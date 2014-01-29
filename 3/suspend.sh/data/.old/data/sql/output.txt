@@ -1,0 +1,5 @@
+5,cfg,remove_trailing,c,c5,c
+4,cfg,remove_trailing,cd,cgg,cd
+3,w,remove_trailing,c,c,""
+2,cfg,remove_trailing,c,c,c
+1,1,1,1,1,1

@@ -1,0 +1,1 @@
+https://help.github.com/articles/setting-your-username-in-git

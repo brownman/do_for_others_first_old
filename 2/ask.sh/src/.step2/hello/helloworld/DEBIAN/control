@@ -1,0 +1,11 @@
+Source: hello-world
+Section: misc
+Priority: extra
+Maintainer: ofer brown <brownman556@gmail.com>
+Build-Depends: Debhelper (>= 8.0.0)
+Version: 0.0.1
+Homepage: http://www.brownman.github.com
+Package: hello
+Architecture: all 
+Depends: bash,flite
+Description: This is a dummy package with a hello world echo script 

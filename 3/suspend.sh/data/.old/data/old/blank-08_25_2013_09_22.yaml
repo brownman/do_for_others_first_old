@@ -1,0 +1,10 @@
+- project:
+	- motivation-plugin: 
+			- what is easier - game
+- game:
+    - what_is_easier:
+        - buy seeds
+
+- achivements:
+	- do: run task series until exit has pressed
+	- why: eliminate un-efficient and dis-regarded usage

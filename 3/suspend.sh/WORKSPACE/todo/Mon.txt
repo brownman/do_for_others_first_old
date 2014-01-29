@@ -1,0 +1,51 @@
+23:10:24 update python env
+16:01:42 error.sh
+15:56:17 error.sh
+15:50:00 error.sh
+15:47:46 update github
+15:41:10 give me a minute
+15:35:57 trap errors
+15:28:06 we have bash sourcecode
+15:23:12 bash source
+15:20:55 bash sourcecode
+15:15:20 error.sh
+15:09:06 error.sh
+15:06:47 error.sh
+14:57:57 error.sh
+14:55:43 error.sh
+14:49:21 error.sh - ask haviv using your program
+14:42:49 :cool
+14:37:53 error.sh
+14:35:36 push error.sh
+14:30:44 trap bash error
+14:28:31 error.sh update
+14:23:03 error.sh
+14:20:49 error.sh
+14:12:05 error.sh
+14:06:19 small error
+13:58:17 we are ok now
+13:51:46 script error.sh
+13:43:53 script only ! error.sh
+13:10:18 update error.sh
+13:07:55 update  error.script
+12:52:12 notify-send is required
+12:41:51 seem complete
+12:17:36 error.sh
+11:52:49 restarting
+10:31:14 nice
+10:17:53 update each round with todo text
+10:06:12 dependencies- check  in script
+10:03:45 use script without package
+09:45:21 restart life
+09:18:11 gconf-editor
+09:09:45 gconf hotkeys
+09:07:27 use hotkeys project sources
+08:58:55 make hotkeys.deb
+08:40:07 hotkeys
+08:37:53 hotkeys - menu
+08:27:06 simplest zenity menu
+08:24:48 think easier
+08:06:43 updating hotkeys
+08:04:28 must have a hotkeys.sh
+07:54:12 update Desktop with todo
+07:47:43 fun

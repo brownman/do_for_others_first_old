@@ -1,0 +1,5 @@
+/home/dao01/magnify_the_small/script/tasks/tasker.sh: line 640: notify-send3: command not found
+[32mcheck existance[0m
+[32mcheck existance[0m
+[32mcheck existance[0m
+Invalid number of options.

@@ -1,0 +1,27 @@
+ideas (as priorities)
+----=-=-=-=-=-=-=-=-=-=-
+updatable db
+minimal debian packaging
+update tasks
+update readme
+last test
+
+zenity-editable list --> then show all abs files - and be able to update on click every row.
+
+meteor - chat - for linux group
+plugin - abs - testing + document it
+black friday - scrapping +securitytube
+zenity -  like - notify-send button 
+translate - regular + random language
+max columns = 0 - ??!
+workflow-task-random description-!story_subject --> random_line from subject.txt
+reminder - escape if not choosed
+suspend - git commit - every 4
+
+- for show file or edit line
+- for deciding realtime - wether to also speak the translation
+
+
+outside
+0-0-0-0-0-
+collect oranges to the composter

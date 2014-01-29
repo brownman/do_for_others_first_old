@@ -1,0 +1,4 @@
+exo-open https://www.google.com/calendar/b/1/render
+exo-open https://mail.google.com/tasks/ig?pli=1
+xterm -e "~/magnify_the_small/genius.sh single suspend1"
+xterm -e "~/magnify_the_small/genius.sh single commitment"

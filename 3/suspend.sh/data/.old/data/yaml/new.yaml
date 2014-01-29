@@ -1,0 +1,102 @@
+    
+triggers:
+        buy:      spagetti
+        remind_life_goal:
+            - why_be_optimistic|collaboration
+        words:
+            - his dog, their dogs, our dog
+        breakthrough:
+            - collaboration
+        recent:
+            - update project
+        create_essay_ideas:
+            - to be happy
+            - to do a task
+            - to smile
+            - to take it easy
+        tweets:
+            - today is the history of tomorroe
+            - tomorrow will be changed by today's ideas
+        wish:
+            - start working on Avshalom's website
+        ideas:
+            efficiency:
+                popups:
+                    - multiple choices - like - update stop-watch- timing,txt
+                workflow:
+                    - suspend -> commitment
+                    - error_handler -> tracex popup !
+                system:
+                    - python koan - use for testing - shell scripts
+        mantra:
+                - run only 1 task and increase after suspension
+                - take a breath for atleast 10 minutes
+        achivements:
+                - I did some coding
+                - tried give Shalva food
+        fun:
+                - physics
+                - shopping
+
+        ideas:
+                    - menus like workflows  instide of cfg
+                    - motivation  - silent option
+        routes:
+            project:
+                recent: do_test
+                plugins:
+                    - article_translation
+                    - youtube_downloader
+                    - else
+            study:
+                recent:
+                        - update project - add essay game
+                project:
+                    next:
+                        - plugin: youtube
+                    later:
+                        - file-sync
+                        - article / yaml tranlsation / bin-translate 
+                        - plugin: languages tree - for 1 
+                        - plugin: shopping - scrap
+                later:
+                    - koans - runner
+                    - network questions
+                    - bash examples
+
+
+
+
+
+        
+resources:
+    youtbe:
+        git@github.com:darxx/youtube-dl-gui.git
+        https://github.com/rg3/youtube-dl
+    js:
+        http://phrogz.net/js/d3-playground/#VerticalBars_HTML
+    bash:
+        './private/old/resources/packages/abs-guide-6.5/hanoi2.bash:      repeat " " $empty'
+    ref:
+        https://github.com/0k/shyaml
+    job:
+        http://www.working.org.il/%D7%93%D7%9E%D7%99_%D7%90%D7%91%D7%98%D7%9C%D7%94/%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%93%D7%9E%D7%99_%D7%90%D7%91%D7%98%D7%9C%D7%94/
+        http://www.taasuka.gov.il/Taasuka/Employment+Consultation/Courses/tel+aviv070108.htm
+    recent:       
+        we:
+                    - http://www.btl.gov.il/benefits/unemployment/Pages/default.aspx
+        job:
+                    - http://www.linkedin.com/jsearch?keywords=linux&searchLocationType=I&countryCode=il&postalCode=76829&distance=50&keepFacets=keepFacets&page_num=1&pplSearchOrigin=JSHP&sortCriteria=R
+        breath:
+                    - http://he.wikipedia.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%A0%D7%99%D7%A1%D7%95%D7%99%D7%99%D7%9D_%D7%9E%D7%97%D7%A9%D7%91%D7%AA%D7%99%D7%99%D7%9D
+    buy:
+        searches:
+            life_upgrade:
+                - 1 more battery for the laptop
+            laptop:
+                - 2 parts laptop - search for replacement parts first
+                - mini computer solution
+                - laptop alternative
+            url:
+                - http://www.antutu.net/index.shtml
+

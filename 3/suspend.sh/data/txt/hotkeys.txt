@@ -1,0 +1,3 @@
+hotkey: fast-add-question
+hotkey: fast-add-gist
+

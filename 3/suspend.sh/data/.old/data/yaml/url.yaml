@@ -1,0 +1,86 @@
+bash_script:
+		-	http://askubuntu.com/questions/68175/how-to-create-script-with-auto-complete
+
+general:
+	Q:
+		- find books
+	A:
+		- http://ebookbrowsee.net/10/101-102-lpic-1-certification-bible
+
+HOW_WORK_o.s:
+	W:
+		-	http://ocw.up.edu.ps/upinar/moodledata/229/
+
+
+best-practice:
+	A:
+		- don't use network-managers !
+		- practice chroot
+		- have many partitions for test new O.S
+
+chroot:
+	W:
+		- https://help.ubuntu.com/12.10/installation-guide/powerpc/linux-upgrade.html
+	Q:
+		- how to  practice chroot/networking troubleshooting
+
+hack:
+	W:
+		- http://subsignal.org/doc/AliensBashTutorial.html#4_e
+js:
+	Q:
+		- can't select text with mouse
+deb:
+	W:
+		- http://askubuntu.com/questions/279686/how-to-package-a-simple-bash-script
+error:
+	W:
+		- http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-3.html
+	Q:
+		- 2 stderr ?
+	S:
+		- output errors: 1>&2
+
+git:
+	W:
+		- http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging
+		- http://stackoverflow.com/questions/5689960/how-do-i-create-a-commit-without-a-parent-in-git?lq=1
+	Q: 
+		- how to create github pages
+
+
+cron:
+	W:
+		- http://theos.in/desktop-linux/removing-unwanted-startup-debian-files-or-services/
+		- http://www.cyberciti.biz/faq/howto-linux-unix-start-restart-cron/
+		- http://www.cyberciti.biz/faq/howto-runlevel-configuration-tool-to-start-service/
+		- http://askubuntu.com/questions/56683/where-is-the-cron-crontab-log 
+		- http://askubuntu.com/questions/23009/reasons-why-crontab-does-not-work
+		- http://serverfault.com/questions/85893/running-a-cron-job-manually-and-immediately
+	Q:
+		- how to stop mail sending
+		- how to use same environments to run a script
+		- how to run cron automaticly on reboot?
+	A:
+		- sudo rcconf #gui + startup jobs + checkbox: -+cron
+		- /etc/rsyslog.d/50-default.conf #send  email on error / output error to: file.log
+
+travis:
+	W:
+		- http://shunit2.googlecode.com/svn/trunk/source/2.1/doc/shunit2.html#some-constants-you-can-use
+
+wikipedia:
+	W:
+		- http://en.wikipedia.org/wiki/Nohup
+
+
+bash:	
+	W:
+		- http://www.gnu.org/software/bash/manual/bashref.html#The-Shopt-Builtin
+		- http://www.gnu.org/software/bash/manual/bashref.html#Job-Control-Builtins
+
+
+meteor:
+	W:
+		-http://www.slideshare.net/JonathanPerl/building-a-chrome-extension-with-meteor
+

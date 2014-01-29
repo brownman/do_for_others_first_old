@@ -1,0 +1,3 @@
+tasker add_koan
+tasker cfg1 xdg-open 'http://www.tldp.org/LDP/abs/html/'
+tasker cfg1 xdg-open http://mywiki.wooledge.org/

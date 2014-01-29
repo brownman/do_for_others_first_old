@@ -1,0 +1,6 @@
+suspend1 830 550 400x 28 yellow true
+suspend2 930 150 500x 31 red true
+lecture 130 250 400x 23 blue true
+lpi 130 650 400x 23 purple true
+collected 230 350 400x 23 white true
+increase_motivation 230 650 400x 23 orange true

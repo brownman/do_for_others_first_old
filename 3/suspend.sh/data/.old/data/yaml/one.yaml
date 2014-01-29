@@ -1,0 +1,203 @@
+date: 
+    - 22.12.13
+
+resources:
+        - https://www.paypal.com
+        - http://mywiki.wooledge.org/  
+        - http://www.grymoire.com/Unix/Sed.html
+        - http://www.tldp.org/LDP/abs/html/gotchas.html
+        - http://stackoverflow.com/
+        - http://mywiki.wooledge.org/BashSheet
+        - http://manned.org/yad/820cb168
+        - https://advance-linux.meteor.com
+
+solution:
+        - http://stackoverflow.com/questions/8850995/notify-send-cause-invalid-number-of-options
+        - http://askubuntu.com/questions/195552/how-to-impose-memory-limits-to-a-shell-script
+        - http://www.commandlinefu.com/commands/matching/ulimit/dWxpbWl0/sort-by-votes
+        - http://www.cyberciti.biz/faq/howto-linux-unix-start-restart-cron/
+        
+
+        
+meteor:
+        - http://codepen.io/sol0mka/pen/kpDtI
+        - https://travis-ci.org/arunoda/meteor-smart-collections
+        - https://www.meteor.com/screencast
+        - https://github.com/search/advanced?q=chat&ref=cmdform&type=Repositories
+        #- https://help.github.com/articles/creating-project-pages-manually
+
+workflow:
+#        - tasker limit1 30 task_force|force of doing a task
+#        - tasker limit1 60 reminder|set a new goal
+         #- tasker limit1 300 pass_to_enlightment|a pass to enlightment
+         - tasker background increase_motivation|increase motivation
+#        - tasker limit1 120 suspend1 true|order and sport
+#        - tasker limit1 40 free_imagination true|free imagination
+#        - tasker limit1 40 must|optional
+        #- tasker limit1 30 add_koan|add 1 koan
+#        #- tasker limit1 200 free_speak|say thanks a little bit
+        #- tasker limit1 20 pownder easy|pownder about 
+        #- tasker limit1 20 pownder advise|pownder about 
+        #
+        #
+        #- tasker limit1 20 act_or_do breath|x
+        #- tasker limit1 20 say 'think what is easy'|x
+#        - tasker limit1 120 say task|do 1 task
+        #- tasker limit1 60 set_rational_condition|set a rational condition
+#        - tasker limit1 60 translate_later|how to say
+        #- tasker limit1 60 say meteor|fix meteor
+        #- tasker limit1 30 collect_new_words|collect new words
+        #- tasker suspend2 true|suspend package
+#        must
+#        - tasker limit1 60 motivations|translate all
+#        - tasker efficiency_report2|efficiency report
+##        - tasker limit1 60 homework|homework
+##        - tasker limit1 60 lpi|lpi homework
+##        - tasker limit1 20 free_speak|say thanks a little bit
+##        - tasker limit1 60 add_koan|add 1 koan
+        #- tasker limit must 30 8|must increase efficiency level
+        #lpi homework
+        #- tasker limit efficiency_report 5
+#        - children_story||an awesome children story
+#        - git_commit||update the repo
+#        - increase_motivation||increase motivation reminder
+#        #- regexp|tasks|on next suspension I can
+#        - riddle||add a riddle
+
+limit:
+        - collect_new_words 30 8
+        #- lpi 60 8
+        #- easiest_task 60 8
+        #- buy paprika 60 8
+        #- push_koans 60 8
+
+
+
+order:
+        - add push koans to watchr
+        - parse next koan to gui 
+        - python ntlp: the word 'sit' is part-of-speach 'x' so suggest group options
+        - ~/magnify_the_small/1/others/RegexKoans
+        - phone-rington -> play a language lesson
+
+hotkeys:
+        #- free_imagination
+        - impulse
+        - updating 
+        - question
+        - riddle
+        - reminder
+        - increase_motivation 
+        #- task_from publish
+        - update_db snippet 
+        #- update_db  
+        - task_from recent
+        - free_speak 
+
+background:
+        - learn_langs 
+        - free_speak
+        - reminder 
+        - push_koans
+        - motivations
+        - update_db the_big_picture 
+
+recent:
+    - https://www.google.co.il/webhp?sourceid=chrome-instant&ion=1&ie=UTF-8#newwindow=1&q=deal%20earphones
+    - vlc /TORRENTS/VIDEO1/SecurityTube.Python.Scripting.Expert/Module-03/01.m4v #use scrapy
+    - clicompanion #random quote
+    - vlc /TORRENTS/feynman_slit.mp3
+    - exo-open http://plnkr.co/edit/6T5XDS7zb5tgr5yrfzVM?p=preview #angular+avshalom
+    - exo-open https://drive.google.com/templates?category=17&sort=hottest&view=public
+    - exo-open file:///home/dao01/Desktop/Screenshot%20-%20271013%20-%2016:45:33.png
+    - exo-open http://www.compileonline.com/execute_bash_online.php
+    - exo-open http://drichard.org/mindmaps/#
+    - exo-open http://www.btl.gov.il/benefits/Unemployment/rates/Pages/Calculator.aspx
+    - gedit $CFG_DIR/cfg/vars.cfg
+    - exo-open http://egghead.io/lessons
+    - exo-open https://www.google.com/calendar/b/1/render
+    - exo-open https://mail.google.com/tasks/ig?pli=1
+    - exo-open http://www.compileonline.com/execute_bash_online.php
+
+
+
+angular-vids:
+    - http://www.bennadel.com/blog/2452-Mixing-Static-And-Dynamic-Data-In-An-AngularJS-Select-Menu.htm
+    - http://egghead.io/lessons
+
+publish:
+    - git_commit
+    - scp_android
+    - screencast
+    - screenshot
+
+
+deals:
+    # israel phones
+    - http://www.zap.co.il/models.aspx?sog=e-cellphone&filter=188396
+    # many sites
+    - http://www.storeswithfreeshipping.net/free-shipping-stores-list.php
+    # daily deal
+    - http://www.pandawill.com/happy-hour/?current=monday
+    
+task:
+    -  if collect 50 new words I will burn photos on a cd -
+    -  try remembering the last lesson
+    -  push shopping forward
+    -  add test through gui - db has to contain last koan to run
+
+done:
+    - paypal website visit
+    - give Shalva to eat
+    - check bank account
+    - send email to Eti
+    - brush Shalva's teeth
+
+url:
+    - http://wiki.bash-hackers.org/rcwatson
+    
+must:
+    - tasker reminder
+    - tasker git_commit
+    - tasker learn_langs
+    - tasker increase_motivation
+    - tasker riddle 
+    - tasker reminder 
+    - tasker cron 
+    - tasker vlc
+
+wallpaper:
+    - suspend1 830 550 400x 28 yellow true 
+    - suspend2 930 150 500x 31 red true 
+    #- logger 830 150 600x 43 white true 
+    - lecture 130 250 400x 23 blue true 
+    - lpi 130 650 400x 23 purple true 
+    - collected 230 350 400x 23 white true 
+    - increase_motivation 230 650 400x 23 orange true 
+    - riddle 30 650 400x 23 orange true 
+    #- assosiation 230 240 400x 14 yellow true 
+    #- disown 1140 650 600x 13 white true 
+
+task_force:
+    - paypal|https://www.paypal.com
+    - shalva coat|www.google.com/coats
+
+question:
+    - https://github.com/brownman/brownman.github.com/edit/master/index.html
+
+crons:
+    - motivation glossary
+    - motivation sport 
+    - lpi
+    - option must
+    - increase_motivation
+    - riddle 
+    - option lecture
+    - shopping
+    #- suspend2
+
+shopping:
+    - www.google.com
+    - www.ebay.com
+
+#primes: 1,2,3,5,7,11,13,17 

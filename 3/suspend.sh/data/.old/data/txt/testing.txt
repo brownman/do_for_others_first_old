@@ -1,0 +1,137 @@
+urgent
+-----------
+lpi + pdf + page
+fix - wallpaper
+
+ongoing
+--
+website: add ascii-cast link
+
+random-learn
+-------
+boot process
+kernel
+show random video - every 30 min -cron!
+
+ppa
+-----
+build-dep - reverse dependencies - which app uses : zenity/yad ?
+
+
+mantain
+-----
+arik-website - create git repo and save it
+
+chat
+-------
+
+user can  capture and show their faces
+cli - chat 
+file.sh -> cron
+connectivity:  website bind between projects
+
+priorities:
+- connectivity
+- 
+- new word each minute
+
+browser - home button - github - edit page:
+question vs solution
+
+firsttaks - increase motivation radio buttons..
+
+3 fields:
+cron - is allive
+suspend 
+collected - words
+
+python + security
+meteor - investigation project - todo with login
+backup mariana's pictures
+fix  - debug gui  utils - use only with cmd - and log it 
+
+shortkey : update by type of file: 
+shortkey: group options: fast add - gui  for category: koan/cfg/txt/yaml
+logout chat timeout
+chat +cli
+conkey + commandlinefu
+search tts:github+http://translate.google.com/translate_tts
+
+export new words to file.txt- load it with meteor
+connect koans-touch project-export to meteor
+
+
+ideas
+------
+android:
+shortkeys for record voice - android - idea  -  hotkeys
+update this file
+
+old:
+-------
+plugin riddle
+translation - silence
+meteor - sort
+
+
+
+
+new:
+-------
+meteor - mongo - sorting
+bash - source code - command: bg
+add many koans sorted by subject
+add a gmail plugin to fetch homework
+homework - 1 koan
+plugin - write words for translation - and play it later
+use essay generator - to practice spacific words
+db: report - efficiency
+css - scroll textarea
+meteor - add html chat box for showing new messages
+meteor chat
+disown - single script - not koan
+cfg - messageYN1 - escape - is killing
+single script OR koan
+collected words - by pressing on button
+send meteor chat message from shell
+homework
+show log after a cycle
+chat through shell
+make homework
+bash - limit process cpu
+cli chatroom github
+
+read the book
+bash koans
+meteor tts chat
+nested quotes
+find recent iandroid records
+plugin - root your android + bin4ry - android  
+random learn langs
+python - virtual environment
+
+later:
+direct errors - to a /tmp/error - make watchr trigger a gui dialog
+update picture from blgger 
+
+breakthrough will:
+buy paprika
+burn disks
+
+
+buy:
+shalva - collar
+ahil
+garbadge 
+phone cable
+kumkum
+sd card
+paprika
+
+
+tasks
+shalva - food
+mindmap - update
+drew money - bankat
+gila  - has charged me ?
+backup images and vids - first plan softly

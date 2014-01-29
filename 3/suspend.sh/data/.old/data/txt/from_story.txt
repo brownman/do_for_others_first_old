@@ -1,0 +1,4 @@
+5|robot
+2|grammer
+1|koans
+1|verb

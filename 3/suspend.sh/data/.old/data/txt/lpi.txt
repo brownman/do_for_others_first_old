@@ -1,0 +1,2 @@
+11:42|11
+empty file: /home/dao01/magnify_the_small/data/txt/lpi.txt

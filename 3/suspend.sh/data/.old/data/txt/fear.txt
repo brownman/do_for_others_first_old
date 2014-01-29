@@ -1,0 +1,21 @@
+present|start|monkey
+nice
+ 
+ present|jump|dog
+ 
+ past|jump|dog
+ 
+good
+god
+ future|go|ant|fast
+next
+ I am here for you
+hello
+ future|enter|cat|slow
+hello
+nice
+or
+present
+animal
+animal
+ present|work|ant|fast

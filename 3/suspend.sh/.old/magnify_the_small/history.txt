@@ -1,0 +1,20 @@
+  479  git --branches
+  480  git -b
+  481  git branches
+  482  git brunch
+  483  git branch
+  484  git add .
+  485  git status
+  486  ls
+  487  ./genius.sh single motivation
+  488  ls
+  489  sudo mkdir /TORRENTS
+  490  sudo chown dao02 /TORRENTS/
+  491  ls
+  492  ./genius.sh 
+  493  ./genius.sh single motivation
+  494  ls
+  495  ./genius.sh single suspend2
+  496  ls
+  497  history
+  498  history 20 >> history.txt

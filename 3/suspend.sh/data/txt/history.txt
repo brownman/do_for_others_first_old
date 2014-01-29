@@ -1,0 +1,9 @@
+man:
+  - http://explainshell.com/explain/1/tr
+
+error handle:
+  - http://www.linuxplanet.com/linuxplanet/tutorials/7025/2
+  - http://tldp.org/LDP/abs/html/exitcodes.html
+
+
+d

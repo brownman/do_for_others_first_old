@@ -1,0 +1,89 @@
+11:48|tasker learn_langs
+11:47|tasker riddle
+11:20|tasker riddle
+07:55|tasker cron
+07:50|tasker git_commit
+12:44|tasker riddle
+12:20|tasker learn_langs
+10:41|exit!
+10:41|if I was a genius I would
+10:36|exit!
+10:36|I won
+10:30|tasker git_commit
+10:12|is to define the problem
+10:09|tasker git_commit
+10:07|to smile
+09:54|one is able to do a lot
+09:53|to get a hug
+09:45|exit
+09:45| _ 1: tasker background increase_motivation
+09:32|exit
+08:47|is to just smile and let it go
+08:47| _ 1: tasker background increase_motivation
+14:04|to smile
+13:19|was
+13:13|did
+13:11|silently
+13:07|neck
+13:05|faster
+12:51|best
+12:31|hands
+12:19|happy
+12:08|stretch
+11:22|-
+11:10|only
+10:58|around
+07:14|success
+07:12|wold
+07:06|good
+07:04|but
+06:32|scream
+06:08|me
+06:04|ears
+06:02|breath
+05:41|and
+05:39|breath
+05:37|silently
+05:35|red
+05:33|thanks
+05:31|way
+16:21|pillow
+16:14|laugh
+16:02|gods
+14:51|understand
+14:47|contented
+14:38|go
+14:25|read
+14:21|your
+14:19|cry
+14:08|happy
+14:00|move
+13:56|pillow
+13:06|cry
+10:52|queen
+10:48|than
+10:26|neck
+10:24|awesome
+10:20|breath
+10:18|your
+10:05|buy
+10:03|your
+09:57|ears
+09:53|climbed
+09:45|scream
+09:39|gods
+08:15|
+tasker learn_langs
+08:12|
+tasker learn_langs
+15:32|we
+13:45|yeah
+13:41|echo hi
+13:41|/usr/bin/notify-send "single process" "config"
+13:41|/usr/bin/notify-send "every 10" "notify-send1 cron 'cron start/running, process 23227'"
+13:41|/usr/bin/notify-send "single process" "config"
+13:40|/usr/bin/notify-send "update commander" "suspend2(): 564: /home/dao01/magnify_the_small/script/tasks/tasker.sh : "
+13:40|/usr/bin/notify-send "say:" "before suspension 2 : "
+13:40|/usr/bin/notify-send "say:" "before suspension 1 : "
+13:40|/usr/bin/notify-send "single process" "motivation"
+13:40|/usr/bin/notify-send "single process" "suspend2"

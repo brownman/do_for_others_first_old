@@ -1,0 +1,3 @@
+http://arongriffis.com/blog/articles/2013-03-25-bashes.html
+http://madebynathan.com/2012/01/30/travis-ci-status-in-shell-prompt/
+http://www.tomaz.me/2013/12/02/running-travis-ci-tests-on-arm.html

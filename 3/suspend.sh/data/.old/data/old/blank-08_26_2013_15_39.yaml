@@ -1,0 +1,54 @@
+moto: "you are here to change"
+goal: "do many many tasks - touch it all"
+subvalue:
+    date: 25.8.13
+    day: sunday
+    things:
+        project:
+            next:
+                - plugin: youtube
+            later:
+                - file-sync
+                - article / yaml tranlsation / bin-translate 
+        tasks:
+            easiest:
+                - buy glue
+            later:
+                - talk to the Binyan
+                - check my accounts
+            harder:
+                - check info about new laptop
+            ongoing:
+                - call Sima-gezer?
+                - bank - call Yael
+                - talk to the dentist
+                - talk to noam .g
+            ask_kuka:
+                - talk with Rotem
+        creative:
+            avshalom:
+                - make a sketch
+        timing:
+                - 18:00 pool
+                - parents - print papers for Iris' meeting
+
+motivations: |
+        be happy because:
+        I have many things to do
+        I want to learn more
+        
+resources:
+    git@github.com:darxx/youtube-dl-gui.git
+    https://github.com/rg3/youtube-dl
+    https://github.com/0k/shyaml
+    http://www.working.org.il/%D7%93%D7%9E%D7%99_%D7%90%D7%91%D7%98%D7%9C%D7%94/%D7%97%D7%99%D7%A9%D7%95%D7%91_%D7%93%D7%9E%D7%99_%D7%90%D7%91%D7%98%D7%9C%D7%94/
+    http://www.taasuka.gov.il/Taasuka/Employment+Consultation/Courses/tel+aviv070108.htm
+
+recent:
+  glue:
+    - http://drfix.co.il/iphone-cover-epoxy-gluing
+    - http://www.zap.co.il/models.aspx?sog=h-glue&db137795=2783583
+  job:
+    - http://www.taasuka.gov.il/Taasuka/About/EmploymentBureaus.htm
+  money:
+    - make an excell table - of the last 3 month

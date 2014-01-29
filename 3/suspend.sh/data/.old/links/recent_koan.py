@@ -1,0 +1,1 @@
+/home/dao01/magnify_the_small/1/testing/python2/koans/about_string_to_buttons.py

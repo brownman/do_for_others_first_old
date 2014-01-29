@@ -1,0 +1,251 @@
+11:41|we
+10:51|body
+10:41|choose
+10:36|upon
+10:07|smile
+09:54|able
+09:53|hug
+08:47|smile
+10:34|questions
+16:05|hands
+15:59|stop
+15:57|straight
+15:55|love
+15:50|slowly
+15:48|boy
+15:27|[32mQ[0m
+Q
+[32mcheck existance[0m
+[32mcheck existance[0m
+15:23|[32mdeep[0m
+deep
+[32mcheck existance[0m
+[32mcheck existance[0m
+15:21|[32mQ[0m
+Q
+[32mcheck existance[0m
+[32mcheck existance[0m
+15:19|[32mQ[0m
+Q
+[32mcheck existance[0m
+[32mcheck existance[0m
+15:17|[32mperson[0m
+person
+[32mcheck existance[0m
+[32mcheck existance[0m
+15:15|[32mhands[0m
+hands
+[32mcheck existance[0m
+[32mcheck existance[0m
+14:56|[32mQ[0m
+Q
+[32mcheck existance[0m
+[32mcheck existance[0m
+14:51|huge
+14:50|hands
+14:47|deep
+14:46|your
+14:42|human
+14:28|breath
+14:27|done
+14:22|doubts
+14:20|she
+14:17|act
+14:15|times
+14:14|close
+14:11|animal
+13:58|three
+13:56|more
+13:50|buy
+13:43|try
+13:41|awesome
+13:22|pillow
+13:20|thanks
+13:18|yourself
+13:09|eyes
+13:08|only
+13:03|too
+13:01|stretch
+12:59|me
+12:57|sit
+12:55|stretch
+12:53|ass
+12:49|talented
+12:47|higher
+12:41|only
+12:39|gods
+12:30|nobody
+12:28|many
+12:17|serious
+12:10|proud
+12:08|boy
+12:06|ears
+11:48|twice
+11:46|beloved
+11:44|champion
+11:43|understand
+11:38|you
+11:35|jump
+10:11|neck
+10:09|your
+10:07|upwards
+10:05|slowly
+10:03|hands
+16:37|will
+16:34|whenever
+16:19|doubts
+16:15|only
+16:02|up
+15:54|comfort
+15:52|sides
+15:50|here
+15:41|move
+15:37|human
+15:35|hello
+15:35|do
+15:34|empty='Q'
+assert_equal_str "$res" 'dog'
+res1=$(act "$1" "$2")
+15:33|empty='Q'
+assert_equal_str "$res" 'dog'
+res1=$(act "$1" "$2")
+15:31|empty='Q'
+assert_equal_str "$res" 'dog'
+res1=$(act "$1" "$2")
+15:30|empty='Q'
+assert_equal_str "$res" 'dog'
+act "$1" "$2"
+15:29|this
+15:29|hello
+15:27|person
+15:22|home
+15:20|gods
+13:19|6100 (process ID) old priority 10, new priority 11
+was
+13:13|2615 (process ID) old priority 10, new priority 11
+did
+13:11|1070 (process ID) old priority 11, new priority 11
+silently
+13:07|31904 (process ID) old priority 19, new priority 19
+neck
+13:05|[31m29494[0m
+29509 (process ID) old priority 10, new priority 19
+[32m29509[0m
+faster
+12:51|[31m23683[0m
+23699 (process ID) old priority 10, new priority 19
+[32m23699[0m
+[31m23683[0m
+23709 (process ID) old priority 10, new priority 19
+[32m23709[0m
+best
+12:31|[31m20532[0m
+20548 (process ID) old priority 10, new priority 15
+[32m20548[0m
+hands
+12:19|[31m16703[0m
+(B[m[32m16718[0m
+(B[m[33m16703[0m
+(B[m
+happy
+12:08|13954 (process ID) old priority 10, new priority 10
+stretch
+11:22|3088 (process ID) old priority 10, new priority 10
+-
+11:10|8624 (process ID) old priority 10, new priority 10
+8624 (process ID) old priority 10, new priority 10
+only
+10:58|
+around
+07:14|
+success
+07:12|
+wold
+07:06|
+good
+07:04|
+but
+06:32|
+scream
+06:08|
+me
+06:04|
+ears
+06:02|
+breath
+05:41|
+and
+05:39|
+breath
+05:37|
+silently
+05:35|
+red
+05:33|
+thanks
+05:31|
+way
+16:21|
+pillow
+16:14|
+laugh
+16:02|
+gods
+14:51|
+understand
+14:47|
+contented
+14:38|
+go
+14:25|
+read
+14:21|
+your
+14:19|
+cry
+14:08|
+happy
+14:00|
+move
+13:56|
+pillow
+13:06|
+cry
+10:52|
+queen
+10:48|
+than
+10:26|
+neck
+10:24|
+awesome
+10:20|
+breath
+10:18|
+your
+10:05|
+buy
+10:03|
+your
+09:57|
+ears
+09:53|
+climbed
+09:45|
+scream
+09:39|
+gods
+15:32|
+we
+13:45|
+yeah
+13:15|
+happy
+12:59|
+what
+12:56|
+faster
+12:54|
+scream
+hi
+1

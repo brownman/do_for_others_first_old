@@ -1,0 +1,96 @@
+.TH QUACKEY  "6" "Version 0.4.02 "
+.SH NAME
+.B quackey
+\- software version of Perquackey
+.SH INSTALLATION
+Rename \fIqky.sh\fP to \fIqky\fP, do a \fBchmod 755 qky\fP, and copy to
+\fB/usr/local/bin\fP directory. Repeat for the other scripts.
+.SH DESCRIPTION 
+Quackey is a software version of the classic Perquackey anagramming word game. It is implemented as a Bash shell script and runs under Linux, UNIX, and OSX. The game is suitable for either solitary or competitive play.
+
+The rules are the same as Perquackey, but the scoring is simplified and plurals of previously played words are allowed. "Vulnerable" play is not yet implemented, but it is otherwise feature-complete.
+
+As the game begins, the player gets 10 letters.  The object is to construct valid dictionary words of at least 3-letter-length from the letterset. Each word-length category -- 3-letter, 4-letter, 5-letter, ... -- fills up with the fifth word entered, and no further words in that category are accepted.
+
+The penalty for too-short (two-letter), duplicate, unconstructable, and invalid (not in dictionary) words is -200. The same penalty applies to attempts to enter a word in a filled-up category.
+
+---
+
+The \fIscoring\fP mostly corresponds to classic Perquackey:
+
+The first 3-letter word scores 60, plus 10 for each additional one.
+
+The first 4-letter word scores 120, plus 20 for each additional one.
+
+The first 5-letter word scores 200, plus 50 for each additional one.
+
+The first 6-letter word scores 300, plus 100 for each additional one.
+
+The first 7-letter word scores 500, plus 150 for each additional one.
+
+The first 8-letter word scores 750, plus 250 for each additional one.
+
+The first 9-letter word scores 1000, plus 500 for each additional one.
+
+The first 10-letter word scores 2000, plus 2000 for each additional one.
+
+---
+
+Category completion bonuses are:
+
+3-letter words   100
+
+4-letter words   200
+
+5-letter words   400
+
+6-letter words   800
+
+7-letter words  2000
+
+8-letter words 10000
+
+This is a simplification of the absurdly complicated Perquackey bonus scoring system.
+
+---
+
+Hitting just ENTER for a word entry ends the game.
+
+Individual word entry is timed to a maximum of 10 seconds.
+
+*** Timing out on an entry ends the game. ***
+
+Other than that, the game is untimed.
+
+--------------------------------------------------
+
+Game statistics are automatically saved to a file.
+
+--------------------------------------------------
+
+
+.SH OPTIONS 
+For competitive ("duplicate") play, a previous letterset
+may be duplicated by repeating the script's random seed,
+command-line parameter $1.
+
+For example, \fBqky 7633\fP specifies the letterset 
+\fBc a d i f r h u s k\fP ...
+
+.SH FILES 
+\fBqky.sh\fP
+\fBqkyv.sh\fP
+\fBqkyv2.sh\fP
+\fBqbot.sh\fP
+.SH AUTHOR 
+Mendel Cooper
+.SH BUGS 
+Likely quite a few, since this is still in Alpha stage.
+.SH SEE ALSO 
+The \fIREADME\fP file in the \fBqky.tar.gz\fP tarball.
+
+---
+
+The \fByawl\fP word list package:
+
+http://bash.neuralshortcircuit.com/yawl-0.3.2.tar.gz

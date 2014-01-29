@@ -1,0 +1,13 @@
+- system:
+    - xfce:
+        - /etc/acpi/powerbtn.sh
+
+- postponding:
+            - koans:
+                - push python_koans
+            - buy:
+                - buy car radio
+            - backup:
+                - hdd to cds
+
+

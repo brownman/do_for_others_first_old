@@ -1,0 +1,237 @@
+workflow:
+        - free_speak||your thoughts are unique
+#        - show_msg_entry|frame.times|plan your time consuming
+#        - show_msg_entry|frame.cake|it is the cake of priorities
+#        - show_msg_entry|frame.conditions|I am happy to
+#        - show_msg_entry|frame.tasks|it is easy to
+#        - helper||help me to decide
+
+        #- increase_motivation||
+
+        #- show_msg_entry|frame.breath|remember the reason for all other things
+        #- learn_langs||learn a new language
+        #- commitment||commitment through time
+        #- show_msg_entry|frame.conditions|I will be happy if
+        #- show_msg_entry|frame.breakthrough|here are my breakthrough for today 
+#        - show_msg_entry|frame.conditions|I will be happy if
+#        - show_msg_entry|frame.awesome|what is awesome
+#        - show_msg_entry|frame.times|my time 
+#        - learn_langs||learn a new language
+        #- commitment||commit through time
+        #- show_msg_entry|frame.efficiency|if I was efficient - I would
+        #- free_speak||deal with your fears
+#        - show_msg_entry|frame.should|I should do
+#        - show_msg|frame.on_computer|I am doing
+#        - show_msg_entry|frame.translate|how to say 
+
+
+line:        
+        translate: get-value rules.translate.0 
+        doing: get-value on_computer.0 
+        should: get-value on_suspend.0 
+        testing: get-value testing.0 
+        project: get-value project.0
+        imagine: get-value imagine.0
+
+details:
+        god:
+                - first python koans - then angular app for searching for android devices - and sign pluses
+        awesome:
+                - avshalom's book
+        week:
+                - ilan - thu - 21:00 
+                - call maor
+        shopping:
+                - lamp cover
+                - recycle bin
+                - kuka perfume
+                - mother shoes
+        questions:
+                - lion's number
+                - phone grasper - can be hunged?
+                - phone charge - 1000 instide of 700 - heat ?
+        mini-tasks:
+                - grab - all iandroid - forum resullt from last 7 days
+        efficiency:
+                - push forward the koans - accomplish python first
+        wishes:
+                - tweet like a bird
+                - make a money out of words
+                - make a program to Adi
+                - make a program to Avi
+        imagine:
+                - I have all the papers I need and I am ready
+                - give shalva medicine
+                - call lion manor
+        fears:
+                - call Riki
+                - take a look at your money
+                - call post-office
+                - checkout the sum of Masha
+                - check info regarding a new laptop
+                - papers - account - feb 2013
+                - backup hd to google drive OR else
+        on_computer:
+                - 10.see-security academy
+        on_suspend:
+                - read edu documents
+        motivations:
+                - there is time for everything
+
+        goals:
+                - create a language lesson
+                - push koans forward X steps
+                - learn physics today from a lecture
+
+        ideas: 
+                - android widget - motivation + language learning
+                - create lesson yaml
+
+        breakthrough:
+                - open the notebook
+                - write something nice
+        search:
+                - freelance - testing - QA
+
+        talk_to:
+                - aiman - amir's friend - ask him about QA
+
+        conditions:
+                - push koans
+                - push project
+                - do some tasks
+                - read physics
+
+        tasks:
+                - push koans
+                - buy a battery
+                - talk to Aiman
+
+        child_story:
+                - hi|Pini said to his wife
+                - ar|Lubna has taken some time off work
+                - ru|Kuka is preparing meet for the next launch
+                
+        breath:
+                - there is time for everything
+                - what is the reason for all other things
+        triggers:
+                - it is easy to
+                - it is so crazy that
+                - it is so interesting that even
+                - I am enthusiastic to
+                - my solution is
+                - I am interested to learn how
+
+        topics:
+                - breath 
+                - children story
+                - ideas
+                - question
+                - amazing
+                - I am unique
+
+        health:
+                - put the computer on a rise platform
+
+
+
+
+rules:
+    efficiency: 0
+    timer:
+        - http://lifehacker.com/tag/jobs
+    home:
+        - hang the laundry
+        - give Shalva food and madicine
+    out:
+        - car - from the bag to the car - move the documents 
+        - do shopping - take the list/photo it
+        - goto pool
+        - Rehovot - buy coffee from
+    report:
+        - every suspension - efficiency level is:X
+        - every hour - am I aware of the daily goal ?
+    recent:
+            - test new plugin with Python
+    idea:   
+            - show recent picture - to refresh memory
+    workflow:
+            - all the time - learn new words by translating - set only 1 sentance in this file
+    translate:
+            - I get it
+    day_goal:
+            - academy - write questions for Nir
+    background:
+            - do python tests
+            - create a file of new words and upload it to blogger
+    resources:
+        linux-news:
+            - http://www.webupd8.org/2011/02/how-to-start-applications-minimized.html
+            - http://www.wired.co.uk/news/archive/2011-10/24/iris-siri-android
+            - http://lifehacker.com/tag/jobs
+        storage:
+            - http://www.webupd8.org/2013/09/mount-google-drive-in-linux-with-google.html
+        streaming-audio:
+            - http://www.webupd8.org/2013/07/command-line-video-download-tool.html
+        shell-menus:
+            - http://code.google.com/p/yad/wiki/Examples
+        education:
+            - http://www.hackeru.co.il/index.php?act=page&id=27
+            - http://www.johnbryce.co.il/training-courses/csi-cyber-security-intelligence-%D7%94%D7%9B%D7%A9%D7%A8%D7%AA-hands-%D7%9C%D7%9E%D7%95%D7%9E%D7%97%D7%99-%D7%90%D7%91%D7%98%D7%97%D7%AA-%D7%9E%D7%99%D7%93%D7%A2
+            - http://www.johnbryce.co.il/training-courses/%D7%9E%D7%94%D7%A0%D7%93%D7%A1-%D7%9E%D7%A2%D7%A8%D7%9B%D7%95%D7%AA-%D7%9C%D7%99%D7%A0%D7%95%D7%A7%D7%A1-%D7%9E%D7%95%D7%A1%D7%9E%D7%9A-%D7%91%D7%A1%D7%91%D7%99%D7%91%D7%95%D7%AA-%D7%90%D7%A0%D7%98%D7%A8%D7%A4%D7%A8%D7%99%D7%99%D7%96-rhel6
+            - http://www.see-security.com/%D7%94%D7%A1%D7%91%D7%A8_%D7%9C%D7%A2%D7%A0%D7%A3_%D7%90%D7%91%D7%98%D7%97%D7%AA_%D7%9E%D7%99%D7%93%D7%A2_%D7%95%D7%9C%D7%99%D7%9E%D7%95%D7%93%D7%99%D7%9D.html
+        shopping:        
+            - http://iandroid.co.il/forum/forum134.html
+            - buy shalva something moving wind
+    email:
+            - https://github.com/joecannatti/Objective-C-Koans
+    simulators:
+            - http://lost-and-found-narihiro.blogspot.co.il/2012/02/linux-mint-12-how-to-install-dynamips.html
+            - http://lost-and-found-narihiro.blogspot.co.il/2013/08/online-dns-visualization-for-free.html
+
+
+
+
+
+
+
+
+project:
+    next:
+        - im afraid of.. essay creation plugin + option to give a name for the file first
+        - free-speak + silent option + give name option
+    plugins:
+        - sync with google calendar and tasks
+        - plugin shopping - should use its own yaml file
+    mini:
+        - cache - learn_langs - wget the html pages!
+        - youtube-sh
+    must:
+        - effective glossary
+    later:
+        - random quotes
+        - grammer learning
+    dir_structure:
+        - project.yaml
+        - shopping.yaml
+        - yaml editing:
+        - big stones
+        - little stones
+    flow:
+        motivation_first:
+            - glossary update efficiency
+        efficiency:
+            - report efficiency - after suspend
+            - check priorities every suspension - and measure the progress
+        background:       
+            - tdd python 
+            - tdd angular
+    on_project:
+            - use Yad dialogs
+            - scrap for language learning
+
+certifications:
+            - http://lpic2.unix.nl/index.html
+mother:
+            - http://www.statman.info/conversions/mens_shoes.html
