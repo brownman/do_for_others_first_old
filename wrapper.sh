@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 #dependencies: bash, gxmessage, libnotify, xsel, vim
 #depend_cfg
@@ -8,14 +8,17 @@
 export VERSION=1
 export GUI=true
 export SOUND=true
+export EDITOR=vim
+
+
 path=`pwd`
-dir_cfg=$path/cfg/error.sh/cfg
-source $dir_cfg/args_set.cfg
-source $dir_cfg/proxy.cfg
-source $dir_cfg/required.cfg
-source $dir_cfg/colors.cfg
-source $dir_cfg/exiting.cfg
-source $dir_cfg/array.cfg
+dir_cfg=$path/cfg/general
+source $dir_cfg/arg/arg.cfg
+source $dir_cfg/proxy/proxy.cfg
+source $dir_cfg/required/required.cfg
+source $dir_cfg/color/colors.cfg
+source $dir_cfg/pids/exiting.cfg
+source $dir_cfg/array/array.cfg
 export file_logger=/tmp/logger.txt
 
 
@@ -86,11 +89,10 @@ use_error(){
     parse "$all"
 
 
-        if [ "$GUI" = true ];then
-        cmd="gvim $exe $line" 
-        else
-        cmd="vim $exe $line" 
-        fi
+echo "editor: $EDITOR"
+echo "editor: $GUI"
+exit
+        cmd="$EDITOR $exe $line" 
 
         echo "$cmd" | xsel --clipboard
         sleep 1
@@ -99,7 +101,7 @@ use_error(){
     else
         print_error "incorrect parsing"
         green "Assume:" 
-        echo "invalide path: path contains: $num_bytes."
+        echo "invalide path: path contains: $num_bytes bytes."
     fi
 }
 try(){
@@ -109,9 +111,9 @@ try(){
 
             set -o errtrace
             traperror () {
-                local err=$1 # error status
-                local line=$2 # LINENO
-                local linecallfunc=$3 
+                local err="$1" # error status
+                local line="$2" # LINENO
+                local linecallfunc="$3" 
                 local command="$4"
                 local funcstack="$5"
                 echo "<---"
@@ -150,10 +152,11 @@ check_log(){
             if [ "$SOUND" = true ];then
                 echo error | flite
             fi
-            echo "press Y for viewing the log file"
+            echo "press N for skip viewing the log file"
             read answer
-            if [ "$answer" = y ];then
+            if [ "$answer" != n ];then
                 line=`cat $file_logger`
+                print_line
                 print_error "$line"
                 print_line
             fi
@@ -181,8 +184,15 @@ info(){
     echo "script:  $script"
     echo "args:  ${args[@]}"
 }
-
+show_state(){
+echo "version: $VERSION"
+echo "gui: $GUI"
+echo "sound: $SOUND"
+echo "editor: $EDITOR"
+}
 ################################# START HERE
+show_state
+sleep 2
 install_dependencies_cli
 if [ "$GUI" = true ];then
     install_dependencies_gui

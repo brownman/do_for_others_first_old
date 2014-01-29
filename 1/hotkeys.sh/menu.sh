@@ -1,10 +1,17 @@
 #!/bin/bash
 
 path=`dirname $0`
-dir_cfg=$path/cfg
-source $dir_cfg/zenity.cfg
+dir_cfg=$dir_project/cfg/general
 
-#file_hotkeys=$path/hotkeys.txt
+source $dir_cfg/zenity/zenity.cfg
+source $dir_cfg/color/colors.cfg
+file_hotkeys=$path/hotkeys.txt
+
+if [ ! -f $file_hotkeys ];then
+    touch $file_hotkeys
+    echo "notify-send I'm alive"
+    green "done installing $path/hotkeys.txt"
+fi
 #if [ ! -f $file_hotkeys ];then
 #    touch $file_hotkeys
 #fi
@@ -14,10 +21,11 @@ source $dir_cfg/zenity.cfg
 #    ln -s $file_hotkeys $dir
 #fi
 
-dir=../$path
-if [ ! -h $dir/$file_hotkeys ];then
-    ln -s $file_hotkeys $dir
+if [ -s $file_hotkeys ];then
+
+    result=$( zenity1 $file_hotkeys )
+else
+    result="invalid file: $file_hotkeys"
 fi
 
-result=$( zenity1 $file_hotkeys )
 notify-send "$result"
