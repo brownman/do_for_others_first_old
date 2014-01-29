@@ -4,7 +4,7 @@
 #depend_cfg
 #source ./vagrant.cfg
 #path=`dirname $0`
-
+notify-send "$@"
 export VERSION=1
 export GUI=true
 export SOUND=true
@@ -12,7 +12,7 @@ export EDITOR=vim
 
 
 path=`pwd`
-dir_cfg=$path/cfg/general
+export dir_cfg=$path/cfg/general
 source $dir_cfg/arg/arg.cfg
 source $dir_cfg/proxy/proxy.cfg
 source $dir_cfg/install/required/required.cfg
@@ -153,9 +153,13 @@ check_log(){
             read answer
             if [ "$answer" != n ];then
                 line=`cat $file_logger`
+                if [ "$GUI" = false ];then
                 print_line
                 print_error "$line"
                 print_line
+            else
+                gxmessage -file "$file_logger" -title logger -timout 3
+            fi
             fi
             use_error "$line"
         else
