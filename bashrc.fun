@@ -5,12 +5,15 @@
 # If not running interactively, don't do anything
 
 export EDITOR="vim"
+
+export dir_project=~/JAIL/do_for_others_first
 #alias bashrc="vi ~/.bashrc"
-alias bashrc="vi ~/JAIL/.bashrc-private.cfg"
+alias bashrc="vi $dir_project/bashrc.fun"
+alias keyrc="vi $dir_project/1/hotkeys.sh/hotkeys.txt"
 alias vimrc="vi ~/.vimrc"
 set -o vi
 
-alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; cat ~/JAIL/save.txt; cat .history;"
+alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; cat ~/JAIL/save.txt; clear; echo .history:; cat .history;"
 
 move(){
     echo 'help: move file to projcect/src/subject/gist.sh'
@@ -49,7 +52,7 @@ lesser(){
         cat $file | less
     fi
 }
-alias question='cd ~/JAIL/ask.sh'
+alias question='cd $dir_project/2/ask.sh/src'
 export -f rm
 export -f rmdir
 export -f lesser

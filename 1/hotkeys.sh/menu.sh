@@ -4,7 +4,7 @@ path=`dirname $0`
 dir_cfg=$dir_project/cfg/general
 
 source $dir_cfg/zenity/zenity.cfg
-source $dir_cfg/color/colors.cfg
+#source $dir_cfg/color/colors.cfg
 file_hotkeys=$path/hotkeys.txt
 
 if [ ! -f $file_hotkeys ];then
@@ -23,7 +23,9 @@ fi
 
 if [ -s $file_hotkeys ];then
 
-    result=$( zenity1 $file_hotkeys )
+    result=$( zenity1 $file_hotkeys 2>/dev/null )
+    eval "$result"
+    
 else
     result="invalid file: $file_hotkeys"
 fi

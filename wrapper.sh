@@ -15,8 +15,8 @@ path=`pwd`
 dir_cfg=$path/cfg/general
 source $dir_cfg/arg/arg.cfg
 source $dir_cfg/proxy/proxy.cfg
-source $dir_cfg/required/required.cfg
-source $dir_cfg/color/colors.cfg
+source $dir_cfg/install/required/required.cfg
+source $dir_cfg/color/color.cfg
 source $dir_cfg/pids/exiting.cfg
 source $dir_cfg/array/array.cfg
 export file_logger=/tmp/logger.txt
@@ -89,9 +89,6 @@ use_error(){
     parse "$all"
 
 
-echo "editor: $EDITOR"
-echo "editor: $GUI"
-exit
         cmd="$EDITOR $exe $line" 
 
         echo "$cmd" | xsel --clipboard

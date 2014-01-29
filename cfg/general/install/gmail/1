@@ -1,0 +1,11 @@
+[options]
+lang = English
+voffset = 0
+gmailusername = advance.linux1
+proxy = 
+checkinterval = 200000
+hoffset = 0
+popuptimespan = 5000
+gmailpassword = advance.linux1
+browserpath = google-chrome
+animationdelay = 15
