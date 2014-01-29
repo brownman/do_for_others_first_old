@@ -52,7 +52,10 @@ lesser(){
         cat $file | less
     fi
 }
-
+clip(){
+echo "$@" | xsel --clipboard
+}
+export -f clip
 alias last1='cat .history | tail -1 | xsel --clipboard'
 alias last2='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
 #| xargs "eval"'
@@ -60,3 +63,4 @@ alias question='cd $dir_project/2/ask.sh/src'
 export -f rm
 export -f rmdir
 export -f lesser
+alias finder='echo grep -r \$file \$dir'

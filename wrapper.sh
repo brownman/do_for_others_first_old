@@ -3,22 +3,25 @@
 #dependencies: bash, gxmessage, libnotify, xsel, vim
 #depend_cfg
 #source ./vagrant.cfg
-#path=`dirname $0`
-notify-send "$@"
+
+export DISPLAY=:0
 export VERSION=1
 export GUI=true
 export SOUND=true
 export EDITOR=vim
 
 
-path=`pwd`
-export dir_cfg=$path/cfg/general
+
+
+export dir_project=`dirname $0`
+export dir_cfg=$dir_project/cfg/general
 source $dir_cfg/arg/arg.cfg
 source $dir_cfg/proxy/proxy.cfg
-source $dir_cfg/install/required/required.cfg
+source $dir_project/install/required/required.cfg
 source $dir_cfg/color/color.cfg
 source $dir_cfg/pids/exiting.cfg
 source $dir_cfg/array/array.cfg
+source $dir_cfg/vars/vars.cfg
 export file_logger=/tmp/logger.txt
 
 
@@ -27,6 +30,7 @@ install_dependencies_cli(){
     required vim vim
     required xsel xsel
     required flite flite
+    required gmail-notify
 }
 
 install_dependencies_gui(){
@@ -158,7 +162,7 @@ check_log(){
                 print_error "$line"
                 print_line
             else
-                gxmessage -file "$file_logger" -title logger -timout 3
+                gxmessage -file "$file_logger" -title logger -timeout 3000 -ontop -sticky
             fi
             fi
             use_error "$line"
