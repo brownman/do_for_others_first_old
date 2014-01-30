@@ -1,5 +1,6 @@
 #!/bin/bash
 dir_self=`dirname $0`
+dir_sh=$dir_self/sh
 print_got "run.sh got: $@"
 filename=''
 args=()
