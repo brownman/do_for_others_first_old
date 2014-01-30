@@ -51,8 +51,10 @@ install_dependencies_cli(){
 }
 
 install_dependencies_gui(){
-    required notify-send libnotify-bin 
+    required notify-send libnotify-bin libnotify1
     required gvim vim-gnome
+    required gxmessage gxmessage
+    required xcowsay xcowsay
 }
 install_dependencies_sound(){
     required flite flite
