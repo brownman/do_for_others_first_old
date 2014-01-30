@@ -36,8 +36,8 @@ source $dir_cfg/color/colors3.cfg
 source $dir_cfg/vars/vars3.cfg
 source $dir_cfg/funcs/funcs3.cfg
 source $dir_cfg/sleep/sleep3.cfg
-##dir struct
-#source $dir_cfg/install/install.cfg
+
+source $dir_cfg/zenity/zenity.cfg
 
 export file_logger=/tmp/logger.txt
 

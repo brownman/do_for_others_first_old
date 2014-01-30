@@ -1,4 +1,5 @@
 notify-send 'hello world'
 gmail-notify
 gxmessage hello
-vi $file_hotkeys
+gvim $file_hotkeys
+echo fine | flite

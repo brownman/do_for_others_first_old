@@ -3,11 +3,11 @@
 path=`dirname $0`
 
 notify-send "2.now in: $path"
-dir_cfg=$dir_project/cfg/general
+#dir_cfg=$dir_project/cfg/general
 
-source $dir_cfg/zenity/zenity.cfg
+
 #source $dir_cfg/color/colors.cfg
-file_hotkeys=$path/hotkeys.txt
+file_hotkeys=$dir_workspace/hotkeys.txt
 
 if [ ! -f "$file_hotkeys" ];then
     touch $file_hotkeys
