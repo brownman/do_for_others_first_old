@@ -3,7 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-
+source $dir_project/cfg/general/color/color.cfg
 export EDITOR="vim"
 
 export dir_project=~/JAIL/do_for_others_first
@@ -13,8 +13,45 @@ alias keyrc="vi $dir_project/1/hotkeys.sh/hotkeys.txt"
 alias vimrc="vi ~/.vimrc"
 set -o vi
 
-alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; cat ~/JAIL/save.txt; clear; echo .history:; cat .history;"
 
+alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; ; echo .history; cat .history"
+add(){
+    clear
+    filename="$1"
+    shift
+    title="$1"
+    shift
+    content="$@"
+
+    local file="$filename.txt"
+    touch $file
+    if [ -f "$filename" ];then
+
+        if [ "$title" ];then
+            echo "$title" >>  $file
+            if [ "$content" ];then
+
+                echo "$content" >> $file
+            fi
+
+            echo "" >> $file
+        else
+            echo "no title"
+        fi
+
+        echo "Added successfuly!"
+        echo "file: $file" 
+        #       cat $file | grep "$content"
+        cat $file 
+    else
+        echo '-------------------------'
+        green "Help:"
+        blue "arguments: filename, title, content"
+        green 'printing *.txt :'
+        echo '-------------------------'
+        cat *.txt
+    fi
+}
 move(){
     echo 'help: move file to projcect/src/subject/gist.sh'
     file="$1"
@@ -53,7 +90,7 @@ lesser(){
     fi
 }
 clip(){
-echo "$@" | xsel --clipboard
+    echo "$@" | xsel --clipboard
 }
 export -f clip
 alias last1='cat .history | tail -1 | xsel --clipboard'
@@ -63,4 +100,5 @@ alias question='cd $dir_project/2/ask.sh/src'
 export -f rm
 export -f rmdir
 export -f lesser
+export -f add
 alias finder='echo grep -r \$file \$dir'

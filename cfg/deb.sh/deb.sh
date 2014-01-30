@@ -1,17 +1,16 @@
-#!/bin/bash -e
+#!/bin/bash 
 
 path=`dirname $0`
-source $dir_cfg/args.cfg
-set_script_and_args
-echo "script: $script"
-exit
+source $dir_cfg/arg/arg.cfg
+source $dir_cfg/self/self.cfg
 
-source $dir_cfg/colors.cfg
-source $dir_cfg/self.cfg
-if [ "$path" ];then
-$( eval $script ${args[@]} )
+
+if [ "$1" ];then
+    set_script_and_args "$@"
+    cmd="$script ${args[@]}" 
+    echo "$cmd"
+    $( eval "$cmd" )
 else
-    
-    show_options $path/bin 
+    show_options "$path/bin"
 fi
 

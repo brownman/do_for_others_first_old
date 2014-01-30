@@ -1,24 +1,13 @@
-#!/bin/bash -e
-
-
-#export dir_base=`pwd` #mistake  ! doesn't  work with hotkeys..
-
-
-#path=`pwd`
-path=`dirname $0`
-export dir_base=$path #mistake  ! doesn't  work with hotkeys..
-
-source $dir_base/cfg/struct.cfg 
-source $dir_cfg/colors.cfg 
-source $dir_cfg/bashrc.cfg 
-
-source $dir_cfg/vars.cfg 
-source $dir_cfg/funcs.cfg 
-
-
+#!/bin/bash
+dir_base=$PWD
+path=$dir_base
+dir_self=`dirname $0`
+source $dir_base/cfg/suspend.sh/cfg/struct.cfg
+source $dir_base/cfg/suspend.sh/cfg/colors.cfg
+source $dir_base/cfg/suspend.sh/cfg/vars.cfg
+source $dir_base/cfg/suspend.sh/cfg/funcs.cfg
+source $dir_base/cfg/suspend.sh/cfg/sleep.cfg
 print_got "run.sh got: $@"
-
-
 filename=''
 args=()
 if [ "$1" ];then
@@ -34,7 +23,7 @@ tail=7
 show_history(){
     #2>&1 | tee -a $path/.log/errors.log)
     print_good "show history (+$tail):"
-    cat $path/.history | tail -$tail
+#    cat $path/.history | tail -$tail
     echo "$dir_sh"
 }
 
@@ -58,24 +47,24 @@ show_edit(){
 
 help(){
     print_error "please supply a script name (+-arguments)"
-    sleep1 2
 #    show_dependencies
     show_history
     show_options
     exit
 }
 run(){
-    script="$dir_sh/$filename.sh" 
+    script="$dir_self/sh/$filename.sh" 
     if [ -f "$script" ];then
         #save command to history
-        echo "$script]] ${args[@]}" >> $path/.history
+#        echo "$script]] ${args[@]}" >> $path/.history
         #execute
         cmd="$script ${args[@]}"
         print_call "call: $cmd"
         eval "$cmd" 
     else
         print_error "file not found: $script"
-        eval  exiting
+    #    eval  exiting
+    exit 1
     fi
 }
 

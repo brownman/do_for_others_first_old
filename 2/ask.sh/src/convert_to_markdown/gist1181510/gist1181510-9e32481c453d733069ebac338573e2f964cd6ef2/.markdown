@@ -1,0 +1,122 @@
+% Ofer Shaham - CV - 21
+% 
+% 
+
+Ofer Shaham
+
+Personal Details
+
+* * * * *
+
+Date of Birth: 30.12.1980                                 Email:
+[ofer.shaham@gmail.com](mailto:ofer.shaham@gmail.com)[ ](mailto:ofer.shaham@gmail.com)
+
+Mobile: 052-5525038                                        Address:
+Kibbutz Naan
+
+Status: Married                                                Github:
+[http://brownman.github.io](http://brownman.github.io/)
+
+Summary
+
+* * * * *
+
+A creative software developer with extensive experience within the open
+source community. Currently a  student for Linux System Admin.
+
+Objective
+
+* * * * *
+
+Looking for a job as a Programmer/QA/Linux system admin/Support/Analyst
+OR related
+
+Education
+
+* * * * *
+
+11.2013-7.2014:  Linux system administrator course , HackerU
+
+2007-2008: Math student ,Ben Gurion University
+
+2005: School for script writing ,Idit Shcori school
+
+1996-1999: Bagrut (Specialization: Physics) ,Brenner high-school
+
+Working Experience
+
+* * * * *
+
+2009-2013: Health Care , Kibbutz Naan
+
+2003-2009: Student Jobs, including some freelance jobs as a Flash
+programmer and Assembler for micro controller.
+
+Professional Experience
+
+* * * * *
+
+Open-Source contribution: “Magnify the Small”. A Linux project written
+mostly in Bash.
+
+Details: an extendable
+[plugins](https://github.com/brownman/magnify_the_small/tree/develop/script/tasks/plugins) framework
+- for managing one’s daily tasks more interactively and more
+efficiently.
+
+URL:
+[https://github.com/brownman/magnify\_the\_small](https://github.com/brownman/magnify_the_small)
+
+Goals:
+
+-   Learn a foreign language
+-   Store new ideas
+-   Increase efficiency
+
+Military service
+----------------
+
+* * * * *
+
+2000-2003:  IDF Human Resource position in Mazy 23.
+
+-   Working on Databases
+
+Technical Knowledge
+
+* * * * *
+
+Environment:
+
+-   OS: Ubuntu Linux (platform), Windows
+-   Source Control: GIT
+-   IDE: Vim, Eclipse
+-   practice TDD methodology
+
+Primary Languages: Bash, javascript
+
+Knowledge in Other Languages: Assembly(Mips,x86), C++, C, C\#, Java,
+Python, Ruby, SQL.
+
+Related Web technology:
+
+-   HTML5, CSS3 (Bootstrap)
+-   Javascript Libraries: JQuery, JQuery Mobile, Backbone, Angular
+-   Flex (ActionScript 3.0)
+-   Ruby on Rails
+-   SQL(Sqlite)
+
+Computer Graphics:
+
+-   Pv3D (ActionScript 3.0)
+-   OpenGL ( C )
+-   THREE.js (Javascript)
+-   XNA (C\#)
+
+Languages
+
+* * * * *
+
+-   Fluent in Hebrew and English
+
+References: available upon request

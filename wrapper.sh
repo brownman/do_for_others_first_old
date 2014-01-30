@@ -6,7 +6,7 @@
 
 export DISPLAY=:0
 export VERSION=1
-export GUI=true
+export GUI=false
 export SOUND=true
 export EDITOR=vim
 
@@ -79,7 +79,7 @@ use_error(){
     arr=()
 
 
-    
+
     notify-send "$error" "$error_code"
 
 
@@ -89,8 +89,8 @@ use_error(){
     read
     if [ "$num_bytes" -lt 100 ] && [ "$num_bytes" -gt 1  ];then
 
-    #set array:arr + set vars:num/exe/line/error/error_code
-    parse "$all"
+        #set array:arr + set vars:num/exe/line/error/error_code
+        parse "$all"
 
 
         cmd="$EDITOR $exe $line" 
@@ -158,12 +158,12 @@ check_log(){
             if [ "$answer" != n ];then
                 line=`cat $file_logger`
                 if [ "$GUI" = false ];then
-                print_line
-                print_error "$line"
-                print_line
-            else
-                gxmessage -file "$file_logger" -title logger -timeout 3000 -ontop -sticky
-            fi
+                    print_line
+                    print_error "$line"
+                    print_line
+                else
+                    gxmessage -file "$file_logger" -title logger -timeout 3000 -ontop -sticky
+                fi
             fi
             use_error "$line"
         else
@@ -190,22 +190,17 @@ info(){
     echo "args:  ${args[@]}"
 }
 show_state(){
-echo "version: $VERSION"
-echo "gui: $GUI"
-echo "sound: $SOUND"
-echo "editor: $EDITOR"
+    echo "version: $VERSION"
+    echo "gui: $GUI"
+    echo "sound: $SOUND"
+    echo "editor: $EDITOR"
 }
 ################################# START HERE
 show_state
 sleep 2
 install_dependencies_cli
-if [ "$GUI" = true ];then
-    install_dependencies_gui
-fi
-
-if [ "$SOUND" = true ];then
-    install_dependencies_sound
-fi
+install_dependencies_gui
+install_dependencies_sound
 set_script_and_args "$@"
 info
 sleep 2

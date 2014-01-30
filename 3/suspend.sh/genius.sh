@@ -1,14 +1,18 @@
 #!/bin/bash -e
 
-export dir_base=`dirname $0`
+
+export dir_base=$PWD
+export dir_self=`dirname $0`
 #export dir_base=`pwd`
 file=''
 args=$1
 level=0
-source $dir_base/cfg/struct.cfg
-source $dir_base/cfg/colors.cfg
-source $dir_base/cfg/vars.cfg
-util=$dir_base/run.sh
+
+
+source $dir_base/cfg/suspend.sh/cfg/struct.cfg
+source $dir_base/cfg/suspend.sh/cfg/colors.cfg
+source $dir_base/cfg/suspend.sh/cfg/vars.cfg
+util=$dir_self/run.sh
 if [ ! -f "$util" ];then
     reason_of_death file "$util"
     exiting
@@ -82,7 +86,7 @@ file_to_array(){
 
 set_file(){
     print_status "level choosed: $level"
-    file=$dir_base/rooms/room$level.txt
+    file=$dir_self/rooms/room$level.txt
     if [ -f $file ];then
         print_good "$file exist!"
     else
@@ -116,10 +120,9 @@ execute_lines(){
                 else
                     print_error 'no line givven'
                 fi
-
+            done
                 xcowsay "$rounds rounds!"
                 let 'rounds += 1'
-            done
         done
     fi
 
