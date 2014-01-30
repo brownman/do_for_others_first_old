@@ -3,10 +3,10 @@
 # for examples
 
 # If not running interactively, don't do anything
-source $dir_project/cfg/general/color/color.cfg
+#source $dir_project/cfg/general/color/color.cfg
 export EDITOR="vim"
 
-export dir_project=~/JAIL/do_for_others_first
+#export dir_project=~/JAIL/do_for_others_first
 #alias bashrc="vi ~/.bashrc"
 alias bashrc="vi $dir_project/bashrc.fun"
 alias keyrc="vi $dir_project/1/hotkeys.sh/hotkeys.txt"
