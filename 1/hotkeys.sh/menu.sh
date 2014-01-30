@@ -1,19 +1,36 @@
-#!/bin/bash -e
+#!/bin/bash
 
-is_working=$( pstree -a | grep gmail | grep notify )
-file=/tmp/send.txt
+path=`dirname $0`
 
+notify-send "2.now in: $path"
+dir_cfg=$dir_project/cfg/general
 
-if [ "$is_working" = '' ];then
-    notify-send "please run:" 'gmail-notify'
-else
-    msg=$( gxmessage -entry -sticky -ontop -timeout 3000 -title 'send a message' 'My Message:' )
-    if [ "$msg" != '' ];then
-        echo "$msg" > $file
+source $dir_cfg/zenity/zenity.cfg
+#source $dir_cfg/color/colors.cfg
+file_hotkeys=$path/hotkeys.txt
 
-        cmd="curl -u $user:$password --ssl-reqd --mail-from advance.linux1@gmail.com --mail-rcpt advance.linux1@gmail.com --url smtps://smtp.gmail.com:465 -T $file"
-        echo "$cmd"
-        eval "$cmd"
-    fi
+if [ ! -f "$file_hotkeys" ];then
+    touch $file_hotkeys
+    echo "notify-send I'm alive"
+    green "done installing $path/hotkeys.txt"
 fi
+#if [ ! -f $file_hotkeys ];then
+#    touch $file_hotkeys
+#fi
+
+#dir=../$file_hotkeys/
+#if [ ! -h $dir/$file_hotkeys ];then
+#    ln -s $file_hotkeys $dir
+#fi
+
+if [ -s "$file_hotkeys" ];then
+    result=$( zenity1 "$file_hotkeys" 2>/dev/null )
+    if [ "$result" ];then
+        eval "$result"
+    fi
+else
+    result="invalid file: $file_hotkeys"
+fi
+
+    notify-send "$result"
 

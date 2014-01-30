@@ -1,5 +1,6 @@
 #!/bin/bash 
-
+#help01: supply a script to wrap  
+#example01: ./wrapper 3/suspend.sh/genius.sh 2
 #dependencies: bash, gxmessage, libnotify, xsel, vim
 #depend_cfg
 #source ./vagrant.cfg
@@ -15,13 +16,29 @@ export EDITOR=vim
 
 export dir_project=`dirname $0`
 export dir_cfg=$dir_project/cfg/general
+
+
+#packages
+source $dir_project/install/required/required.cfg
+
+source $dir_cfg/vars/vars.cfg
+source $dir_cfg/struct/struct.cfg 
 source $dir_cfg/arg/arg.cfg
 source $dir_cfg/proxy/proxy.cfg
-source $dir_project/install/required/required.cfg
 source $dir_cfg/color/color.cfg
 source $dir_cfg/pids/exiting.cfg
 source $dir_cfg/array/array.cfg
-source $dir_cfg/vars/vars.cfg
+#source $dir_cfg/struct/struct3.cfg
+#source $dir_cfg/struct/struct3.cfg
+source $dir_cfg/color/colors3.cfg
+source $dir_cfg/vars/vars3.cfg
+source $dir_cfg/color/colors3.cfg
+source $dir_cfg/vars/vars3.cfg
+source $dir_cfg/funcs/funcs3.cfg
+source $dir_cfg/sleep/sleep3.cfg
+##dir struct
+#source $dir_cfg/install/install.cfg
+
 export file_logger=/tmp/logger.txt
 
 
@@ -87,7 +104,7 @@ use_error(){
     red "line: num of bytes: $num_bytes"
     echo press enter
     read
-    if [ "$num_bytes" -lt 100 ] && [ "$num_bytes" -gt 1  ];then
+    if [ "$num_bytes" -lt 200 ] && [ "$num_bytes" -gt 1  ];then
 
         #set array:arr + set vars:num/exe/line/error/error_code
         parse "$all"

@@ -23,7 +23,7 @@ fi
 
 
 run(){
-    local line=$( gxmessage -file $file -title 'todo' -timeout $timeout -entry -ontop -sticky )
+    local line=$( gxmessage -file $file -title 'think small:' -timeout $timeout -entry -ontop -sticky )
     update_file "$line" "$file"
 }
 update_file(){

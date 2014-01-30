@@ -1,17 +1,12 @@
 #!/bin/bash -e
 
 
-export dir_base=$PWD
+#export dir_base=$dir_root
 export dir_self=`dirname $0`
 #export dir_base=`pwd`
 file=''
 args=$1
 level=0
-
-
-source $dir_base/cfg/suspend.sh/cfg/struct.cfg
-source $dir_base/cfg/suspend.sh/cfg/colors.cfg
-source $dir_base/cfg/suspend.sh/cfg/vars.cfg
 util=$dir_self/run.sh
 if [ ! -f "$util" ];then
     reason_of_death file "$util"

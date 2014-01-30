@@ -1,3 +1,4 @@
 notify-send 'hello world'
 gmail-notify
 gxmessage hello
+vi $file_hotkeys

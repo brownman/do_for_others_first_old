@@ -14,7 +14,7 @@ alias vimrc="vi ~/.vimrc"
 set -o vi
 
 
-alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; ; echo .history; cat .history"
+alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; echo .history; cat .history"
 add(){
     clear
     filename="$1"

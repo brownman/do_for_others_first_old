@@ -1,10 +1,9 @@
 #!/bin/bash -e
-
 #change between false and true - to mute / unmute
 mute=false
+#path=`dirname $0`
 plugin_name=reminder
-dir=$dir_constants/txt
-file=$dir/$plugin_name.txt
+file=$dir_workspace/$plugin_name.txt
 file_shortcut=~/Desktop/REMINDERS.txt
 
 if [ ! -h $file_shortcut ];then
@@ -19,16 +18,11 @@ else
 fi
 
 
-
-if [ ! -d $dir ];then
-    mkdir $dir
-fi
 if [ ! -f $file ];then
     touch $file
 fi
 if [ ! -s $file ];then
     reason_of_death  $file empty
-    exiting
 fi
 
 cmd=${1:-'run'}
