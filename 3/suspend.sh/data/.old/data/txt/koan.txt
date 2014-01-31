@@ -1,5 +1,0 @@
-empty line
-add more tests
-push tests forward
-you have many successful tests
-koans are great

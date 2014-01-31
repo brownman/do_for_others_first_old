@@ -1,7 +1,0 @@
-
-
-shopt -s histappend export PROMPT_COMMAND=history -a; 
-
-
-
-

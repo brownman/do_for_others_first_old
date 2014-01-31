@@ -1,1 +1,0 @@
-/usr/share/gnome-schedule/xwrapper.py

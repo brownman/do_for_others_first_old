@@ -1,1 +1,0 @@
-../data/txt/easy_for_robot.txt

@@ -1,6 +1,6 @@
 #!/bin/bash 
 #help01: supply a script to wrap  
-#example01: ./wrapper 3/suspend.sh/genius.sh 2
+#example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
 #dependencies: bash, gxmessage, libnotify, xsel, vim
 #depend_cfg
 #source ./vagrant.cfg
@@ -14,28 +14,25 @@ export EDITOR=vim
 
 
 
+
 export dir_project=`dirname $0`
-export dir_cfg=$dir_project/cfg/general
+source $dir_project/0/struct.cfg
+source $dir_project/0/INSTALLATION/required/required.cfg
+#now we have dir_cfg
 
-
-#packages
-source $dir_project/install/required/required.cfg
-
-source $dir_cfg/vars/vars.cfg
-source $dir_cfg/struct/struct.cfg 
 source $dir_cfg/arg/arg.cfg
 source $dir_cfg/proxy/proxy.cfg
 source $dir_cfg/color/color.cfg
 source $dir_cfg/pids/exiting.cfg
 source $dir_cfg/array/array.cfg
-#source $dir_cfg/struct/struct3.cfg
-#source $dir_cfg/struct/struct3.cfg
+
 source $dir_cfg/color/colors3.cfg
-source $dir_cfg/vars/vars3.cfg
 source $dir_cfg/color/colors3.cfg
-source $dir_cfg/vars/vars3.cfg
 source $dir_cfg/funcs/funcs3.cfg
 source $dir_cfg/sleep/sleep3.cfg
+
+source $dir_cfg/vars/me.cfg
+source $dir_cfg/vars/time.cfg
 
 source $dir_cfg/zenity/zenity.cfg
 
@@ -135,7 +132,10 @@ use_error(){
     fi
 }
 try(){
+    
     blue 'try()'
+    print_line
+    echo -n Start:
     { 
         if [ $VERSION -eq 2 ];then
 
@@ -165,11 +165,13 @@ try(){
         eval "$script ${args[@]}" 2>$file_logger;
     }
     local error_code=$?
-    if [ "$error_code" -eq 0   ];then
+
         print_line
+        echo -n 'End !'
+    if [ "$error_code" -eq 0   ];then
         green "no errors"
     else
-        print_line
+
         red "error_code: $error_code"
     fi
 

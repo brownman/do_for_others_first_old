@@ -1,8 +1,0 @@
-/home/dao02/magnify_the_small/genius.sh:63:main
-./alarm_clock.sh:32:main
-./genius.sh:60:main
-./genius.sh:60:main
-./genius.sh:57:main
-./genius.sh:57:main
-./genius.sh:1:run
-./genius.sh:72:main

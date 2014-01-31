@@ -1,6 +1,5 @@
 #!/bin/bash
 dir_self=`dirname $0`
-dir_sh=$dir_self/sh
 print_got "run.sh got: $@"
 filename=''
 args=()
@@ -47,7 +46,7 @@ help(){
     reason_of_death 'no arguments'
 }
 run(){
-    script="$dir_self/sh/$filename.sh" 
+    script="$dir_sh/$filename.sh" 
     if [ -f "$script" ];then
         #save command to history
 #        echo "$script]] ${args[@]}" >> $path/.history
