@@ -51,15 +51,27 @@ install_dependencies_cli(){
 }
 
 install_dependencies_gui(){
-    required notify-send libnotify-bin 
+    required notify-send libnotify-bin libnotify1
     required gvim vim-gnome
+    required gxmessage gxmessage
+    required xcowsay xcowsay
 }
 install_dependencies_sound(){
     required flite flite
 }
-
-
-
+<<'COMMENT'
+what ever written here is a comment
+ 1299  sudo apt-get install libnotify0.4-cil
+ 1312  sudo apt-get install xosd-bin
+ 1314  sudo  apt-get install libnotify1 notification-daemon dbus 
+ 1315  sudo  apt-get install libnotify4]
+ 1316  sudo  apt-get install libnotify4
+ 1319  sudo apt-get --reinstall install notify-osd
+ 1320  sudo apt-get --reinstall install libnotify-bin
+ 1326  sudo apt-get --reinstall install notify-osd
+ 1333  sudo apt-get autoremove notify-sende
+ 1334  sudo apt-get autoremove notify-send
+COMMENT
 
 #echo -n '' > $file_logger
 clean_logger(){
