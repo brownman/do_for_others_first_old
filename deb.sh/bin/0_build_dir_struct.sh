@@ -1,9 +1,7 @@
-#!/bin/bash
-path=`pwd`
-dir=$path/cfg
-file=$dir/vars.cfg
-
-
+#!/bin/bash 
+path=`dirname $0`
+dir=$path/my_folder
+file=$dir/package.cfg
 create_dir(){
     if [ ! -d "$dir" ];then
         echo 'generate dir: /cfg'
@@ -34,10 +32,11 @@ steps(){
 
 
 if [ "$1" ];then
-    eval "$1"    
+    echo "eval $@"
+    eval "$@"    
 else
     show_self
-    edit_self
+#    edit_self
 fi
 
 

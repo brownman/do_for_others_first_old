@@ -19,6 +19,7 @@ export dir_project=`dirname $0`
 source $dir_project/0/struct.cfg
 source $dir_project/0/INSTALLATION/required/required.cfg
 #now we have dir_cfg
+source $dir_cfg/self/self.cfg
 
 source $dir_cfg/arg/arg.cfg
 source $dir_cfg/proxy/proxy.cfg
@@ -26,8 +27,6 @@ source $dir_cfg/color/color.cfg
 source $dir_cfg/pids/exiting.cfg
 source $dir_cfg/array/array.cfg
 
-source $dir_cfg/color/colors3.cfg
-source $dir_cfg/color/colors3.cfg
 source $dir_cfg/funcs/funcs3.cfg
 source $dir_cfg/sleep/sleep3.cfg
 
@@ -134,8 +133,11 @@ use_error(){
 try(){
     
     blue 'try()'
+
+    echo  -n '/*'
     print_line
-    echo -n Start:
+    echo 
+
     { 
         if [ $VERSION -eq 2 ];then
 
@@ -167,7 +169,7 @@ try(){
     local error_code=$?
 
         print_line
-        echo -n 'End !'
+        echo  '*/'
     if [ "$error_code" -eq 0   ];then
         green "no errors"
     else
