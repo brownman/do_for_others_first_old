@@ -23,7 +23,7 @@ show_history(){
 show_dependencies(){
     cat $dir_debian/control
 }
-show_options(){
+show_scripts(){
     local type=${1:-sh}
     local dir=${2:-$dir_sh}
     print_good "show available scripts:"
@@ -42,7 +42,7 @@ help(){
     print_error "please supply a script name (+-arguments)"
 #    show_dependencies
     show_history
-    show_options
+    show_scripts
     reason_of_death 'no arguments'
 }
 run(){

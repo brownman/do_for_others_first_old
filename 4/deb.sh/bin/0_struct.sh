@@ -5,18 +5,18 @@ dir=$path/my_folder
 file=$dir/my_package.cfg
 create_dir(){
     if [ ! -d "$dir" ];then
-        echo "generate dir: $dir"
+        green "generate dir: $dir"
         mkdir -p "$dir"
     else 
-        echo "use dir: $dir"
+        green "use dir: $dir"
     fi
 }
 create_file(){
     if [ ! -f "$file" ];then
-        echo "generate file: $file"
+        green "generate file: $file"
         touch $file
     else 
-        echo "use file: $file"
+        green "use file: $file"
     fi
 }
 
@@ -46,7 +46,7 @@ if [ "$1" ];then
     echo "eval $@"
     eval "$@"    
 else
-    show_self
+    show_funcs
 #    edit_self
 fi
 

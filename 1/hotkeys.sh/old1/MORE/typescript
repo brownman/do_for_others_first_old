@@ -4,7 +4,7 @@ Script started on Sun 26 Jan 2014 10:36:47 AM UTC
 1
 ]0;dao04@localhost: ~/JAIL/pilot.shdao04@localhost:~/JAIL/pilot.sh$ ./script.sh 
 ./script.sh: line 20: someerrorrr: command not found
-show_self
+show_funcs
 ./script.sh
   run
   step1
@@ -49,7 +49,7 @@ str_to_arr(){[m
 [1m[7m ~/JAIL/pilot.sh/wrapper.sh   CWD: /home/dao04/JAIL/pilot.sh   Line: 1          [2;1H[?12l[?25h[?25l[m[24;1H[1m-- INSERT --[2;12H[?12l[?25h[1;2H+r awrapper.sh [?25l[m[2;12H[36m [m[22;28H[1m[7m[+]   CWD: /home/dao04/JAIL/pilot.sh   Line: 1[2;13H[?12l[?25h[?25l[m[36m 0[?12l[?25h[?25l0e[?12l[?25h[?25l[m[2;14H[K[2;14H[?12l[?25h[?25l[2;13H[K[2;13H[?12l[?25h[?25l[36m 0[?12l[?25h[?25l[m[2;13H[K[2;13H[?12l[?25h[?25l[36m -[?12l[?25h[?25l-e[?12l[?25h[m[24;1H[K[2;14H[?25l[?12l[?25h[?25l[23;1H:[?12l[?25hw[?25l[?12l[?25h[?25l"wrapper.sh" 72L, 1455C written[1;2H[1mwrapper.shs h[m[7m  [m[22;28H[1m[7m   CWD: /home/dao04/JAIL/pilot.sh   Line: 1    [2;14H[?12l[?25h[?25l[m[23;1H[K[23;1H:[?12l[?25hq[?25l[?12l[?25h[?25l
 [23;1H[K[24;1H[?1l>[?12l[?25h[?1049l]0;dao04@localhost: ~/JAIL/pilot.shdao04@localhost:~/JAIL/pilot.sh$ vi wrapper.sh [2P./script[C[C[C[C
 ./script.sh: line 20: someerrorrr: command not found
-show_self
+show_funcs
 ./script.sh
   run
   step1
@@ -152,7 +152,7 @@ xfce4-settings-editor
 [1m[37m}[m
 someerrorrr
 [1m[7m ~/JAIL/pilot.sh/script.sh   CWD: /home/dao04/JAIL/pilot.sh   Line: 4           [5;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[2;21r[m[2;1H[2M[1;24r[20;1H[36m#$cmd[m
-show_self[23;1H[K[22;69H[1m[7m22[21;1H[?12l[?25h[m[1;2H[1m+c rscript.sh [?25l[m[21;1H[1m[34m~                                                                               [m[22;27H[1m[7m[+]   CWD: /home/dao04/JAIL/pilot.sh   Line: 21[20;1H[?12l[?25h[?25l
+show_funcs[23;1H[K[22;69H[1m[7m22[21;1H[?12l[?25h[m[1;2H[1m+c rscript.sh [?25l[m[21;1H[1m[34m~                                                                               [m[22;27H[1m[7m[+]   CWD: /home/dao04/JAIL/pilot.sh   Line: 21[20;1H[?12l[?25h[?25l
 
 
 [m:[?12l[?25hw[?25l[?12l[?25h[?25l"script.sh" 21L, 205C written[1;2H[1mscript.shs h[m[7m  [m[22;27H[1m[7m   CWD: /home/dao04/JAIL/pilot.sh   Line: 21    [20;1H[?12l[?25h[?25l[m[23;1H[K[23;1H:[?12l[?25hq[?25l[?12l[?25h[?25l
@@ -2431,7 +2431,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR[m
 [1m[33mtrap[m [1m[31m'[m[1m[35mecho $BASH_SOURCE $LINENO[m[1m[31m'[m ERR[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\
@@ -2456,7 +2456,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[m
@@ -2467,8 +2467,8 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m# This allows us to get the name of the functionw where this function was called[10;1H# http://stackoverflow.com/questions/7650438/bash-funcname-value-expanding
 #http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html[m
 [1m[33malias [m[1m[36massert1[m[1m[33m=[m[1m[31m'[m[1m[35massert1 ${BASH_SOURCE} ${FUNCNAME} ${LINENO}[m[1m[31m'[m
-[1m[37mshow_self(){[m
-    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_self[m[1m[31m'[m
+[1m[37mshow_funcs(){[m
+    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_funcs[m[1m[31m'[m
     [1m[33mlocal[m [1m[36mscript[m=[1m[34m$0[m
     [1m[33mecho[m[1m[35m [m[1m[34m$0[m[18;4H [1m[33mfunctions[m[1m[31m=[m[35m`[m[1m[33mgrep[m[35m -h [m[1m[31m'[m[1m[35m()[m[1m[31m'[m[35m [m[1m[34m$0[m[35m [m[1m[31m|[m[35m cut -d [m[1m[31m'[m[1m[35m([m[1m[31m'[m[35m -f [m[1m[35m1[m[35m`[m
     [36m#functions=`grep -h test_ $0 | cut -d '(' -f 1`[m
@@ -2512,7 +2512,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -2575,7 +2575,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -2599,7 +2599,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -2897,7 +2897,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -2954,7 +2954,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#[m[7m[36mtrap[m[36m 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -12323,8 +12323,8 @@ export exe=change_my_name[6;32H[?12l[?25h[m[34;86H[1m[7m6 [7;26H[?25l[
 [1m[37mif [m[1m[31m[[m [1m[37m-z[m [1m[31m"[m[1m[34m${debian_chroot[m[1m[31m:-[m[1m[34m}[m[1m[31m"[m [1m[31m][m [1m[31m&&[m [1m[31m[[m [1m[37m-r[m /etc/debian_chroot [1m[31m];[m [1m[37mthen[m
 [1m[7m ~/.bashrc   CWD: /home/dao04/JAIL/error.sh   Line: 29                                                                        [26;1H[?12l[?25hP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\[?25l[27m[m[H[2J[1;1H[1m ~/.bashrc [m[7m                                                                                                                   [m[2;1H[36m#http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html[m
 [1m[33malias [m[1m[36massert1[m[1m[33m=[m[1m[31m'[m[1m[35massert1 ${BASH_SOURCE} ${FUNCNAME} ${LINENO}[m[1m[31m'[m
-[1m[37mshow_self(){[m
-    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_self[m[1m[31m'[m
+[1m[37mshow_funcs(){[m
+    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_funcs[m[1m[31m'[m
     [1m[33mlocal[m [1m[36mscript[m=[1m[34m$0[m
     [1m[33mecho[m[1m[35m [m[1m[34m$0[m[9;4H [1m[33mfunctions[m[1m[31m=[m[35m`[m[1m[33mgrep[m[35m -h [m[1m[31m'[m[1m[35m()[m[1m[31m'[m[35m [m[1m[34m$0[m[35m [m[1m[31m|[m[35m cut -d [m[1m[31m'[m[1m[35m([m[1m[31m'[m[35m -f [m[1m[35m1[m[35m`[m
     [36m#functions=`grep -h test_ $0 | cut -d '(' -f 1`[m
@@ -12340,7 +12340,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -12527,8 +12527,8 @@ export exe=change_my_name [m[1m[31m>>[m [1m[34m$pwd[m/cfg/vars.cfg
 ]0;dao04@localhost: ~dao04@localhost:~$ bashrc
 [?1049h[?1h=[1;36r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[35;1H"~/.bashrc" 205L, 5835C[>c[1;1H[1m ~/.bashrc [m[7m                                                                                                                   [m[2;1H[36m#http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html[m
 [1m[33malias [m[1m[36massert1[m[1m[33m=[m[1m[31m'[m[1m[35massert1 ${BASH_SOURCE} ${FUNCNAME} ${LINENO}[m[1m[31m'[m
-[1m[37mshow_self(){[m
-    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_self[m[1m[31m'[m
+[1m[37mshow_funcs(){[m
+    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_funcs[m[1m[31m'[m
     [1m[33mlocal[m [1m[36mscript[m=[1m[34m$0[m
     [1m[33mecho[m[1m[35m [m[1m[34m$0[m[9;4H [1m[33mfunctions[m[1m[31m=[m[35m`[m[1m[33mgrep[m[35m -h [m[1m[31m'[m[1m[35m()[m[1m[31m'[m[35m [m[1m[34m$0[m[35m [m[1m[31m|[m[35m cut -d [m[1m[31m'[m[1m[35m([m[1m[31m'[m[35m -f [m[1m[35m1[m[35m`[m
     [36m#functions=`grep -h test_ $0 | cut -d '(' -f 1`[m
@@ -12544,7 +12544,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -12591,8 +12591,8 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [1m[30m[43mHIST[m[1m[36mSIZE[m=
 [1m[30m[43mHIST[m[1m[36mFILESIZE[m=[14;65H[?12l[?25h[?25l[35;1H/hist[1m[31mh[m[35;6H[K[35;1H[34;54H[1m[7m5 [16;1H[?12l[?25h[?25l[35;1H[34;54H7 [18;17H[?12l[?25h[?25l[35;1H[34;54H8 [19;10H[?12l[?25h[?25l[27m[m[H[2J[1;1H[1m ~/.bashrc [m[7m                                                                                                                   [m[2;1H[36m#http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html[m
 [1m[33malias [m[1m[36massert1[m[1m[33m=[m[1m[31m'[m[1m[35massert1 ${BASH_SOURCE} ${FUNCNAME} ${LINENO}[m[1m[31m'[m
-[1m[37mshow_self(){[m
-    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_self[m[1m[31m'[m
+[1m[37mshow_funcs(){[m
+    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_funcs[m[1m[31m'[m
     [1m[33mlocal[m [1m[36mscript[m=[1m[34m$0[m
     [1m[33mecho[m[1m[35m [m[1m[34m$0[m[9;4H [1m[33mfunctions[m[1m[31m=[m[35m`[m[1m[33mgrep[m[35m -h [m[1m[31m'[m[1m[35m()[m[1m[31m'[m[35m [m[1m[34m$0[m[35m [m[1m[31m|[m[35m cut -d [m[1m[31m'[m[1m[35m([m[1m[31m'[m[35m -f [m[1m[35m1[m[35m`[m
     [36m#functions=`grep -h test_ $0 | cut -d '(' -f 1`[m
@@ -12608,7 +12608,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m
@@ -12650,8 +12650,8 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 # make less more friendly for non-text input files, see lesspipe(1)[m
 [1m[7m ~/.bashrc   CWD: /home/dao04/JAIL/error.sh   Line: 1                                                                         [2;1H[?12l[?25h[?25l[27m[m[H[2J[1;1H[1m ~/.bashrc [m[7m                                                                                                                   [m[2;1H[36m#http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html[m
 [1m[33malias [m[1m[36massert1[m[1m[33m=[m[1m[31m'[m[1m[35massert1 ${BASH_SOURCE} ${FUNCNAME} ${LINENO}[m[1m[31m'[m
-[1m[37mshow_self(){[m
-    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_self[m[1m[31m'[m
+[1m[37mshow_funcs(){[m
+    [1m[33mecho[m[1m[35m [m[1m[31m'[m[1m[35mshow_funcs[m[1m[31m'[m
     [1m[33mlocal[m [1m[36mscript[m=[1m[34m$0[m
     [1m[33mecho[m[1m[35m [m[1m[34m$0[m[9;4H [1m[33mfunctions[m[1m[31m=[m[35m`[m[1m[33mgrep[m[35m -h [m[1m[31m'[m[1m[35m()[m[1m[31m'[m[35m [m[1m[34m$0[m[35m [m[1m[31m|[m[35m cut -d [m[1m[31m'[m[1m[35m([m[1m[31m'[m[35m -f [m[1m[35m1[m[35m`[m
     [36m#functions=`grep -h test_ $0 | cut -d '(' -f 1`[m
@@ -12667,7 +12667,7 @@ notify-send error [1m[31m"[m[1m[34m$1[m[1m[35m [m[1m[34m$2[m[1m[35
 [36m#echo "line number: ${FUNCNAME[0]}"[m
 [1m[37m}[m
 [1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m error_report[m
-[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_self[m
+[1m[33mexport[m[1m[36m [m[35m-f[m[1m[36m show_funcs[m
 
 [36m#trap 'error_report $BASH_SOURCE $LINENO' ERR
 #trap 'echo $BASH_SOURCE $LINENO' ERR[m

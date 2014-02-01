@@ -1,3 +1,16 @@
+1 it is so true
+1 I  will do it 
+1 I am imagining
+1 coolest dude
+1 genius
+1 expect greatness
+1 peace
+1 this is easy for me
+1 edit as last  arg
+1 fantastic
+1 fantastic god
+1 magnify the small
+1 god is good
 1 thousand thanks
 1 genious
 1 thanks god
@@ -57,7 +70,7 @@
 12:28:42 
 12:23:09 
 12:21:50 
-12:17:08 show_self
+12:17:08 show_funcs
 12:15:53 magnify to small - really
 12:10:26 
 12:09:09 tail dmesg
