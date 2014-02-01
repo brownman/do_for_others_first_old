@@ -93,8 +93,8 @@ clip(){
     echo "$@" | xsel --clipboard
 }
 export -f clip
-alias last1='cat .history | tail -1 | xsel --clipboard'
-alias last2='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
+alias last='cat .history | tail -1 | xsel --clipboard'
+alias last1='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
 #| xargs "eval"'
 alias question='cd $dir_project/2/ask.sh/src'
 export -f rm

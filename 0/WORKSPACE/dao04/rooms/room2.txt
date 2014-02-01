@@ -1,6 +1,6 @@
-todo1
-alive
 reminder1
+alive
+todo1
 sleep 60
 suspend 
 sleep 60

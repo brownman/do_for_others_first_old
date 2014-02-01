@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash  -e
 #help01: supply a script to wrap  
 #example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
 #dependencies: bash, gxmessage, libnotify, xsel, vim
@@ -9,7 +9,9 @@ export DISPLAY=:0
 export VERSION=1
 export GUI=false
 export SOUND=true
+
 export EDITOR=vim
+export TRACE=false
 
 
 
@@ -122,7 +124,8 @@ use_error(){
 
         echo "$cmd" | xsel --clipboard
         sleep 1
-        green 'your clipboard has been updated with:'
+        green "$0 says:"
+        echo 'your clipboard has been updated with:'
         blue "$cmd"
     else
         print_error "incorrect parsing"
@@ -171,7 +174,7 @@ try(){
         print_line
         echo  '*/'
     if [ "$error_code" -eq 0   ];then
-        green "no errors"
+        trace green "no errors"
     else
 
         red "error_code: $error_code"
@@ -179,7 +182,7 @@ try(){
 
 }
 check_log(){
-    blue  'check_log()' #
+    #blue  'check_log()' #
     if [ -f "$file_logger" ];then
         if [ -s "$file_logger" ];then
             red "logger is not empty"
@@ -201,7 +204,6 @@ check_log(){
             use_error "$line"
         else
             blue "logger is empty"
-            #blue "$file_logger:"
             echo
         fi
     else
@@ -227,14 +229,18 @@ show_state(){
     echo "gui: $GUI"
     echo "sound: $SOUND"
     echo "editor: $EDITOR"
+    echo "trace: $TRACE"
 }
 ################################# START HERE
+
+
+
 show_state
 sleep 2
 install_dependencies_cli
 install_dependencies_gui
 install_dependencies_sound
-set_script_and_args "$@"
+arg "$@"
 info
 sleep 2
 #cmd=${1:-steps}

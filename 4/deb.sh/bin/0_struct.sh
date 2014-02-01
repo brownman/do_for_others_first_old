@@ -1,13 +1,22 @@
 #!/bin/bash 
-path=`dirname $0`
+plugin_name=deb.sh
+path=$dir_workspace/$plugin_name
 dir=$path/my_folder
-file=$dir/package.cfg
+file=$dir/my_package.cfg
 create_dir(){
     if [ ! -d "$dir" ];then
-        echo 'generate dir: /cfg'
+        echo "generate dir: $dir"
         mkdir -p "$dir"
     else 
-        echo 'use dir: /cfg'
+        echo "use dir: $dir"
+    fi
+}
+create_file(){
+    if [ ! -f "$file" ];then
+        echo "generate file: $file"
+        touch $file
+    else 
+        echo "use file: $file"
     fi
 }
 
@@ -25,7 +34,9 @@ show_msg(){
 }
 
 steps(){
+    green 'steps:'
     create_dir
+    create_file
     create_config_file
     show_msg
 }

@@ -8,3 +8,6 @@
   echo $PWD/wrapper.sh $PWD/1/hotkeys.sh/menu.sh 
   /home/dao04/JAIL/do_for_others_first/wrapper.sh /home/dao04/JAIL/do_for_others_first/1/hotkeys.sh/menu.sh
   ls
+  grep no_kill -r .
+  grep kill -r 0/
+  #grep -rl $oldstring /path/to/folder | xargs sed -i s@$oldstring@$newstring@g
