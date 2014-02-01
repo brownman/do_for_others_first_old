@@ -11,3 +11,4 @@
   grep no_kill -r .
   grep kill -r 0/
   #grep -rl $oldstring /path/to/folder | xargs sed -i s@$oldstring@$newstring@g
+  #grep --exclude-dir=".svn"

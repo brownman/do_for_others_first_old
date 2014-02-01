@@ -92,6 +92,30 @@ lesser(){
 clip(){
     echo "$@" | xsel --clipboard
 }
+replace(){
+exclude_dir='.git'
+path=. 
+old_string="$1"
+new_string="$2"
+
+cmd="grep --exclude-dir=$exclude_dir -rl '$old_string' $path | xargs sed -i s@$old_string@$new_string@g"
+
+echo "$cmd"
+echo 'execute?'
+
+read answer
+if [ "$answer" = y ];then
+    echo 'evaluating..'
+    eval "$cmd"
+    echo 'Results:'
+   grep --exclude-dir=$exclude_dir -r $new_string $path 
+fi
+}
+hotkeys(){
+echo 'interesting how..'
+}
+
+  #
 export -f clip
 alias last='cat .history | tail -1 | xsel --clipboard'
 alias last1='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
@@ -100,5 +124,7 @@ alias question='cd $dir_project/2/ask.sh/src'
 export -f rm
 export -f rmdir
 export -f lesser
+
 export -f add
+export -f replace 
 alias finder='echo grep -r \$file \$dir'
