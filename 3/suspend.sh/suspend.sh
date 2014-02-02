@@ -9,10 +9,9 @@ export dir_self=`dirname $0`
 file=''
 args=$1
 level=0
-util=$dir_self/run.sh
+util=$single_sh
 if [ ! -f "$util" ];then
     reason_of_death file file "$util"
-    exiting
 fi
 
 folder=~/Desktop/$day 
@@ -24,16 +23,6 @@ fi
 
 
 
-is_valid_file(){
-    http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html
-}
-is_valid_array(){
-    http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_02.html
-    http://www.thegeekstuff.com/2010/06/bash-array-tutorial/
-}
-type_of(){
-    http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_01.html
-}
 choose_level(){
     print_status choose_level
     #prompt for input
@@ -44,15 +33,7 @@ choose_level(){
         read level
     fi
 }
-file_to_array11(){
-    {
-        IFS=\$
-        lines=( $(cat -E $file) )
-    }
-}
-file_to_array2(){
-    lines=( $(cat $file) ) ## no quotes
-}
+
 file_to_array(){
     print_status "use:  file, lines"
     if [ ! -f "$file" ];then
@@ -111,7 +92,6 @@ execute_lines(){
                 if [ "$line" ];then
                     cmd="$util $line"
                     print_call "call: $cmd"
-                    set +x
                     eval "$cmd"
                     #echo "$cmd"
                 else

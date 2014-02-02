@@ -1,4 +1,6 @@
-#!/bin/bash  -e
+#!/bin/bash
+#vim: moving around: http://vim.wikia.com/wiki/Moving_around
+
 #help01: supply a script to wrap  
 #example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
 #dependencies: bash, gxmessage, libnotify, xsel, vim
@@ -9,20 +11,29 @@ export DISPLAY=:0
 export VERSION=1
 export GUI=false
 
-export TRANSLATE=true
+export TRANSLATE=false
 export SOUND=true
 
 export EDITOR=vim
 export TRACE=false
 
+export UPDATE_DESKTOP=true
 
+export DEBUG=true
+#export DEBUG=true
+
+if [ "$DEBUG" = true ];then
+    set -u
+    set -o  
+fi
 
 
 
 export dir_project=`dirname $0`
 
+
 source $dir_project/4/struct.cfg
-source $dir_project/4/INSTALLATION/required/required.cfg
+source $dir_project/4/DETECT/required/required.cfg
 
 #now we have dir_cfg
 source $dir_cfg/self/self.cfg
@@ -39,6 +50,7 @@ source $dir_cfg/funcs/funcs3.cfg
 source $dir_cfg/sleep/sleep3.cfg
 
 source $dir_cfg/vars/me.cfg
+
 source $dir_cfg/vars/time.cfg
 
 source $dir_cfg/zenity/zenity.cfg
@@ -65,16 +77,16 @@ install_dependencies_sound(){
 }
 <<'COMMENT'
 what ever written here is a comment
- 1299  sudo apt-get install libnotify0.4-cil
- 1312  sudo apt-get install xosd-bin
- 1314  sudo  apt-get install libnotify1 notification-daemon dbus 
- 1315  sudo  apt-get install libnotify4]
- 1316  sudo  apt-get install libnotify4
- 1319  sudo apt-get --reinstall install notify-osd
- 1320  sudo apt-get --reinstall install libnotify-bin
- 1326  sudo apt-get --reinstall install notify-osd
- 1333  sudo apt-get autoremove notify-sende
- 1334  sudo apt-get autoremove notify-send
+1299  sudo apt-get install libnotify0.4-cil
+1312  sudo apt-get install xosd-bin
+1314  sudo  apt-get install libnotify1 notification-daemon dbus 
+1315  sudo  apt-get install libnotify4]
+1316  sudo  apt-get install libnotify4
+1319  sudo apt-get --reinstall install notify-osd
+1320  sudo apt-get --reinstall install libnotify-bin
+1326  sudo apt-get --reinstall install notify-osd
+1333  sudo apt-get autoremove notify-sende
+1334  sudo apt-get autoremove notify-send
 COMMENT
 
 #echo -n '' > $file_logger
@@ -140,7 +152,7 @@ use_error(){
     fi
 }
 try(){
-    
+
     blue 'try()'
 
     echo  -n '/*'
@@ -172,13 +184,22 @@ try(){
             };
             trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
 
+
+        else
+            if [ ${#args[@]} -eq 0 ]; then
+                eval "nice -n10 $script" 2>$file_logger;
+            else
+                eval "nice -n10 $script ${args[@]}" 2>$file_logger;
+            fi
+
         fi
-        eval "nice -n10 $script ${args[@]}" 2>$file_logger;
+
     }
+
     local error_code=$?
 
-        print_line
-        echo  '*/'
+    print_line
+    echo  '*/'
     if [ "$error_code" -eq 0   ];then
         trace green "no errors"
     else
@@ -228,7 +249,9 @@ steps(){
 }
 info(){
     echo "script:  $script"
+    if [ ${#args[@]} -ne 0 ];then
     echo "args:  ${args[@]}"
+    fi
 }
 show_state(){
     show_my_name
@@ -248,6 +271,7 @@ install_dependencies_cli
 install_dependencies_gui
 install_dependencies_sound
 arg "$@"
+#Assume: script has been defined
 info
 sleep 2
 #cmd=${1:-steps}

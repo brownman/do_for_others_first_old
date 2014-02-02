@@ -25,7 +25,6 @@ show_dependencies(){
 }
 show_scripts(){
     show_my_name
-    exiting
     local type=${1:-sh}
     local dir=${2:-$dir_sh}
     print_good "show available scripts:"
