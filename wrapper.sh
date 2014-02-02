@@ -8,6 +8,8 @@
 export DISPLAY=:0
 export VERSION=1
 export GUI=false
+
+export TRANSLATE=true
 export SOUND=true
 
 export EDITOR=vim
@@ -18,12 +20,16 @@ export TRACE=false
 
 
 export dir_project=`dirname $0`
-source $dir_project/0/struct.cfg
-source $dir_project/0/INSTALLATION/required/required.cfg
+
+source $dir_project/4/struct.cfg
+source $dir_project/4/INSTALLATION/required/required.cfg
+
 #now we have dir_cfg
 source $dir_cfg/self/self.cfg
 
+
 source $dir_cfg/arg/arg.cfg
+source $dir_cfg/sound/sound.cfg
 source $dir_cfg/proxy/proxy.cfg
 source $dir_cfg/color/color.cfg
 source $dir_cfg/pids/exiting.cfg
@@ -167,7 +173,7 @@ try(){
             trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
 
         fi
-        eval "$script ${args[@]}" 2>$file_logger;
+        eval "nice -n10 $script ${args[@]}" 2>$file_logger;
     }
     local error_code=$?
 
@@ -225,6 +231,7 @@ info(){
     echo "args:  ${args[@]}"
 }
 show_state(){
+    show_my_name
     echo "version: $VERSION"
     echo "gui: $GUI"
     echo "sound: $SOUND"

@@ -15,7 +15,7 @@ if [ ! -s $file ];then
     reason_of_death  $file empty
 fi
 
-if [ "$create_desktop_shortcut" = true ];then
+if [ "$UPDATE_DESKTOP" = true ];then
 
     if [ ! -h $file_shortcut ];then
         ln -s $file $file_shortcut
@@ -27,7 +27,8 @@ if [ "$create_desktop_shortcut" = true ];then
     else
         echo 'symlink already exist'
     fi
-
+else
+    echo  'skip: updating the desktop:with symlinks'
 fi
 
 cmd=${1:-'run'}
@@ -39,19 +40,6 @@ run(){
     speak "$line"
 
 }
-speak(){
-    local    line="$1"
-    notify-send "$line" & 
-    if [ "$mute" = false ];then
-
-        echo "$line" | flite -voice slt &
-        sleep 1
-        echo "$line" | flite -voice kal &
-        sleep 1
-        echo "$line" | flite -voice awb &
-    fi
-}
-
 
 random_line(){
     local file=$1
