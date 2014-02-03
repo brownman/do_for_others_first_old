@@ -1,5 +1,24 @@
 #!/bin/bash -e
+pushd `dirname $0`> /dev/null
 set -o nounset
+
+
+source $dir_project/4/struct.cfg
+
+source $dir_project/4/source_cfg.cfg
+
+source $dir_project/4/env.cfg
+
+
+
+source $dir_project/4/DETECT/required/required.cfg
+export file_logger=/tmp/logger.txt
+
+
+
+
+
+
 << ABC
 https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
 http://mywiki.wooledge.org/BashGuide/Practices
@@ -19,18 +38,7 @@ ABC
 
 
 
-export dir_project=`dirname $0`
 
-
-
-
-source $dir_project/4/exports.cfg
-
-source $dir_project/4/struct.cfg
-source $dir_project/4/DETECT/required/required.cfg
-export file_logger=/tmp/logger.txt
-
-source $dir_project/4/loader.cfg
 
 install_dependencies_cli(){
     required bash bash

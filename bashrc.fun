@@ -14,7 +14,7 @@ alias vimrc="vi ~/.vimrc"
 set -o vi
 
 
-alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/JAIL/save.txt; echo .history; cat .history"
+
 add(){
     clear
     filename="$1"
@@ -67,7 +67,7 @@ export -f move
 #http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html
 
 #export PATH=$PATH:~/JAIL/deb.sh/
-export dir_project=~/JAIL/do_for_others_first
+
 rm(){
     echo 'rm()'
     str=`basename "$1"`
@@ -133,6 +133,9 @@ export -f clip
 alias last='cat .history | tail -1 | xsel --clipboard'
 alias last1='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
 #| xargs "eval"'
+
+export dir_project=~/CLASS/do_for_others_first
+alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/$dir_project/save.txt; echo .history; cat .history"
 alias question='cd $dir_project/0/ask.sh/QUESTION'
 export -f rm
 export -f rmdir
@@ -143,3 +146,5 @@ export -f add
 export -f finder
 export -f replace 
 #alias finder='echo grep -r \$file \$dir'
+
+
