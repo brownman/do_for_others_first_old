@@ -111,9 +111,22 @@ if [ "$answer" = y ];then
    grep --exclude-dir=$exclude_dir -r $new_string $path 
 fi
 }
+
 hotkeys(){
-echo 'interesting how..'
+    #xfce desktop:
+    xfconf-query -c xfce4-keyboard-shortcuts -p /commands/default/XF86Display -s 'test'
+    xfconf-query -c xfce4-keyboard-shortcuts -l
 }
+finder(){
+str="$1"
+echo "search string: $str"
+cmd="grep  --exclude-dir=.git $str . -r"
+echo "$cmd"
+eval "$cmd"
+}
+alias udebug='set +x'
+alias debug='set -x'
+
 
   #
 export -f clip
@@ -125,6 +138,8 @@ export -f rm
 export -f rmdir
 export -f lesser
 
+
 export -f add
+export -f finder
 export -f replace 
-alias finder='echo grep -r \$file \$dir'
+#alias finder='echo grep -r \$file \$dir'

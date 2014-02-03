@@ -1,62 +1,43 @@
 #!/bin/bash
-#vim: moving around: http://vim.wikia.com/wiki/Moving_around
 
-#help01: supply a script to wrap  
-#example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
+<< ABC
+https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
+http://mywiki.wooledge.org/BashGuide/Practices
+http://andreinc.net/2011/09/04/bash-scripting-best-practice/
+http://fahdshariff.blogspot.co.il/2013/10/shell-scripting-best-practices.html
+http://stackoverflow.com/questions/78497/design-patterns-or-best-practices-for-shell-scripts
+http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)
+#vim: moving around: http://vim.wikia.com/wiki/Moving_around
+ABC
+
+##help01: supply a script to wrap  
+##example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
 #dependencies: bash, gxmessage, libnotify, xsel, vim
 #depend_cfg
 #source ./vagrant.cfg
 
-export DISPLAY=:0
-export VERSION=1
-export GUI=false
-
-export TRANSLATE=false
-export SOUND=true
-
-export EDITOR=vim
-export TRACE=false
-
-export UPDATE_DESKTOP=true
-
-export DEBUG=true
 #export DEBUG=true
-
-if [ "$DEBUG" = true ];then
-    set -u
-    set -o  
-fi
 
 
 
 export dir_project=`dirname $0`
 
 
+
+
+source $dir_project/4/exports.cfg
+
 source $dir_project/4/struct.cfg
 source $dir_project/4/DETECT/required/required.cfg
-
-#now we have dir_cfg
-source $dir_cfg/self/self.cfg
-
-
-source $dir_cfg/arg/arg.cfg
-source $dir_cfg/sound/sound.cfg
-source $dir_cfg/proxy/proxy.cfg
-source $dir_cfg/color/color.cfg
-source $dir_cfg/pids/exiting.cfg
-source $dir_cfg/array/array.cfg
-
-source $dir_cfg/funcs/funcs3.cfg
-source $dir_cfg/sleep/sleep3.cfg
-
-source $dir_cfg/vars/me.cfg
-
-source $dir_cfg/vars/time.cfg
-
-source $dir_cfg/zenity/zenity.cfg
-
 export file_logger=/tmp/logger.txt
 
+source $dir_project/4/loader.cfg
+
+if [ "$DEBUG" = true ];then
+#    set -u
+set -o nounset
+    set -o  
+fi
 
 install_dependencies_cli(){
     required bash bash
@@ -98,34 +79,16 @@ clean_logger(){
         touch $file_logger
     fi
 }
-parse(){
-    local all="$1"
-    local str=`echo $all | sed 's/line /+/g'`
-    str_to_arr "$str"
-    #we have: arr
-    num="${#arr[@]}"
-    exe="${arr[0]}"
-    line="${arr[1]}"
-    error="${arr[2]}"
-    error_code="${arr[3]}"
-    blue 'Assume:'
-    echo -e "\t\tarray size: $num"
-    echo -e "\t\texe: $exe"
-    echo -e "\t\tline: $line"
-    echo -e "\t\terror: $error"
-    echo -e "\t\terror+code: $error_code"
-
-    #printf "%s\n" "${arr[@]}" > /tmp/error.txt
-
-}
 use_error(){
+    show_my_name func
+    
     green 'use_error()'
     local all="$1"
     arr=()
 
 
 
-    notify-send "$error" "$error_code"
+
 
 
     num_bytes=$(  echo "$all" | wc --bytes )
@@ -134,15 +97,18 @@ use_error(){
     read
     if [ "$num_bytes" -lt 200 ] && [ "$num_bytes" -gt 1  ];then
 
+
+
         #set array:arr + set vars:num/exe/line/error/error_code
-        parse "$all"
+        parse_primary "$all"
 
 
+    notify-send "$error" "$error_code"
         cmd="$EDITOR $exe $line" 
 
         echo "$cmd" | xsel --clipboard
         sleep 1
-        green "$0 says:"
+#        green "$0 says:"
         echo 'your clipboard has been updated with:'
         blue "$cmd"
     else
@@ -186,10 +152,13 @@ try(){
 
 
         else
+            cmd="nice -n10 $script"
+            print_evaluating "$cmd"
             if [ ${#args[@]} -eq 0 ]; then
-                eval "nice -n10 $script" 2>$file_logger;
+
+                eval "$cmd" 2>$file_logger;
             else
-                eval "nice -n10 $script ${args[@]}" 2>$file_logger;
+                eval "$cmd ${args[@]}" 2>$file_logger;
             fi
 
         fi
@@ -234,12 +203,14 @@ check_log(){
             echo
         fi
     else
-        red 'no such file'
+        red "no such file"
+        echo "$file_logger"
     fi
 
 }
 steps(){
-    blue "steps()"
+show_my_name func
+#info
     clean_logger
     blue "run()"
     green "steps:"
@@ -247,22 +218,19 @@ steps(){
     try 
     check_log
 }
-info(){
-    echo "script:  $script"
-    if [ ${#args[@]} -ne 0 ];then
-    echo "args:  ${args[@]}"
-    fi
-}
+#info(){
+#   http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash 
+#http://pubs.opengroup.org/onlinepubs/9699919799/utilities/contents.html
+ #   echo "script:  $script"
+ #   if [ ${#args[@]} -ne 0 ];then
+ #   echo "args:  ${args[@]}"
+ #   fi
+#}
 show_state(){
-    show_my_name
-    echo "version: $VERSION"
-    echo "gui: $GUI"
-    echo "sound: $SOUND"
-    echo "editor: $EDITOR"
-    echo "trace: $TRACE"
+    cat $dir_root/4/exports.cfg
 }
 ################################# START HERE
-
+show_my_name script
 
 
 show_state
@@ -272,13 +240,14 @@ install_dependencies_gui
 install_dependencies_sound
 arg "$@"
 #Assume: script has been defined
-info
+
 sleep 2
 #cmd=${1:-steps}
 cmd=steps
 $cmd
 echo 
 echo
+echo random_line misterious
 #ref: http://wiki.bash-hackers.org/commands/builtin/eval
 #http://linuxcommand.org/wss0150.php
 #http://bashdb.sourceforge.net/bashdb.html#SEC_Contents
@@ -286,3 +255,6 @@ echo
 #http://stackoverflow.com/questions/6928946/mysterious-lineno-in-bash-trap-err
 #https://github.com/sickill/asciinema.org
 #http://docs.python-guide.org/en/latest/dev/virtualenvs/
+
+#https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
+##http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)

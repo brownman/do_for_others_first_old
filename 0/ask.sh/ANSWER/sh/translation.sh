@@ -2,6 +2,7 @@
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
+show_my_name script
 print_note 'TRANSLATION.SH'
 declare -A repeater
 repeater["it"]=1

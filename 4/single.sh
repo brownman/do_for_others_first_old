@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 dir_self=`dirname $0`
-print_got "run.sh got: $@"
+#print_got "run.sh got: $@"
 filename=''
 args=()
 if [ "$1" ];then
