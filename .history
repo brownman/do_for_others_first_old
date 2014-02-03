@@ -14,3 +14,6 @@
   #grep --exclude-dir=".svn"
   assume script exist
   finder 'show_my_name func'
+  touch save.txt
+  ls
+  python
