@@ -1,9 +1,9 @@
-#!/bin/bash 
+#!/bin/bash  -e 
+set -u
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
 show_my_name script
-print_note 'TRANSLATION.SH'
 declare -A repeater
 repeater["it"]=1
 repeater["en"]=1
@@ -21,37 +21,6 @@ amount["ru"]=12
 amount["ar"]=3
 amount["hi"]=2
 amount["tl"]=1
-#export repeater
-help_options="sentance/ line/ lines"
-method="$1" #sentance, line, lines
-from="$2" #file or sentance
-multiple_langs=true
-#false
-#assert_equal_str "$3"
-silence2=${3:-"$SILENCE"} #"$3" #false #export MULTIPLE_LANGS=true
-#if [ "$silence2" = 'false' ];then
-#breakpoint 3
-#fi
-#cmd="notify-send1 'silence request?' '$silence2'"
-#every "$cmd" 9
-#assert_equal_str "$silence2" 'false'
-#silence2=$silence2
-lang_target=$LANG_DEFAULT
-
-#silence2_fetch=$silence2_FETCH #if no tts is needed
-silence2_fetch=true
-#$silence2
-
-#unlocker?
-file_locker=/tmp/translation
-delay=3
-loops=2
-gentle=true
-
-trace 'translate.sh got:'
-trace "1:$1 2:$2"
-notify-send 'TranslatE:' "$@"
-
 
 random_language_changer(){
 
@@ -502,7 +471,7 @@ all_lines(){
 
 run(){
     #assert_equal_file $file_log
-
+show_my_name func
     local result=''
     #motivation "$file"
     if [ "$method" = 'sentence' ];then
@@ -529,5 +498,24 @@ run(){
     fi
 }
 
-#unlocker true
-run
+help_options="sentance/ line/ lines"
+method="$1" #sentance, line, lines
+from="$2" #file or sentance
+multiple_langs=true
+silence2=${3:-"$SILENCE"} #"$3" #false #export MULTIPLE_LANGS=true
+lang_target=$LANG_DEFAULT
+silence2_fetch=true
+file_locker=/tmp/translation
+delay=3
+loops=2
+gentle=true
+
+trace 'translate.sh got:'
+trace "1:$1 2:$2"
+#notify-send 'TranslatE:' "$@"
+
+
+#run
+#echo4 "$1"
+translate_f "$1" "ru"
+

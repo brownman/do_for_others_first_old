@@ -1,22 +1,22 @@
-#!/bin/bash -e
+#!/bin/bash 
+#set -u
+show_my_name script
+
 dir_self=`dirname $0`
+#echo "5 is: $5"
 #print_got "run.sh got: $@"
 filename=''
-args=()
-if [ "$1" ];then
-    filename=$1
-    if [ "$2" ];then
-    shift
-        args=( "$@" )
-    fi
-fi
-tail=7
 
+
+#echo "$script"
+#echo "${args[@]}"
+#:argr "$dir_self $@"
+tail=7
 
 show_history(){
     #2>&1 | tee -a $path/.log/errors.log)
     print_good "show history (+$tail):"
-#    cat $path/.history | tail -$tail
+    #    cat $path/.history | tail -$tail
     echo "$dir_sh"
 }
 
@@ -24,7 +24,7 @@ show_dependencies(){
     cat $dir_debian/control
 }
 show_scripts(){
-    show_my_name
+    show_my_name func
     local type=${1:-sh}
     local dir=${2:-$dir_sh}
     print_good "show available scripts:"
@@ -40,33 +40,45 @@ show_edit(){
 }
 
 help(){
+    show_my_name func
+    say_my_name
     print_error "please supply a script name (+-arguments)"
-#    show_dependencies
+    #    show_dependencies
     show_history
     show_scripts
     reason_of_death 'no arguments'
 }
 run(){
-    script="$dir_sh/$filename.sh" 
+
     if [ -f "$script" ];then
         #save command to history
-#        echo "$script]] ${args[@]}" >> $path/.history
+        #        echo "$script]] ${args[@]}" >> $path/.history
         #execute
         cmd="$script ${args[@]}"
         print_call "call: $cmd"
         eval "$cmd" 
     else
         print_error "file not found: $script"
-    #    eval  exiting
-    exit 1
+        #    eval  exiting
+        exit 1
     fi
 }
 
-
-if [ "$filename"  ];then
-    run
-else
+if [ $# -eq 0 ];then
+    print_note 'helping'
     help
+else
+    print_note 'running'
+    dir="$dir_sh" 
+    file_type='sh'
+    arg_soft "$@"
+    
+    script="$dir/$script.$file_type"
+    #updated script 
+
+    run
 fi
+
+
 
 #echo vi $script

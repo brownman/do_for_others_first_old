@@ -1,5 +1,5 @@
-#!/bin/bash
-
+#!/bin/bash -e
+set -o nounset
 << ABC
 https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
 http://mywiki.wooledge.org/BashGuide/Practices
@@ -9,7 +9,6 @@ http://stackoverflow.com/questions/78497/design-patterns-or-best-practices-for-s
 http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)
 #vim: moving around: http://vim.wikia.com/wiki/Moving_around
 ABC
-
 ##help01: supply a script to wrap  
 ##example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
 #dependencies: bash, gxmessage, libnotify, xsel, vim
@@ -32,12 +31,6 @@ source $dir_project/4/DETECT/required/required.cfg
 export file_logger=/tmp/logger.txt
 
 source $dir_project/4/loader.cfg
-
-if [ "$DEBUG" = true ];then
-#    set -u
-set -o nounset
-    set -o  
-fi
 
 install_dependencies_cli(){
     required bash bash
@@ -81,7 +74,7 @@ clean_logger(){
 }
 use_error(){
     show_my_name func
-    
+
     green 'use_error()'
     local all="$1"
     arr=()
@@ -103,14 +96,6 @@ use_error(){
         parse_primary "$all"
 
 
-    notify-send "$error" "$error_code"
-        cmd="$EDITOR $exe $line" 
-
-        echo "$cmd" | xsel --clipboard
-        sleep 1
-#        green "$0 says:"
-        echo 'your clipboard has been updated with:'
-        blue "$cmd"
     else
         print_error "incorrect parsing"
         green "Assume:" 
@@ -153,7 +138,7 @@ try(){
 
         else
             cmd="nice -n10 $script"
-            print_evaluating "$cmd"
+            print_evaluating "$cmd ...."
             if [ ${#args[@]} -eq 0 ]; then
 
                 eval "$cmd" 2>$file_logger;
@@ -209,8 +194,11 @@ check_log(){
 
 }
 steps(){
-show_my_name func
-#info
+    show_my_name func
+    if [ "$DEBUG" = true ];then
+        show_state
+    fi
+    #info
     clean_logger
     blue "run()"
     green "steps:"
@@ -218,22 +206,19 @@ show_my_name func
     try 
     check_log
 }
-#info(){
-#   http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash 
-#http://pubs.opengroup.org/onlinepubs/9699919799/utilities/contents.html
- #   echo "script:  $script"
- #   if [ ${#args[@]} -ne 0 ];then
- #   echo "args:  ${args[@]}"
- #   fi
-#}
 show_state(){
     cat $dir_root/4/exports.cfg
+
+    if [ "$DEBUG" = true ];then
+        set -o  
+    fi
+
 }
 ################################# START HERE
 show_my_name script
 
 
-show_state
+
 sleep 2
 install_dependencies_cli
 install_dependencies_gui
@@ -247,7 +232,7 @@ cmd=steps
 $cmd
 echo 
 echo
-echo random_line misterious
+#echo random_line misterious
 #ref: http://wiki.bash-hackers.org/commands/builtin/eval
 #http://linuxcommand.org/wss0150.php
 #http://bashdb.sourceforge.net/bashdb.html#SEC_Contents
