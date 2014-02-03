@@ -3,11 +3,11 @@ pushd `dirname $0`> /dev/null
 set -o nounset
 
 
+source $dir_project/4/env.cfg
 source $dir_project/4/struct.cfg
-
 source $dir_project/4/source_cfg.cfg
 
-source $dir_project/4/env.cfg
+
 
 
 
