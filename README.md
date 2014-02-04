@@ -1,21 +1,30 @@
-- how to stop being a complete IDIOT: A guide from a caring heart
-- 3 steps machanism - bring life to a thought
+DO FOR OTHERS FIRST
+==
+I think that above all motivations gathers during the years - this sentance rule them all.
+Nothing makes you feel better than if you decide doing something for someone else's good being.
+so let's do it together for the benefits of all of us :)
 
--
-RATIONAL:
+
+MOTIVATION:
+=
+- how to stop being a complete IDIOT: A guide from a caring heart:
+- 3 steps machanism - A method for bringing life to a thought
+
+
+THE PROBLEM:
 = 
 - you have many ideas
 - you keep bumping into interesting concepts
 - but -
 - soon you loose them !
-- you keep on failing with document your idea
-- you keep on saving new favorite in your browser, 
+- you keep on failing of trying to document your idea
+- you keep on saving new browser's favorites in an un
 - and everything gets lost
 - your ideas fades away
 - your enthusiasm is soon forgotten
-- you have a silly or a smart question and you forgive yourself on letting it go.
+- you have a silly or a smart question and you forgive yourself and let it fly away
 
-SOLUTION:
+PROVIDED SOLUTION:
 =
 - save your thoughts - damn it!
 - treat your new question as a baby
@@ -27,9 +36,15 @@ SOLUTION:
 
 
 
-3 Easy Steps:
-====
-A) Idea 
+-3- Easy Steps Mechanism:
+---
+
+1) IMAGINE FIRST
+=
+- believe that it's worthy And Catch the flying Idea!
+- press a key combination - And - write it down
+--
+technical details:
 --
 1. a new throught just bumbed into your head
 2. you decide to document it
@@ -38,21 +53,14 @@ A) Idea
 5. you fill up a small form - and press save
 6. fantastic.
 
-the form had the fields: Subject|description|Url|Code-Snippet
-and submitting it created some files on your system:
-- WORKSPACE/my_name/subject/snippet.sh
-- WORKSPACE/my_name/subject/README.md (has: description, url)
+2) MAGNIFY THE SMALL
+====
+- go back to the idea 
+- magnify the small idea By forming an actual script based upon it.
 
-
-
-
-B) Playground
+3) DO FOR OTHERS FIRST 
 -
-you visit the created folder and start altering the code/readme so that it will be attractive to be upgraded later on OR being shared with your friends/other worldwide users.
-
-C) Timing
--
-- set a list of tasks(your collection of working scripts) to run in a loop and add flavore to your life.
+- create a list of tasks - and run them in a loop - a single task is actualy a link to a script 
 - e.g: 
 1. suspend the computer every 5 minutes
 2. use text-to-speach engine to tell me 'you are a genius' every 2 minutes
