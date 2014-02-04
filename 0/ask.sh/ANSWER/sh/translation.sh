@@ -515,11 +515,55 @@ trace "1:$1 2:$2"
 
 #run
 #echo4 "$1"
-translate_f1(){
-local sentance="$1"
-local lang="$2"
-echo "translating.."
-echo "$sentance + $lang"
+step0(){
+
+dir_txt=/tmp
+dir_mp3=/tmp
+dir_html=/tmp
 }
-translate_f1 "$1" "$2"
+step1(){
+
+    show_my_name func
+
+#    local lang="$2"
+
+#    local input=$(remove_trailing "$1")
+    #local input="$1" #translate src
+
+
+
+
+     input_wsp=$(echo "$input"|sed 's/ /+/g');
+     input_ws=$(echo "$input"|sed 's/ /_/g');
+
+     file_txt=$(  echo $dir_txt/${input_ws}_${lang}.txt )
+     file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
+     file_html=$(  echo $dir_html/${input_ws}_${lang}.html )
+echo "$input_wsp"
+}
+step2(){
+    if [ "$input_wsp" ];then
+    show_my_name func
+    result=$(wget -U "Mozilla/5.0" -qO - "http://translate.google.com/translate_a/t?client=t&text=$input_wsp&sl=en&tl=$lang" ) 
+        #echo "$result" >> $TODAY_DIR/translate.json
+        cleaner=$(echo "$result" | sed 's/\[\[\[\"//') 
+        #trace "$result"
+        phonetics=$(echo "$cleaner" | cut -d \" -f 5)
+        output=$(echo "$cleaner" | cut -d \" -f 1)
+        output_wsp=$(echo "$output"|sed 's/ /+/g');
+        output_ws=$(echo "$output"|sed 's/ /_/g');
+echo "$output_wsp"
+fi
+}
+
+steps(){
+show_my_name func
+step0
+step1
+step2
+}
+
+input="$1"
+lang="$2"
+steps 
 
