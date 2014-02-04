@@ -38,3 +38,6 @@
   show edit
   last edit
   vi 0/ask.sh/ANSWER/sh/translation.sh 
+  #  ./wrapper.sh 4/single.sh translation
+  exec  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  notify-send hi

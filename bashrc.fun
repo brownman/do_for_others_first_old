@@ -143,7 +143,12 @@ else
 subject="$1"
 file="$dir_project/.tmp/$subject.txt"
 touch $file
-cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history $file ; echo \"File: $filer\";echo '-----' ;cat $file;"
+cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' "
+line=`eval "$cmd"`
+echo -e "Add this line?\n "
+echo -e "line: $line"
+read
+cmd="echo "$line" | tee -a .history $file ; echo \"File: $filer\";echo '-----' ;cat $file;"
 eval "$cmd"
 show "$subject"
 fi

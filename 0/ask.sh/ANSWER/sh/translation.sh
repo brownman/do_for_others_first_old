@@ -1,7 +1,8 @@
-#!/bin/bash 
+#!/bin/bash  -e
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
+lskdjflk
 declare -A repeater
 repeater["it"]=1
 repeater["en"]=1
@@ -539,7 +540,11 @@ step1(){
      file_txt=$(  echo $dir_txt/${input_ws}_${lang}.txt )
      file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
      file_html=$(  echo $dir_html/${input_ws}_${lang}.html )
+
+     file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
+
 echo "$input_wsp"
+echo "$file_mp3"
 }
 step2(){
     if [ "$input_wsp" ];then
@@ -556,10 +561,11 @@ echo "$output_wsp"
 fi
 }
 step3(){
-                wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
 
 
-                    play -V1 -q  "$file_mp3"
+wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
+ls -l $file_mp3
+play -V1 -q  "$file_mp3"
 }
 
 steps(){
@@ -570,7 +576,7 @@ step2
 step3
 }
 
-input="$1"
-lang="$2"
+input="${1:-dog}"
+lang="${2:-ru}"
 steps 
 
