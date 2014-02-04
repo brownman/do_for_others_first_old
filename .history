@@ -17,3 +17,24 @@
   touch save.txt
   ls
   python
+  ls
+  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  cat .history 
+  hi
+  test
+  test2
+  cat .tmp/edit.txt 
+  cat .tmp/edit.txt 
+  nice
+  #  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  bash
+  vi hi
+  test 4
+  vi hi
+  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  ./wrapper.sh 4/single.sh translation
+  ./wrapper.sh 4/DETECT/install_bashrc.sh 
+  vi 4/DETECT/install_bashrc.sh 
+  show edit
+  last edit
+  vi 0/ask.sh/ANSWER/sh/translation.sh 

@@ -1,0 +1,2 @@
+  ./wrapper.sh 4/single.sh translation
+  ./wrapper.sh 4/DETECT/install_bashrc.sh 

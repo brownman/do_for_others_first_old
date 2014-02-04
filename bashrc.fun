@@ -130,13 +130,68 @@ alias debug='set -x'
 
   #
 export -f clip
-alias last='cat .history | tail -1 | xsel --clipboard'
-alias last1='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
+#alias last='cat .history | tail -1 | xsel --clipboard'
+#alias last1='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
 #| xargs "eval"'
 
 
-alias save="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history ~/$dir_project/save.txt; echo .history; cat .history"
+
+save(){
+if [ $# -eq 0 ];then
+echo 'supply a subject'
+else
+subject="$1"
+file="$dir_project/.tmp/$subject.txt"
+touch $file
+cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' |  tee -a .history $file ; echo \"File: $filer\";echo '-----' ;cat $file;"
+eval "$cmd"
+show "$subject"
+fi
+}
+last(){
+if [ $# -eq 0 ];then
+echo 'supply a subject'
+else
+subject="$1"
+file="$dir_project/.tmp/$subject.txt"
+cmd="cat $file | tail -1"
+line=`eval "$cmd"`
+echo "line: $line" | xsel --clip
+
+eval "$line"
+fi
+
+}
+show(){
+if [ $# -eq 0 ];then
+echo 'supply a subject'
+else
+subject="$1"
+file="$dir_project/.tmp/$subject.txt"
+echo "$file"
+cat $file
+fi
+
+}
+
+
+
 alias question='cd $dir_project/0/ask.sh/QUESTION'
+tree1(){
+tree > /tmp/tree.txt
+cat /tmp/tree.txt
+echo 'create new file? .tree ?'
+read answer
+if [ "$answer" = y ];then
+    cat /tmp/tree.txt >> .tree
+fi
+}
+export -f tree1
+
+export -f save
+export -f show
+export -f last
+
 export -f rm
 export -f rmdir
 export -f lesser

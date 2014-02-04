@@ -3,7 +3,7 @@
 path=`dirname $0`
 
 notify-send "2.now in: $path"
-#dir_cfg=$dir_project/cfg/general
+#dir_cfg=$dir_root/cfg/general
 
 
 #source $dir_cfg/color/colors.cfg

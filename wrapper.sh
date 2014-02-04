@@ -1,18 +1,25 @@
 #!/bin/bash -e
+# help01:\n\tsupply a script to wrap  
+# example01:\n\t./wrapper.sh 3/suspend.sh/suspend.sh 1
+#dependencies: bash, gxmessage, libnotify, xsel, vim
+
 clear
 pushd `dirname $0`> /dev/null
+
+export dir_root=`pwd`
+
 set -o nounset
 
 
-source $dir_project/4/env.cfg
-source $dir_project/4/struct.cfg
-source $dir_project/4/source_cfg.cfg
+source $dir_root/4/env.cfg
+source $dir_root/4/struct.cfg
+source $dir_root/4/source_cfg.cfg
 
 
 
 
 
-source $dir_project/4/DETECT/required/required.cfg
+source $dir_root/install/required/required.cfg
 export file_logger=/tmp/logger.txt
 
 
@@ -29,14 +36,6 @@ http://stackoverflow.com/questions/78497/design-patterns-or-best-practices-for-s
 http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)
 #vim: moving around: http://vim.wikia.com/wiki/Moving_around
 ABC
-##help01: supply a script to wrap  
-##example01: ./wrapper.sh 3/suspend.sh/suspend.sh 1
-#dependencies: bash, gxmessage, libnotify, xsel, vim
-#depend_cfg
-#source ./vagrant.cfg
-
-#export DEBUG=true
-
 
 
 
@@ -147,7 +146,7 @@ try(){
 
         else
             cmd="nice -n10 $script"
-            print_evaluating ".... $script ...."
+#            print_evaluating ".... $script ...."
             if [ ${#args[@]} -eq 0 ]; then
 
                 eval "$cmd" 2>$file_logger;
@@ -224,7 +223,6 @@ show_state(){
 
 }
 ################################# START HERE
-show_my_name script
 
 
 
@@ -245,13 +243,7 @@ if  [  $# -gt 0  ];then
     echo 
     echo
 else
-#    echo "No Arguments"
-
-    str1=`cat $0 | grep -m1 help01 `
-    str2=`cat $0 | grep -m1 example01`
-
-    echo "$str1"
-    echo "$str2"
+    print_about_self
 fi
 #echo random_line misterious
 #ref: http://wiki.bash-hackers.org/commands/builtin/eval

@@ -555,12 +555,19 @@ step2(){
 echo "$output_wsp"
 fi
 }
+step3(){
+                wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
+
+
+                    play -V1 -q  "$file_mp3"
+}
 
 steps(){
 show_my_name func
 step0
 step1
 step2
+step3
 }
 
 input="$1"
