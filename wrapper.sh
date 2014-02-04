@@ -1,4 +1,5 @@
 #!/bin/bash -e
+clear
 pushd `dirname $0`> /dev/null
 set -o nounset
 
@@ -146,7 +147,7 @@ try(){
 
         else
             cmd="nice -n10 $script"
-            print_evaluating "$cmd ...."
+            print_evaluating ".... $script ...."
             if [ ${#args[@]} -eq 0 ]; then
 
                 eval "$cmd" 2>$file_logger;
@@ -231,15 +232,27 @@ sleep 2
 install_dependencies_cli
 install_dependencies_gui
 install_dependencies_sound
-arg "$@"
-#Assume: script has been defined
+if  [  $# -gt 0  ];then
 
-sleep 2
-#cmd=${1:-steps}
-cmd=steps
-$cmd
-echo 
-echo
+
+    arg "$@"
+    #Assume: script has been defined
+
+    sleep 2
+    #cmd=${1:-steps}
+    cmd=steps
+    $cmd
+    echo 
+    echo
+else
+#    echo "No Arguments"
+
+    str1=`cat $0 | grep -m1 help01 `
+    str2=`cat $0 | grep -m1 example01`
+
+    echo "$str1"
+    echo "$str2"
+fi
 #echo random_line misterious
 #ref: http://wiki.bash-hackers.org/commands/builtin/eval
 #http://linuxcommand.org/wss0150.php

@@ -1,5 +1,4 @@
 #!/bin/bash 
-#set -u
 show_my_name script
 
 dir_self=`dirname $0`

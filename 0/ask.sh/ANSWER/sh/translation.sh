@@ -1,9 +1,7 @@
-#!/bin/bash  -e 
-set -u
+#!/bin/bash 
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
-show_my_name script
 declare -A repeater
 repeater["it"]=1
 repeater["en"]=1
@@ -114,7 +112,7 @@ play1(){
 
 
 translate_f(){
-
+show_my_name func
     ################################# result: txt 
     trace "translate_f() got:"
     trace "input: $1 | lang: $2"
@@ -497,7 +495,7 @@ show_my_name func
        # help1 "$help_options"
     fi
 }
-
+env1(){
 help_options="sentance/ line/ lines"
 method="$1" #sentance, line, lines
 from="$2" #file or sentance
@@ -513,9 +511,15 @@ gentle=true
 trace 'translate.sh got:'
 trace "1:$1 2:$2"
 #notify-send 'TranslatE:' "$@"
-
+}
 
 #run
 #echo4 "$1"
-translate_f "$1" "ru"
+translate_f1(){
+local sentance="$1"
+local lang="$2"
+echo "translating.."
+echo "$sentance + $lang"
+}
+translate_f1 "$1" "$2"
 
