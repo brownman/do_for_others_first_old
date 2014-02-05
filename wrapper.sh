@@ -21,7 +21,7 @@ source $dir_root/bin/source_cfg.cfg
 #CHANGE:
 
 
-export VERSION=2
+export VERSION=1
 export LANG=ru
 
 

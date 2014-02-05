@@ -580,6 +580,6 @@ input="$1"
 lang="$2"
 steps 
 else
-    reason_of_death 'no arguments'
+    reason_of_death "need 2 arguments - got $#"
 fi
 
