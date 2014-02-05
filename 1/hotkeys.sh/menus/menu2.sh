@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 is_working=$( pstree -a | grep gmail | grep notify )
 file=/tmp/send.txt

@@ -116,6 +116,9 @@ hotkeys(){
     #xfce desktop:
     xfconf-query -c xfce4-keyboard-shortcuts -p /commands/default/XF86Display -s 'test'
     xfconf-query -c xfce4-keyboard-shortcuts -l
+    
+    cmd="$1"
+    echo "$1"
 }
 finder(){
     str="$1"
@@ -135,9 +138,11 @@ save(){
     cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' "
     line=`eval "$cmd"`
 
+
     echo "$line" | grep 'vi ' -m1 >> .history.edit || \
-        echo "$line" | grep 'http ' -m1 >> .history.url || \
-        echo "$line" | grep 'http ' -m1 >> .history.run  || \
+    echo "$line" | grep 'should' -m1 >> .history.should || \
+        echo "$line" | grep 'http' -m1 >> .history.url || \
+        echo "$line" | grep '.sh' -m1 >> .history.run  || \
         echo "$line" | grep 'http ' -m1 >> .history
 
 

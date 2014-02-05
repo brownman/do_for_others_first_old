@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 #change between false and true - to mute / unmute
 
 mute=false

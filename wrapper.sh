@@ -221,6 +221,7 @@ check_log(){
 
 }
 steps(){
+    print_func
     if [ "$DEBUG" = true ];then
         show_state
     fi
