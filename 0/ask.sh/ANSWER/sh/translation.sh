@@ -541,8 +541,8 @@ step1(){
 
     file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
 
-    echo "$input_wsp"
-    echo "name: $file_mp3"
+    #echo "$input_wsp"
+    #echo "name: $file_mp3"
 }
 step2(){
     if [ "$input_wsp" ];then
@@ -554,16 +554,24 @@ step2(){
         output=$(echo "$cleaner" | cut -d \" -f 1)
         output_wsp=$(echo "$output"|sed 's/ /+/g');
         output_ws=$(echo "$output"|sed 's/ /_/g');
-        echo "$output_wsp"
+
+
+
+        #notify-send "$output" "$phonetics"
+        notify-send "$output"
+        notify-send "$phonetics"
     fi
+
+        #echo "$output_wsp"
 }
 step3(){
 
-
+    if [ ! -f "$file_mp3" ] || [ -s "$file_mp3" ];then
     wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
-    ls -l $file_mp3
-
-
+else
+    echo "use cached file"
+fi
+    #ls -l $file_mp3
     cmd="play -V1 -q  $file_mp3"
     commander "$cmd"
 }
@@ -575,9 +583,10 @@ steps(){
     step2
     step3
 }
-if [ $# -eq 2 ];then
-input="$1"
-lang="$2"
+if [ $# -gt 1 ];then
+lang="$1"
+shift
+input="$@"
 steps 
 else
     reason_of_death "need 2 arguments - got $#"
