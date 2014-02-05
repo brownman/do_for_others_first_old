@@ -140,7 +140,7 @@ save(){
 
 
     echo "$line" | grep 'vi ' -m1 >> .history.edit || \
-    echo "$line" | grep 'should' -m1 >> .history.should || \
+    echo "$line" | grep 'robot' -m1 >> .history.robot || \
         echo "$line" | grep 'http' -m1 >> .history.url || \
         echo "$line" | grep '.sh' -m1 >> .history.run  || \
         echo "$line" | grep 'http ' -m1 >> .history

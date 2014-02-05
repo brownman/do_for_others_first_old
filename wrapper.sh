@@ -1,5 +1,6 @@
 #!/bin/bash -e
-        set -o errtrace
+set -o pipefail  # trace ERR through pipes
+
 
 
 # help01:\n\tsupply a script to wrap  
@@ -20,7 +21,7 @@ source $dir_root/bin/source_cfg.cfg
 #CHANGE:
 
 
-export VERSION=1
+export VERSION=2
 export LANG=ru
 
 
@@ -101,6 +102,10 @@ what ever written here is a comment
 1326  sudo apt-get --reinstall install notify-osd
 1333  sudo apt-get autoremove notify-sende
 1334  sudo apt-get autoremove notify-send
+
+dpkg -S sox
+libsox-fmt-mp3: /usr/lib/sox/libsox_fmt_mp3.so
+
 COMMENT
 
 #echo -n '' > $file_logger
@@ -156,6 +161,7 @@ try(){
         red 'Should : trap errors!'
 
 
+        set -o errtrace
         trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
 
     fi
