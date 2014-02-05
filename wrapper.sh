@@ -4,8 +4,7 @@
 
 # help01:\n\tsupply a script to wrap  
 # example01:\n\t./wrapper.sh 3/suspend.sh/suspend.sh 1
-#dependencies: bash, gxmessage, libnotify, xsel, vim
-clear
+#dependencies: bash, gxmessage, libnotify, xsel, vim, mpg321
 
 pushd `dirname $0`> /dev/null
 
@@ -20,7 +19,9 @@ source $dir_root/bin/struct.cfg
 source $dir_root/bin/source_cfg.cfg
 #CHANGE:
 
+
 export VERSION=1
+export LANG=ru
 
 
 
@@ -77,13 +78,16 @@ install_dependencies_cli(){
 }
 
 install_dependencies_gui(){
-    required notify-send libnotify-bin libnotify1
+    required notify-send libnotify-bin
+    #libnotify1
     required gvim vim-gnome
     required gxmessage gxmessage
     required xcowsay xcowsay
 }
 install_dependencies_sound(){
     required flite flite
+#    required mpg321 mpg321
+    required sox libsox-fmt-all
 }
 <<'COMMENT'
 what ever written here is a comment
@@ -109,7 +113,6 @@ clean_logger(){
     fi
 }
 use_error(){
-     func
 
     green 'use_error()'
     local all="$1"
@@ -124,7 +127,7 @@ use_error(){
     red "line: num of bytes: $num_bytes"
     echo press enter
     read
-    if [ "$num_bytes" -lt 200 ] && [ "$num_bytes" -gt 1  ];then
+    if [ "$num_bytes" -lt 300 ] && [ "$num_bytes" -gt 1  ];then
 
 
 
@@ -134,6 +137,7 @@ use_error(){
 
     else
         print_error "incorrect parsing"
+        flite 'incorrect parsing'
         green "Assume:" 
         echo "invalide path: path contains: $num_bytes bytes."
     fi
@@ -154,8 +158,6 @@ try(){
 
         trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
 
-    else
-        red 'should not trap errors'
     fi
 
     cmd="nice -n10 $script"
@@ -219,7 +221,6 @@ check_log(){
 
 }
 steps(){
-     func
     if [ "$DEBUG" = true ];then
         show_state
     fi

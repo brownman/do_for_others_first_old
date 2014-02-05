@@ -1,8 +1,9 @@
-#!/bin/bash  -e
+#!/bin/bash
+print_script
+
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
-lskdjflk
 declare -A repeater
 repeater["it"]=1
 repeater["en"]=1
@@ -113,7 +114,6 @@ play1(){
 
 
 translate_f(){
- func
     ################################# result: txt 
     trace "translate_f() got:"
     trace "input: $1 | lang: $2"
@@ -279,9 +279,9 @@ echo5(){
         #notify-send1 ""
         max_for_lang=${amount[$lang]}
         max_for_lang=${max_for_lang:-12}
-#notify-send1        "$max_for_lang -gt $current ?"
+        #notify-send1        "$max_for_lang -gt $current ?"
         if [ $current -le $max_for_lang ];then
-         
+
             #notify-send1 "  translate:  $lang : $str"
             translate_f  "$str" $lang 
             sleep1 2
@@ -470,7 +470,6 @@ all_lines(){
 
 run(){
     #assert_equal_file $file_log
- func
     local result=''
     #motivation "$file"
     if [ "$method" = 'sentence' ];then
@@ -493,63 +492,61 @@ run(){
         echo "$result"
     else
         trace   "unknown method:"
-       # help1 "$help_options"
+        # help1 "$help_options"
     fi
 }
 env1(){
-help_options="sentance/ line/ lines"
-method="$1" #sentance, line, lines
-from="$2" #file or sentance
-multiple_langs=true
-silence2=${3:-"$SILENCE"} #"$3" #false #export MULTIPLE_LANGS=true
-lang_target=$LANG_DEFAULT
-silence2_fetch=true
-file_locker=/tmp/translation
-delay=3
-loops=2
-gentle=true
+    help_options="sentance/ line/ lines"
+    method="$1" #sentance, line, lines
+    from="$2" #file or sentance
+    multiple_langs=true
+    silence2=${3:-"$SILENCE"} #"$3" #false #export MULTIPLE_LANGS=true
+    lang_target=$LANG_DEFAULT
+    silence2_fetch=true
+    file_locker=/tmp/translation
+    delay=3
+    loops=2
+    gentle=true
 
-trace 'translate.sh got:'
-trace "1:$1 2:$2"
-#notify-send 'TranslatE:' "$@"
+    trace 'translate.sh got:'
+    trace "1:$1 2:$2"
+    #notify-send 'TranslatE:' "$@"
 }
 
 #run
 #echo4 "$1"
 step0(){
 
-dir_txt=/tmp
-dir_mp3=/tmp
-dir_html=/tmp
+    dir_txt=/tmp
+    dir_mp3=/tmp
+    dir_html=/tmp
 }
 step1(){
 
-     func
 
-#    local lang="$2"
+    #    local lang="$2"
 
-#    local input=$(remove_trailing "$1")
+    #    local input=$(remove_trailing "$1")
     #local input="$1" #translate src
 
 
 
 
-     input_wsp=$(echo "$input"|sed 's/ /+/g');
-     input_ws=$(echo "$input"|sed 's/ /_/g');
+    input_wsp=$(echo "$input"|sed 's/ /+/g');
+    input_ws=$(echo "$input"|sed 's/ /_/g');
 
-     file_txt=$(  echo $dir_txt/${input_ws}_${lang}.txt )
-     file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
-     file_html=$(  echo $dir_html/${input_ws}_${lang}.html )
+    file_txt=$(  echo $dir_txt/${input_ws}_${lang}.txt )
+    file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
+    file_html=$(  echo $dir_html/${input_ws}_${lang}.html )
 
-     file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
+    file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
 
-echo "$input_wsp"
-echo "$file_mp3"
+    echo "$input_wsp"
+    echo "name: $file_mp3"
 }
 step2(){
     if [ "$input_wsp" ];then
-     func
-    result=$(wget -U "Mozilla/5.0" -qO - "http://translate.google.com/translate_a/t?client=t&text=$input_wsp&sl=en&tl=$lang" ) 
+        result=$(wget -U "Mozilla/5.0" -qO - "http://translate.google.com/translate_a/t?client=t&text=$input_wsp&sl=en&tl=$lang" ) 
         #echo "$result" >> $TODAY_DIR/translate.json
         cleaner=$(echo "$result" | sed 's/\[\[\[\"//') 
         #trace "$result"
@@ -557,26 +554,32 @@ step2(){
         output=$(echo "$cleaner" | cut -d \" -f 1)
         output_wsp=$(echo "$output"|sed 's/ /+/g');
         output_ws=$(echo "$output"|sed 's/ /_/g');
-echo "$output_wsp"
-fi
+        echo "$output_wsp"
+    fi
 }
 step3(){
 
 
-wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
-ls -l $file_mp3
-play -V1 -q  "$file_mp3"
+    wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
+    ls -l $file_mp3
+
+
+    cmd="play -V1 -q  $file_mp3"
+    commander "$cmd"
 }
 
 steps(){
- func
-step0
-step1
-step2
-step3
+    print_func 
+    step0
+    step1
+    step2
+    step3
 }
-
-input="${1:-dog}"
-lang="${2:-ru}"
+if [ $# -eq 2 ];then
+input="$1"
+lang="$2"
 steps 
+else
+    reason_of_death 'no arguments'
+fi
 

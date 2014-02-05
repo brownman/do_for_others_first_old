@@ -1,0 +1,4 @@
+http://stackoverflow.com/questions/1712918/bash-case-menu-dynamic-choices
+notify-send hi
+ls
+

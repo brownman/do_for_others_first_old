@@ -39,7 +39,7 @@ cmd=${1:-'run'}
 
 run(){
     local line=$(random_line $file)
-    speak "$my_name"
+    speak "$my_name" false
     sleep1 2
     speak "$line"
 

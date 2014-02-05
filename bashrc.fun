@@ -131,8 +131,18 @@ alias debug='set -x'
 export -f clip
 
 
-
 save(){
+    cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' "
+    line=`eval "$cmd"`
+
+    echo "$line" | grep 'vi ' -m1 >> .history.edit || \
+        echo "$line" | grep 'http ' -m1 >> .history.url || \
+        echo "$line" | grep 'http ' -m1 >> .history.run  || \
+        echo "$line" | grep 'http ' -m1 >> .history
+
+
+}
+save1(){
     if [ $# -eq 1 ];then
         subject="$1"
 
@@ -148,7 +158,7 @@ save(){
         show "$subject"
     else
         subject=$1
-shift
+        shift
         cmd="$@"
         file="$dir_project/.tmp/$subject.txt"
 
@@ -176,6 +186,33 @@ last(){
     fi
 
 }
+menu(){
+
+
+    if [ $# -eq 1 ];then
+        dumpfile="$1"
+        while [[ 1 ]]
+        do
+            cat -n "$dumpfile"
+            read -p "Please make a selection, select q to quit: " choice
+            case $choice in
+                # Check for digits
+                [0-9] )   dtvariable=$(sed -n "$choice"p "$dumpfile")
+                $dtvariable            ;;
+            q|Q)
+                break
+                ;;
+            *)
+                echo "Invalid choice"
+                ;;
+        esac
+    done
+else 
+
+    echo Dynamic menu generator
+    echo 'please supply a file'
+fi
+}
 show(){
     if [ $# -eq 0 ];then
         echo 'supply a subject'
@@ -190,7 +227,7 @@ show(){
 
 
 
-alias question='cd $dir_project/0/ask.sh/QUESTION'
+alias question='cd $dir_project/0/ask.sh/QUESTION/src'
 tree1(){
     tree > /tmp/tree.txt
     cat /tmp/tree.txt
@@ -213,14 +250,14 @@ confirm(){
 query(){
     echo "Let's Surf the Web!"
     cd $dir_project
-./wrapper.sh 0/ask.sh/ask.sh "$1" 
+    ./wrapper.sh 0/ask.sh/ask.sh "$1" 
 
 
 }
 shortcut(){
-local dir=`pwd`
-cd ~/Desktop/
-ln -s $dir .
+    local dir=`pwd`
+    cd ~/Desktop/
+    ln -s $dir .
 }
 export -f shortcut
 export -f query
@@ -238,5 +275,7 @@ export -f lesser
 
 export -f add
 export -f finder
+
 export -f replace 
+export -f menu 
 #alias finder='echo grep -r \$file \$dir'
