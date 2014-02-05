@@ -11,3 +11,6 @@
   last edit
   vi 0/ask.sh/ANSWER/sh/translation.sh 
   helllo
+vi coool
+vi 0/ask.sh/ANSWER/cfg/parse/parse.cfg
+vi 0/ask.sh/ANSWER/cfg/parse/parse.cfg

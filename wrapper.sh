@@ -1,19 +1,26 @@
-#!/bin/bash -e
+#!/bin/bash
+        set -o errtrace
+
+
 # help01:\n\tsupply a script to wrap  
 # example01:\n\t./wrapper.sh 3/suspend.sh/suspend.sh 1
 #dependencies: bash, gxmessage, libnotify, xsel, vim
-
 clear
+
 pushd `dirname $0`> /dev/null
+
 
 export dir_root=`pwd`
 
 set -o nounset
 
 
-source $dir_root/4/env.cfg
-source $dir_root/4/struct.cfg
-source $dir_root/4/source_cfg.cfg
+source $dir_root/bin/env.cfg
+source $dir_root/bin/struct.cfg
+source $dir_root/bin/source_cfg.cfg
+#CHANGE:
+
+export VERSION=1
 
 
 
@@ -38,6 +45,27 @@ http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_med
 ABC
 
 
+
+traperror () {
+    print_func
+    local err="$1" # error status
+    local line="$2" # LINENO
+    local linecallfunc="$3" 
+    local command="$4"
+    local funcstack="$5"
+    echo "<---"
+    echo "ERROR: line $line - command '$command' exited with status: $err" 
+    if [ "$funcstack" != "::" ]; then
+        echo -n "   ... Error at ${funcstack} "
+        if [ "$linecallfunc" != "" ]; then
+            echo -n "called at line $linecallfunc"
+        fi
+    else
+        echo -n "   ... internal debug info from function ${FUNCNAME} (line $linecallfunc)"
+    fi
+    echo
+    echo "--->" 
+}
 
 
 install_dependencies_cli(){
@@ -112,51 +140,37 @@ use_error(){
 }
 try(){
 
-    blue 'try()'
+    #    blue 'try()'
+    print_func
 
     echo  -n '/*'
     print_line
     echo 
 
-    { 
-        if [ $VERSION -eq 2 ];then
 
-            set -o errtrace
-            traperror () {
-                local err="$1" # error status
-                local line="$2" # LINENO
-                local linecallfunc="$3" 
-                local command="$4"
-                local funcstack="$5"
-                echo "<---"
-                echo "ERROR: line $line - command '$command' exited with status: $err" 
-                if [ "$funcstack" != "::" ]; then
-                    echo -n "   ... Error at ${funcstack} "
-                    if [ "$linecallfunc" != "" ]; then
-                        echo -n "called at line $linecallfunc"
-                    fi
-                else
-                    echo -n "   ... internal debug info from function ${FUNCNAME} (line $linecallfunc)"
-                fi
-                echo
-                echo "--->" 
-            };
-            trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
+    if [ $VERSION -eq 2 ];then
+        red 'Should : trap errors!'
 
 
-        else
-            cmd="nice -n10 $script"
-#            print_evaluating ".... $script ...."
-            if [ ${#args[@]} -eq 0 ]; then
+        trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
 
-                eval "$cmd" 2>$file_logger;
-            else
-                eval "$cmd ${args[@]}" 2>$file_logger;
-            fi
+    else
+        red 'should not trap errors'
+    fi
 
-        fi
+    cmd="nice -n10 $script"
+    #            print_evaluating ".... $script ...."
+    if [ ${#args[@]} -eq 0 ]; then
 
-    }
+        eval "$cmd" 2>$file_logger;
+    else
+        eval "$cmd ${args[@]}" 2>$file_logger;
+    fi
+
+
+
+
+
 
     local error_code=$?
 
@@ -171,12 +185,15 @@ try(){
 
 }
 check_log(){
-    #blue  'check_log()' #
+    #lue  'check_log()' #
+    print_func
     if [ -f "$file_logger" ];then
         if [ -s "$file_logger" ];then
             red "logger is not empty"
             if [ "$SOUND" = true ];then
-                echo error | flite
+
+                flite 'error'
+
             fi
             echo "press N for skip viewing the log file"
             read answer
@@ -215,7 +232,9 @@ steps(){
     check_log
 }
 show_state(){
-    cat $dir_root/4/exports.cfg
+
+    $dir_root/4/exports.cfg
+    cat $0 | grep export
 
     if [ "$DEBUG" = true ];then
         set -o  

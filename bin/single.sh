@@ -1,5 +1,6 @@
 #!/bin/bash 
-show_my_name script
+sldlkfjl
+#show_my_name script
 
 dir_self=`dirname $0`
 #echo "5 is: $5"
@@ -23,7 +24,7 @@ show_dependencies(){
     cat $dir_debian/control
 }
 show_scripts(){
-    show_my_name func
+  #  show_my_name func
     local type=${1:-sh}
     local dir=${2:-$dir_sh}
     print_good "show available scripts:"
@@ -39,7 +40,6 @@ show_edit(){
 }
 
 help(){
-    show_my_name func
     say_my_name
     print_error "please supply a script name (+-arguments)"
     #    show_dependencies
@@ -50,15 +50,11 @@ help(){
 run(){
 
     if [ -f "$script" ];then
-        #save command to history
-        #        echo "$script]] ${args[@]}" >> $path/.history
-        #execute
         cmd="$script ${args[@]}"
         print_call "call: $cmd"
         eval "$cmd" 
     else
-        print_error "file not found: $script"
-        #    eval  exiting
+        reason_of_death 'file not found' "$script"
         exit 1
     fi
 }

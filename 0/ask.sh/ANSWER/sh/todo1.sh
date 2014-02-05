@@ -32,7 +32,7 @@ update_file(){
     local line="$1"
     local file=$2
 
-    local time_stamp=`date | cut -d' ' -f4`
+    local time_stamp=`date | cut -d' ' -f5`
 
 
     if [ "$line" ];then

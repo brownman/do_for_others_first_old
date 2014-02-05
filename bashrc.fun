@@ -93,23 +93,23 @@ clip(){
     echo "$@" | xsel --clipboard
 }
 replace(){
-exclude_dir='.git'
-path=. 
-old_string="$1"
-new_string="$2"
+    exclude_dir='.git'
+    path=. 
+    old_string="$1"
+    new_string="$2"
 
-cmd="grep --exclude-dir=$exclude_dir -rl '$old_string' $path | xargs sed -i s@$old_string@$new_string@g"
+    cmd="grep --exclude-dir=$exclude_dir -rl '$old_string' $path | xargs sed -i s@$old_string@$new_string@g"
 
-echo "$cmd"
-echo 'execute?'
+    echo "$cmd"
+    echo 'execute?'
 
-read answer
-if [ "$answer" = y ];then
-    echo 'evaluating..'
-    eval "$cmd"
-    echo 'Results:'
-   grep --exclude-dir=$exclude_dir -r $new_string $path 
-fi
+    read answer
+    if [ "$answer" = y ];then
+        echo 'evaluating..'
+        eval "$cmd"
+        echo 'Results:'
+        grep --exclude-dir=$exclude_dir -r $new_string $path 
+    fi
 }
 
 hotkeys(){
@@ -118,64 +118,73 @@ hotkeys(){
     xfconf-query -c xfce4-keyboard-shortcuts -l
 }
 finder(){
-str="$1"
-echo "search string: $str"
-cmd="grep  --exclude-dir=.git $str . -r"
-echo "$cmd"
-eval "$cmd"
+    str="$1"
+    echo "search string: $str"
+    cmd="grep  --exclude-dir=.git $str . -r"
+    echo "$cmd"
+    eval "$cmd"
 }
 alias udebug='set +x'
 alias debug='set -x'
 
 
-  #
 export -f clip
-#alias last='cat .history | tail -1 | xsel --clipboard'
-#alias last1='cat .history | tail -2  | head -1  | tee "xsel --clipboard"'
-#| xargs "eval"'
 
 
 
 save(){
-if [ $# -eq 0 ];then
-echo 'supply a subject'
-else
-subject="$1"
-file="$dir_project/.tmp/$subject.txt"
-touch $file
-cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' "
-line=`eval "$cmd"`
-echo -e "Add this line?\n "
-echo -e "line: $line"
-read
-cmd="echo "$line" | tee -a .history $file ; echo \"File: $filer\";echo '-----' ;cat $file;"
-eval "$cmd"
-show "$subject"
-fi
+    if [ $# -eq 1 ];then
+        subject="$1"
+
+        file="$dir_project/.tmp/$subject.txt"
+        touch $file
+        cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' "
+        line=`eval "$cmd"`
+        echo -e "Add this line?\n "
+        echo -e "line: $line"
+        read
+        cmd="echo "$line" | tee -a .history $file ; echo \"File: $filer\";echo '-----' ;cat $file;"
+        eval "$cmd"
+        show "$subject"
+    else
+        subject=$1
+shift
+        cmd="$@"
+        file="$dir_project/.tmp/$subject.txt"
+
+        echo "$cmd" >> $file
+        echo "updated File: $file"
+        cat $file
+        confirm
+        eval "$cmd"
+
+    fi
 }
 last(){
-if [ $# -eq 0 ];then
-echo 'supply a subject'
-else
-subject="$1"
-file="$dir_project/.tmp/$subject.txt"
-cmd="cat $file | tail -1"
-line=`eval "$cmd"`
-echo "line: $line" | xsel --clip
-
-eval "$line"
-fi
+    clear
+    if [ $# -eq 0 ];then
+        echo 'supply a subject'
+    else
+        subject="$1"
+        file="$dir_project/.tmp/$subject.txt"
+        cmd="cat $file | tail -1"
+        line=`eval "$cmd"`
+        echo -e "Execute command?\n $line" 
+        #| xsel --clipboard
+        confirm
+        eval "$line"
+    fi
 
 }
 show(){
-if [ $# -eq 0 ];then
-echo 'supply a subject'
-else
-subject="$1"
-file="$dir_project/.tmp/$subject.txt"
-echo "$file"
-cat $file
-fi
+    if [ $# -eq 0 ];then
+        echo 'supply a subject'
+    else
+        subject="$1"
+        file="$dir_project/.tmp/$subject.txt"
+        echo "$file"
+        cat $file
+    fi
 
 }
 
@@ -183,14 +192,37 @@ fi
 
 alias question='cd $dir_project/0/ask.sh/QUESTION'
 tree1(){
-tree > /tmp/tree.txt
-cat /tmp/tree.txt
-echo 'create new file? .tree ?'
-read answer
-if [ "$answer" = y ];then
-    cat /tmp/tree.txt >> .tree
-fi
+    tree > /tmp/tree.txt
+    cat /tmp/tree.txt
+    echo 'create new file? .tree ?'
+    read answer
+    if [ "$answer" = y ];then
+        cat /tmp/tree.txt >> .tree
+    fi
 }
+confirm(){
+    echo
+    echo
+    echo Press Y to continue
+    read answer
+    if [ "$answer" != y ];then
+        exit
+    fi
+
+}
+query(){
+    echo "Let's Surf the Web!"
+$dir_project/0/ask.sh/ask.sh "$1"
+
+}
+shortcut(){
+local dir=`pwd`
+cd ~/Desktop/
+ln -s $dir .
+}
+export -f shortcut
+export -f query
+export -f confirm
 export -f tree1
 
 export -f save
