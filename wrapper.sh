@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
         set -o errtrace
 
 
@@ -109,7 +109,7 @@ clean_logger(){
     fi
 }
 use_error(){
-    show_my_name func
+     func
 
     green 'use_error()'
     local all="$1"
@@ -219,7 +219,7 @@ check_log(){
 
 }
 steps(){
-    show_my_name func
+     func
     if [ "$DEBUG" = true ];then
         show_state
     fi

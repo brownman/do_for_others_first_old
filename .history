@@ -13,7 +13,7 @@
   #grep -rl $oldstring /path/to/folder | xargs sed -i s@$oldstring@$newstring@g
   #grep --exclude-dir=".svn"
   assume script exist
-  finder 'show_my_name func'
+  finder ' func'
   touch save.txt
   ls
   python

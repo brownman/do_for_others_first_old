@@ -113,7 +113,7 @@ play1(){
 
 
 translate_f(){
-show_my_name func
+ func
     ################################# result: txt 
     trace "translate_f() got:"
     trace "input: $1 | lang: $2"
@@ -470,7 +470,7 @@ all_lines(){
 
 run(){
     #assert_equal_file $file_log
-show_my_name func
+ func
     local result=''
     #motivation "$file"
     if [ "$method" = 'sentence' ];then
@@ -524,7 +524,7 @@ dir_html=/tmp
 }
 step1(){
 
-    show_my_name func
+     func
 
 #    local lang="$2"
 
@@ -548,7 +548,7 @@ echo "$file_mp3"
 }
 step2(){
     if [ "$input_wsp" ];then
-    show_my_name func
+     func
     result=$(wget -U "Mozilla/5.0" -qO - "http://translate.google.com/translate_a/t?client=t&text=$input_wsp&sl=en&tl=$lang" ) 
         #echo "$result" >> $TODAY_DIR/translate.json
         cleaner=$(echo "$result" | sed 's/\[\[\[\"//') 
@@ -569,7 +569,7 @@ play -V1 -q  "$file_mp3"
 }
 
 steps(){
-show_my_name func
+ func
 step0
 step1
 step2

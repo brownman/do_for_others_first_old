@@ -3,3 +3,4 @@ gmail-notify
 gxmessage hello
 gvim $file_hotkeys
 echo fine | flite
+question;sleep 10;

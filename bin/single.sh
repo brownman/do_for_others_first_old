@@ -1,6 +1,4 @@
 #!/bin/bash 
-sldlkfjl
-#show_my_name script
 
 dir_self=`dirname $0`
 #echo "5 is: $5"
@@ -24,7 +22,7 @@ show_dependencies(){
     cat $dir_debian/control
 }
 show_scripts(){
-  #  show_my_name func
+  #   func
     local type=${1:-sh}
     local dir=${2:-$dir_sh}
     print_good "show available scripts:"

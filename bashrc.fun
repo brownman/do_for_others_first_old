@@ -212,7 +212,9 @@ confirm(){
 }
 query(){
     echo "Let's Surf the Web!"
-$dir_project/0/ask.sh/ask.sh "$1"
+    cd $dir_project
+./wrapper.sh 0/ask.sh/ask.sh "$1" 
+
 
 }
 shortcut(){
