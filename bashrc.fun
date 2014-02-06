@@ -119,11 +119,14 @@ hotkeys(){
     
     cmd="$1"
     echo "$1"
+    xfce4-settings-manager
 }
 finder(){
+
     str="$1"
+    path="${2-.}"
     echo "search string: $str"
-    cmd="grep  --exclude-dir=.git $str . -r"
+    cmd="grep  --exclude-dir=.git $str $path -r"
     echo "$cmd"
     eval "$cmd"
 }
@@ -232,7 +235,7 @@ show(){
 
 
 
-alias question='cd $dir_project/0/ask.sh/QUESTION/src'
+alias question='cd $dir_project/src/0/ask.sh/QUESTION/src'
 tree1(){
     tree > /tmp/tree.txt
     cat /tmp/tree.txt
@@ -255,15 +258,27 @@ confirm(){
 query(){
     echo "Let's Surf the Web!"
     cd $dir_project
-    ./wrapper.sh 0/ask.sh/ask.sh "$1" 
-
-
+    relative_sh="src/0/ask.sh/ask.sh"
+    ./wrapper.sh $relative_sh  "$1"
 }
 shortcut(){
     local dir=`pwd`
     cd ~/Desktop/
     ln -s $dir .
 }
+history1(){
+    amount=20
+    if [ $# -eq 1 ];then
+    str="$1"
+results=$(    history $amount | grep "$str" )
+echo "$result"
+else
+    echo Please supply a subject 
+    echo I will grep the last $amount history commands for you..
+fi
+
+}
+alias project="cd $dir_project"
 export -f shortcut
 export -f query
 export -f confirm
@@ -282,5 +297,7 @@ export -f add
 export -f finder
 
 export -f replace 
+
 export -f menu 
+export -f history1 
 #alias finder='echo grep -r \$file \$dir'

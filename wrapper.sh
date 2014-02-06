@@ -1,34 +1,29 @@
 #!/bin/bash -e
-set -o pipefail  # trace ERR through pipes
-
-
-
+####################
 # help01:\n\tsupply a script to wrap  
 # example01:\n\t./wrapper.sh 3/suspend.sh/suspend.sh 1
-#dependencies: bash, gxmessage, libnotify, xsel, vim, mpg321
-
-pushd `dirname $0`> /dev/null
 
 
-export dir_root=`pwd`
-
+set -o pipefail  # trace ERR through pipes
 set -o nounset
-
-
-source $dir_root/bin/env.cfg
-source $dir_root/bin/struct.cfg
-source $dir_root/bin/source_cfg.cfg
-#CHANGE:
-
+#set -o errtrace
 
 export VERSION=1
 export LANG=ru
 
+pushd `dirname $0`> /dev/null
 
 
+dir_root=`pwd`
+
+export dir_src=$dir_root/src
+
+source $dir_src/bin/env.cfg
+source $dir_src/bin/struct.cfg
+source $dir_src/bin/source_cfg.cfg
 
 
-source $dir_root/install/required/required.cfg
+export dir_deb=$dir_src/friends/OLD/packaging/deb.sh
 export file_logger=/tmp/logger.txt
 
 
@@ -36,15 +31,7 @@ export file_logger=/tmp/logger.txt
 
 
 
-<< ABC
-https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
-http://mywiki.wooledge.org/BashGuide/Practices
-http://andreinc.net/2011/09/04/bash-scripting-best-practice/
-http://fahdshariff.blogspot.co.il/2013/10/shell-scripting-best-practices.html
-http://stackoverflow.com/questions/78497/design-patterns-or-best-practices-for-shell-scripts
-http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)
-#vim: moving around: http://vim.wikia.com/wiki/Moving_around
-ABC
+
 
 
 
@@ -68,45 +55,6 @@ traperror () {
     echo
     echo "--->" 
 }
-
-
-install_dependencies_cli(){
-    required bash bash
-    required vim vim
-    required xsel xsel
-    required flite flite
-    required gmail-notify
-}
-
-install_dependencies_gui(){
-    required notify-send libnotify-bin
-    #libnotify1
-    required gvim vim-gnome
-    required gxmessage gxmessage
-    required xcowsay xcowsay
-}
-install_dependencies_sound(){
-    required flite flite
-#    required mpg321 mpg321
-    required sox libsox-fmt-all
-}
-<<'COMMENT'
-what ever written here is a comment
-1299  sudo apt-get install libnotify0.4-cil
-1312  sudo apt-get install xosd-bin
-1314  sudo  apt-get install libnotify1 notification-daemon dbus 
-1315  sudo  apt-get install libnotify4]
-1316  sudo  apt-get install libnotify4
-1319  sudo apt-get --reinstall install notify-osd
-1320  sudo apt-get --reinstall install libnotify-bin
-1326  sudo apt-get --reinstall install notify-osd
-1333  sudo apt-get autoremove notify-sende
-1334  sudo apt-get autoremove notify-send
-
-dpkg -S sox
-libsox-fmt-mp3: /usr/lib/sox/libsox_fmt_mp3.so
-
-COMMENT
 
 #echo -n '' > $file_logger
 clean_logger(){
@@ -161,7 +109,7 @@ try(){
         red 'Should : trap errors!'
 
 
-        set -o errtrace
+
         trap 'traperror $? $LINENO $BASH_LINENO "$BASH_COMMAND" $(printf "::%s" ${FUNCNAME[@]})'  ERR;
 
     fi
@@ -241,7 +189,7 @@ steps(){
 }
 show_state(){
 
-    $dir_root/4/exports.cfg
+    $dir_src/4/exports.cfg
     cat $0 | grep export
 
     if [ "$DEBUG" = true ];then
@@ -254,9 +202,6 @@ show_state(){
 
 
 sleep 2
-install_dependencies_cli
-install_dependencies_gui
-install_dependencies_sound
 if  [  $# -gt 0  ];then
 
 
@@ -283,3 +228,34 @@ fi
 
 #https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
 ##http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)
+
+
+<< ABC
+https://www.google.co.il/search?q=bash+best+practices&oq=bash+best&aqs=chrome.1.69i57j0l3.3122j0j1&sourceid=chrome&ie=UTF-8
+http://mywiki.wooledge.org/BashGuide/Practices
+http://andreinc.net/2011/09/04/bash-scripting-best-practice/
+http://fahdshariff.blogspot.co.il/2013/10/shell-scripting-best-practices.html
+http://stackoverflow.com/questions/78497/design-patterns-or-best-practices-for-shell-scripts
+http://kvz.io/blog/2013/11/21/bash-best-practices/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+kvz+(Kevin+van+Zonneveld)
+#vim: moving around: http://vim.wikia.com/wiki/Moving_around
+ABC
+
+
+<<'COMMENT'
+what ever written here is a comment
+1299  sudo apt-get install libnotify0.4-cil
+1312  sudo apt-get install xosd-bin
+1314  sudo  apt-get install libnotify1 notification-daemon dbus 
+1315  sudo  apt-get install libnotify4]
+1316  sudo  apt-get install libnotify4
+1319  sudo apt-get --reinstall install notify-osd
+1320  sudo apt-get --reinstall install libnotify-bin
+1326  sudo apt-get --reinstall install notify-osd
+1333  sudo apt-get autoremove notify-sende
+1334  sudo apt-get autoremove notify-send
+
+dpkg -S sox
+libsox-fmt-mp3: /usr/lib/sox/libsox_fmt_mp3.so
+
+COMMENT
+
