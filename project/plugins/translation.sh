@@ -510,7 +510,7 @@ env1(){
 
     trace 'translate.sh got:'
     trace "1:$1 2:$2"
-    #notify-send 'TranslatE:' "$@"
+    notify-send 'TranslatE:' "$@"
 }
 
 #run
@@ -572,8 +572,11 @@ else
     echo "use cached file"
 fi
     #ls -l $file_mp3
+
     cmd="play -V1 -q  $file_mp3"
     commander "$cmd"
+
+
 }
 
 steps(){
@@ -581,7 +584,10 @@ steps(){
     step0
     step1
     step2
+if [ "$SOUND" = true ];then
+
     step3
+fi
 }
 if [ $# -gt 1 ];then
 lang="$1"

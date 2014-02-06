@@ -200,14 +200,12 @@ show_state(){
 
 
 
-sleep 2
 if  [  $# -gt 0  ];then
 
 
     arg "$@"
     #Assume: script has been defined
 
-    sleep 2
     #cmd=${1:-steps}
     cmd=steps
     $cmd
