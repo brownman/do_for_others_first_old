@@ -1,0 +1,12 @@
+Package: change_my_name
+Version: 0.0.1-0
+Section: internet
+Priority: extra
+Architecture: all
+Depends: perl,bash,flite,libnotify-bin
+Installed-Size: 8
+Maintainer: advanace-linux <advance-linux1@gmail.com>
+Homepage: https://github.com/hackerU-Advance-Linux-Group
+Description: Deb package for a simple bash script
+ please update me as soon as you can because I want to be famous
+

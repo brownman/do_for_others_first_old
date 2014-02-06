@@ -1,0 +1,6 @@
+control + q : add question
+control + i : add idea
+control + u : add url
+control + n : learn a new word
+conrotl + l : listen to 1 lecture
+

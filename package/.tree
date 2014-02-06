@@ -1,0 +1,40 @@
+.
+├── first
+│   └── install_bashrc.sh
+├── gmail
+│   └── notifier.conf
+├── hotkeys
+│   ├── how.txt
+│   └── where.txt
+├── install.sh
+├── packaging
+│   ├── deb.sh
+│   │   ├── bin
+│   │   │   ├── 0_struct.sh
+│   │   │   ├── 1_try.sh
+│   │   │   ├── 2_build.sh
+│   │   │   ├── 3_install.sh
+│   │   │   ├── 4_confirm.sh
+│   │   │   └── my_folder
+│   │   ├── deb.sh
+│   │   ├── old
+│   │   └── TMP
+│   │       ├── first_folder
+│   │       │   ├── DEBIAN
+│   │       │   │   └── control
+│   │       │   ├── README.md
+│   │       │   └── usr
+│   │       │       └── bin
+│   │       │           ├── change_my_name.sh
+│   │       │           └── check_for_new_files.sh
+│   │       ├── product
+│   │       │   ├── 1.deb
+│   │       │   └── dropbox-voices.deb
+│   │       ├── TMP
+│   │       └── vars.cfg
+│   └── README.md
+├── README.md
+└── required
+    └── required.cfg
+
+16 directories, 21 files

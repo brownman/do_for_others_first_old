@@ -246,7 +246,7 @@ tree1(){
     fi
 }
 confirm(){
-    echo
+    echo 'confirm' | /usr/bin/flite
     echo
     echo Press Y to continue
     read answer
