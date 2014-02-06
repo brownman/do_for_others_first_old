@@ -11,14 +11,15 @@ args=$1
 level=0
 util=$single_sh
 if [ ! -f "$util" ];then
-    reason_of_death file file "$util"
+    reason_of_death 'script not found' "$util"
 fi
-
+if [ "$DESKTOP" = true ];then
 folder=~/Desktop/$day 
 if [ ! -d "$folder" ];then
     mkdir $folder
 else
     echo "already exist: $folder"
+fi
 fi
 
 
@@ -71,8 +72,18 @@ set_file(){
         reason_of_death file "$file"
     fi
 }
+update_desktop(){
+           if [ "$DESKTOP" = true ];then
+            file1=$folder/$rounds.txt
+            if [ ! -f $file1 ];then
+                touch $file1
+            fi
 
+            fi
+
+}
 execute_lines(){
+    print_func
     local file1=''
     num=${#lines[@]}
     print_status "execute $num tasks ?"
@@ -81,24 +92,19 @@ execute_lines(){
     if [ "$answer" = y ];then
         local res=''
         rounds=1
-        while true;do
-            file1=$folder/$rounds.txt
-            if [ ! -f $file ];then
-                touch $file1
-            fi
-            for line in "${lines[@]}"
+        while :;do
+             for line in "${lines[@]}"
             do
-                print_good "Next Task: $line"
-                if [ "$line" ];then
+                echo "Next Task: $line"
+                if [ "$line" != '' ];then
                     cmd="$util $line"
-                    print_call "call: $cmd"
-                    eval "$cmd"
-                    #echo "$cmd"
+                    
+                    commander "$cmd"
                 else
-                    print_error 'no line givven'
+                    reason_of_death 'empty line'
                 fi
             done
-                xcowsay "$rounds rounds!"
+                echo xcowsay "$rounds rounds!"
                 let 'rounds += 1'
         done
     fi
