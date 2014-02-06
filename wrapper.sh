@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 ####################
 # help01:\n\tsupply a script to wrap  
 # example01:\n\t./wrapper.sh 3/suspend.sh/suspend.sh 1
@@ -6,24 +6,23 @@
 
 set -o pipefail  # trace ERR through pipes
 set -o nounset
-#set -o errtrace
-
+set -o errtrace
 export VERSION=1
 export LANG=ru
 
 pushd `dirname $0`> /dev/null
 
-
 dir_root=`pwd`
 
-export dir_src=$dir_root/src
+export dir_project=$dir_root/project
 
-source $dir_src/bin/env.cfg
-source $dir_src/bin/struct.cfg
-source $dir_src/bin/source_cfg.cfg
+source $dir_project/env/env.cfg
+source $dir_project/env/struct.cfg
+source $dir_project/env/source.cfg
 
 
-export dir_deb=$dir_src/friends/OLD/packaging/deb.sh
+
+#export dir_deb=$dir_project/friends/OLD/packaging/deb.sh
 export file_logger=/tmp/logger.txt
 
 
@@ -189,7 +188,7 @@ steps(){
 }
 show_state(){
 
-    $dir_src/4/exports.cfg
+    $dir_project/4/exports.cfg
     cat $0 | grep export
 
     if [ "$DEBUG" = true ];then

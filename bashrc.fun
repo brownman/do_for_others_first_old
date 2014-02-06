@@ -3,13 +3,13 @@
 # for examples
 
 # If not running interactively, don't do anything
-#source $dir_project/cfg/general/color/color.cfg
+#source $dir_root/cfg/general/color/color.cfg
 export EDITOR="vim"
 
-#export dir_project=~/JAIL/do_for_others_first
+#export dir_root=~/JAIL/do_for_others_first
 #alias bashrc="vi ~/.bashrc"
-alias bashrc="vi $dir_project/bashrc.fun"
-alias keyrc="vi $dir_project/1/hotkeys.sh/hotkeys.txt"
+alias bashrc="vi $dir_root/bashrc.fun"
+alias keyrc="vi $dir_root/1/hotkeys.sh/hotkeys.txt"
 alias vimrc="vi ~/.vimrc"
 set -o vi
 
@@ -57,7 +57,7 @@ move(){
     file="$1"
     subject="$2"
     if [ "$subject" ] && [ -f "$file" ] ;then
-        mv $file $dir_project/2/ask.sh/src/subject/
+        mv $file $dir_root/2/ask.sh/src/subject/
     fi
 }
 export -f move
@@ -154,7 +154,7 @@ save1(){
     if [ $# -eq 1 ];then
         subject="$1"
 
-        file="$dir_project/.tmp/$subject.txt"
+        file="$dir_root/.tmp/$subject.txt"
         touch $file
         cmd="history 2 | head -1 | sed 's/^ [0-9]*//g' "
         line=`eval "$cmd"`
@@ -168,7 +168,7 @@ save1(){
         subject=$1
         shift
         cmd="$@"
-        file="$dir_project/.tmp/$subject.txt"
+        file="$dir_root/.tmp/$subject.txt"
 
         echo "$cmd" >> $file
         echo "updated File: $file"
@@ -184,7 +184,7 @@ last(){
         echo 'supply a subject'
     else
         subject="$1"
-        file="$dir_project/.tmp/$subject.txt"
+        file="$dir_root/.tmp/$subject.txt"
         cmd="cat $file | tail -1"
         line=`eval "$cmd"`
         echo -e "Execute command?\n $line" 
@@ -226,7 +226,7 @@ show(){
         echo 'supply a subject'
     else
         subject="$1"
-        file="$dir_project/.tmp/$subject.txt"
+        file="$dir_root/.tmp/$subject.txt"
         echo "$file"
         cat $file
     fi
@@ -235,7 +235,7 @@ show(){
 
 
 
-alias question='cd $dir_project/src/0/ask.sh/QUESTION/src'
+alias question='cd $dir_root/src/0/ask.sh/QUESTION/src'
 tree1(){
     tree > /tmp/tree.txt
     cat /tmp/tree.txt
@@ -257,7 +257,7 @@ confirm(){
 }
 query(){
     echo "Let's Surf the Web!"
-    cd $dir_project
+    cd $dir_root
     relative_sh="src/0/ask.sh/ask.sh"
     ./wrapper.sh $relative_sh  "$1"
 }
@@ -278,7 +278,7 @@ else
 fi
 
 }
-alias project="cd $dir_project"
+alias project="cd $dir_root"
 export -f shortcut
 export -f query
 export -f confirm
