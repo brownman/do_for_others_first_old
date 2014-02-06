@@ -1,4 +1,5 @@
 #!/bin/bash 
+print_script 
 plugin_name=deb.sh
 path=$dir_workspace/$plugin_name
 dir=$path/my_folder

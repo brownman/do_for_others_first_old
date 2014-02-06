@@ -158,8 +158,8 @@ check_log(){
                     print_line
                     print_error "$line"
                     print_line
-                else
-                    gxmessage -file "$file_logger" -title logger -timeout 3000 -ontop -sticky
+              #  else
+               #     gxmessage -file "$file_logger" -title logger -timeout 3000 -ontop -sticky
                 fi
             fi
             use_error "$line"
