@@ -574,6 +574,7 @@ fi
     #ls -l $file_mp3
 
     cmd="play -V1 -q  $file_mp3"
+#    mpg321 $file_mp3 1> /dev/null
     commander "$cmd"
 
 

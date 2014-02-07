@@ -2,12 +2,18 @@
 
 is_working=$( pstree -a | grep gmail | grep notify )
 file=/tmp/send.txt
+user=advance.linux1
+password=advance.linux
+default(){
 
 
 if [ "$is_working" = '' ];then
+    
+
+    echo "please run:" 'gmail-notify'
     notify-send "please run:" 'gmail-notify'
 else
-    msg=$( gxmessage -entry -sticky -ontop -timeout 3000 -title 'send a message' 'My Message:' )
+    msg=$( gxmessage -entry -sticky -ontop -timeout 3000 -title "user: $user password:$password" "My Message:" )
     if [ "$msg" != '' ];then
         echo "$msg" > $file
 
@@ -17,3 +23,9 @@ else
     fi
 fi
 
+}
+
+
+
+cmd=${1:-default}
+eval "$cmd"
