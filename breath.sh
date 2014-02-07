@@ -226,7 +226,7 @@ else
     ./runner.sh
     result=$?
    # echo "result=$result"
-    cd -
+    cd - > /dev/null
     if [ $result -eq 1 ];then
     echo 'keep on moving my son !'
     else

@@ -16,7 +16,8 @@ export EDITOR="vim"
 
 
 confirm(){
-
+echo
+echo
 
     if [ $# -gt 0 ];then
         cmd="$@"
