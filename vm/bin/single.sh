@@ -26,7 +26,8 @@ help(){
 }
 run(){
     print_func
-
+cmd_edit="$EDITOR $script"
+xsel "$cmd_edit"
     if [ -f "$script" ];then
         cmd="$script ${args[@]}"
         print_call "call: $cmd"

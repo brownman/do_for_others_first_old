@@ -1,9 +1,12 @@
 #!/bin/bash
+#url:http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html 
+#url:http://www.cyberciti.biz/faq/linux-log-files-location-and-how-do-i-view-logs-files/
 ####################
-# help01:\n\tsupply a script to wrap  
-# example01:\n\t./wrapper.sh 3/suspend.sh/suspend.sh 1
+#
+#help_1:\t\t\t--- supply a script to wrap ----
+#example_1:\t./wrapper.sh 3/suspend.sh/suspend.sh 1\n
 
-
+reset
 set -o pipefail  # trace ERR through pipes
 set -o nounset
 set -o errtrace
@@ -14,7 +17,7 @@ pushd `dirname $0`> /dev/null
 
 dir_root=`pwd`
 
-export dir_project=$dir_root/project
+export dir_project=$dir_root/vm
 
 source $dir_project/env/env.cfg
 source $dir_project/env/struct.cfg
@@ -212,7 +215,7 @@ if  [  $# -gt 0  ];then
     echo 
     echo
 else
-    print_about_self
+    about_self
 fi
 #echo random_line misterious
 #ref: http://wiki.bash-hackers.org/commands/builtin/eval
