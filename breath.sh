@@ -215,7 +215,26 @@ if  [  $# -gt 0  ];then
     echo 
     echo
 else
+
+
+
+
+   color3 'INSTALLING..' 
+   echo
+    sleep 3
+    cd $dir_install
+    ./runner.sh
+    result=$?
+   # echo "result=$result"
+    cd -
+    if [ $result -eq 1 ];then
+    echo 'keep on moving my son !'
+    else
+flite success
+confirm 
     about_self
+    fi
+
 fi
 #echo random_line misterious
 #ref: http://wiki.bash-hackers.org/commands/builtin/eval

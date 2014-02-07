@@ -10,28 +10,27 @@ export EDITOR="vim"
 #http://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html
 
 #export PATH=$PATH:~/JAIL/deb.sh/
-        
+
 #export dir_cfg=~/JAIL/pilot.sh/cfg
 
 
 
 confirm(){
+
+
     if [ $# -gt 0 ];then
         cmd="$@"
         echo "cmd: $cmd"
         echo
-
         /usr/bin/flite -t 'confirm' &
-        echo Press Y to continue
-        read answer
-
-
-        if [ "$answer" != y ];then
-            exit
-        fi
-    else
-        echo Please supply a command string
     fi
+
+    echo Press Y to continue
+    read answer
+    if [ "$answer" != y ];then
+        exit
+    fi
+
 
 }
 clip(){
