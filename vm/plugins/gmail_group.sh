@@ -3,7 +3,7 @@
 is_working=$( pstree -a | grep gmail | grep notify )
 file=/tmp/send.txt
 user=advance.linux1
-password=advance.linux
+password=advance.linux1
 default(){
 
 
