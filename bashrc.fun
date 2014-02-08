@@ -1,4 +1,4 @@
-dir_lib=./bashrc
+dir_lib=$dir_root/bashrc
 source $dir_lib/alias.fun.cfg
 source $dir_lib/fs.fun.cfg
 source $dir_lib/general.fun.cfg
