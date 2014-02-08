@@ -33,7 +33,8 @@ update_file(){
     local file=$2
 
     local time_stamp=`date | cut -d' ' -f5`
-
+    
+speak "$line"
 
     if [ "$line" ];then
         #str=`echo "$line" | sed 's/ /_/g'`

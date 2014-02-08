@@ -7,11 +7,11 @@ delay1=$delay_riddle
 notify_send1 delay "$delay1"
 
 random_path(){
-        dir=$SCRIPT_DIR/tasks/abs/source
+        dir=$dir_vendors/abs/source
         subject=abs
 
         
-        filename=$(random_from_subject1 $subject)
+        filename=$(random_line $file_list_abs )
 
         full_path=$dir/$filename
 
@@ -31,9 +31,9 @@ run(){
            
             cmd1="copy $full_path"
             optional "$cmd1" "copy riddle.sh ?" question
- cmd="gedit $full_path"
+ cmd="$EDITOR_GUI $full_path"
             detach "$cmd"  
- cmd="gedit $KOANS_DIR/src/about_project.sh"
+ cmd="$EDITOR_GUI $KOANS_DIR/src/about_project.sh"
             detach "$cmd"  
         fi
         trace 'sleep..'        

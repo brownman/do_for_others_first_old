@@ -19,7 +19,7 @@ else
 
         cmd="curl -u $user:$password --ssl-reqd --mail-from advance.linux1@gmail.com --mail-rcpt advance.linux1@gmail.com --url smtps://smtp.gmail.com:465 -T $file"
         echo "$cmd"
-        eval "$cmd"
+        eval "$cmd" #>/dev/null
     fi
 fi
 
