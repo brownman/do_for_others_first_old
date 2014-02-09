@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 #url:http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html 
 #url:http://www.cyberciti.biz/faq/linux-log-files-location-and-how-do-i-view-logs-files/
 ####################
 #
 #help_1:\t\t\t--- supply a script to wrap ----
 #example_1:\t./wrapper.sh 3/suspend.sh/suspend.sh 1\n
+
 reset
 set -o pipefail  # trace ERR through pipes
 set -o nounset
@@ -22,6 +23,10 @@ source $dir_env/source.cfg
 #export dir_deb=$dir_project/friends/OLD/packaging/deb.sh
 export file_logger=/tmp/logger.txt
 #echo -n '' > $file_logger
+#if [ "$BASHRC_LOADED" != true ];then
+    echo "LOADING: local bashrc"
+    source $dir_root/bashrc.fun
+#fi
 clean_logger(){
     print_func
     if [ -f "$file_logger" ];then
@@ -131,6 +136,7 @@ show_state(){
 ################################# START HERE
 check_system(){
     green 'INSTALLING..' 
+    print_line
     echo
     sleep 3
     $dir_install/runner.sh
@@ -139,6 +145,8 @@ check_system(){
     if [ $result -eq 1 ];then
         echo
     else
+        print_line
+        echo
         print_good "success!"
     fi
     confirm

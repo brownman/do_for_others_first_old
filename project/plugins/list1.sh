@@ -6,7 +6,7 @@
 #use: write a line which describe your current focus
 #changing:  workspace/plugin-name/$subject.txt
 
-plugin_name=${1:-subject}
+plugin_name=${1:-list_without_name}
 dir=$dir_workspace/$plugin_name
 file=$dir/$day.txt
 file_tmp=/tmp/$subject.txt
@@ -35,7 +35,7 @@ update_file(){
 
     local time_stamp=`date | cut -d' ' -f5`
     
-speak "$line"
+
 
     if [ "$line" ];then
         #str=`echo "$line" | sed 's/ /_/g'`
@@ -44,7 +44,10 @@ speak "$line"
         if [ "$line" = delete ];then
             echo -n '' > $file
         else
+
+speak "$line"
             tac $file > $file_tmp
+
             #
             echo -e "$time_stamp -\t\t$line" >> $file_tmp
             tac $file_tmp > $file

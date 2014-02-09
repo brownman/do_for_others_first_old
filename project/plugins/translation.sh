@@ -575,21 +575,23 @@ fi
 
     cmd="play -V1 -q  $file_mp3"
 #    mpg321 $file_mp3 1> /dev/null
-    commander "$cmd"
+( commander "$cmd" &)
 
 
 }
 
 steps(){
     print_func 
+
     step0
     step1
     step2
-if [ "$SOUND" = true ];then
 
+if [ "$SOUND" = true ] &&  [ "$TRANSLATE_VOICE" = true ];then
     step3
 fi
 }
+
 if [ $# -gt 1 ];then
 lang="$1"
 shift
