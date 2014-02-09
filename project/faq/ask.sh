@@ -2,7 +2,7 @@
 
 question="$@"
 
-dir=$dir_question/fu-master
+dir=$dir_faq/fu-master
 script=fu
 flag='-a'
 

@@ -1,14 +1,15 @@
 #!/bin/bash
-#name: update todo list 
+#name: update $subject list 
 #description:  pop-up a dialog wich consist of 2 boxes: 1.for showing the usage history, and , 2.a input box
 #depend-gui: gxmessage
 #depend-cli: bash
 #use: write a line which describe your current focus
-#changing:  workspace/plugin-name/todo.txt
-plugin_name='todo'
+#changing:  workspace/plugin-name/$subject.txt
+
+plugin_name=${1:-subject}
 dir=$dir_workspace/$plugin_name
 file=$dir/$day.txt
-file_tmp=/tmp/todo.txt
+file_tmp=/tmp/$subject.txt
 timeout=10
 if [ ! -d "$dir" ];then
     #Assume: struct.cfg created the $dir_workspace
@@ -25,7 +26,7 @@ fi
 
 
 run(){
-    local line=$( gxmessage -file $file -title 'think small:' -timeout $timeout -entry -ontop -sticky )
+    local line=$( gxmessage -file $file -title "$plugin_name" -timeout $timeout -entry -ontop -sticky )
     update_file "$line" "$file"
 }
 update_file(){
@@ -45,7 +46,7 @@ speak "$line"
         else
             tac $file > $file_tmp
             #
-            echo "$time_stamp $line" >> $file_tmp
+            echo -e "$time_stamp -\t\t$line" >> $file_tmp
             tac $file_tmp > $file
             price 60
         fi

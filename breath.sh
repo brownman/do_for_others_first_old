@@ -109,8 +109,8 @@ check_log(){
 }
 steps(){
     print_func
-    check_system
-   # confirm
+    #check_system
+
     if [ "$DEBUG" = true ];then
         show_state
     fi
@@ -130,8 +130,7 @@ show_state(){
 }
 ################################# START HERE
 check_system(){
-print_func
-    color3 'INSTALLING..' 
+    green 'INSTALLING..' 
     echo
     sleep 3
     $dir_install/runner.sh
@@ -139,12 +138,10 @@ print_func
     # echo "result=$result"
     if [ $result -eq 1 ];then
         echo
-        echo
-        echo 'keep on moving my son !'
-        echo
     else
         print_good "success!"
     fi
+    confirm
 }
 if  [  $# -gt 0  ];then
     arg "$@"
