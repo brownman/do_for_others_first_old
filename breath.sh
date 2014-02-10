@@ -13,7 +13,8 @@ set -o errtrace
 export VERSION=2
 export LANG=ru
 pushd `dirname $0`> /dev/null
-dir_root=`pwd`
+export dir_root=`pwd`
+echo "dir_root: $dir_root"
     source $dir_root/bashrc.fun
     source $dir_root/projectrc.fun
 clean_logger(){

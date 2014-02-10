@@ -20,3 +20,9 @@ source $dir_lib/prompt.cfg
 alias single1="$dir_root/breath.sh project/bin/single.sh"
 export BASHRC_LOADED=true
 echo "LOADING: bashrc.fun"
+
+exist(){
+cmd="$1"
+type $cmd >/dev/null 2>&1 || { echo -e >&2 "false" ;}
+}
+export -f exist 
