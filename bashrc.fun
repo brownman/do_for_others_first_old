@@ -1,5 +1,7 @@
 dir_lib=$dir_root/bashrc
 
+
+source $dir_lib/proxy.cfg
 source $dir_lib/eval.cfg
 source $dir_lib/alias.cfg
 source $dir_lib/fs.cfg
@@ -17,3 +19,4 @@ source $dir_lib/prompt.cfg
 
 alias single1="$dir_root/breath.sh project/bin/single.sh"
 export BASHRC_LOADED=true
+echo "LOADING: bashrc.fun"

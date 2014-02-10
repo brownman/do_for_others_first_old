@@ -1,0 +1,38 @@
+EVALUATING WITH/WITHOUT DOUBLE-QUOTES
+-------------------------------------
+change:
+where the evaluation occures
+-------------------------------------
+let
+shell1:cmd='some command'
+shell2:func()
+
+question:
+send a command:$cmd to a function
+when the content is evaluated?
+answer:
+1)if you call the function: func "$cmd" - it evaluated before the call
+2)if you call the function: func $cmd - it evaluated after the call
+
+shell1:
+    example:
+    shell1: var:command1='some commands'
+
+    shell1:print content:
+    echo $command1 
+    /usr/bin/notify-send hi there
+
+    eval $command1 
+    works!
+
+shell1 calls shell2:
+calling to shell2::   detach() OR commander()
+1)
+detach 0 $command1 
+COMMANDER()
+No arguments - no command
+2)
+detach 0 "$commander"
+COMMANDER()
+evaluating:		 eval "/usr/bin/notify-send hi there"
+

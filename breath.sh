@@ -14,19 +14,8 @@ export VERSION=2
 export LANG=ru
 pushd `dirname $0`> /dev/null
 dir_root=`pwd`
-export dir_project=$dir_root/project
-export dir_env=$dir_project/env
-
-source $dir_env/env.cfg
-source $dir_env/struct.cfg
-source $dir_env/source.cfg
-#export dir_deb=$dir_project/friends/OLD/packaging/deb.sh
-export file_logger=/tmp/logger.txt
-#echo -n '' > $file_logger
-#if [ "$BASHRC_LOADED" != true ];then
-    echo "LOADING: local bashrc"
     source $dir_root/bashrc.fun
-#fi
+    source $dir_root/projectrc.fun
 clean_logger(){
     print_func
     if [ -f "$file_logger" ];then

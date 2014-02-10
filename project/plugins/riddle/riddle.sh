@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/bash -e
 print_script
 
-random_path(){
+random_file(){
     print_func
     dir=$dir_vendor/abs/source
     file_list=$dir/list.txt
@@ -10,25 +10,27 @@ random_path(){
 
         filename=$( random_line $file_list )
 echo "filename: $filename"
-    confirm
     
     else
         reason_of_death 'no such file' "$file_list"
     fi
 
 
-    file_choose=$dir/$filename.sh
+    file_choose=$dir/$filename
     print_note "file choose: $file_choose"
 
 
 }
 
-
 run(){
     print_func
     local cmd=''
-    random_path
+    random_file
     cmd="$EDITOR_GUI $file_choose"
-echo    commander "$cmd"
+    #eval "$cmd"
+detach "$cmd"
+
+    
+    
 }
 run
