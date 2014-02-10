@@ -560,12 +560,15 @@ step2(){
 
 
         #notify-send "$output" "$phonetics"
-
-                echo  "$phonetics"
         echo "$output"
 
 notify-send "$output"
+if [ "$phonetics" ];then
+                echo  "$phonetics"
         notify-send "$phonetics"
+fi
+
+
     else
         reason_of_death 'no results'
     fi
@@ -602,9 +605,10 @@ if [ "$SOUND" = true ] &&  [ "$TRANSLATE_VOICE" = true ];then
 fi
 }
 
-if [ $# -eq 2 ];then
+if [ $# -gt 1 ];then
 lang="$1"
-input="$2"
+shift
+input="$@"
 steps 
 else
     reason_of_death "need 2 arguments - got $#"

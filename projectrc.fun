@@ -23,10 +23,10 @@ export dir_project_rc=$dir_root/projectrc
 
 
 
-source $dir_env/user.cfg #load username , password, etc
+
 source $dir_env/env.cfg #load configuration for running the project: +-SOUND +-EDITOR +-TRANSLATION_ON
 source $dir_env/source.cfg #load global functions
-
+source $dir_env/user.cfg #load username , password, etc
 
 
 echo "LOADING: projectrc"
