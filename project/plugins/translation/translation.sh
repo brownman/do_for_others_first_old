@@ -516,7 +516,7 @@ env1(){
 #run
 #echo4 "$1"
 step0(){
-
+print_func
     dir_txt=/tmp
     dir_mp3=/tmp
     dir_html=/tmp
@@ -524,13 +524,12 @@ step0(){
 step1(){
 
 
+print_func
     #    local lang="$2"
 
     #    local input=$(remove_trailing "$1")
     #local input="$1" #translate src
-
-
-
+echo "input: $input"
 
     input_wsp=$(echo "$input"|sed 's/ /+/g');
     input_ws=$(echo "$input"|sed 's/ /_/g');
@@ -541,12 +540,15 @@ step1(){
 
     file_mp3=$(  echo $dir_mp3/${input_ws}_${lang}.mp3 )
 
-    #echo "$input_wsp"
-    #echo "name: $file_mp3"
+echo "input_wsp: $input_wsp"
+echo "file_mp3:  $file_mp3"
 }
 step2(){
+    print_func
+    result=''
     if [ "$input_wsp" ];then
         result=$(wget -U "Mozilla/5.0" -qO - "http://translate.google.com/translate_a/t?client=t&text=$input_wsp&sl=en&tl=$lang" ) 
+        if [ "$result" ];then
         #echo "$result" >> $TODAY_DIR/translate.json
         cleaner=$(echo "$result" | sed 's/\[\[\[\"//') 
         #trace "$result"
@@ -558,14 +560,22 @@ step2(){
 
 
         #notify-send "$output" "$phonetics"
-        notify-send "$output"
+
+                echo  "$phonetics"
+        echo "$output"
+
+notify-send "$output"
         notify-send "$phonetics"
+    else
+        reason_of_death 'no results'
+    fi
+
     fi
 
         #echo "$output_wsp"
 }
 step3(){
-
+print_func
     if [ ! -f "$file_mp3" ] || [ -s "$file_mp3" ];then
     wget -U Mozilla -q -O - "$@" translate.google.com/translate_tts?ie=UTF-8\&tl=${lang}\&q=${output_wsp} > $file_mp3 
 else
@@ -575,7 +585,7 @@ fi
 
     cmd="play -V1 -q  $file_mp3"
 #    mpg321 $file_mp3 1> /dev/null
-( commander "$cmd" &)
+eval "$cmd" 
 
 
 }
@@ -592,10 +602,9 @@ if [ "$SOUND" = true ] &&  [ "$TRANSLATE_VOICE" = true ];then
 fi
 }
 
-if [ $# -gt 1 ];then
+if [ $# -eq 2 ];then
 lang="$1"
-shift
-input="$@"
+input="$2"
 steps 
 else
     reason_of_death "need 2 arguments - got $#"

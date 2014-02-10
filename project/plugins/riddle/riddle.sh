@@ -28,7 +28,7 @@ run(){
     random_file
     cmd="$EDITOR_GUI $file_choose"
     #eval "$cmd"
-detach "$cmd"
+eval "$cmd" &
 
     
     

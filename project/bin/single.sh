@@ -1,6 +1,5 @@
 #!/bin/bash 
 print_script
-
 dir_self=`dirname $0`
 filename=''
 
@@ -26,12 +25,12 @@ help(){
 }
 run(){
     print_func
-#cmd_edit="$EDITOR $script_name/$script_name"
-#xsel "$cmd_edit"
+cmd_edit="$EDITOR $script"
+xsel "$cmd_edit"
     if [ -f "$script" ];then
         cmd="$script ${args[@]}"
         print_call "call: $cmd"
-        eval "$cmd" 
+        commander "$cmd" 
     else
         reason_of_death 'file not found' "$script"
         exit 1
