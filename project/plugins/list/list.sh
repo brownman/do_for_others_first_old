@@ -33,7 +33,7 @@ update_file(){
     local line="$1"
     local file=$2
 
-    local time_stamp=`date | cut -d' ' -f5`
+#    local time_stamp=`date | cut -d' ' -f5`
     
 
 
@@ -49,7 +49,9 @@ speak "$line"
             tac $file > $file_tmp
 
             #
-            echo -e "$time_stamp -\t\t$line" >> $file_tmp
+
+            echo -e "$line" >> $file_tmp
+            #echo -e "$time_stamp -\t\t$line" >> $file_tmp
             tac $file_tmp > $file
             price 60
         fi

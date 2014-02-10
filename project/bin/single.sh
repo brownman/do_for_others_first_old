@@ -26,8 +26,8 @@ help(){
 }
 run(){
     print_func
-cmd_edit="$EDITOR $script"
-xsel "$cmd_edit"
+#cmd_edit="$EDITOR $script_name/$script_name"
+#xsel "$cmd_edit"
     if [ -f "$script" ];then
         cmd="$script ${args[@]}"
         print_call "call: $cmd"
@@ -46,7 +46,8 @@ else
     dir="$dir_plugins" 
     file_type='sh'
     arg_soft "$@"
-    script="$dir/$script.$file_type"
+    script_name=$script
+    script="$dir/$script_name/$script_name.$file_type"
     run
 fi
 
