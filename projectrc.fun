@@ -15,7 +15,7 @@ export dir_project_rc=$dir_root/projectrc
         export file_shortcut=$dir_workspace
             export dir_rooms=$dir_workspace/rooms
             
-        export dir_install=$dir_project/install
+        export dir_install=$dir_project/install1
         export dir_bin=$dir_project/bin
             export single_sh=$dir_bin/single.sh
         export dir_plugins=$dir_project/plugins

@@ -1,0 +1,13 @@
+cron.sh
+burning.sh
+bashrc.sh
+dependencies.sh
+workspace.sh
+desktop.sh
+dropbox.sh
+hotkeys.sh
+steps.sh
+user.sh
+gmail.sh
+
+
