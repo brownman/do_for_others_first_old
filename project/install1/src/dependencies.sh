@@ -53,14 +53,16 @@ install_dependencies_cli(){
 }
 
 install_dependencies_gui(){
-    required notify-send libnotify-bin
+
     #libnotify1
     if [ "$EDITOR" = 'gvim' ];then
     required gvim vim-gnome
 fi
     
+    required notify-send libnotify-bin
     required gxmessage gxmessage
     required xcowsay xcowsay
+    required zenity zenity
 }
 install_dependencies_sound(){
     required flite flite
