@@ -9,4 +9,4 @@ testEquality1() {
 
 
 
-. ./lib/shunit2-2.0.3/src/shell/shunit2
+. ./VENDOR/shunit2-2.0.3/src/shell/shunit2
