@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
-
 DO FOR OTHERS FIRST
 ==
 I think that above all motivations gathers during the years - this sentance rule them all.
