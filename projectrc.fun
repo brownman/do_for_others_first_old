@@ -9,6 +9,8 @@ export dir_project_rc=$dir_root/projectrc
 
 
     export dir_vendor=$dir_root/VENDOR
+
+    export dir_workspace_guest=$dir_root/WORKSPACE/GUEST
     export dir_workspace=$dir_root/WORKSPACE/$LOGNAME
         export file_shortcut=$dir_workspace
             export dir_rooms=$dir_workspace/rooms

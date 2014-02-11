@@ -139,7 +139,6 @@ check_system(){
         echo
         print_good "success!"
     fi
-    confirm
 }
 if  [  $# -gt 0  ];then
     arg "$@"

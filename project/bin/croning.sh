@@ -1,3 +1,3 @@
 #!/bin/bash
-echo  croning
 flite croning
+notify-send alive
