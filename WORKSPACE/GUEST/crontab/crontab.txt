@@ -4,4 +4,4 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games
 #MAILTO=guest
 DISPLAY=:0 
 * * * * *   /usr/bin/env > /tmp/cron-env
-*/2 * * * *  bash -c "$dir_root/breath.sh project/bin/croning.sh"
+*/1 * * * *  bash -c "$dir_root/breath.sh project/bin/croning.sh"
