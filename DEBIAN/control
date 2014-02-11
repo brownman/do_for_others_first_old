@@ -3,7 +3,7 @@ Version: 0.0.1-0
 Section: internet
 Priority: extra
 Architecture: all
-Depends: perl,bash,flite
+Depends: perl,bash,flite,libsox-fmt-all,vim-gnome,gxmessage,zenity,libnotify-bin,xcowsay,vim,wget,xsel,sox,gmail-notify
 Installed-Size: 8
 Maintainer: ofer_shaham <ofer.shaham@gmail.com>
 Homepage: https://github.com/brownman/do_for_others_first

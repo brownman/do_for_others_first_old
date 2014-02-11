@@ -1,9 +1,18 @@
 #!/bin/bash -e
-path=`dirname $0`
+path=`pwd`
+
 env(){
 print_func
-dir_first=vm
-package_name='do_for_others_first'
+
+echo "path: $path"
+confirm
+dir_first=package/vm
+package_name='do-for-others-first'
+SUDO=''
+
+inst_dir=test1
+root_dir=/tmp
+args_extra="--force-not-root"
 }
 
 build(){
@@ -11,7 +20,21 @@ build(){
 cmd="dpkg-deb --build  $dir_first $path/$package_name.deb"
 confirm "$cmd"
 }
+install(){
+    print_func
+   if [ ! -d "$inst_dir" ];then
+mkdir -p $inst_dir
+fi 
 
+cmd="$SUDO dpkg -i $args_extra $package_name.deb --root=$root_dir --instdir=$inst_dir"
+confirm "$cmd"
+}
+remove(){
+$SUDO dpkg -r $package_name
+}
+info(){
+$SUDO dpkg -L $package_name
+}
 if [ $# -gt 0 ];then
 env
 cmd="$1"
