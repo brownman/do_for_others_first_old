@@ -1,8 +1,8 @@
-reminder1
-list1 todo
+reminder
+list todo
 sleep 60
 suspend 
-list1 done
+list done
 sleep 60
-reminder1
+reminder
 sleep 60
