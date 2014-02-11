@@ -4,6 +4,7 @@ testEquality() {
 	assertEquals 1 1
 }
 testEquality1() {
+    ./breath.sh
 	assertEquals 2 1
 }
 
