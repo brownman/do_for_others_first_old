@@ -3,28 +3,41 @@
 #
 test_bashrc_calls_the_project_s_bashrc(){
 path="$dir_root"
-file_target=/tmp/bashrc-addition
+file_target=~/bashrc-addition
 touch $file_target
+
+
+
+    local result1=`cat $file_target | grep dir_root`
+    if [ "$result1" = '' ];then
+
 echo -n > $file_target
-    local result=`cat ~/.bashrc | grep dir_root`
-
-    if [ "$result" = '' ];then
         echo "Installing.."
-###
         echo "export dir_root=$dir_root" >> $file_target
-
         echo "source \$dir_root/bashrc.fun" >> $file_target
         echo "source \$dir_root/projectrc.fun" >> $file_target
-###
         echo "File: $file_target"
-        cat $file_target
-        cmd="cat $file_target >> ~/.bashrc"
-        confirm "$cmd"
-        print_hint 'run: bash and try again'
+      print_hint "updating $file_target..."
+      flite 'updating bash rc additions'
         exiting
-    fi
 
-    assertNotEqual "$result" ''
+       fi
+
+
+
+    local result2=`cat ~/.bashrc | grep bashrc-addition`
+
+    if [ "$result2" = '' ];then
+           cmd="echo \"source $file_target\" >> ~/.bashrc"
+
+      print_hint 'updating bashrc...'
+      flite 'updating bashrc'
+        exiting
+
+      fi
+
+
+    assertNotEqual "${result1}${result2}" ''
 
 
 }

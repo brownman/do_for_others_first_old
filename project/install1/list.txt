@@ -1,7 +1,7 @@
-cron.sh
-burning.sh
 bashrc.sh
 dependencies.sh
+cron.sh
+burning.sh
 workspace.sh
 desktop.sh
 dropbox.sh

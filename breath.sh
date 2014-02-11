@@ -10,7 +10,7 @@ reset
 set -o pipefail  # trace ERR through pipes
 set -o nounset
 set -o errtrace
-export VERSION=2
+export VERSION=1
 export LANG=ru
 pushd `dirname $0`> /dev/null
 export dir_root=`pwd`

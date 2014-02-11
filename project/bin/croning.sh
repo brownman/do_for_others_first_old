@@ -1,6 +1,7 @@
 #!/bin/bash
 
-flite croning &
+
 notify-send alive
 xcowsay alive
+flite -t 'croning'
 
