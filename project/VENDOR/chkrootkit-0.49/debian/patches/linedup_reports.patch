@@ -1,0 +1,42 @@
+Author: 
+Description: (printn): Use printf if available (#343284)
+--- a/chkrootkit
++++ b/chkrootkit
+@@ -2514,10 +2514,34 @@ chk_telnetd () {
+ 
+ printn ()
+ {
+-    if `${echo} "a\c" | ${egrep} c >/dev/null 2>&1` ; then
+-        ${echo} -n "$1"
++    printf="use printf"
++    printf_fmt="%-60s"
++
++    if [ ! "$PRINTF_BIN" ]; then
++	# This is first time call to use. Check environment and
++	# define this global.
++
++	PRINTF_BIN=`which printf 2> /dev/null`
++
++	# Set to dummy, if not found
++	[ ! "$PRINTF_BIN" ] && PRINTF_BIN="not exists"
++
++	# We're done, and won't enter this if-case any more
++    fi
++
++    # Some messages are continued, so don't use printf
++    case "$1" in
++	*exec*|*bogus*) printf="" ;;
++    esac
++
++    if [ "$PRINTF_BIN" ] && [ "$printf" ]; then
++	$PRINTF_BIN "$printf_fmt" "$1"
+     else
+-        ${echo} "${1}\c"
++	if `${echo} "a\c" | ${egrep} c >/dev/null 2>&1` ; then
++	    ${echo} -n "$1"
++	else
++	    ${echo} "${1}\c"
++	fi
+     fi
+ }
+ 

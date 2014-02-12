@@ -1,0 +1,53 @@
+#!/bin/sh
+
+set -e
+
+CF=/etc/chkrootkit.conf
+
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+db_capb backup
+
+db_title "chkrootkit"
+
+if [ -f $CF ]; then
+    . $CF || true
+    case "$RUN_DAILY" in
+        true|false);;
+        *) RUN_DAILY="false";;
+    esac
+    case "$DIFF_MODE" in
+        true|false);;
+        *) DIFF_MODE="false";;
+    esac
+    db_set chkrootkit/run_daily "$RUN_DAILY"
+    db_set chkrootkit/run_daily_opts "$RUN_DAILY_OPTS"
+    db_set chkrootkit/diff_mode "$DIFF_MODE"
+fi
+
+STATE=1
+while [ "$STATE" -gt 0 -a "$STATE" -lt 4 ]; do
+    case "$STATE" in
+    1) db_input medium chkrootkit/run_daily || true;;
+    2) 
+        db_get chkrootkit/run_daily
+        if [ "$RET" = "true" ]; then
+            db_input medium chkrootkit/run_daily_opts || true
+        fi
+    ;;
+    3)
+        db_get chkrootkit/run_daily
+        if [ "$RET" = "true" ]; then
+            db_input medium chkrootkit/diff_mode || true
+        fi
+
+    ;;
+    esac
+
+    if db_go; then
+        STATE=$(($STATE + 1))
+    else
+        STATE=$(($STATE - 1))
+    fi
+done

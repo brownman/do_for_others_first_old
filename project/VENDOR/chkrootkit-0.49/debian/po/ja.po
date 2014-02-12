@@ -1,0 +1,98 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: chkrootkit 0.48-3\n"
+"Report-Msgid-Bugs-To: chkrootkit@packages.debian.org\n"
+"POT-Creation-Date: 2008-02-26 08:06+0100\n"
+"PO-Revision-Date: 2008-07-08 18:26+0900\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Should chkrootkit be run automatically every day?"
+msgstr "毎日自動的に chkrootkit を実行しますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"The chkrootkit program can be run automatically via a daily cron job. If you "
+"choose this option, you'll also be given the opportunity to specify options "
+"for the daily run."
+msgstr ""
+"chkrootkit プログラムを cron.dairy 経由で自動的に実行できます。このオプション"
+"を選んだ場合、毎日実行する際のオプションも指定できます。"
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "Arguments to use with chkrootkit in the daily run:"
+msgstr "日次で実行される際に chkrootkit で使われる引数"
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid ""
+"The following are useful arguments to pass to chkrookit:\n"
+" -r <root>: use an alternate root directory;\n"
+" -n       : do not attempt to analyze NFS-mounted files;\n"
+" -q       : run in quiet mode [highly recommended]."
+msgstr ""
+"以下が chkrootkit に与えられる有用な引数です:\n"
+" -r <root>: 別のディレクトリを root ディレクトリとして指定します\n"
+" -n       : nfs マウントされたファイルは分析しようとしません\n"
+" -q       : 静粛モードで動作します [非常にお勧め]"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Only report problems if they differ from previous day's problems?"
+msgstr "前日の問題との差分があった場合のみ、問題を報告するようにしますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"If you choose this option, chkrootkit will only report problems when they "
+"differ from the previous day's run."
+msgstr ""
+"このオプションを選ぶと、chkrootkit は前日の動作と違っていた場合のみ問題を報告"
+"します。"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"Using this option is not recommended as it is likely to hide existing "
+"security problems."
+msgstr ""
+"このオプションの利用は、存在しているセキュリティ問題を隠すことになり得るので"
+"お勧めできません。"
+
+#~ msgid "-q"
+#~ msgstr "-q"
+
+#~ msgid "What arguments would you like to pass to the daily chkrootkit run?"
+#~ msgstr "どの引数を毎日の chkrootkit の実行時に指定しますか?"
+
+#~ msgid "Use this option with care."
+#~ msgstr "このオプションは注意して使ってください。"

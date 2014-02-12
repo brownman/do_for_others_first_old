@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+[ "$1" = "purge" ] && rm -rf /etc/chkrootkit.conf /var/cache/chkrootkit/ /var/log/chkrootkit/
+
+#DEBHELPER#

@@ -1,43 +1,4 @@
-  http://stackoverflow.com/questions/6565357/git-push-requires-username-and-password
-  ./wrapper.sh 1/hotkeys.sh/menu.sh 
-  echo $PWD/wrapper.sh $PWD/hotkeys.sh/menu.sh 
-  echo $PWD/wrapper.sh $PWD/1/hotkeys.sh/menu.sh 
-  $PWD/wrapper.sh $PWD/1/hotkeys.sh/menu.sh 
-  #$PWD/wrapper.sh $PWD/1/hotkeys.sh/menu.sh 
-  lksjflksdjf
-  echo $PWD/wrapper.sh $PWD/1/hotkeys.sh/menu.sh 
-  /home/dao04/JAIL/do_for_others_first/wrapper.sh /home/dao04/JAIL/do_for_others_first/1/hotkeys.sh/menu.sh
   ls
-  grep no_kill -r .
-  grep kill -r 0/
-  #grep -rl $oldstring /path/to/folder | xargs sed -i s@$oldstring@$newstring@g
-  #grep --exclude-dir=".svn"
-  assume script exist
-  finder ' func'
-  touch save.txt
-  ls
-  python
-  ls
-  vi 0/ask.sh/ANSWER/sh/translation.sh 
-  cat .history 
-  hi
-  test
-  test2
-  cat .tmp/edit.txt 
-  cat .tmp/edit.txt 
-  nice
-  #  vi 0/ask.sh/ANSWER/sh/translation.sh 
-  bash
-  vi hi
-  test 4
-  vi hi
-  vi 0/ask.sh/ANSWER/sh/translation.sh 
-  ./wrapper.sh 4/single.sh translation
-  ./wrapper.sh 4/DETECT/install_bashrc.sh 
-  vi 4/DETECT/install_bashrc.sh 
-  show edit
-  last edit
-  vi 0/ask.sh/ANSWER/sh/translation.sh 
-  #  ./wrapper.sh 4/single.sh translation
-  exec  vi 0/ask.sh/ANSWER/sh/translation.sh 
-  notify-send hi
+  url http://www.commandlinefu.com/commands/view/65/get-the-10-biggest-filesfolders-for-the-current-direcotry#comment
+  idea shut the fuck up
+  idea|shut the fuck up

@@ -1,0 +1,83 @@
+# Danish translation chkrootkit.
+# Copyright (C) 2010 chkrootkit og nedenstående oversættere.
+# This file is distributed under the same license as chkrootkit package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: chkrootkit\n"
+"Report-Msgid-Bugs-To: chkrootkit@packages.debian.org\n"
+"POT-Creation-Date: 2008-02-26 08:06+0100\n"
+"PO-Revision-Date: 2010-11-29 17:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Should chkrootkit be run automatically every day?"
+msgstr "Skal chkrootkit køres automatisk hver dag?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"The chkrootkit program can be run automatically via a daily cron job. If you "
+"choose this option, you'll also be given the opportunity to specify options "
+"for the daily run."
+msgstr ""
+"Programmet chkrootkit kan køres automatisk via et dagligt cronjob. Hvis du "
+"vælger denne indstilling, vil du også få muligheden for at angive "
+"indstillinger for den daglige kørsel."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "Arguments to use with chkrootkit in the daily run:"
+msgstr "Argumenter der skal bruges med chkrootkit i den daglige kørsel:"
+
+# engelsk fejl mangler t i chkrookit
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid ""
+"The following are useful arguments to pass to chkrookit:\n"
+" -r <root>: use an alternate root directory;\n"
+" -n       : do not attempt to analyze NFS-mounted files;\n"
+" -q       : run in quiet mode [highly recommended]."
+msgstr ""
+"Følgende er brugbare argumenter der kan videresendes til chkrootkit:\n"
+" -r <rod> : brug en anden rodmappe;\n"
+" -n       : forsøg ikke at analysere NFS-monterede filer;\n"
+" -q       : kør i tilstanden stille [stærkt anbefalet]."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Only report problems if they differ from previous day's problems?"
+msgstr ""
+"Rapporter kun problemer hvis de er forskellige fra forrige dags problemer?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"If you choose this option, chkrootkit will only report problems when they "
+"differ from the previous day's run."
+msgstr ""
+"Hvis du vælger denne indstilling, vil chkrootkit kun rapportere problemer, "
+"når de er forskellige fra den forrige dags kørsel."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"Using this option is not recommended as it is likely to hide existing "
+"security problems."
+msgstr ""
+"Brug af denne indstilling anbefales ikke, da det kan skjule eksisterende "
+"sikkerhedsproblemer."

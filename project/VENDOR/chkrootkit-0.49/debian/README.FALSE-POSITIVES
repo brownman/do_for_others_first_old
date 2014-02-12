@@ -1,0 +1,86 @@
+the false positives that have been reported to me have fallen into to five
+basic camps: hidden process, hidden files under /usr/lib, a specific file
+is found, legitimate sniffers, and listening on well known ports.
+
+the hidden processes problem *seems* to be a thing of the past.  mostly it
+was due to the difference between how threads were reported under 2.4 and
+2.6.
+
+the hidden files issue continues to crop up now and again.  basically,
+if chkrootkit sees a hidden file (a file that begins with .) under
+/usr/lib, it flags it as suspicious.  there are various packages that
+contain these hidden files and they are innocuous.  however, it appears
+that arbitrary hidden files under /usr/lib is a sign of a rootkit, so,
+again, it's the safe vs sorry argument.
+
+the well known port issue also comes up frequently.  the problem is that
+many well known ports are also used by rootkits (to get around firewalls
+and as camouflage).  chkrootkit doesn't currently do any additional
+checking when it finds a process listening on a port that's known to have
+been used for a rootkit.
+
+the sniffer check is just an informational check, it doesn't necessarily
+mean that you've been rooted.  there are several legitimate sniffers out
+there; however, you may still want to check that the sniffer is the one
+that you think it is, etc.
+
+In general, any process starting at around same time as lkm test may
+trigger a warning. Just try while true;do chkrootkit lkm;sleep 1;done
+during normal system use. See also FAQ 6 on www.chkrootkit.org -- paolo
+
+chroot environments may cause "suspicious file" false positives.
+
+bindshell listens on a lot of ports.  these ports are also used by other
+legitimate programs.  chkrootkit's detection algorithm cannot determine
+the difference between a legitimate program and bindshell.
+
+below is a (non-exhaustive) list of packages that are known to cause false
+positives.  before filing a bug report, please check this list.
+
+listens on well known ports
+  *radius: the Slapper worm listens on 1812
+  bitlbee: LDP worms listen on port 6667
+  cfs: bindshell listens on port 3049
+  erlang-base: bindshell listens on port 4369
+  exim-tls: bindshell listens on port 465
+  mldonkey-server: bindshell listens on port 4000
+  nfs-common: rpc.statd listens on port 3049
+  portsentry: listens on several ports that chkrootkit sees as rootkit ports
+  postfix-tls: bindshell listens on port 465
+  reaim: bindshell listens on port 5190
+
+legitimate sniffers
+  dhcpd
+  ethereal
+  knockd
+  p0f
+  pppoe
+  tcpdump
+
+hidden files http://www.chkrootkit.org/faq/#8
+  perl packages sometimes have .packlist files
+  blackdown java
+  blender
+  geomview
+  gnustep-make
+  kaffe
+  obliq
+  mindi
+  r-cran-hmisc
+  realplay
+  scilab
+  smlnj
+  subversion
+  tiger
+  twiki
+  viewglob
+
+contains specific files
+  asp: Ramen Worms contain the file /usr/bin/asp
+  libgcj-common: the 'OBSD rk v1' contains 
+    /usr/lib/security, 
+    /usr/lib/security/classpath.security 
+    /usr/lib/security/libgcj.security. 
+  libproc-dev: t0rn v8 contains a libproc.a
+  run: ZK rootkits contain /usr/bin/run
+  slice: RH-Sharpe contains /usr/bin/slice

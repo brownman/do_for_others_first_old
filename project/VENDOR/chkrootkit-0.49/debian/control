@@ -1,0 +1,25 @@
+Source: chkrootkit
+Section: misc
+Priority: optional
+Maintainer: Giuseppe Iuculano <iuculano@debian.org>
+Uploaders: Mike Forbes <mike@nothing.net.nz>
+Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 7), po-debconf, quilt (>= 0.40)
+Homepage: http://www.chkrootkit.org/
+Vcs-Git: git://git.debian.org/git/collab-maint/chkrootkit.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/chkrootkit.git
+
+Package: chkrootkit
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, binutils, net-tools, debconf, procps
+Description: rootkit detector
+ The chkrootkit security scanner searches the local system for signs
+ that it is infected with a 'rootkit'. Rootkits are set of programs
+ and hacks designed to take control of a target machine by using known
+ security flaws.
+ .
+ Types that chkrootkit can identify are listed on the project's home page.
+ .
+ Please note that where chkrootkit detects no intrusions, this does
+ not guarantee that the system is uncompromised. In addition to
+ running chkrootkit, more specific tests should always be performed.

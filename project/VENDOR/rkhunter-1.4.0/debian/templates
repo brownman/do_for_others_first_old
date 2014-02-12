@@ -1,0 +1,32 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: rkhunter/cron_daily_run
+Type: boolean
+_Description: Activate daily run of rkhunter?
+ If you choose this option, rkhunter will be run automatically
+ by a daily cron job.
+
+Template: rkhunter/cron_db_update
+Type: boolean
+_Description: Activate weekly update of rkhunter's databases?
+ If you choose this option, rkhunter databases will be
+ updated automatically by a weekly cron job.
+
+Template: rkhunter/apt_autogen
+Type: boolean
+Default: false
+_Description: Automatically update rkhunter's file properties database?
+ The file properties database can be updated automatically
+ by the package management system.
+ .
+ This feature is not enabled by default as
+ database updates may be slow on low-end machines.
+ Even if it is enabled, the database won't be updated if the
+ 'hashes' test is disabled in rkhunter configuration.

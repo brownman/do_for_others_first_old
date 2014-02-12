@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rkhunter\n"
+"Report-Msgid-Bugs-To: Source: rkhunter@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-12 01:13+0530\n"
+"PO-Revision-Date: 2007-12-09 13:41+0100\n"
+"Last-Translator: Bart Cornelis <cobaco@skolelinux.no>\n"
+"Language-Team: debian-l10n-dutch <debian-l10n-dutch@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Dutch\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Activate daily run of rkhunter?"
+msgstr "Wilt u rkhunter dagelijks uitvoeren?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you choose this option, rkhunter will be run automatically by a daily "
+"cron job."
+msgstr ""
+"Als u deze optie kiest zal rkhunter dagelijks uitgevoerd worden via een "
+"dagelijkse cron-taak."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Activate weekly update of rkhunter's databases?"
+msgstr "Wilt u rkhunter wekelijks uitvoeren?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If you choose this option, rkhunter databases will be updated automatically "
+"by a weekly cron job."
+msgstr ""
+"Als u deze optie kiest zal rkhunter de databases wekelijks bijwerken via een "
+"wekelijkse cron-taak."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Automatically update rkhunter's file properties database?"
+msgstr ""
+"Wilt u dat rkhunter's database met bestandseigenschappen automatisch "
+"bijgewerkt wordt?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"The file properties database can be updated automatically by the package "
+"management system."
+msgstr ""
+"De database met bestandseigenschappen kan automatisch bijgewerkt worden door "
+"het pakketbeheersystem. "
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"This feature is not enabled by default as database updates may be slow on "
+"low-end machines. Even if it is enabled, the database won't be updated if "
+"the 'hashes' test is disabled in rkhunter configuration."
+msgstr ""
+"Omdat het bijwerken van de database traag kan zijn op oudere of minder zware "
+"systemen is dit standaard niet ingeschakeld. Zelfs wanneer ingeschakeld zal "
+"de database niet bijgewerkt worden als de 'hashes'-test uitgeschakeld is in "
+"de configuratie van rkhunter."

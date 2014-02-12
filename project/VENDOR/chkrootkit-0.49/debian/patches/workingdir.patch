@@ -1,0 +1,15 @@
+Author: unknown
+Description: the base chkrootkit is designed to be run from it's build directory,
+therefor it uses "./" as a prefix to all it's executables.  we need to
+change to /usr/lib/chkrootkit to keep this working
+--- a/chkrootkit
++++ b/chkrootkit
+@@ -17,6 +17,8 @@ unalias netstat > /dev/null 2>&1
+ unalias ps > /dev/null 2>&1
+ unalias dirname > /dev/null 2>&1
+ 
++cd /usr/lib/chkrootkit
++
+ # Workaround for recent GNU coreutils
+ _POSIX2_VERSION=199209
+ export _POSIX2_VERSION

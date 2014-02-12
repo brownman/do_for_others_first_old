@@ -1,0 +1,737 @@
+rkhunter (1.4.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Delete patches merged upstream 
+
+ -- Julien Valroff <julien@debian.org>  Sat, 26 May 2012 08:41:02 +0200
+
+rkhunter (1.3.8-11) unstable; urgency=low
+
+  * Backport patch from upstream to add the '--list propfiles' option. This
+    dumps out the file names used to build the file properties database
+  * Add commented entries for etckeeper hidden files and directories
+    (Closes: #655055)
+  * Removed /etc/.initramfs and /etc/.mdadm from the example hidden
+    directories following to the /var/run → /run transition
+  * Update DEP-5 URI to the final location 
+  * Also use --appendlog option for the weekly cronjob - thanks to Hannes von
+    Haugwitz <hannes@vonhaugwitz.com> (Closes: #661873) 
+  * Update to latest policy 3.9.3
+
+ -- Julien Valroff <julien@debian.org>  Fri, 02 Mar 2012 18:57:38 +0100
+
+rkhunter (1.3.8-10) unstable; urgency=low
+
+  * Remove all references to now inexistant /dev/.udev* directories in the
+    default configuration (Closes: #644326) 
+  * Actually allow deactivation of reports - thanks to Alexander
+    Reichle-Schmehl for the patch (Closes: #647493) 
+
+ -- Julien Valroff <julien@debian.org>  Thu, 03 Nov 2011 19:49:55 +0100
+
+rkhunter (1.3.8-9) unstable; urgency=low
+
+  * Actually recommend unhide.rb or unhide - fix an error in the previous
+    upload (Closes: #643776) 
+
+ -- Julien Valroff <julien@debian.org>  Thu, 29 Sep 2011 18:23:50 +0200
+
+rkhunter (1.3.8-8) unstable; urgency=low
+
+  * Recommend unhide.rb OR unhide 
+  * Apply patch from upstream to add support for newer versions of 'file'
+    command when reporting scripts (Closes: #641217) 
+  * Stop suggesting libdigest-sha1-perl: the package is obsolete, and is only
+    meant to be used when sha1sum is not installed (it is part of an essential
+    package) 
+  * Update DEP-5 uri
+
+ -- Julien Valroff <julien@debian.org>  Sun, 18 Sep 2011 14:50:26 +0200
+
+rkhunter (1.3.8-7) unstable; urgency=low
+
+  * Point to GPL-2 license text in debian/copyright 
+  * Adds upstream changelog to the package (Closes: #625981) 
+  * Fix typo in default configuration file (Closes: #625871)
+
+ -- Julien Valroff <julien@debian.org>  Sun, 03 Jul 2011 07:36:32 +0200
+
+rkhunter (1.3.8-6) unstable; urgency=low
+
+  * Add patch from upstream CVS fixing ALLOWPROCDELFILE behaviour
+    (Closes: #626643) 
+
+ -- Julien Valroff <julien@debian.org>  Sat, 14 May 2011 21:57:24 +0200
+
+rkhunter (1.3.8-5) unstable; urgency=low
+
+  * Fix maintainer address (Closes: #624457) 
+
+ -- Julien Valroff <julien@debian.org>  Sun, 08 May 2011 13:51:36 +0200
+
+rkhunter (1.3.8-4) unstable; urgency=low
+
+  * Upload to unstable 
+
+ -- Julien Valroff <julien@debian.org>  Sat, 30 Apr 2011 09:41:01 +0200
+
+rkhunter (1.3.8-3) experimental; urgency=low
+
+  * Disable rkhunter-propud trigger in case APT_AUTOGEN is enabled 
+  * Fix VCS-Browser link 
+
+ -- Julien Valroff <julien@debian.org>  Mon, 18 Apr 2011 21:21:26 +0200
+
+rkhunter (1.3.8-2) experimental; urgency=low
+
+  * First upload as part of the Debian Forensics team:
+    + State the team as maintainer
+    + State myself as uploader
+    + Update the VCS information accordingly
+  * Demote the MTA dependency to recommends (Closes: #604632)
+  * Change it to default-mta | mail-transport-agent (thanks to Jason
+    Heeris <jason.heeris@gmail.com>
+  * Suggest all packages providing mailx and not only bsd-mailx
+  * Suggest unhide.rb and disable original C unhide in the default
+    configuration for the hidden_procs test in case both commands are
+    installed on the system (Closes: #617846)
+  * Add Danish debconf templates translation - thanks to Joe Hansen
+    <joedalton2@yahoo.dk> (Closes: #605326)
+  * Add rkhunter-propupd trigger 
+  * Take into account values from rkhunter.conf.local in maintainer scripts 
+  * Update copyright information 
+  * Bump debhelper compat to 8 
+  * By default, do not run daily check if running on battery - add
+    powermgmt-base to Suggests 
+  * Update to new policy 3.9.2 (no changes needed)
+
+ -- Julien Valroff <julien@debian.org>  Sun, 17 Apr 2011 14:21:27 +0200
+
+rkhunter (1.3.8-1) experimental; urgency=low
+
+  * New Upstream Version:
+    24 bug fixes, 29 changes and 18 new items
+    See upstream CHANGELOG for details
+  * Refresh patches for new release
+  * Drop patches merged upstream
+  * Update copyright information
+  * Update my email address 
+  * Remove DMUA field, now useless
+
+ -- Julien Valroff <julien@debian.org>  Wed, 17 Nov 2010 06:52:12 +0100
+
+rkhunter (1.3.6-5) unstable; urgency=low
+
+  * New Debian Policy 3.9.1 (no changes needed)
+  * Replace reference to dhclient3 by dhclient in the default
+    configuration file (Closes: #591055)
+  * Use ucf to manage default file
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 09 Oct 2010 21:30:11 +0200
+
+rkhunter (1.3.6-4) unstable; urgency=low
+
+  * Bump Debian policy version to 3.8.4
+  * Remove Micah from Uploaders
+  * Switch GIT repository: updated VCS field accordingly
+  * Apply patch kindly sent by Marc Deslauriers to fix 
+    some of the false positives in the Xzibit rootkit
+    detection (Closes: #576680)
+  * Update note in README.Debian to only state remaining files
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 06 Apr 2010 18:07:53 +0200
+
+rkhunter (1.3.6-3) unstable; urgency=low
+
+  * Add a note in README.Debian about the hdparm string causing rkhunter
+    to report a possible Xzibit rootkit (Closes: #559696)
+  * Add a note about local configuration file in README.Debian
+  * Make debian/copyright machine-interpretable as per DEP5
+  * apps test is now disabled by default to avoid warnings about
+    outdated applications
+  * Add a note in README.Debian about IRC daemons triggering warnings
+    (Closes: #562588)
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 26 Dec 2009 21:00:54 +0100
+
+rkhunter (1.3.6-2) unstable; urgency=low
+
+  * Fixed link to FAQ (Closes: #555318)
+  * Now use minimal rules file using dh
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 05 Dec 2009 21:51:55 +0100
+
+rkhunter (1.3.6-1) unstable; urgency=low
+
+  * New upstream release:
+    29 additions including 9 configuration options 
+    and details for 12 rootkits, 29 changes including improvements
+    for 15 rootkit checks and 22 bugfixes (Closes: #518405)
+    See upstream CHANGELOG for more details.
+  * Removed patches merged upstream
+  * New recommends libdigest-sha-perl
+  * Improved postinst script to only run some actions on upgrade
+    or on first install
+  * Added security warnings in README.Debian about potential risk when
+    using automatic database update (Closes: #472295)
+  * Fixed typo in README.Debian (thanks to Holger Levsen
+    <holger@layer-acht.org>)
+  * Converted source package to 3.0 (quilt) format
+  * Switched to GIT: updated VCS-* fields accordingly
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 30 Nov 2009 20:16:56 +0100
+
+rkhunter (1.3.4-7) unstable; urgency=low
+
+  * Bumped Standards-Version to 3.8.3
+  * Added patch to ensure /proc/kallsyms is readable, as some
+    security frameworks prevent programs from reading it
+    Thanks to Francois Marier <francois@debian.org> (Closes: #542139)
+  * Added description to patches
+  * Added README.source
+
+ -- Julien Valroff <julien@kirya.net>  Wed, 19 Aug 2009 14:29:56 +0200
+
+rkhunter (1.3.4-6) unstable; urgency=low
+
+  * Fixed non-ascii space in the weekly cronjob - thanks to 
+    Thibault VINCENT <tibal@reloaded.fr> (Closes: #532213)
+  * Do not recommend libmd5-perl any more: the MD5 Perl module
+    has been deprecated by the Digest::MD5 module
+    (part of the perl package) (Closes: #539018)
+  * Bumped Standards version to 3.8.2 (no changes needed)
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 28 Jul 2009 19:00:34 +0200
+
+rkhunter (1.3.4-5) unstable; urgency=low
+
+  * Fixed non-ascii chars in debian/config (Closes: #528577)
+  * Let the package configure sucessfully on systems using prelink
+    (Closes: #528820)
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 17 May 2009 08:43:47 +0200
+
+rkhunter (1.3.4-4) unstable; urgency=low
+
+  * Updated to new policy 3.8.1 (no changes needed)
+  * Bumped debhelper compat to 7
+  * Removed deprecated dh_clean -k in favour of dh_prep
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 12 Apr 2009 19:12:05 +0200
+
+rkhunter (1.3.4-3) unstable; urgency=low
+
+  * Fixed bashism in postinst script (Closes: #518936)
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 09 Mar 2009 12:09:36 +0100
+
+rkhunter (1.3.4-2) unstable; urgency=low
+
+  * Added --nolog option when using --propupd (sensibly reduces the time
+    needed to update the database)
+  * Removed wpa_supplicant example entry as it is already automatically
+    "whitelisted" by rkhunter
+  * Added whitelist entry for /usr/share/man/man5/.k5login.5.gz from the
+    krb5-doc package (Closes: #511485)
+  * Added recommends on lsof needed for the running_procs test
+  * Added suggests on tripwire needed for the software intrusions test
+  * Fixed DM-Upload-Allowed field (removed XS- prefix)
+  * Fixed permissions on the DB directory: should be 750 and not 755
+  * Fixed postinst script to only copy passwd and group files if they are
+    not already there (ie. when installing rkhunter for the first time)
+
+ -- Julien Valroff <julien@kirya.net>  Wed, 18 Feb 2009 08:22:22 +0100
+
+rkhunter (1.3.4-1) experimental; urgency=low
+
+  * New upstream release
+  * Add call to dh_lintian to install lintian overrides
+
+ -- Julien Valroff <julien@kirya.net>  Thu, 05 Feb 2009 20:22:38 +0100
+
+rkhunter (1.3.2-7) unstable; urgency=low
+
+  * Updated Spanish translation - thanks to 
+    Francisco Javier Cuadrado <fcocuadrado@gmail.com>
+    (Closes: #506414)
+  * Switched maintainers' roles (Micah as uploader, me as maintainer)
+
+ -- Julien Valroff <julien@kirya.net>  Fri, 21 Nov 2008 17:29:53 +0100
+
+rkhunter (1.3.2-6) unstable; urgency=low
+
+  * Added patch to fix race condition when using --debug option
+    (Closes: #496375)
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 25 Aug 2008 18:31:39 +0200
+
+rkhunter (1.3.2-5) unstable; urgency=low
+
+  * Added patch to allow the databases to be stored on a
+    write protected media (Closes: #48900)
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 04 Aug 2008 17:58:58 +0200
+
+rkhunter (1.3.2-4) unstable; urgency=low
+
+  * Updated Japanese debconf templates translation - Hideki Yamane
+    <henrich@debian.or.jp> (Closes: #4489936)
+  * Updated Swedish debconf templates translation - Martin Bagge
+    <brother@bsnet.se> (Closes: #491783)
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 22 Jul 2008 17:50:22 +0200
+
+rkhunter (1.3.2-3) unstable; urgency=low
+
+  * Fixed typos in 10_monolithic-kernel.dpatch
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 15 Jun 2008 09:53:01 +0200
+
+rkhunter (1.3.2-2) unstable; urgency=low
+
+  * Do not run --propupd if debconf option apt_autogen
+    is set (Closes: #471389)
+  * Added a note about setting DPKG for PKGMGR option taking
+    longer than the default value when running --propupd
+    (Closes: #472114) 
+  * Fixed README.Debian about how to disable hashes|attributes tests
+  * Check if module support is enabled before running module tests 
+    (Closes: #471808)
+  * Do not ship defaulthashes.dat in the package as not used anymore
+  * Updated to new policy 3.8.0 (no changes needed)
+  * Removed obsolete linda override file
+  * Changed mailx suggest to bsd-mailx
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 14 Jun 2008 09:08:56 +0200
+
+rkhunter (1.3.2-1) unstable; urgency=low
+
+  [Julien Valroff]
+  * New upstream release: bugfixes and improvements
+    (Closes: #470718)
+    + removed patches merged upstream:
+      10_socklog.dpatch (Closes: #464256)
+      20_suspscan-fix.dpatch
+      15_allow-unknown-language.dpatch
+  * Removed $RK_OPT from the daily cron job - all command line
+    options can be set in the configuration file
+  * Fixed postinst script to update the file properties database
+    only if both attributes and hashes tests are enabled
+  * Fixed APT configuration hook to do the same
+  * Updated lintian overrides
+  * Fixed log file permissions so that members of the adm group
+    can read it
+  * Fixed daily cron job so that logs are appended again
+  * Updated Japanes debconf templates translation - Hideki Yamane
+    <henrich@debian.or.jp> (Closes: #463248)
+  * Updated copyright information
+
+  [Micah Anderson]
+  * [debian/README.Debian]:
+    + Fix ALLOWHIDDENFILE and ALLOWHIDDENDIR names
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 15 Mar 2008 07:44:45 +0100
+
+rkhunter (1.3.0-3) unstable; urgency=low
+
+  [ Christian Perrier ]
+  * Debconf templates and debian/control reviewed by the
+    debian-l10n-english team as part of the Smith review project
+    (Closes: #452170)
+  * [Debconf translation updates]
+  * Galician (Closes: #452827)
+  * Basque (Closes: #452944)
+  * Finnish (Closes: #453155)
+  * Italian (Closes: #453339)
+  * Vietnamese (Closes: #453651)
+  * Norwegian Bokmål (Closes: #453854)
+  * Russian (Closes: #455205)
+  * Dutch; Flemish (Closes: #451288, #455242)
+  * Czech (Closes: #455234)
+  * German (Closes: #455268)
+  * Portuguese (Closes: #456367)
+  * French (Closes: #456387)
+
+  [ Julien Valroff ]
+  * [debian/control]:
+    + Added dependency on binutils instead of recommends
+      (Closes: #448611)
+    + Updates standards version to 3.7.3 (no changes needed)
+    + Added Vcs-* fields
+    + Added DM-Upload-Allowed field to allow me to upload directly
+      the future revisions
+  * Updated cron scripts to add a recipient to the forged e-mail
+    (Closes: #451132)
+  * Applied patch from Francois Marier <francois@debian.org> to take
+    into account the new unhide package (Closes: #455353)
+  * Actually removes the APT configuration hook on purge
+  * Added sashroot to UID0_ACCOUNTS examples (Closes: #457667)
+  * Changed daily cronjob so that it exits with 0 when package
+    is removed (not purged) - thanks to Chris Butler
+    <chrisb@crustynet.org.uk> (Closes: #461217)
+
+ -- Julien Valroff <julien@kirya.net>  Thu, 17 Jan 2008 17:57:47 +0100
+
+rkhunter (1.3.0-2) unstable; urgency=low
+
+  [ Micah Anderson ]
+  * Fix typos in README.Debian (Closes: #443945)
+
+  [ Julien Valroff ]
+  * Bumped debian/compat and debhelper to version 5
+  * Applied patch from SVN to recognize socklog as syslog daemon - thanks
+    to Bastian Kleineidam <calvin _at_ debian.org> (Closes: #444382)
+  * Applied patch from SVN improving error msg about unsupported languages,
+    and added warning to the config file (Closes: #443941)
+  * [debian/README.Debian]: (Closes: #445449)
+    + Added a note about running rkhunter on a system with a
+      monolithic linux kernel or in a vserver instance
+    + Added an entry about sash causing a UID=0 warning
+    + Added notes about third party tools supported by rkhunter, but
+      not (yet) included in Debian
+  * Only run rkhunter --propupd at configure time if the hashes test
+    is not disabled
+  * Added Recommends: for wget alternatives (curl|links|elinks|lynx),
+    updated README.Debian and weekly cronjob (Closes: #443942)
+  * [debian/patch/05_custom_conffile.dpatch]:
+    + Updated to fix a typo in upstream configuration file (s/XINETD/INETD)
+    + Added some more examples for INETD_ALLOWED_SVC and ALLOWPROCDELFILE
+      thanks to Moritz Naumann (Closes: #443946)
+  * Applied patch from SVN to fix false positive when running filesystem check
+    after a suspscan test (Closes: #443943)
+  * Weekly cronjob now issues a warning when no supported download tool is
+    found (Closes: #445663)
+  * Improved the cron scripts as suggested by Jörg Sommer <joerg _at_ alea.gnuu.de>
+    (Closes: #445662)
+  * Added an APT configuration file allowing the file properties database to
+    be updated after each install or remove. Added a debconf template to allow
+    the feature to be enabled/disabled - thanks to Jörg Sommer
+    <joerg _at_ alea.gnuu.de> for suggesting this (Closes: #445661)
+  * Added hostname to email reports subject line (Closes: #445791)
+  * [debian/rules]:
+    + Added debconf-updatepo call in the clean target to make sure all PO files
+      are updated whenever the templates file is (also changed po-debconf to
+      build-depends)
+  * Moved Homepage to own field (from pseudo-field in long description)
+  * Updated Galician debconf templates translation - Jacobo Tarrio
+    <jtarrio _at_ trasno.net> (Closes: #447938)
+
+ -- Julien Valroff <julien@kirya.net>  Thu, 25 Oct 2007 20:26:56 +0200
+
+rkhunter (1.3.0-1) unstable; urgency=low
+
+  * New upstream release:
+    + New command-line option '--propupd' replaces 'hashupd.sh'.
+    + New command-line option '--hash' to select the hash function
+      command for the file hash value check and the properties update.
+    + Added support for Debian based systems, and the 'dash' and 'ash' shells.
+    + Added basic internationalization (i18n) functionality.
+    + Added two new command-line and configuration file options, '--
+      enable' and '--disable' to specify which tests are to be carried
+      out and which are to be ignored.
+    + Application version numbers can now be whitelisted. This caters
+      for those distributions that may patch a 'known bad' version, but
+      without updating the original version number.
+  * [debian/patches]:
+    + Updated patches for new release
+    + Removed most of the patches (useless or added upstream)
+  * [ debian/postinst]:
+    + run rkhunter --propupd at configure time
+    + copy password and group files in the temporary directory
+      to avoid warnings when rkhunter is first run
+  * [ debian/postrm ]:
+    + make sure that all the directories are remove on purge (and
+      only on purge)
+  * Exclude /var/lib/rkhunter/db/* from dh_md5sums (Closes: #424739)
+  * [debian/control]:
+    + Now recommends iproute
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 23 Sep 2007 11:25:55 +0200
+
+rkhunter (1.2.9-5) unstable; urgency=low
+
+  * Moved --check-listen option to /etc/default/rkhunter
+  * Fixed FTBFS if built twice in a row (Closes: #424287)
+
+ -- Julien Valroff <julien@kirya.net>  Wed, 16 May 2007 20:13:49 +0200
+
+rkhunter (1.2.9-4) unstable; urgency=low
+
+  * Added dhclient3 to ALLOWPROCLISTEN examples (Closes: #411371)
+  * Added Galician debconf templates translation - Jacobo Tarrio
+    <jtarrio _at_ trasno.net> (Closes: #414114)
+  * Added Dutch debconf templates translation -  Bart Cornelis
+    <cobaco _at_ skolelinux.no> (Closes: #414759)
+  * Added Brazilian Portuguese debconf templates translation - Herbert P
+    Fortes Neto <h_p_f_n _at_ yahoo.com.br> (Closes: #417586)
+  * Updated German debconf templates translation - Matthias
+    Julius <mdeb _at_ julius-net.net> (Closes: #411217)
+  * Lowered dependency on wget to recommend and documented this
+    change in README.Debian (Closes: #330384)
+  * Added lintian override for non-standard directory permission
+  * Added linda override
+  * debian/README.Debian:
+    + changed FAQ location
+    + fixed typo
+    + made the structure clearer
+  * debian/patches/08_update_manpage.patch: fixed typo
+  * Fixed /etc/default/rkhunter permission
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 23 Apr 2007 19:18:04 +0200
+
+rkhunter (1.2.9-3) unstable; urgency=low
+
+  * Added suggest to mailx to send reports generated by rkhunter
+  * Added niceness priority setting in /etc/default/rkhunter
+    default value is 0 which means no change (Closes: #398548)
+  * Unactivated hashes check in daily cron job and documented
+    this in README.Debian (Closes: #396501)
+  * Added --check-listen option to standard daily cron job
+  * Added recommend to binutils (Closes: #399040)
+  * Added Japanese Debconf translation - Hideki Yamane
+    <henrich _at_ debian.or.jp> (Closes: #400438)
+  * Added German Debconf Translation - Matthias Julius
+    <mdeb _at_ julius-net.net> (Closes: #400475)
+  * Added Spanish Debconf Translation - Javier Ruano
+    <javier.ruano _at_ estudiante.uam.es> (Closes: #404614)
+  * Added patch to update man page so that it includes all
+    the available options and parameters (Closes: #403861)
+  * Made rkhunter tmp dir readable by root only
+  * Fixed postrm script to empty tmp dir on remove/purge
+
+ -- Julien Valroff <julien@kirya.net>  Thu,  8 Feb 2007 18:49:21 +0100
+
+rkhunter (1.2.9-2) unstable; urgency=low
+
+  * Added patch to ship the package with only updated mirrors
+  * Added patch to fix output when dash is linked to dash (Closes: #330930)
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 22 Oct 2006 09:58:10 +0200
+
+rkhunter (1.2.9-1) unstable; urgency=low
+
+  * New upstream release (Closes: #390268)
+    + New upstream maintainance team
+    + Added check for packet capturing applications
+    + Added check for processes using deleted files
+    + Bugfixes and improvements
+  * Removed/updated Debian patches for new release
+  * debian/control:
+    + added Homepage: pseudo-header
+  * debian/watch
+    + updated for new project homepage
+    + updated for version 3
+  * Fixed non-standard perms on check_update.sh script
+  * Added /dev/.initramfs to the list of false positives
+    in README.Debian (Closes: #381006)
+  * Added Portuguese Debconf translation - Luísa Lourenço
+    <kikentai _at_ gmail.com> (Closes: #381723)
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 30 Sep 2006 12:54:26 +0200
+
+rkhunter (1.2.8-5) unstable; urgency=low
+
+  * Fixed check of presence of SHAREDIR variable in configuration
+    file - thanks to Mark van Eijk <m.v.eijk@stud.tue.nl> (Closes: #369672)
+  * Added patch to fix typos in man page (Closes: #369436)
+  * Fixed support of Debian architectures - patch from
+    Matt Taggart <taggart@debian.org> (Closes: #370643)
+  * Now depends on mail-transport-agent instead of mailx and uses
+    /usr/sbin/sendmail in daily/weekly cron jobs (Closes: #377129)
+  * Update standards version to 3.7.2 (no changes)
+
+ -- Julien Valroff <julien@kirya.net>  Fri,  7 Jul 2006 09:38:02 +0200
+
+rkhunter (1.2.8-4) unstable; urgency=low
+
+  [Julien Valroff]
+  * Added all Debian supported architectures to os.dat (Closes: #360707)
+  * Added commented entries in rkhunter.conf for udev (Closes: #360071)
+  * Now intalls db files to be only readable by root
+  * Added GPL license blob to debian/copyright
+  * Moved shared scripts from /usr/lib to /usr/share (due to arch: all)
+  * Added dependency to net-tools
+  * Bumped Standards-Version to 3.7.0, no further changes required
+  
+  [Micah Anderson]
+  * Changed Build-depends-Indep to Build-depends to conform to 
+    new lintian strict errors
+
+ -- Micah Anderson <micah@debian.org>  Wed,  5 Apr 2006 00:47:43 -0400
+
+rkhunter (1.2.8-3) unstable; urgency=low
+
+  * Fixed debian/rules and debian/control for 'arch: all'
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 25 Mar 2006 01:48:05 +0100
+
+rkhunter (1.2.8-2) unstable; urgency=low
+
+  * Removed broken mirrors
+  * Added debian/testing amd64 entry to os.dat (Closes: #356642)
+  * Changed architecture to all (Closes: #357451)
+
+ -- Julien Valroff <julien@kirya.net>  Sun,  5 Mar 2006 08:40:29 +0100
+
+rkhunter (1.2.8-1) unstable; urgency=low
+
+  * Upgraded to new release
+  * Removed mirror 7 (Closes: #346503)
+  * Fixed hash/dash mixup (Closes: #340382)
+
+ -- Micah Anderson <micah@debian.org>  Tue, 14 Feb 2006 20:17:51 -0500
+
+rkhunter (1.2.7-16) unstable; urgency=low
+
+  * Updated weekly cronjob to only send errors of database updates
+    unless you set DB_UPDATE_EMAIL in /etc/default/rkhunter to
+    "yes". (Closes: #332261) 
+  * Updated /etc/default/rkhunter to allow for reports and updates
+    to be sent to other email addresses (defaults to root)
+  * Added French translation - Sylvain Archenault (Closes: #333563)
+  * Added patch to escape the dot of filenames for the egrep call
+    (Bastian Kleineidam <calvin@debian.org>) (Closes: #334518)
+  * debian/control:
+    + Added dependency to perl
+    + recommends libmd5-perl
+
+ -- Micah Anderson <micah@debian.org>  Wed,  5 Oct 2005 17:08:18 -0400
+	
+rkhunter (1.2.7-15) unstable; urgency=low
+
+  * Fixed typos in postinst script
+  * Changed postinst script not to use sed '--in-place' option
+    (Closes: #330693)
+  * Added a note in README.Debian about packages known to set off
+    false alarms
+  * Updated debconf templates (Closes: #331469)
+  * Added Swedish translation - Daniel Nylander (Closes: #331296)
+  * Updated Swedish translation - Daniel Nylander (Closes: #331603)
+  * Added Czech translation - Miroslav Kure (Closes: #331467)
+
+ -- Julien Valroff <julien@kirya.net>  Fri, 30 Sep 2005 06:56:55 +0200
+
+rkhunter (1.2.7-14) unstable; urgency=low
+
+  * Fixed insecure file creation in cronjob, thanks to Thomas Prokosch
+    (Closes: #330627)
+
+ -- Micah Anderson <micah@debian.org>  Wed, 28 Sep 2005 20:33:12 -0400
+
+rkhunter (1.2.7-13) unstable; urgency=low
+
+  [ Julien Valroff]
+  * Changed cron scripts not to use source bash built-in
+    command (Closes: #330067)
+  * Changed daily cron script to send reports only on
+    warnings (Closes: #330127)
+  * Changed README.Debian to reflect the changes made to
+    cron scripts (Closes: #330068)
+  * Changed default so that weekly database update and
+    daily run can be enabled/disabled independently
+  * Added debconf templates to enable/disable the cronjobs (Closes: #329624)
+  * Added myself as co-maintainer
+
+  [ Micah Anderson ]
+  * Changed debian/control to Depend on ${misc:Depends} instead of
+    debconf, this generates proper debconf dependencies.
+  * Added || true to the end of the db_go in debian/config to
+    prevent the script from dying if debconf can't display a
+    question, or the user tries to back up.
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 25 Sep 2005 20:13:11 +0200
+
+rkhunter (1.2.7-12) unstable; urgency=low
+
+  * Changed README.Debian to spell default properly (Closes: #329315)
+  * Added cron.daily to do the rkhunter check daily, removed the weekly
+    check and made it update the database weekly instead. (Closes: #329411)
+
+ -- Micah Anderson <micah@debian.org>  Thu, 22 Sep 2005 07:08:33 -0400
+
+rkhunter (1.2.7-11) unstable; urgency=low
+
+  * Build for upload (Closes: #243938)
+  * Updated debian/rules to remove unused targets and noops
+  * Updated debian/rules to install the upstream changelog and the
+    /etc/default file using debhelper scripts, removed unused debhelper
+    scripts
+  * Updated debian/control to build-depend on dpatch and debian/rules to
+    pull-in appropriate dpatch pieces
+  * Updated debian/control, tightened up the description
+
+ -- Micah Anderson <micah@debian.org>  Sat,  3 Sep 2005 18:14:05 -0500
+
+rkhunter (1.2.7-10) unstable; urgency=low
+
+  * Modified 01_installer.dpatch:
+    - fixed the INSTALLDIR value in rkhunter.conf
+    - fixed path to documentation in some translations
+
+  * Moved db and tmp directories to /var/lib/rkhunter
+    (added a note in README.Debian about that)
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 23 Aug 2005 21:47:48 +0200
+
+rkhunter (1.2.7-9) unstable; urgency=low
+
+  * Fixed INSTALLDIR value in rkhunter.conf (Zak Kipling <zak@transversal.com>)
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 23 Aug 2005 19:39:32 +0200
+
+rkhunter (1.2.7-8) unstable; urgency=low
+
+  * Minor fixes to pass lintian tests
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 16 Aug 2005 13:35:08 +0200
+
+rkhunter (1.2.7-7) unstable; urgency=low
+
+  * Renamed installer patch name
+
+ -- Julien Valroff <julien@kirya.net>  Sun,  7 Aug 2005 10:30:09 +0200
+
+rkhunter (1.2.7-6) unstable; urgency=low
+
+  * Cleaned up source packages
+
+ -- Julien Valroff <julien@kirya.net>  Thu,  4 Aug 2005 22:49:15 +0200
+
+rkhunter (1.2.7-5) unstable; urgency=low
+
+  * Added missing logrotate entry
+
+ -- Julien Valroff <julien@kirya.net>  Mon,  1 Aug 2005 18:04:44 +0200
+
+rkhunter (1.2.7-4) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Julien Valroff <julien@kirya.net>  Thu, 14 Jul 2005 07:34:55 +0200
+
+rkhunter (1.2.7-3) experimental; urgency=low
+
+  * Fixed bug with cron job
+  * Fixed dependency to mailx for report
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 12 Jul 2005 18:07:18 +0200
+
+rkhunter (1.2.7-2) unstable; urgency=low
+
+  * Added weekly cron job
+  * Fixed removing process (failed because non-empty tmp dir)
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 11 Jul 2005 20:54:09 +0200
+
+rkhunter (1.2.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 11 Jul 2005 20:22:47 +0200
+
+rkhunter (1.1.9-1) unstable; urgency=low
+
+  * Initial Release. (Closes: #243938)
+
+ -- Emanuele Rocca <ema@debian.org>  Wed,  5 Jan 2005 14:04:00 +0100
+

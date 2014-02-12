@@ -1,0 +1,79 @@
+# Vietnamese translation for RK Hunter.
+# Copyright © 2007 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rkhunter 1.3.0-3\n"
+"Report-Msgid-Bugs-To: Source: rkhunter@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-12 01:13+0530\n"
+"PO-Revision-Date: 2007-11-30 22:13+1030\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.7b1\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Activate daily run of rkhunter?"
+msgstr "Khởi chạy tiến trình rkhunter hàng ngày không?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you choose this option, rkhunter will be run automatically by a daily "
+"cron job."
+msgstr ""
+"Bật tùy chọn này thì rkhunter sẽ được chạy tự động bởi công việc định thời "
+"(cron) hàng ngày."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Activate weekly update of rkhunter's databases?"
+msgstr ""
+"Khởi chạy tiến trình cập nhật hàng tuần các cơ sở dữ liệu rkhunter không?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If you choose this option, rkhunter databases will be updated automatically "
+"by a weekly cron job."
+msgstr ""
+"Bật tùy chọn này thì các cơ sở dữ liệu rkhunter sẽ được cập nhật tự động bởi "
+"công việc định thời (cron) hàng tuần."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Automatically update rkhunter's file properties database?"
+msgstr "Tự động cập nhật cơ sở dữ liệu thuộc tính tập tin của rkhunter không?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"The file properties database can be updated automatically by the package "
+"management system."
+msgstr ""
+"Hệ thống quản lý gói có khả năng tự động cập nhật cơ sở dữ liệu thuộc tính "
+"tập tin."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"This feature is not enabled by default as database updates may be slow on "
+"low-end machines. Even if it is enabled, the database won't be updated if "
+"the 'hashes' test is disabled in rkhunter configuration."
+msgstr ""
+"Tính năng này bị tắt theo mặc định, vì tiến trình cập nhật cơ sở dữ liệu có "
+"thể chạy chậm trên máy tính sản phẩm cấp thấp. Bật nó thì vẫn còn không cập "
+"nhật cơ sở dữ liệu nếu sự thử « hashes » bị tắt trong cấu hình của rkhunter."

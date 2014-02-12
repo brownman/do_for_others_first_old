@@ -1,0 +1,31 @@
+Description: Various fixes for the manpage
+Author: Julien Valroff <julien@debian.org>
+Forwarded: no
+
+--- a/files/rkhunter.8
++++ b/files/rkhunter.8
+@@ -4,11 +4,11 @@
+ .SH NAME
+ rkhunter \- RootKit Hunter
+ .SH SYNOPSIS
+-\fBrkhunter\fP {--check | --unlock | --update | --versioncheck |
+-          --propupd [{filename | directory | package name},...] |
+-          --list [tests | {lang | languages} | rootkits | perl |
++\fBrkhunter\fP {-\-check | -\-unlock | -\-update | -\-versioncheck |
++          -\-propupd [{filename | directory | package name},...] |
++          -\-list [tests | {lang | languages} | rootkits | perl |
+                   propfiles] |
+-          --config\-check | --version | --help} [options]
++          -\-config\-check | -\-version | -\-help} [options]
+ 
+ .SH DESCRIPTION
+ \fBrkhunter\fP is a shell script which carries out various checks on the local
+@@ -134,7 +134,7 @@
+ on the command\-line and in the configuration files. That is, only the
+ configuration options for tests which would normally run are checked. In
+ order to check all the configured options, then use the \fB--enable all
+---disable none\fP options on the command line. Additionally, the program will
++-\-disable none\fP options on the command line. Additionally, the program will
+ check to see if there are any unrecognised configuration options. If any
+ configuration problems are found, then they will be displayed and the return
+ code will be set to 1.

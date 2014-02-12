@@ -1,0 +1,131 @@
+
+Some of the tests within RKH use commands which do not have standard options.
+An example is the 'ps' command: for GNU linux we would use 'ps aux', but for
+SunOS or IRIX we would use 'ps -ef'. As such the test can run for all these
+operating systems, but RKH must be coded to handle each of them differently.
+
+In cases were an O/S is not supported by a test, then RKH will usually mark the
+test as 'skipped'. The user should look in the log file to see why the test was
+skipped. It may be that we can then include code to enable the test for that
+O/S, or the user can include it as a disabled test in the configuration file.
+
+The problem is that when we are asked to support a new O/S, we need to find out
+which command options are avaiable. We can then see if the test will run on the
+new O/S, or if we need to modify RKH to support it.
+
+This file lists those instances in RKH where whichever operating system is
+used, RKH will use different commands and/or command options.
+
+==============================================================================
+
+RKH makes the assumtion that certain commands are standard among all UNIX,
+Linux and *BSD operating systems. If one or more of these commands are not
+present on the system, then RKH will not run.
+
+The current list of required commands is:
+
+     awk  cat  chmod  chown  cp  cut  date  egrep  grep  head
+     ls  mv  sed  sort  tail  touch  tr  uname  uniq  wc
+
+==============================================================================
+
+
+1) What is the output of the 'uname' command?
+
+This is a very basic command, but it is possible it may not work or may not
+provide the information we want.
+
+
+2) Is the '/bin' directory a link to '/usr/bin'?
+
+In order to cut down on the time repeatedly looking for files in '/bin' and
+'/usr/bin', RKH can exclude '/bin' if it is a link to '/usr/bin'. This occurs
+on the AIX, IRIX and SunOS operating systems.
+
+
+3) What is the output of the 'uname -m' command?
+
+Typically 'uname -m' can be used to determine if the system is 32 or 64-bit.
+For other operating systems, we have to use other commands. For example,
+'sysctl' on FreeBSD and OSX, 'uname -p' on SunOS and AIX.
+
+
+4) Does 'ls -ld /etc/*release* /etc/*version* /etc/issue' show some sort of 'release' or
+version file being present?
+
+In order to find out some information about the O/S, such as its version
+number, RKH will look in '/etc' for any one of various files. Typically this
+information will come from '/etc/lsb-release', or specific O/S versions such as
+'/etc/debian_version' or '/etc/gentoo_release'.
+
+The RKH configuration file contains an option to set the specific file name, if
+RKH cannot correctly detect a 'release' file.
+
+
+5) Does the O/S support setting an 'immutable-bit' on files? If so, then is the
+'lsattr' command present?
+
+This is one of the file properties checks. However, at present only Linux and
+*BSD support the immutable-bit on files. If the system supports the
+immutable-bit, but 'lsattr' is not present, then does 'ls -lno' show the file
+attributes?
+
+
+6) What is the output of the 'netstat -an' command?
+
+RKH may use this output in determining if certain ports are being used.
+However, the output from 'netstat' varies wildly amongst different operating
+systems. So we need to see the output in order to ensure that RKH handles it
+correctly.
+
+
+7) Does the 'ifconfig' or 'ifconfig -a' command show the available network interfaces?
+
+RKH looks at the network interfaces to see if they are in promiscuous mode.
+
+
+8) Is the 'ip' command present? If so, then can it show the interfaces present,
+and if so how? (Perhaps using 'ip -s link'?)
+
+As above, this is a second check for promiscuous interfaces.
+
+
+9) Does the file '/proc/net/packet' exist? (It may be zero-sized.) If it does
+exist, then is the 'lsof' command present on the system as well?
+
+This is used by RKH to see if there are any applications watching the network
+interfaces. The 'lsof' command is used by several tests in RKH.
+
+
+10) Does the 'ps ax' command display the processes running on the system? If
+not, then does 'ps -ef' work instead? If not, what options to the 'ps' command
+cause it to show all the current running processes on the system (the output
+must include the PID and the process (command) being run by that PID).
+
+RKH uses the 'ps' command for a few tests. However, the output varies a lot
+amongst different operating systems, so we have to code RKH according to each
+system.
+
+
+11) Does the 'date +%s' command show the number of seconds since the epoch?
+    Does it also understand "date --date '5 seconds ago'"? If not then perl
+    will be needed.
+
+This is used by RKH in order to add to filenames to make them random.
+
+
+12) Is the 'stat' command present on the system, and if so, does the
+'stat -c '%i 0%a %u %g %s %Y:' /etc/motd' command work?
+If not try using 'stat -f ...'.
+
+This should display some numbers relating to the ('/etc/motd') file attributes.
+If it doesn't work, then we may need to see the man page for the 'stat'
+command.
+
+13) Does the grep command need the '-a' option, or some other option, in
+order to treat binary (language) files as text files. See GREP_OPT in RKH.
+
+14) Does the 'readlink' command exist, and if so does it support the '-f'
+option to get the full pathname. If not, then the builtin command may be
+required.
+

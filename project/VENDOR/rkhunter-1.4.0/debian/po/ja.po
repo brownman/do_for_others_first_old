@@ -1,0 +1,76 @@
+# Copyright (C) 2006 Micah Anderson <micah@debian.org>
+# This file is distributed under the same license as the rkhunter package.
+# Hideki Yamane <henrich@debian.or.jp>, 2006-2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rkhunter 1.3.2-3\n"
+"Report-Msgid-Bugs-To: Source: rkhunter@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-12 01:13+0530\n"
+"PO-Revision-Date: 2008-07-08 19:26+0900\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Activate daily run of rkhunter?"
+msgstr "rkhunter を毎日実行しますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you choose this option, rkhunter will be run automatically by a daily "
+"cron job."
+msgstr ""
+"このオプションを選んだ場合、rkhunter は毎日の cron ジョブによって自動的に実行"
+"されます。"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Activate weekly update of rkhunter's databases?"
+msgstr "rkhunter のデータベース更新を毎週行いますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If you choose this option, rkhunter databases will be updated automatically "
+"by a weekly cron job."
+msgstr ""
+"このオプションを選んだ場合、rkhunter のデータベースは毎週の cron ジョブによっ"
+"て自動的に更新されます。"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Automatically update rkhunter's file properties database?"
+msgstr "rkhunter のファイルプロパティデータベースを自動的に更新しますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"The file properties database can be updated automatically by the package "
+"management system."
+msgstr ""
+"ファイルプロパティデータベースは、パッケージマネジメントシステムによって自動"
+"的に更新できます。"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"This feature is not enabled by default as database updates may be slow on "
+"low-end machines. Even if it is enabled, the database won't be updated if "
+"the 'hashes' test is disabled in rkhunter configuration."
+msgstr ""
+"ローエンドのマシンではデータベースの更新が遅いため、この機能はデフォルトでは"
+"有効になっていません。この機能を有効にしても、rkhunter の設定中で 'hashes' テ"
+"ストが無効になっているとデータベースは更新されません。"

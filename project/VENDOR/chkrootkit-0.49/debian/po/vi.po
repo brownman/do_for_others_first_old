@@ -1,0 +1,82 @@
+# Vietnamese translation for Chroot Kit.
+# Copyright © 2008 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: chkrootkit 0.47-1.2\n"
+"Report-Msgid-Bugs-To: chkrootkit@packages.debian.org\n"
+"POT-Creation-Date: 2008-02-26 08:06+0100\n"
+"PO-Revision-Date: 2008-02-29 20:33+1030\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.7b3\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Should chkrootkit be run automatically every day?"
+msgstr "Có nên tự động chạy chrootkit hàng ngày không?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"The chkrootkit program can be run automatically via a daily cron job. If you "
+"choose this option, you'll also be given the opportunity to specify options "
+"for the daily run."
+msgstr ""
+"Chương trình chrootkit có khả năng được tự động chạy thông qua một công việc "
+"định thời (cron) hàng ngày. Bật tùy chọn này thì bạn cũng có dịp ghi rõ các "
+"tùy chọn cho tiến trình chạy hàng ngày."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "Arguments to use with chkrootkit in the daily run:"
+msgstr "Các đối số cần dùng với chrootkit khi chạy hàng ngày:"
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid ""
+"The following are useful arguments to pass to chkrookit:\n"
+" -r <root>: use an alternate root directory;\n"
+" -n       : do not attempt to analyze NFS-mounted files;\n"
+" -q       : run in quiet mode [highly recommended]."
+msgstr ""
+"Các đối số sau có ích khi được gửi cho chkrookit:\n"
+" -r <root>: dùng một thư mục gốc xen kẽ\n"
+" -n       : đừng thử phân tích tập tin được NFS lắp;\n"
+" -q       : chạy ở chế độ im (rất khuyến khích)."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Only report problems if they differ from previous day's problems?"
+msgstr "Chỉ thông báo lỗi khác với các lỗi của ngày trước không?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"If you choose this option, chkrootkit will only report problems when they "
+"differ from the previous day's run."
+msgstr ""
+"Bật tùy chọn này thì chrootkit sẽ chỉ thông báo lỗi khi nó khác với các lỗi "
+"được gặp bởi tiến trình chạy vào ngày trước."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"Using this option is not recommended as it is likely to hide existing "
+"security problems."
+msgstr ""
+"Không khuyên bạn hiệu lực tùy chọn này, vì nó rất có thể ẩn các vấn đề bảo "
+"mật đã có."

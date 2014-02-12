@@ -1,0 +1,35 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: chkrootkit/run_daily
+Type: boolean
+Default: false
+_Description: Should chkrootkit be run automatically every day?
+ The chkrootkit program can be run automatically via a daily cron job. If you
+ choose this option, you'll also be given the opportunity to
+ specify options for the daily run.
+
+Template: chkrootkit/run_daily_opts
+Type: string
+Default: -q
+_Description: Arguments to use with chkrootkit in the daily run:
+ The following are useful arguments to pass to chkrookit:
+  -r <root>: use an alternate root directory;
+  -n       : do not attempt to analyze NFS-mounted files;
+  -q       : run in quiet mode [highly recommended].
+
+Template: chkrootkit/diff_mode
+Type: boolean
+Default: false
+_Description: Only report problems if they differ from previous day's problems?
+ If you choose this option, chkrootkit will
+ only report problems when they differ from the previous day's run.
+ .
+ Using this option is not recommended as it is likely to hide existing
+ security problems.

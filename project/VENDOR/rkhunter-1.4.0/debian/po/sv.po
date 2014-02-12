@@ -1,0 +1,84 @@
+# Swedish translation of rkhunter.
+# Copyright (C) 2005 THE rkhunter'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the rkhunter package.
+# Daniel Nylander <po@danielnylander.se>, 2005.
+# , fuzzy
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rkhunter 1.2.7-14\n"
+"Report-Msgid-Bugs-To: Source: rkhunter@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-12 01:13+0530\n"
+"PO-Revision-Date: 2008-07-21 19:32+0100\n"
+"Last-Translator: Martin Bagge <brother@bsnet.se>\n"
+"Language-Team: Swedish <sv@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Activate daily run of rkhunter?"
+msgstr "Aktivera dagliga körningar?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you choose this option, rkhunter will be run automatically by a daily "
+"cron job."
+msgstr ""
+"Välj detta om du vill att rkhunter ska köras dagligen, automatiskt via cron."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Activate weekly update of rkhunter's databases?"
+msgstr "Aktivera databasuppdateringar per vecka?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If you choose this option, rkhunter databases will be updated automatically "
+"by a weekly cron job."
+msgstr ""
+"Välj detta om du vill att rkhunter ska uppdateras veckovis, automatiskt via "
+"cron."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Automatically update rkhunter's file properties database?"
+msgstr "Uppdatera rkhunters databas över filer automatiskt?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"The file properties database can be updated automatically by the package "
+"management system."
+msgstr ""
+"Databasen över filer kan uppdateras automatiskt av pakethanteringssystemet."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"This feature is not enabled by default as database updates may be slow on "
+"low-end machines. Even if it is enabled, the database won't be updated if "
+"the 'hashes' test is disabled in rkhunter configuration."
+msgstr ""
+"Denna funktion är inte aktiverad som standard få databasuppdateringar kan "
+"vara långsamma på lågpresterande maskiner. Även om funktionen är aktiverad "
+"så kommer inte databasen att bli updaterad om testet 'hashes' är avaktiverat "
+"i inställningarna för rkhunter."
+
+#~ msgid "Say yes if you want to run rkhunter tests every day."
+#~ msgstr "SÃ¤g ja om du vill att rkhunter ska testa ditt system varje dag."
+
+#~ msgid "Say yes if you want to update rkhunter database every week."
+#~ msgstr "SÃ¤g ja om du vill uppdatera rkhunters databas varje vecka."

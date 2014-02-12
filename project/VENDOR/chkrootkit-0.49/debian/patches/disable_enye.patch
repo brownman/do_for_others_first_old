@@ -1,0 +1,18 @@
+Author: Francois Marier <francois@debian.org>
+Description: disabling this check which was killing random processes (#457828)
+--- a/chkproc.c
++++ b/chkproc.c
+@@ -364,11 +364,13 @@ int main(int argc, char **argv)
+       retdir+= errno;
+    }
+    /* Check for Enye LKM */
++   /* Disabled, see #421864
+    if (stat(ENYELKM, &sb) && kill (12345, 58) >= 0)
+    {
+       printf("Enye LKM found\n");
+       retdir+= errno;
+    }
++   */
+ #endif
+    return (retdir+retps);
+ }

@@ -1,0 +1,21 @@
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/backdoorports.dat 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/mirrors.dat 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/programs_bad.dat 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/suspscan.dat 0640 != 0644
+rkhunter: non-standard-dir-perm var/lib/rkhunter/tmp/ 0750 != 0755
+rkhunter: non-standard-dir-perm var/lib/rkhunter/db/ 0750 != 0755
+rkhunter: non-standard-dir-perm var/lib/rkhunter/db/i18n/ 0750 != 0755
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/i18n/cn 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/i18n/de 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/i18n/en 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/i18n/zh 0640 != 0644
+rkhunter: non-standard-file-perm var/lib/rkhunter/db/i18n/zh.utf8 0640 != 0644
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/backdoorports.dat
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/i18n/cn
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/i18n/de
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/i18n/en
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/i18n/zh
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/i18n/zh.utf8
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/suspscan.dat
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/mirrors.dat
+rkhunter: file-missing-in-md5sums var/lib/rkhunter/db/programs_bad.dat

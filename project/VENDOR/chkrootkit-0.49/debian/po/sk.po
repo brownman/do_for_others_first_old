@@ -1,0 +1,85 @@
+# Slovak translations for chkrootkit package
+# Slovenské preklady pre balík chkrootkit.
+# Copyright (C) 2011 THE chkrootkit'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the chkrootkit package.
+# Automatically generated, 2011.
+# Slavko <linux@slavino.sk>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: chkrootkit 0.49-4\n"
+"Report-Msgid-Bugs-To: chkrootkit@packages.debian.org\n"
+"POT-Creation-Date: 2008-02-26 08:06+0100\n"
+"PO-Revision-Date: 2011-12-06 16:17+0100\n"
+"Last-Translator: Slavko <linux@slavino.sk>\n"
+"Language-Team: slovenčina <debian-l10n-slovak@lists.debian.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-POFile-SpellExtra: cron NFS chkrootkit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Should chkrootkit be run automatically every day?"
+msgstr "Má byť chkrootkit spúšťaný automaticky každý deň?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"The chkrootkit program can be run automatically via a daily cron job. If you "
+"choose this option, you'll also be given the opportunity to specify options "
+"for the daily run."
+msgstr ""
+"Program chkrootkit môže byť spúšťaný automaticky prostredníctvom každodennej "
+"úlohy cron. Ak zvolíte túto možnosť, bude vám poskytnutá možnosť zadať voľby "
+"každodenného spúšťania."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "Arguments to use with chkrootkit in the daily run:"
+msgstr "Argumenty každodenného spúšťania chkrootkit:"
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid ""
+"The following are useful arguments to pass to chkrookit:\n"
+" -r <root>: use an alternate root directory;\n"
+" -n       : do not attempt to analyze NFS-mounted files;\n"
+" -q       : run in quiet mode [highly recommended]."
+msgstr ""
+"Nasledujú užitočné argumenty pre chkrootkit:\n"
+" -r <root>: použiť alternatívny adresár root;\n"
+" -n       : neanalyzovať súbory pripojené cez NFS;\n"
+" -q       : spustiť v tichom režime [dôrazne odporúčané]."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Only report problems if they differ from previous day's problems?"
+msgstr "Hlásiť problémy, len ak sa líšia od problémov predošlého dňa?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"If you choose this option, chkrootkit will only report problems when they "
+"differ from the previous day's run."
+msgstr ""
+"Ak vyberiete túto voľbu, chkrootkit bude hlásiť problémy, len ak sa líšia od "
+"predošlého spustenia."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"Using this option is not recommended as it is likely to hide existing "
+"security problems."
+msgstr ""
+"Použitie tejto voľby nie je odporúčané, pretože bude skrývať existujúce "
+"bezpečnostné problémy."

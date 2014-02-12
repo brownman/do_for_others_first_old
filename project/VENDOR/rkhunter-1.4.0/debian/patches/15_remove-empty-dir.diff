@@ -1,0 +1,15 @@
+Description: Avoid shipping an empty /usr/lib/ directory
+Author: Julien Valroff <julien@debian.org>
+Forwarded: not-needed
+
+--- a/installer.sh
++++ b/installer.sh
+@@ -700,7 +700,7 @@
+ 	if [ "${RKHINST_LAYOUT}" = "oldschool" ]; then
+ 		RKHDIR_LIST="${RKHINST_DIRS}"
+ 	else
+-		RKHDIR_LIST="${RKHINST_DIRS} ${LIBDIR} ${VARDIR}/lib"
++		RKHDIR_LIST="${RKHINST_DIRS} ${VARDIR}/lib"
+ 	fi
+ 
+ 	umask 022

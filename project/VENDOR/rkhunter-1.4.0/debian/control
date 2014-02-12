@@ -1,0 +1,32 @@
+Source: rkhunter
+Section: admin
+Priority: optional
+Maintainer: Debian Forensics <forensics-devel@lists.alioth.debian.org>
+Uploaders: Julien Valroff <julien@debian.org>
+Build-Depends: debhelper (>= 8), po-debconf
+Standards-Version: 3.9.3
+Homepage: http://rkhunter.sourceforge.net
+Vcs-Browser: http://git.debian.org/?p=forensics/rkhunter.git;a=summary
+Vcs-Git: git://git.debian.org/forensics/rkhunter.git
+
+Package: rkhunter
+Architecture: all
+Pre-Depends: debconf (>= 0.5) | debconf-2.0
+Depends: file, net-tools, binutils, ucf (>= 0.28), ${perl:Depends}, ${misc:Depends}
+Recommends: default-mta | mail-transport-agent, wget | curl | links | elinks | lynx, iproute, unhide.rb | unhide, lsof
+Suggests: bsd-mailx | mailutils | heirloom-mailx | mailx, tripwire, libdigest-whirlpool-perl, liburi-perl, libwww-perl, powermgmt-base
+Description: rootkit, backdoor, sniffer and exploit scanner
+ Rootkit Hunter scans systems for known and unknown rootkits,
+ backdoors, sniffers and exploits.
+ .
+ It checks for:
+  - MD5 hash changes;
+  - files commonly created by rootkits;
+  - executables with anomalous file permissions;
+  - suspicious strings in kernel modules;
+  - hidden files in system directories;
+ and can optionally scan within files.
+ .  
+ Using rkhunter alone does not guarantee that a system is not
+ compromised. Running additional tests, such as chkrootkit, is
+ recommended.

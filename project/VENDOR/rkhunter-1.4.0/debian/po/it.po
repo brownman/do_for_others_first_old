@@ -1,0 +1,79 @@
+# Italian translation of the rkhunter debconf templates
+# This file is distributed under the same license as the rkhunter package
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# Luca Monducci <luca.mo@tiscali.it>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: rkhunter 1.3.0 PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: Source: rkhunter@packages.debian.org\n"
+"POT-Creation-Date: 2007-12-12 01:13+0530\n"
+"PO-Revision-Date: 2007-11-27 21:53+0100\n"
+"Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
+"Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Activate daily run of rkhunter?"
+msgstr "Attivare l'esecuzione giornaliera di rkhunter?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you choose this option, rkhunter will be run automatically by a daily "
+"cron job."
+msgstr ""
+"Se si accetta, rkhunter verrà eseguito automaticamente da un lavoro "
+"quotidiano di cron."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Activate weekly update of rkhunter's databases?"
+msgstr "Attivare l'aggiornamento settimanale del database di rkhunter?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If you choose this option, rkhunter databases will be updated automatically "
+"by a weekly cron job."
+msgstr ""
+"Se si accetta, il database di rkhunter verrà aggiornato automaticamente da "
+"un lavoro settimanale di cron."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid "Automatically update rkhunter's file properties database?"
+msgstr ""
+"Aggiornare automaticamente il database di rkhunter delle proprietà dei file?"
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"The file properties database can be updated automatically by the package "
+"management system."
+msgstr ""
+"Il database con le proprietà dei file può essere aggiornato automaticamente "
+"dal sistema di gestione dei pacchetti."
+
+#. Type: boolean
+#. Description
+#: ../templates:4001
+msgid ""
+"This feature is not enabled by default as database updates may be slow on "
+"low-end machines. Even if it is enabled, the database won't be updated if "
+"the 'hashes' test is disabled in rkhunter configuration."
+msgstr ""
+"Nella configurazione predefinita questa funzionalità non è attiva perché gli "
+"aggiornamenti del database potrebbero essere lenti su macchine di fascia "
+"bassa. Inoltre anche se attiva il database non verrà aggiornato qualora il "
+"test \"hashes\" sia disabilitato nella configurazione di rkhunter."
