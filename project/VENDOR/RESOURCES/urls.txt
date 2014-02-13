@@ -1,2 +1,0 @@
-http://www.commandlinefu.com/commands/matching/clip/Y2xpcA==/sort-by-votes
-http://stackoverflow.com/questions/749544/pipe-to-from-clipboard

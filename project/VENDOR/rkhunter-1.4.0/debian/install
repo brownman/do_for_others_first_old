@@ -1,3 +1,0 @@
-debian/90rkhunter           /etc/apt/apt.conf.d
-debian/default.conf         /usr/share/rkhunter
-debian/rkhupd.sh            /usr/share/rkhunter/scripts

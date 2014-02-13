@@ -1,9 +1,0 @@
-chkrootkit usr/sbin
-chklastlog /usr/lib/chkrootkit
-chkwtmp /usr/lib/chkrootkit
-chkutmp /usr/lib/chkrootkit
-chkdirs /usr/lib/chkrootkit
-chkproc /usr/lib/chkrootkit
-ifpromisc /usr/lib/chkrootkit
-check_wtmpx /usr/lib/chkrootkit
-strings-static /usr/lib/chkrootkit

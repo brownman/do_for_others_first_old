@@ -1,1 +1,0 @@
-pdftotext [file] - | grep 'YourPattern'

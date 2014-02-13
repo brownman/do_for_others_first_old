@@ -1,6 +1,6 @@
-export SUCCESS=1
-export FAILURE=0
-dir_lib=$dir_root/bashrc
+#export SUCCESS=1
+#export FAILURE=0
+dir_lib=$dir_rc/bashrc
 
 
 source $dir_lib/proxy.cfg
@@ -19,12 +19,12 @@ source $dir_lib/prompt.cfg
 #export PROMPT_COMMAND='history -a'
 
 
-alias single1="$dir_root/breath.sh project/bin/single.sh"
-export BASHRC_LOADED=true
+#alias single1="$dir_root/breath.sh project/bin/single.sh"
+#export BASHRC_LOADED=true
 echo "LOADING: bashrc.fun"
 
-exist(){
-cmd="$1"
-type $cmd >/dev/null 2>&1 || { echo -e >&2 "false" ;}
-}
-export -f exist 
+#exist(){
+#cmd="$1"
+#type $cmd >/dev/null 2>&1 || { echo -e >&2 "false" ;}
+#}
+#export -f exist 
