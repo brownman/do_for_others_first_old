@@ -4,8 +4,9 @@ path=`pwd`
 
 echo "path: $path"
 confirm
-dir_first=package/vm
+
 package_name='do-for-others-first'
+dir_first=$package_name-0.0.1
 SUDO=''
 inst_dir=test1
 root_dir=/tmp
@@ -13,7 +14,7 @@ args_extra="--force-not-root"
 
 build(){
     print_func
-cmd="dpkg-deb --build  $dir_first $path/$package_name.deb"
+cmd="dpkg-deb --build  $dir_first $root_dir/$package_name.deb"
 confirm "$cmd"
 }
 install(){
