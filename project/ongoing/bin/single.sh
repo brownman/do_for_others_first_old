@@ -54,27 +54,34 @@ else
     fi
     if [  -d "$dir_plugins/$name" ];then
 
-        file_test=$dir_plugins/$name/test.sh
-        if [ -f "$file_test" ];then
+        export file_test=$dir_plugins/$name/test.sh
+        export file_script=$dir_plugins/$name/script.sh
+        export file_config=$dir_plugins/$name/config.cfg
 
+
+        if [ -f "$file_test" ];then
+            res=$FAILURE
             echo testing..
-            $file_test
+
+                source $file_config
+            $file_runner $file_test
             res=$?
             if [ $res -eq $SUCCESS ];then
                 print_color $GREEN 'test OK'
+
                 if [ "${#args[@]}" -gt 0 ];then
-                    $dir_plugins/$name/$name.sh "${args[@]}"
+                    $file_script "${args[@]}"
                 else
-                    $dir_plugins/$name/$name.sh
+                    $file_script
                 fi
             else
-                reason_of_death 'test failed'
+                print_color $RED 'test failed'
             fi
         else
             reason_of_death 'no such test' "$file_test"
         fi
     else
-        reason_of_death 'no such directory' "$dir_plugins/$name"
+        reason_of_death 'no such plugin' "$name"
     fi
 
 
@@ -87,4 +94,3 @@ fi
 #run
 
 
-echo bye

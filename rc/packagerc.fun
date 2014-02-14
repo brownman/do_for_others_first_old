@@ -7,7 +7,10 @@ source $dir_lib/pid.cfg
 source $dir_lib/eval.cfg
 
 source $dir_lib/parse.cfg
+
+
 source $dir_lib/array.cfg
+source $dir_lib/regex.cfg
 
 source $dir_lib/user.cfg
 source $dir_lib/self.cfg

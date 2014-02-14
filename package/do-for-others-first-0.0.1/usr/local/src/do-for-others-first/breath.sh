@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash 
 #version:   0.0.1
 #date:      12.2.2014
 #help:      run and save error logs
@@ -17,10 +17,14 @@ export SUCCESS=0
 export FAILURE=1
 export TRAP=false
 export GUI=true
+export EDITOR=vi
 
-export BLUE=32
-export RED=33
-export GREEN=35
+
+export RED=31
+export GREEN=32
+export BLUE=34
+export YELLOW=33
+export PINK=35
 
 #first
 dir_root=`pwd`
@@ -29,16 +33,20 @@ dir_root=`pwd`
 export dir_rc=$dir_root/rc
 export dir_plugins=$dir_root/plugins
 export dir_lib=$dir_root/lib
+
 export dir_shunit=$dir_lib/shunit2-2.0.3
+export dir_koans=$dir_lib/bash_koans
 
 #load
 source $dir_rc/packagerc.fun
 
-export file_runner=$dir_shunit/src/shell/shunit2
+
+#export file_runner=$dir_shunit/src/shell/shunit2
+export file_runner=$dir_koans/runner.sh
 
 #assert 1 1
 
-export script=$dir_root/bin/single.sh
+script=$dir_root/bin/single.sh
 
 
 
@@ -71,7 +79,7 @@ run(){
         cmd="$script"
     fi
 #echo "$cmd"
-confirm "$cmd"  2>$file_error 
+eval "$cmd"  2>$file_error 
 
     if [ ! -n $file_error ];then
         echo
@@ -86,7 +94,7 @@ confirm "$cmd"  2>$file_error
             echo 'file error exist buy - No content' "$file_error"
         fi
     else
-        echo "OK!"
+        print_color $GREEN End.
         #echo "File: $file_error"
         #echo "is empty"
     fi
