@@ -15,8 +15,8 @@ export LANG=ru
 pushd `dirname $0`> /dev/null
 export dir_root=`pwd`
 echo "dir_root: $dir_root"
-    source $dir_root/bashrc.fun
-    source $dir_root/projectrc.fun
+    source $dir_root/../rc/bashrc.fun
+    source $dir_root/rc/projectrc.fun
 clean_logger(){
     print_func
     if [ -f "$file_logger" ];then

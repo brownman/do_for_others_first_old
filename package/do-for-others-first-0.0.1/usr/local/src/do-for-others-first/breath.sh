@@ -11,11 +11,16 @@ set -o errtrace
 pushd `dirname $0` > /dev/null
 
 
+
 #vars
 export SUCCESS=0
 export FAILURE=1
 export TRAP=false
 export GUI=true
+
+export BLUE=32
+export RED=33
+export GREEN=35
 
 #first
 dir_root=`pwd`
@@ -23,9 +28,18 @@ dir_root=`pwd`
 #dir-struct
 export dir_rc=$dir_root/rc
 export dir_plugins=$dir_root/plugins
-script=$dir_root/bin/single.sh
+export dir_lib=$dir_root/lib
+export dir_shunit=$dir_lib/shunit2-2.0.3
+
 #load
 source $dir_rc/packagerc.fun
+
+export file_runner=$dir_shunit/src/shell/shunit2
+
+#assert 1 1
+
+export script=$dir_root/bin/single.sh
+
 
 
 #local
@@ -78,7 +92,6 @@ confirm "$cmd"  2>$file_error
     fi
 
 }
-
 clear
 print_script
 echo -n  "Time: "
@@ -87,8 +100,10 @@ if [ $# -gt 0 ];then
     args=( "$@" )
 else
     echo
-    show_funcs
+#    show_funcs
   #  reason_of_death 'No Arguments'
 fi
     run
+
+#source $file_runner
 popd
