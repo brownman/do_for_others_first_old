@@ -1,9 +1,10 @@
 #!/bin/bash -e
+
 path=`pwd`
 #source $path/loader.cfg
 
+
 echo "path: $path"
-confirm
 
 package_name='do-for-others-first'
 dir_first=$package_name-0.0.1
