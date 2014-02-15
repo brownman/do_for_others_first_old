@@ -68,4 +68,8 @@ technical details:
 3. repeat the last step - but this time - translate the sentance to german before speaking it
 
 
-- to be continued
+
+changelog
+=
+- version 0.0.1 - first deb package: has 1 plugin , each plugin has  files:script.sh test.sh config.cfg
+
