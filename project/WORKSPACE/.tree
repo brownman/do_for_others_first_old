@@ -1,0 +1,30 @@
+.
+├── dao02
+│   ├── debian.txt
+│   ├── reminder.txt
+│   ├── rooms
+│   │   └── room1.txt
+│   └── todo
+├── dao04
+│   ├── deb.sh
+│   │   └── my_folder
+│   │       └── my_package.cfg
+│   ├── hotkeys.txt
+│   ├── questions.txt
+│   ├── reminder.txt
+│   ├── rooms
+│   │   ├── room1.txt
+│   │   ├── room2.txt
+│   │   ├── room3.txt
+│   │   └── room4.txt
+│   └── todo
+│       ├── Fri.txt
+│       ├── Mon.txt
+│       ├── Sat.txt
+│       ├── Sun.txt
+│       ├── Thu.txt
+│       └── Tue.txt
+├── README.md
+└── todo
+
+9 directories, 18 files

@@ -1,0 +1,22 @@
+  test2
+  cat .tmp/edit.txt 
+  cat .tmp/edit.txt 
+  nice
+  #  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  test 4
+  vi hi
+  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  vi 4/DETECT/install_bashrc.sh 
+  show edit
+  last edit
+  vi 0/ask.sh/ANSWER/sh/translation.sh 
+  helllo
+vi coool
+vi 0/ask.sh/ANSWER/cfg/parse/parse.cfg
+vi 0/ask.sh/ANSWER/cfg/parse/parse.cfg
+vi 0/ask.sh/ANSWER/sh/translation.sh
+vi /home/dao04/JAIL/do_for_others_first/0/ask.sh/ANSWER/cfg/sound/sound.cfg
+vi /home/dao04/JAIL/do_for_others_first/0/ask.sh/ANSWER/cfg/sound/sound.cfg
+vi 0/ask.sh/ANSWER/sh/reminder1.sh
+vi 0/ask.sh/ANSWER/sh/reminder1.sh
+vi 0/ask.sh/ANSWER/sh/reminder1.sh
