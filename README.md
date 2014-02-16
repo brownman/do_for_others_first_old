@@ -16,9 +16,11 @@ echo "create or use a plugin:"
 
 ```
 
-## Plugins:
-utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
-[gmail-group](https://github.com/brownman/do_for_others_first/tree/develop/src/plugins/gmail-group)
+![demo](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/root.gif)
+ 
+Plugins:
+-
+- utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).[gmail-group](https://github.com/brownman/do_for_others_first/tree/develop/src/plugins/gmail-group)
 
 
- ![demo](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/root.gif)
+
