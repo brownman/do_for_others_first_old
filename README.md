@@ -11,4 +11,4 @@ step by step instructions:
  - ./breath.sh
  - echo "create or use a plugin:"
  
- [demo](./presentations/root.gif)
+![demo](./presentations/root.gif)
