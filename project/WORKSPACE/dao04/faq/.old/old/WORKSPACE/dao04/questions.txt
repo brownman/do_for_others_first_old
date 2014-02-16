@@ -1,7 +1,0 @@
-how
-how to x
-how to y
-http://askubuntu.com/questions/80371/bash-history-handling-with-multiple-terminals
-query - node.js chat streamingaudio
-http://naveenubuntu.blogspot.co.il/2011/01/broadcom-sta-wireless-driver.html
-git repo - share external dir

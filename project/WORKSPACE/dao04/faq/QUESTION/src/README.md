@@ -1,1 +1,0 @@
-http://drichard.org/mindmaps/

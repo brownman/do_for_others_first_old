@@ -1,4 +1,0 @@
-  ./wrapper.sh 
-  ./wrapper.sh bin/single.sh translation cat it
-  ps -ef | grep bash | grep -v grep | awk '{print $2}'
-  idea cron log - desktop shortcut first
