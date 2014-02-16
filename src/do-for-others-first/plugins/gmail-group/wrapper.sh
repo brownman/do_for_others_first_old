@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 dir=`dirname $0`
 
 
@@ -14,19 +14,21 @@ file_test=$dir/test.sh
 file_script=$dir/script.sh
 
 steps(){
-    clear
     source $file_cfg
     source $file_helpers
-
+print_script
     print_func
 
-    $(exec $file_test)
+    cmd="$file_test" 
+    $( eval "$cmd" )
+
     res=$?
 
         
-    if [ "$res" = $SUCCESS ];then
+    if [ "$res" -eq $SUCCESS ];then
       print_color 32 'run!'
-        exec $file_script 2>$file_log
+#        $( eval $file_script 2>$file_log )
+$file_script
     else
       print_color 31 'follow the Instructions -> then try again!'
     fi

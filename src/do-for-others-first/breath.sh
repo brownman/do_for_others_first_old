@@ -3,8 +3,8 @@
 #date:      12.2.2014
 #help:      run and save error logs
 #arguments: a script to run
-set -o nounset
-set -o errtrace
+#set -o nounset
+#set -o errtrace
 #set -o verbose
 #set -o
 #confirm
@@ -79,7 +79,8 @@ run(){
         cmd="$script"
     fi
 #echo "$cmd"
-eval "$cmd"  2>$file_error 
+eval "$cmd" 
+#2>$file_error 
 
     if [ ! -n $file_error ];then
         echo

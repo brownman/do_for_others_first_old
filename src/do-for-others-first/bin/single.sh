@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 #print_script
 #dir_self=`dirname $0`
 #filename=''
@@ -56,33 +56,14 @@ else
     fi
     if [  -d "$dir_plugins/$name" ];then
 
-        export file_test=$dir_plugins/$name/test.sh
-        export file_script=$dir_plugins/$name/script.sh
-        export file_config=$dir_plugins/$name/config.cfg
-
-
-        if [ -f "$file_test" ];then
-            res=$FAILURE
-            echo testing..
-
-                source $file_config
-            $file_runner $file_test
-            res=$?
-            if [ $res -eq $SUCCESS ];then
-                print_color $GREEN 'test OK'
+        file_script=$dir_plugins/$name/wrapper.sh
 
                 if [ "${#args[@]}" -gt 0 ];then
                     $file_script "${args[@]}"
                 else
                     $file_script
                 fi
-            else
-                print_color $RED 'test failed'
-            fi
-        else
-            reason_of_death 'no such test' "$file_test"
-        fi
-    else
+   else
         reason_of_death 'no such plugin' "$name"
     fi
 
