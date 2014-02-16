@@ -13,6 +13,8 @@ show_scripts(){
         #    local ptrn="s/.$type//g"
         ls -1 $dir 
         echo
+        echo -n "example: "
+        echo "./breath.sh gmail-group"
         #| sed "$ptrn"
     else
         reason_of_death 'no such directory' "$dir"

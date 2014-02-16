@@ -1,5 +1,4 @@
 #!/bin/bash
-clean
 dir=package/do-for-others-first-0.0.1/usr/local/src/do-for-others-first/
 wrapper=$dir/breath.sh
 ###########################################  Directory structure:  ######################\
