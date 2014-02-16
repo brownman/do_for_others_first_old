@@ -11,4 +11,13 @@ step by step instructions:
  - ./breath.sh
  - echo "create or use a plugin:"
  
+
+ 
+
+
+Plugins:
+=
+[gmail-group](https://github.com/brownman/do_for_others_first/tree/develop/src/plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
+
+
  ![demo](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/root.gif)
