@@ -1,5 +1,0 @@
-notify-send remind_me
-gxmessage open_url
-google-chrome <<< echo `menu_gui url.txt`
-xcowsay hi
-xfce4-settings-manager

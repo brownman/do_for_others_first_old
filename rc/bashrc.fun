@@ -31,51 +31,101 @@ echo "LOADING: bashrc.fun"
 #
 #
 scaffold(){
-str_bash="#!/bin/bash"
-echo 'scaffolding..'
+    str_bash="#!/bin/bash"
+        echo 'scaffolding..'
 ###################### cfg / global funcs (2)
-touch vars.cfg
-touch helpers.cfg
+        touch vars.cfg
+        touch helpers.cfg
 ###################### scripts:  (3)
 # wrapper: play all tools
-touch wrapper.sh
 # test:    self test/present/check/validate/help/info
-touch test.sh
 # script:  the simplest/cleanest snippet of code
-touch script.sh
 #####################
+#
+#
+#
 
-
-func1=check_X
-file=test.sh
-echo -e "$str_bash\n\n\n\n${func1}(){\n \
-     echo '${func1}()'\n}\n\n\n${func1}" \
-     >> $file
-
-func1=steps
-file=wrapper.sh
-echo -e "$str_bash -e\nset -o nounset\n\n\n\n${func1}(){\n \
-     echo '${func1}()'\n}\n\n\n${func1}" \
-     >> $file
-
-func1=snippet_X
-file=script.sh
-echo -e "$str_bash\n\n\n\n${func1}(){\n \
-     echo '${func1}()'\n}\n\n\n${func1}" \
-     >> $file
-
-echo 'export -f func' >> helpers.cfg
-echo 'export VAR=""' >> vars.cfg
-
-chmod u+x script.sh
-chmod u+x wrapper.sh
-chmod u+x test.sh
-
-
-grep -rn '' .
+        file=.gitignore
 
 
 
-}
+        if [ ! -f "$file" ];then
+            touch $file
+                echo '.old' >> .gitignore
+
+                echo 'added: .gitignore: .old'
+        else
+            echo "file already exist:  $file"
+                fi
+
+
+
+                func1=check_X
+                file=test.sh
+
+                if [ ! -f $file ];then
+                    touch $file
+                        echo -e "$str_bash\n\n\n\n${func1}(){\n \
+                        echo '${func1}()'\n}\n\n\n${func1}" \
+                        >> $file
+                        else
+                        echo  "file already Exist:  $file"
+                        fi
+
+                        func1=steps
+                        file=wrapper.sh
+
+                        if [ ! -f $file ];then
+                        touch $file
+                        echo -e "$str_bash -e\nset -o nounset\n\n\n\n${func1}(){\n \
+                            echo '${func1}()'\n}\n\n\n${func1}" \
+                            >> $file
+                            else
+                            echo  "file already Exist:  $file"
+                            fi
+
+                            func1=snippet_X
+                            file=script.sh
+
+                            if [ ! -f $file ];then
+                            touch $file
+                            echo -e "$str_bash\n\n\n\n${func1}(){\n \
+                                echo '${func1}()'\n}\n\n\n${func1}" \
+                                >> $file
+                                else
+                                echo  "file already Exist:  $file"
+                                fi
+
+                                echo 'export -f func' >> helpers.cfg
+                                echo 'export VAR=""' >> vars.cfg
+
+                                chmod u+x script.sh
+                                chmod u+x wrapper.sh
+                                chmod u+x test.sh
+
+
+
+
+
+                                dir=PRESENTATION
+                                if [ ! -d "$dir" ];then
+                                mkdir $dir
+                                touch $dir/demo1.gif
+                                else
+                                echo "dir  already exist:  $dir"
+                                fi
+
+                                file=README.md
+                                if [ ! -f $file ];then
+                                touch $file
+                                name0=`pwd`
+                                name=`basename $name0`
+                                echo -e "$name\n====\n![demo1](./PRESENTATION/demo1.gif)" >> $file
+                                else
+                                echo  "file already Exist:  $file"
+                                fi
+echo
+                                echo "HINT: test it with:     grep -rn '' ."
+                                }
 export -f scaffold
 

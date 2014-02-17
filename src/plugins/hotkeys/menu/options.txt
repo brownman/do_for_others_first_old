@@ -1,0 +1,7 @@
+notify-send remind_me
+gxmessage open_url
+google-chrome <<< echo `menu_gui url.txt`
+xcowsay hi
+xfce4-settings-manager
+xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F3" -t string -s "xfce4-appfinder" --create
+google-chrome https://github.com/cesar-rgon/xfce-installer/blob/master/sh/xfce4-config.sh 

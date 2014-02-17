@@ -1,7 +1,8 @@
 #!/bin/bash
 set -o nounset
 dir=`dirname $0`
-file_menu=$dir/options.txt
+dir_menu=$dir/menu
+file_menu=$dir_menu/options.txt
 
 source $dir/helpers.cfg
 source $dir/vars.cfg
