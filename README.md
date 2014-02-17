@@ -1,11 +1,14 @@
+
+[![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
+
 changelog:
-===
+---
 - 17-2-2014: global: scaffolding:      +for plugin creation
 - 17-2-2014: plugin: hotkeys           +presenration
 - 16-2-2014: plugin: gmail-group       +presentation
 - 16-2-2014: plugin: screencast        ++new
 
-[![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
+
 
 Do For Others First
 =
