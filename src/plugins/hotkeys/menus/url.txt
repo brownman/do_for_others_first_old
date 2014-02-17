@@ -1,0 +1,8 @@
+#general
+http://www.cyberciti.biz/
+http://askubuntu.com/
+http://www.commandlinefu.com/
+
+
+#bash
+http://tldp.org/LDP/abs/html/special-chars.html
