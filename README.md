@@ -1,5 +1,5 @@
 16.2.14
-
+[![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
 
 Do For Others First
 =
