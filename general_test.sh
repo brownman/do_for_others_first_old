@@ -7,7 +7,7 @@
 
 path=`pwd`
 
-export runner=$path/VENDOR/old/shunit2-2.0.3/src/shell/shunit2
+export runner=$path/VENDOR/shunit2-2.0.3/src/shell/shunit2
 
 pending_project_has_1_file_to_execute_them_all(){
 str=`ls $wrapper` 
