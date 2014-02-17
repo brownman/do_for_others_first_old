@@ -13,7 +13,7 @@ step by step instructions:
 ---------------------------------
 
 
-```sh
+```shell
 cd /tmp #just for demonstration
 sudo apt-get install git
 git clone https://github.com/brownman/do_for_others_first.git
@@ -44,3 +44,4 @@ ref:
 [smilies](http://www.emoji-cheat-sheet.com/)
 [mastering](http://guides.github.com/overviews/mastering-markdown/)
 [editor](http://dillinger.io/)
+[lexers](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
