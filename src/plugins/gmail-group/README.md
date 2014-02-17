@@ -10,10 +10,9 @@ how to use:
 
 
 
-![demo1](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/plugins/gmail-group/plugin-gmail-group-1.gif)
 
-[demo2](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/plugins/gmail-group/plugin-gmail-group-0.gif)
+![demo1](./GIF/plugin-gmail-group-1.gif)
+[demo2](./GIF/plugin-gmail-group-2.gif)
+[demo3](./GIF/plugin-gmail-group-3.gif)
+[demo4](./GIF/plugin-gmail-group-4.gif)
 
-[demo3](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/plugins/gmail-group/plugin-gmail-group-2.gif)
-
-[demo4](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/plugins/gmail-group/plugin-gmail-group-3.gif)

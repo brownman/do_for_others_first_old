@@ -1,6 +1,10 @@
-#!/bin/bash
+#!/bin/bash -e
 set -o nounset
-dir=`dirname $0`
+
+
+pushd `dirname $0` > /dev/null
+
+dir=`pwd`
 dir_menu=$dir/menu
 file_menu=$dir_menu/options.txt
 
@@ -22,3 +26,4 @@ steps(){
 
 
 steps
+popd
