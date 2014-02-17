@@ -33,9 +33,9 @@ Plugins:
 Each plugin located under: $project_root/plugins/
 
 
-* [hotkeys](./plugins/hotkeys) - update the key-combination of your system for ..productivity (obviously! - I wonder why I didn't use this wonderful option till now)
-* [screencast](./plugins/screencast) - recored your desktop - with the minified way - and save it as animated.gif
-* [gmail-group] (./plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
+* [hotkeys](./src/plugins/hotkeys) - update the key-combination of your system for ..productivity (obviously! - I wonder why I didn't use this wonderful option till now)
+* [screencast](./src/plugins/screencast) - recored your desktop - with the minified way - and save it as animated.gif
+* [gmail-group] (./src/plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
 
 ref:
 --
