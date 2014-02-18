@@ -1,0 +1,10 @@
+.
+├── README.md
+├── reminder
+│   └── reminder.txt
+├── rooms
+│   └── room1.txt
+└── todo
+    └── todo.txt
+
+3 directories, 4 files

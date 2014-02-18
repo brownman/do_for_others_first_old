@@ -1,0 +1,12 @@
+\#recieving mail+cli
+curl -u username --silent https://mail.google.com/mail/feed/atom
+
+\#recieving mail+cli
+curl -u username --silent https://mail.google.com/mail/feed/atom
+
+title
+curl -u username --silent https://mail.google.com/mail/feed/atom
+
+title
+curl -u username --silent https://mail.google.com/mail/feed/atom
+
