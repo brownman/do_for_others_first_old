@@ -1,0 +1,414 @@
+.
+├── DEBIAN
+│   └── control
+├── install.sh
+├── loader.cfg
+├── rc
+│   ├── bashrc
+│   │   ├── alias.cfg
+│   │   ├── eval.cfg
+│   │   ├── fs.cfg
+│   │   ├── general.cfg
+│   │   ├── grep.cfg
+│   │   ├── history.cfg
+│   │   ├── menu.cfg
+│   │   ├── project.cfg
+│   │   ├── prompt.cfg
+│   │   ├── proxy.cfg
+│   │   └── rm.cfg
+│   ├── bashrc.fun
+│   ├── packagerc
+│   │   ├── eval.cfg
+│   │   ├── proxy.cfg
+│   │   ├── self.cfg
+│   │   └── user.cfg
+│   ├── packagerc.fun
+│   ├── projectrc
+│   │   └── cfg
+│   │       ├── aliases
+│   │       │   └── aliases3.cfg
+│   │       ├── arg
+│   │       │   └── arg.cfg
+│   │       ├── array
+│   │       │   └── array.cfg
+│   │       ├── color
+│   │       │   └── color.cfg
+│   │       ├── cron
+│   │       │   └── cron3.cfg
+│   │       ├── env
+│   │       │   └── env_dump3.cfg
+│   │       ├── funcs
+│   │       │   └── funcs3.cfg
+│   │       ├── msg
+│   │       │   └── msg3.cfg
+│   │       ├── parse
+│   │       │   └── parse.cfg
+│   │       ├── pids
+│   │       │   ├── death.cfg
+│   │       │   ├── exiting.cfg
+│   │       │   ├── job.cfg
+│   │       │   └── trap.cfg
+│   │       ├── random
+│   │       │   └── random_line.cfg
+│   │       ├── regexp
+│   │       │   └── regexp.cfg
+│   │       ├── self
+│   │       │   ├── self.cfg
+│   │       │   └── SELF_PRESENTATION3.cfg1
+│   │       ├── sleep
+│   │       │   └── sleep.cfg
+│   │       ├── sound
+│   │       │   └── sound.cfg
+│   │       ├── vars
+│   │       │   ├── me.cfg
+│   │       │   └── time.cfg
+│   │       ├── yad
+│   │       └── zenity
+│   │           └── zenity.cfg
+│   ├── projectrc.fun
+│   └── VAGRANT
+│       ├── Vagrantfile.1
+│       └── Vagrantfile.2
+├── README.md
+├── src
+│   ├── 3_steps
+│   ├── bin
+│   │   ├── install.sh
+│   │   └── single.sh
+│   ├── breath.sh
+│   ├── lib
+│   │   ├── bash_koans
+│   │   │   ├── config.cfg
+│   │   │   ├── runner.sh
+│   │   │   └── testing.cfg
+│   │   └── shunit2-2.0.3
+│   │       ├── bin
+│   │       │   ├── docbookPrep.sh
+│   │       │   ├── extractDocs.pl
+│   │       │   └── which
+│   │       ├── doc
+│   │       │   ├── CHANGES-2.0.txt
+│   │       │   ├── contributors.txt
+│   │       │   ├── design_doc.txt
+│   │       │   ├── LGPL-2.1
+│   │       │   ├── README.txt
+│   │       │   ├── RELEASE_NOTES-2.0.0.txt
+│   │       │   ├── RELEASE_NOTES-2.0.1.txt
+│   │       │   ├── RELEASE_NOTES-2.0.2.txt
+│   │       │   ├── RELEASE_NOTES-2.0.3.txt
+│   │       │   ├── shunit2.html
+│   │       │   ├── style.css
+│   │       │   └── TODO.txt
+│   │       ├── lib
+│   │       │   └── sh
+│   │       │       └── shlib
+│   │       ├── Makefile
+│   │       ├── share
+│   │       │   ├── docbook
+│   │       │   │   └── tldp-xsl
+│   │       │   │       └── 21MAR2004
+│   │       │   │           ├── fo
+│   │       │   │           │   └── tldp-print.xsl
+│   │       │   │           └── html
+│   │       │   │               ├── tldp-common.xsl
+│   │       │   │               └── tldp-one-page.xsl
+│   │       │   └── resources
+│   │       │       └── shelldoc.xslt
+│   │       └── src
+│   │           ├── docbook
+│   │           │   ├── functions.xml
+│   │           │   ├── introduction.xml
+│   │           │   ├── quickstart.xml
+│   │           │   └── shunit2.xml
+│   │           ├── shell
+│   │           │   └── shunit2
+│   │           └── test
+│   │               ├── run-test-suite
+│   │               ├── testAsserts
+│   │               ├── testFailures
+│   │               ├── test-functions.inc
+│   │               ├── testInternalFx
+│   │               └── testSuiteFx
+│   ├── plugins
+│   │   ├── croning
+│   │   ├── gmail-group
+│   │   │   ├── BAK
+│   │   │   │   └── notifier.conf
+│   │   │   ├── helpers.cfg
+│   │   │   ├── README.md
+│   │   │   ├── script.sh
+│   │   │   ├── vars.cfg
+│   │   │   └── wrapper.sh
+│   │   ├── hotkeys
+│   │   │   ├── helpers.cfg
+│   │   │   ├── HISTORY
+│   │   │   │   └── history
+│   │   │   ├── menu
+│   │   │   │   ├── options.txt
+│   │   │   │   └── url.txt
+│   │   │   ├── README.md
+│   │   │   ├── script.sh
+│   │   │   ├── vars.cfg
+│   │   │   └── wrapper.sh
+│   │   ├── imagine_first
+│   │   │   ├── helpers.cfg
+│   │   │   ├── README.md
+│   │   │   ├── script.sh
+│   │   │   ├── test.sh
+│   │   │   ├── vars.cfg
+│   │   │   └── wrapper.sh
+│   │   ├── memory
+│   │   │   └── chrome.limit.py
+│   │   ├── remote_desktop
+│   │   ├── scrap
+│   │   ├── screencast
+│   │   │   ├── helpers.cfg
+│   │   │   ├── HISTORY
+│   │   │   │   └── history
+│   │   │   ├── HTML
+│   │   │   │   ├── How to create animated GIF images of a screencast  - Ask Ubuntu_files
+│   │   │   │   │   ├── 0B664.gif
+│   │   │   │   │   ├── 188d
+│   │   │   │   │   ├── 220504afffbdf238ee833c081525cbc3
+│   │   │   │   │   ├── 858395cf1fc125b0609a1070081038b8
+│   │   │   │   │   ├── all.css
+│   │   │   │   │   ├── c5187279a8111c09cb5960e47fdc03a8
+│   │   │   │   │   ├── c88f455192559b06f95d006abfe33f9f
+│   │   │   │   │   ├── c916d92c098426d84778a7910cc32b39
+│   │   │   │   │   ├── cb524ef8e1abf36adf0e3f56ad408a0e
+│   │   │   │   │   ├── EypyJ.gif
+│   │   │   │   │   ├── software-large
+│   │   │   │   │   └── TdKZk.gif
+│   │   │   │   └── How to create animated GIF images of a screencast  - Ask Ubuntu.html
+│   │   │   ├── README.md
+│   │   │   ├── script.sh
+│   │   │   ├── vars.cfg
+│   │   │   └── wrapper.sh
+│   │   ├── security
+│   │   ├── sniff
+│   │   │   └── script.sh
+│   │   ├── suspend
+│   │   ├── translate
+│   │   └── wrapper
+│   │       └── html
+│   │           └── Here Documents.html
+│   ├── rc
+│   │   ├── packagerc
+│   │   │   ├── array.cfg
+│   │   │   ├── colors.cfg
+│   │   │   ├── eval.cfg
+│   │   │   ├── parse.cfg
+│   │   │   ├── pid.cfg
+│   │   │   ├── printing.cfg
+│   │   │   ├── proxy.cfg
+│   │   │   ├── regex.cfg
+│   │   │   ├── self.cfg
+│   │   │   └── user.cfg
+│   │   ├── packagerc.fun
+│   │   ├── template
+│   │   │   ├── script.sh
+│   │   │   └── wrapper.sh
+│   │   └── vim
+│   └── share
+│       └── test.cfg
+├── Vagrantfile
+└── WORKSPACE
+    ├── dao02
+    │   ├── debian.txt
+    │   ├── reminder.txt
+    │   ├── rooms
+    │   │   └── room1.txt
+    │   └── todo
+    ├── dao04
+    │   ├── cron
+    │   │   ├── crontab.root.txt
+    │   │   └── crontab.txt.bak
+    │   ├── dao04 -> /home/dao04/JAIL/package/vm/WORKSPACE/dao04
+    │   ├── deb.sh
+    │   │   └── my_folder
+    │   │       └── my_package.cfg
+    │   ├── done
+    │   │   ├── Mon.txt
+    │   │   ├── Sun.txt
+    │   │   ├── Tue.txt
+    │   │   └── Wed.txt
+    │   ├── faq
+    │   │   ├── ask.sh
+    │   │   ├── QUESTION
+    │   │   │   └── src
+    │   │   │       ├── android
+    │   │   │       ├── android_kernel_compilation_in_vm
+    │   │   │       ├── android_shortcuts
+    │   │   │       ├── apache
+    │   │   │       │   ├── auto.sh
+    │   │   │       │   ├── exercise.txt
+    │   │   │       │   ├── perl.pl
+    │   │   │       │   └── url.txt
+    │   │   │       ├── browser
+    │   │   │       ├── cat
+    │   │   │       ├── cat_function_source_code
+    │   │   │       ├── cli_bip
+    │   │   │       ├── clipboard
+    │   │   │       │   └── script.sh
+    │   │   │       ├── commands.sh
+    │   │   │       ├── convert_to_markdown
+    │   │   │       │   ├── cv
+    │   │   │       │   │   └── OferShahamCV21.html
+    │   │   │       │   ├── echo
+    │   │   │       │   ├── gist1181510
+    │   │   │       │   │   └── gist1181510-9e32481c453d733069ebac338573e2f964cd6ef2
+    │   │   │       │   │       └── any2pandoc.sh
+    │   │   │       │   ├── gist1181510-9e32481c453d733069ebac338573e2f964cd6ef2
+    │   │   │       │   │   └── gist1181510-9e32481c453d733069ebac338573e2f964cd6ef2
+    │   │   │       │   │       └── any2pandoc.sh
+    │   │   │       │   ├── idea.txt
+    │   │   │       │   ├── notify-send
+    │   │   │       │   └── url.txt
+    │   │   │       ├── cpu
+    │   │   │       ├── cron
+    │   │   │       │   └── script.sh
+    │   │   │       ├── curl
+    │   │   │       ├── debian_packaging
+    │   │   │       ├── device
+    │   │   │       ├── directory_size
+    │   │   │       │   └── get-the-10-biggest-filesfolders-for-the-current-direcotry
+    │   │   │       ├── dpkg
+    │   │   │       │   └── README.md
+    │   │   │       ├── dropbox-voices
+    │   │   │       │   ├── playground
+    │   │   │       │   │   ├── 0.sh
+    │   │   │       │   │   ├── 1.sh
+    │   │   │       │   │   └── 2.sh
+    │   │   │       │   ├── README.md
+    │   │   │       │   └── units
+    │   │   │       │       ├── play_audio.sh
+    │   │   │       │       ├── record_audio.sh
+    │   │   │       │       ├── refresh.sh
+    │   │   │       │       └── service.sh
+    │   │   │       ├── faq
+    │   │   │       │   └── README.md
+    │   │   │       ├── firewall
+    │   │   │       ├── git_tips
+    │   │   │       │   ├── README.md
+    │   │   │       │   └── rsa.sh
+    │   │   │       ├── gmail
+    │   │   │       │   ├── curl.txt
+    │   │   │       │   ├── file.txt
+    │   │   │       │   ├── gist.txt
+    │   │   │       │   └── url.txt
+    │   │   │       ├── grep
+    │   │   │       │   └── exclude
+    │   │   │       ├── intrusion
+    │   │   │       │   ├── 1
+    │   │   │       │   ├── apt-cache.txt
+    │   │   │       │   ├── picture.txt
+    │   │   │       │   └── scanner.txt
+    │   │   │       ├── job-hunting
+    │   │   │       │   └── README.md
+    │   │   │       ├── kernel
+    │   │   │       ├── language
+    │   │   │       ├── menu
+    │   │   │       │   ├── dynamic.txt
+    │   │   │       │   └── script.sh
+    │   │   │       ├── mount
+    │   │   │       ├── network
+    │   │   │       ├── nice
+    │   │   │       ├── notify-send
+    │   │   │       │   └── README.md
+    │   │   │       ├── ntp
+    │   │   │       │   ├── ntp.png
+    │   │   │       │   └── README.md
+    │   │   │       ├── pdf_search
+    │   │   │       │   └── script.sh
+    │   │   │       ├── readme
+    │   │   │       │   ├── c.v
+    │   │   │       │   │   ├── README.md
+    │   │   │       │   │   ├── README.md.pdf
+    │   │   │       │   │   └── tools.txt
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── script2.sh
+    │   │   │       │   ├── script.sh
+    │   │   │       │   ├── url.txt
+    │   │   │       │   └── website.sh
+    │   │   │       ├── README.md
+    │   │   │       ├── README.me
+    │   │   │       ├── rip_video
+    │   │   │       │   └── script.sh
+    │   │   │       ├── scrap
+    │   │   │       │   └── deals
+    │   │   │       │       └── README.md
+    │   │   │       ├── screen_record
+    │   │   │       │   ├── playground
+    │   │   │       │   ├── README.md
+    │   │   │       │   ├── screen_record.sh
+    │   │   │       │   └── units
+    │   │   │       ├── shell_record
+    │   │   │       │   ├── gist.sh
+    │   │   │       │   ├── movies
+    │   │   │       │   │   ├── 29_07:50:33.out
+    │   │   │       │   │   ├── 29_07:50:33.time
+    │   │   │       │   │   ├── wifi_4.out
+    │   │   │       │   │   ├── wifi_4.time
+    │   │   │       │   │   ├── wifi_5.out
+    │   │   │       │   │   ├── wifi_5.time
+    │   │   │       │   │   ├── wifi-cll-1.out
+    │   │   │       │   │   └── wifi-cll-1.time
+    │   │   │       │   ├── playground
+    │   │   │       │   └── units
+    │   │   │       ├── speller
+    │   │   │       │   └── README.md
+    │   │   │       ├── wifi_cli
+    │   │   │       │   ├── gist.sh
+    │   │   │       │   └── README.md
+    │   │   │       ├── wiki_txt
+    │   │   │       │   ├── playground
+    │   │   │       │   ├── units
+    │   │   │       │   └── wiki_txt.sh
+    │   │   │       └── zenity
+    │   │   │           ├── README.md
+    │   │   │           └── script.sh
+    │   │   └── README.md
+    │   ├── lesson
+    │   │   └── evaluating_with_double_quotes.txt
+    │   ├── meteor
+    │   ├── reminder
+    │   │   └── reminder.txt
+    │   ├── rooms
+    │   │   ├── room1.txt
+    │   │   ├── room2.txt
+    │   │   ├── room3.txt
+    │   │   └── room4.txt
+    │   ├── test
+    │   │   └── test.sh
+    │   ├── todo
+    │   │   ├── Fri.txt
+    │   │   ├── Mon.txt
+    │   │   ├── Sat.txt
+    │   │   ├── Sun.txt
+    │   │   ├── Thu.txt
+    │   │   ├── Tue.txt
+    │   │   └── Wed.txt
+    │   ├── translate
+    │   │   └── Sun.txt
+    │   └── txt
+    │       ├── git_flow_commands.txt
+    │       ├── keys.priority.txt
+    │       └── url.priority.txt
+    ├── GUEST
+    │   ├── crontab
+    │   │   ├── crontab_root.txt
+    │   │   ├── crontab.txt
+    │   │   └── crontab_user.txt
+    │   ├── README.md
+    │   ├── reminder
+    │   │   └── reminder.txt
+    │   ├── rooms
+    │   │   └── room1.txt
+    │   └── todo
+    │       └── todo.txt
+    ├── README.md
+    └── vagrant
+        └── rooms
+            └── room1.txt
+
+158 directories, 253 files

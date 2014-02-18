@@ -7,7 +7,7 @@
 
 path=`pwd`
 
-export runner=$path/VENDOR/shunit2-2.0.3/src/shell/shunit2
+export runner=$path/TESTING/shunit2/src/shell/shunit2
 
 pending_project_has_1_file_to_execute_them_all(){
 str=`ls $wrapper` 
@@ -47,8 +47,8 @@ assertEquals 1 2
 
 
 
-$path/tests/about_sed.sh
-$path/tests/about_grep.sh
+$path/TESTING/about_sed.sh
+$path/TESTING/about_grep.sh
 
 
 
