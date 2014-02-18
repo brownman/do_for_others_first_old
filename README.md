@@ -1,5 +1,10 @@
 
 [![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
+#### Todo:
+- debian package - easy to install
+- package install - key-combination on xfce environment desktop
+- Make sure: 3 plugins are working: suspend, hotkeys, reminder
+- extension: add translation
 
 #### ChangeLog:
 
