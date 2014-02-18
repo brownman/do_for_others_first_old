@@ -1,0 +1,145 @@
+.
+├── debian.sh
+├── do-for-others-first
+│   ├── DEBIAN
+│   │   └── control
+│   ├── install.sh
+│   ├── loader.cfg
+│   ├── README.md
+│   ├── src
+│   │   ├── 3_steps
+│   │   ├── bin
+│   │   │   ├── install.sh
+│   │   │   └── single.sh
+│   │   ├── breath.sh
+│   │   ├── lib
+│   │   │   └── bash_koans
+│   │   ├── plugins
+│   │   │   ├── croning
+│   │   │   ├── gmail-group
+│   │   │   ├── hotkeys
+│   │   │   ├── imagine_first
+│   │   │   ├── memory
+│   │   │   ├── remote_desktop
+│   │   │   ├── scrap
+│   │   │   ├── screencast
+│   │   │   ├── security
+│   │   │   ├── sniff
+│   │   │   ├── suspend
+│   │   │   ├── translate
+│   │   │   └── wrapper
+│   │   ├── rc
+│   │   │   ├── packagerc
+│   │   │   ├── packagerc.fun
+│   │   │   ├── template
+│   │   │   └── vim
+│   │   └── share
+│   │       └── test.cfg
+│   ├── Vagrantfile
+│   └── WORKSPACE
+│       ├── dao02
+│       │   ├── debian.txt
+│       │   ├── reminder.txt
+│       │   ├── rooms
+│       │   └── todo
+│       ├── dao04
+│       │   ├── cron
+│       │   ├── dao04 -> /home/dao04/JAIL/package/vm/WORKSPACE/dao04
+│       │   ├── deb.sh
+│       │   ├── done
+│       │   ├── faq
+│       │   ├── lesson
+│       │   ├── meteor
+│       │   ├── reminder
+│       │   ├── rooms
+│       │   ├── test
+│       │   ├── todo
+│       │   ├── translate
+│       │   └── txt
+│       ├── GUEST
+│       │   ├── crontab
+│       │   ├── README.md
+│       │   ├── reminder
+│       │   ├── rooms
+│       │   └── todo
+│       ├── README.md
+│       └── vagrant
+│           └── rooms
+├── rc
+│   ├── bashrc
+│   │   ├── alias.cfg
+│   │   ├── eval.cfg
+│   │   ├── fs.cfg
+│   │   ├── general.cfg
+│   │   ├── grep.cfg
+│   │   ├── history.cfg
+│   │   ├── menu.cfg
+│   │   ├── project.cfg
+│   │   ├── prompt.cfg
+│   │   ├── proxy.cfg
+│   │   └── rm.cfg
+│   ├── bashrc.fun
+│   ├── packagerc
+│   │   ├── eval.cfg
+│   │   ├── proxy.cfg
+│   │   ├── self.cfg
+│   │   └── user.cfg
+│   ├── packagerc.fun
+│   ├── projectrc
+│   │   └── cfg
+│   │       ├── aliases
+│   │       ├── arg
+│   │       ├── array
+│   │       ├── color
+│   │       ├── cron
+│   │       ├── env
+│   │       ├── funcs
+│   │       ├── msg
+│   │       ├── parse
+│   │       ├── pids
+│   │       ├── random
+│   │       ├── regexp
+│   │       ├── self
+│   │       ├── sleep
+│   │       ├── sound
+│   │       ├── vars
+│   │       ├── yad
+│   │       └── zenity
+│   ├── projectrc.fun
+│   └── VAGRANT
+│       ├── Vagrantfile.1
+│       └── Vagrantfile.2
+├── TESTING
+│   ├── about_grep.sh
+│   ├── about_sed.sh
+│   └── shunit2
+│       ├── bin
+│       │   ├── docbookPrep.sh
+│       │   ├── extractDocs.pl
+│       │   └── which
+│       ├── doc
+│       │   ├── CHANGES-2.0.txt
+│       │   ├── contributors.txt
+│       │   ├── design_doc.txt
+│       │   ├── LGPL-2.1
+│       │   ├── README.txt
+│       │   ├── RELEASE_NOTES-2.0.0.txt
+│       │   ├── RELEASE_NOTES-2.0.1.txt
+│       │   ├── RELEASE_NOTES-2.0.2.txt
+│       │   ├── RELEASE_NOTES-2.0.3.txt
+│       │   ├── shunit2.html
+│       │   ├── style.css
+│       │   └── TODO.txt
+│       ├── lib
+│       │   └── sh
+│       ├── Makefile
+│       ├── share
+│       │   ├── docbook
+│       │   └── resources
+│       └── src
+│           ├── docbook
+│           ├── shell
+│           └── test
+└── test.sh
+
+87 directories, 55 files
