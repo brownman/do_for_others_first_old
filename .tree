@@ -1,0 +1,18 @@
+.
+├── life.sh
+├── loader.cfg
+├── README.md
+├── READY
+│   ├── PRIVATE
+│   │   └── ongoing
+│   ├── PUBLIC
+│   │   ├── rc
+│   │   └── src
+│   └── WORLD
+│       ├── debian.sh
+│       ├── tests
+│       ├── test.sh
+│       └── wiki
+└── Vagrantfile
+
+9 directories, 6 files

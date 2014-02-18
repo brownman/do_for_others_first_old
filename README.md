@@ -30,7 +30,7 @@ echo "create or use a plugin:"
 
 ```
 
-![demo](https://raw2.github.com/brownman/do_for_others_first/develop/presentations/root.gif)
+![demo](./.GIF/root.gif)
  
 
 
