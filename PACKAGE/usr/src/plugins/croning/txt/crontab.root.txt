@@ -1,0 +1,11 @@
+DISPLAY=:0
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+NAME=dao04
+
+dir_plugins=/home/$NAME/JAIL/PROJECT/src/plugins
+
+* * * * *   /usr/bin/env > /home/$NAME/Desktop/ENV_CRON_ROOT.txt
+*/10 * * * * bash -c "dbus-send --system --print-reply     --dest=\"org.freedesktop.UPower\"     /org/freedesktop/UPower     org.freedesktop.UPower.Suspend 2>/home/$NAME/Desktop/ERROR_CRONE_ROOT.txt"
+*/2 * * * * bash -c "$dir_plugins/croning/croning.sh"
+

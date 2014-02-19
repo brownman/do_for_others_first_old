@@ -9,8 +9,8 @@
 #set -o
 #confirm
 pushd `dirname $0` > /dev/null
-
-
+dir_root=`pwd`
+#source setup.cfg
 
 #vars
 export SUCCESS=0
@@ -27,24 +27,8 @@ export YELLOW=33
 export PINK=35
 
 #first
-dir_root=`pwd`
-
-#dir-struct
-export dir_rc=$dir_root/rc
-export dir_plugins=$dir_root/plugins
-export dir_lib=$dir_root/lib
-
-export dir_shunit=$dir_lib/shunit2-2.0.3
-export dir_koans=$dir_lib/bash_koans
-
-#load
-source $dir_rc/packagerc.fun
-
-
-#export file_runner=$dir_shunit/src/shell/shunit2
-export file_runner=$dir_koans/runner.sh
-
-#assert 1 1
+dir_project=`pwd`
+source setup.cfg
 
 script=$dir_root/bin/single.sh
 
@@ -78,9 +62,9 @@ run(){
     else
         cmd="$script"
     fi
-#echo "$cmd"
-eval "$cmd" 
-#2>$file_error 
+    #echo "$cmd"
+    eval "$cmd" 
+    #2>$file_error 
 
     if [ ! -n $file_error ];then
         echo
@@ -109,10 +93,10 @@ if [ $# -gt 0 ];then
     args=( "$@" )
 else
     echo
-#    show_funcs
-  #  reason_of_death 'No Arguments'
+    #    show_funcs
+    #  reason_of_death 'No Arguments'
 fi
-    run
+run
 
 #source $file_runner
 popd

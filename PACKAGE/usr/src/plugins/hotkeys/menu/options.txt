@@ -1,7 +1,8 @@
-notify-send remind_me
-gxmessage open_url
+gvim menu/options.txt 
+export file=~/Desktop/questions.txt;touch $file;echo `gxmessage -title add_question -file $file -entry` >> $file 2>~/Desktop/errors.txt
+gvim "$dir_plugins/croning/txt/crontab.user.txt" 2>~/Desktop/errors.txt
+xcowsay cool
 google-chrome <<< echo `menu_gui menu/url.txt` &
-xcowsay hi
 xfce4-settings-manager
 xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F3" -t string -s "$PWD/wrapper.sh" --create
 google-chrome https://github.com/cesar-rgon/xfce-installer/blob/master/sh/xfce4-config.sh 

@@ -1,0 +1,17 @@
+computer:
+    self:
+        - first_steps:
+                - ensure alias for keyword: question
+                - ensure croning
+                - ensure hotkeys
+                - ensure fast_urls
+                - add plugin: imagine first: with translation,sound : gui/cli
+
+    friends:
+        - upload video to youtube - explain:
+        - how to share a folder and use the package 
+
+
+suspension:
+        - bank account - enter
+        - irrigate the fields

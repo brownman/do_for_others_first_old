@@ -17,25 +17,25 @@ tree1 ()
 }
 ABC
 
-if [ $dir_rc = '' ];then
-    echo "\$dir_rc  - not defined"
+if [ $dir_rc0 = '' ];then
+    echo "\$dir_rc0  - not defined"
     exit
 fi
-dir_lib=$dir_rc/bashrc
+dir_bashrc=$dir_rc0/bashrc
 
 
-source $dir_lib/proxy.cfg
-source $dir_lib/eval.cfg
-source $dir_lib/alias.cfg
-source $dir_lib/fs.cfg
-source $dir_lib/general.cfg
-source $dir_lib/grep.cfg
-source $dir_lib/history.cfg
-source $dir_lib/menu.cfg
-source $dir_lib/project.cfg
+source $dir_bashrc/proxy.cfg
+source $dir_bashrc/eval.cfg
+source $dir_bashrc/alias.cfg
+source $dir_bashrc/fs.cfg
+source $dir_bashrc/general.cfg
+source $dir_bashrc/grep.cfg
+source $dir_bashrc/history.cfg
+source $dir_bashrc/menu.cfg
+source $dir_bashrc/project.cfg
 
-source $dir_lib/rm.cfg
-source $dir_lib/prompt.cfg
+source $dir_bashrc/rm.cfg
+source $dir_bashrc/prompt.cfg
 
 #export PROMPT_COMMAND='history -a'
 
@@ -98,12 +98,6 @@ scaffold(){
     ##########################################################################
 
 
-    ######################################### update the scripts: wrapper.sh + script.sh + test.sh
-    func1=check_X
-    file=test.sh
-    text="$str_bash\n\n\n\n${func1}(){\n echo '${func1}()'\n}\n\n\n${func1}" 
-    update_file "$file" "$text"
-
     func1=steps
     file=wrapper.sh
     text="$str_bash -e\nset -o nounset\n\n\n\n${func1}(){\n \
@@ -162,11 +156,19 @@ scaffold(){
     echo "HINT: test it with:     grep -rn '' ."
     chmod u+x script.sh
     chmod u+x wrapper.sh
-    chmod u+x test.sh
 
 }
 
 export -f scaffold
 export -f update_file
 export -f update_dir
-
+#source ../do-for-others-first/src/rc/packagerc.fun
+color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
+sed_dry_run(){
+    find ./ -type f | xargs sed -i 's/string1/string2/g'
+        
+    while IFS= read -r -d $'' file; do
+          sed -i 's/string1/string2/g' "$file"
+      done < <(find ./ -type f -print0)
+}
+export -f sed_dry_run
