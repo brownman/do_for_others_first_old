@@ -4,6 +4,7 @@ computer:
                 - ensure alias for keyword: question
                 - ensure croning
                 - ensure hotkeys
+                - cool!!
                 - ensure fast_urls
                 - add plugin: imagine first: with translation,sound : gui/cli
 
