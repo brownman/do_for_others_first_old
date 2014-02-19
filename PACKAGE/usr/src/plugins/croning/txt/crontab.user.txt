@@ -5,10 +5,10 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games
 DISPLAY=:0 
 NAME=$LOGNAME
 dir_desktop=/home/$NAME/Desktop/
-file_env=$dir_desktop/ENV_CRON_USER.txt
-file_error=$dir_desktop/errors.user.txt
+file_env=$dir_plugins/croning/env/user.txt
+file_error=$dir_plugins/croning/error/user.txt
 
-* * * * *   /usr/bin/env >$file_env
-* * * * *  bash -c "$dir_plugins/croning/croning.sh 2>$file_error"
-* * * * *  bash -c "$dir_plugins/croning/croning.sh gmail-group 2>$file_error"
+* * * * *  /usr/bin/env >$file_env
+6 * * * *  bash -c "$dir_plugins/croning/croning.sh 2>$file_error"
+4 * * * *  bash -c "$dir_plugins/croning/croning.sh gmail-group 2>$file_error"
 
