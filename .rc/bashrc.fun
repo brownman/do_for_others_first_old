@@ -26,16 +26,14 @@ dir_bashrc=$dir_rc0/bashrc
 
 source $dir_bashrc/proxy.cfg
 source $dir_bashrc/eval.cfg
-source $dir_bashrc/alias.cfg
 source $dir_bashrc/fs.cfg
 source $dir_bashrc/general.cfg
 source $dir_bashrc/grep.cfg
 source $dir_bashrc/history.cfg
 source $dir_bashrc/menu.cfg
-source $dir_bashrc/project.cfg
 
 source $dir_bashrc/rm.cfg
-source $dir_bashrc/prompt.cfg
+source $dir_bashrc/prompt.cfg #share history between all shells
 
 #export PROMPT_COMMAND='history -a'
 

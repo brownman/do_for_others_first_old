@@ -4,6 +4,11 @@ PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games
 #MAILTO=guest
 DISPLAY=:0 
 NAME=$LOGNAME
-* * * * *   /usr/bin/env > /home/$NAME/Desktop/ENV_CRON_USER.txt
-* * * * *  bash -c "$dir_plugins/croning/croning.sh"
+dir_desktop=/home/$NAME/Desktop/
+file_env=$dir_desktop/ENV_CRON_USER.txt
+file_error=$dir_desktop/errors.user.txt
+
+* * * * *   /usr/bin/env >$file_env
+* * * * *  bash -c "$dir_plugins/croning/croning.sh 2>$file_error"
+* * * * *  bash -c "$dir_plugins/croning/croning.sh gmail-group 2>$file_error"
 
