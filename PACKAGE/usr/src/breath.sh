@@ -10,8 +10,9 @@
 #confirm
 pushd `dirname $0` > /dev/null
 dir_project=`pwd`
-#source setup.cfg
-
+clear
+source setup.cfg
+print_script
 #vars
 export SUCCESS=0
 export FAILURE=1
@@ -27,7 +28,7 @@ export YELLOW=33
 export PINK=35
 
 #first
-source setup.cfg
+
 
 script=$dir_project/bin/single.sh
 
@@ -37,8 +38,6 @@ script=$dir_project/bin/single.sh
 
 #declare -a args
 args=()
-time1=`date | cut -d' ' -f4 | sed 's/:/_/g'`
-export file_error=~/Desktop/errors_$time1.txt
 
 
 
@@ -84,8 +83,7 @@ run(){
     fi
 
 }
-clear
-print_script
+
 echo -n  "Time: "
 echo "$time1"
 if [ $# -gt 0 ];then

@@ -15,7 +15,7 @@ file_cfg=$dir/vars.cfg
 file_helpers=$dir/helpers.cfg
 
 #test prequisites
-file_test=../../share/test.cfg
+file_test=$dir/../../share/test.cfg
 
 #run the actual script
 file_script=$dir/script.sh

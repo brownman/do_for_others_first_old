@@ -1,8 +1,0 @@
-reminder
-list todo
-sleep 60
-suspend 
-list done
-sleep 60
-reminder
-sleep 60
