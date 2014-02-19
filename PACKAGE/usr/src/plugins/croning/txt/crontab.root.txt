@@ -9,5 +9,7 @@ file_env=/home/$NAME/Desktop/ENV_CRON_ROOT.txt
 * * * * *   /usr/bin/env >$file_env
 */10 * * * * bash -c "dbus-send --system --print-reply     --dest=\"org.freedesktop.UPower\"     /org/freedesktop/UPower     org.freedesktop.UPower.Suspend 2>$file_error"
 */2 * * * * bash -c "$dir_plugins/croning/croning.sh"
+
 */5 * * * * bash -c "$dir_plugins/croning/croning.sh suspend"
+*/1 * * * * bash -c "$dir_plugins/croning/croning.sh alive"
 
