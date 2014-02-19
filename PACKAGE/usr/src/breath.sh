@@ -9,7 +9,7 @@
 #set -o
 #confirm
 pushd `dirname $0` > /dev/null
-dir_root=`pwd`
+dir_project=`pwd`
 #source setup.cfg
 
 #vars
@@ -27,10 +27,9 @@ export YELLOW=33
 export PINK=35
 
 #first
-dir_project=`pwd`
 source setup.cfg
 
-script=$dir_root/bin/single.sh
+script=$dir_project/bin/single.sh
 
 
 
