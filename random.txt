@@ -1,4 +1,0 @@
-5|alias
-2|reminder
-9|todo
-10|learn_new_word
