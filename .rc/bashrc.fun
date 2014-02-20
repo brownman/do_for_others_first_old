@@ -103,7 +103,7 @@ scaffold(){
     update_file "$file" "$text"
 
     func1=snippet_X
-    file=script.sh
+    file=snippet.sh
     text="$str_bash\n\n\n\n${func1}(){\n \
         echo '${func1}()'\n}\n\n\n${func1}" 
     update_file "$file" "$text"
@@ -131,12 +131,12 @@ scaffold(){
     update_dir "$dir" "$file" "$text"
 
     dir='.SNIPPET'
-    file=script.sh
+    file=snippet.sh
     text=''
     update_dir "$dir" "$file" "$text"
 
     dir='.old'
-    file=script.sh
+    file=snippet.sh
     text=''
     update_dir "$dir" "$file" "$text"
     ############################
@@ -152,7 +152,7 @@ scaffold(){
 
     ###################################################### update permissions : user is allowed to execute the .sh files
     echo "HINT: test it with:     grep -rn '' ."
-    chmod u+x script.sh
+    chmod u+x snippet.sh
     chmod u+x wrapper.sh
 
 }
@@ -170,3 +170,5 @@ sed_dry_run(){
       done < <(find ./ -type f -print0)
 }
 export -f sed_dry_run
+    lastfile () { find ${1:-.} -maxdepth 1 -type f -printf "%T+ %p\n" | sort -n | tail -n1 | sed 's/[^[:space:]]\+ //'; }
+export -f lastfile
