@@ -6,6 +6,8 @@ let 'counter=0'
 
 while [ 1 ];do
     let 'counter+=1'
+    file=$counter.wow
+    touch ~/Desktop/$file
     xcowsay "great! WOW! $counter"
     cmd="$dir_ongoing/suspend/wrapper.sh"
     echo "$cmd"
