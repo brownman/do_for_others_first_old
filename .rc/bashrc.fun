@@ -157,6 +157,21 @@ scaffold(){
 
 }
 
+hotkey(){
+    clear
+alt_key=${1:-''}
+if [ "$alt_key" ];then
+print_func
+cmd="xfconf-query -c xfce4-keyboard-shortcuts -p \"/commands/custom/<Alt>F${alt_key}\" -t string -s \"$PWD/wrapper.sh\" --create"
+confirm "$cmd"
+else
+    reason_of_death 'please supply a number'
+    echo 'to install new key combination: alt+$number'
+fi
+
+}
+
+export -f hotkey
 export -f scaffold
 export -f update_file
 export -f update_dir

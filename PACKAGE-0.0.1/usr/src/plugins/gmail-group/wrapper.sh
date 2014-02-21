@@ -8,12 +8,12 @@ set -o nounset
 set -o errtrace
 set -o pipefail
 
+file_helpers=$dir/.old/helpers.cfg
+#source $file_helpers
 
 #update environments vars
 
 file_cfg=$dir/vars.cfg
-file_helpers=$dir/helpers.cfg
-
 #test prequisites
 file_test=$dir/../../share/test.cfg
 
@@ -21,7 +21,7 @@ file_test=$dir/../../share/test.cfg
 file_script=$dir/script.sh
 
 source $file_cfg
-source $file_helpers
+
 source $file_test
 
 print_script
