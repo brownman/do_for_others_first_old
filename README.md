@@ -45,6 +45,9 @@ Each plugin located under: $project_root/plugins/
 * [screencast](./src/plugins/screencast) - recored your desktop - with the minified way - and save it as animated.gif
 * [gmail-group] (./src/plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
 
+
+![whiteboard](./WHITEBOARD/whiteboard.jpg)
+
 ref:
 --
 [markdown editor] ( http://markable.in/editor/ )

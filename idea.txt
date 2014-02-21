@@ -7,3 +7,4 @@ plugin-test-inline
 plugin-help
 idea|fast save  - create files quick/idea.txt
 idea|load a library file like in python: example: use eval.commander -> result in exporting commander() which located in rc/eval/commander.cfg
+idea| suspend.sh -> add folders: rooms/ dirty/ -> use dirty when nothing else is working
