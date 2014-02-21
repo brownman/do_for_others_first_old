@@ -12,10 +12,13 @@ while [ 1 ];do
     touch ~/Desktop/$file
     xcowsay "$str_remind"
 
-    cmd="$dir_ongoing/suspend/wrapper.sh"
+    cmd="sleep 120"
+
     echo "$cmd"
     eval "$cmd"
-    cmd="sleep 120"
+
+    cmd="$dir_ongoing/suspend/wrapper.sh"
+
     echo "$cmd"
     eval "$cmd"
 done
