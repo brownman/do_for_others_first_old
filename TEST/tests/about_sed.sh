@@ -35,4 +35,4 @@ local str=$( echo "$input" | sed "$pattern" )
 assertEquals "a line1 line2" "$str"
 }
 
-#. $runner
+. $runner

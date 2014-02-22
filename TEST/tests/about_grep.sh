@@ -7,4 +7,4 @@ local res=$(echo -e "file.sh~\nfile.sh" | grep -v '~')
  assertEquals "$res" 'file.sh'
 }
  
-#. $runner
+. $runner

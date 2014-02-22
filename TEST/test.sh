@@ -3,16 +3,11 @@
 #wrapper=$dir/breath.sh
 ###########################################  Directory structure:  ######################\
 unset rm
-
-
 dir=`pwd`
-dir_test=$dir/TEST
-
-
-export runner=$dir_test/shunit2/src/shell/shunit2
-#export runner=$dir_test/shunit2/src/shell/shunit2
-. $runner
-#. $dir_test/about_grep.sh
+dir_test=$dir/tests
+export runner=$dir/lib/shunit2/src/shell/shunit2
+$dir_test/about_grep.sh
+$dir_test/about_sed.sh
 
 
 
