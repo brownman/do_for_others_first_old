@@ -2,12 +2,11 @@
 [![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
 #### Todo:
 - debian package - easy to install
-- package install - key-combination on xfce environment desktop
-- Make sure: 3 plugins are working: suspend, hotkeys, reminder
-- extension: add translation
+- .travis: add tests for: self.sh
+- activate plugin: google-group: push lpi-exam-question every 5 minutes
 
 #### ChangeLog:
-
+- 22-2-2014: rings/ : revived the skeleton of the old project: Magnify_The_Small
 - 17-2-2014: global: scaffolding:      +for plugin creation
 - 17-2-2014: plugin: hotkeys           +presenration
 - 16-2-2014: plugin: gmail-group       +presentation
@@ -46,7 +45,11 @@ Each plugin located under: $project_root/plugins/
 * [gmail-group] (./PACKAGE/usr/src/plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
 
 
+
+
+[My whiteboard](./.WHITEBOARD)
 ![whiteboard](./.WHITEBOARD/whiteboard.jpg)
+
 
 ref:
 --
