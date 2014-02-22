@@ -1,24 +1,22 @@
 #!/bin/bash
 set -o nounset 
+NAME=ofer
 
-#change between false and true - to mute / unmute
-mute=false
+#change between false and true - to sound / unsound
+SOUND=true
+sound=$SOUND
 dir_script=`dirname $0`
 file=$dir_script/list.txt
 cmd=${1:-'run'}
 
-minutes_reminder=1
-minutes_todo=1
 
-
-run(){
-    echo 'run()'
-local line=$(random_line $file)
+speak(){
+local line="$1"
 if [ "$line" ];then
 
 
 notify-send "$line" & 
-if [ "$mute" = false ];then
+if [ "$sound" = true ];then
 
 echo "$line" | flite -voice slt &
 sleep 1
@@ -26,10 +24,17 @@ echo "$line" | flite -voice kal &
 sleep 1
 echo "$line" | flite -voice awb &
 else
-    echo "mute:" "$line"
+    echo "sound:" "$line"
 fi
 
 fi
+
+}
+run(){
+    echo 'run()'
+local line=$(random_line $file)
+speak "$NAME"
+speak "$line"
 }
 
 

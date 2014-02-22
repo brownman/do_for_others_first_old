@@ -5,6 +5,20 @@ ROOM=2
 file_list=$dir_parent/rooms/room${ROOM}.txt 
 
 
+ensure(){
+    echo 'ensure()'
+
+echo "room: $ROOM : $file_list"
+echo
+cat $file_list
+echo
+echo
+echo 'delay: 5 seconds'
+sleep 5
+
+}
+
+
 
 
 
@@ -44,6 +58,7 @@ single(){
     done < $file_list
 }
 loop(){
+
     clear
     echo 'loop()'
     touch ~/Desktop/round${counter}.txt
@@ -53,6 +68,6 @@ loop(){
         single
     done
 }
-
+ensure
 loop
 
