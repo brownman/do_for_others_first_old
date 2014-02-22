@@ -18,4 +18,16 @@ dir_workspace - dropbox shared work
 
 
 
+functions:
+---
+save - add last history command to .history
+
+
+library:
+--
+eval.command
+eval.detach
+eval.confirm
+proxy - for common tiny-gui-apps: gxmessage,notify-send..
+
 
