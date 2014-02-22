@@ -46,7 +46,7 @@ Each plugin located under: $project_root/plugins/
 * [gmail-group] (./src/plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
 
 
-![whiteboard](./WHITEBOARD/whiteboard.jpg)
+![whiteboard](./.WHITEBOARD/whiteboard.jpg)
 
 ref:
 --
