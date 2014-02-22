@@ -19,5 +19,5 @@ vi menu/url.txt
 ```
 - I am sure - that's exctly what a pilot feels when he navigates between clouds    :)
 
-![demo1](./GIF/demo_edit_list.gif)
-[demo2](./GIF/demo_sub_menus.gif)
+![demo1](./.GIF/demo_edit_list.gif)
+[demo2](./.GIF/demo_sub_menus.gif)
