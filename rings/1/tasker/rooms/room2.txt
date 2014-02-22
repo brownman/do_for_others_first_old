@@ -1,4 +1,8 @@
+sleep 60 zz
+new_word
 reminder
+todo
+
 list todo
 sleep 60
 suspend 

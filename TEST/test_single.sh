@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-
-./TEST/bash_koans/runner.sh $1
+path=`dirname $0`
+$path/lib/bash_koans/runner.sh $1

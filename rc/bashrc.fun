@@ -187,3 +187,8 @@ sed_dry_run(){
 export -f sed_dry_run
     lastfile () { find ${1:-.} -maxdepth 1 -type f -printf "%T+ %p\n" | sort -n | tail -n1 | sed 's/[^[:space:]]\+ //'; }
 export -f lastfile
+exiting(){
+    echo exiting
+exit 1
+}
+export -f exiting
