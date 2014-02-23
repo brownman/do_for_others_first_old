@@ -7,7 +7,7 @@ clear
 source helpers.cfg
 source vars.cfg
 
-echo 'this script must be independent'
+#echo 'this script must be independent'
 sleep 1
 dir=`pwd`
 user=''

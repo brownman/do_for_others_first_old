@@ -1,0 +1,5 @@
+0. create a presentation on each run of the $root_dir/script.sh
+1. create a minimal package
+2. install it in the vm
+3. make sure it is running: gmail-group
+4. use cron to present a question every 5 minutes

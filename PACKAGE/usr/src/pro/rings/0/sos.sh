@@ -1,15 +1,23 @@
 #!/bin/bash
 set -o nounset
+pushd `dirname $0`
 echo "just suspend me!"
 delay=300
 path=`dirname $0`
+dir_root=../
 
 let 'counter=0'
 #str_remind="great! WOW! $counter"
 
-str_remind="$counter whiteboards"
-file=$path/suspend/suspend.sh
+
+file_setup=$dir_root/setup.cfg
+source $file_setup
+script_name=suspend
+file=$dir_root/acts/$script_name/$script_name.sh
+
 while [ 1 ];do
+
+str_remind="$counter whiteboards"
     flite -t "$str_remind" &
     let 'counter+=1'
     file1=$counter.wow
@@ -31,3 +39,4 @@ while [ 1 ];do
     eval "$cmd"
 
 done
+popd
