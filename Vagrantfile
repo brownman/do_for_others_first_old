@@ -10,9 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-
-  #config.vm.box = "lucid32"
-  config.vm.box = "precise64"
+  config.vm.box = "wheezy"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -46,37 +44,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider :virtualbox do |vb|
-    # Don't boot with headless mode
-    vb.gui = true
-
+  # config.vm.provider :virtualbox do |vb|
+  #   # Don't boot with headless mode
+  #   vb.gui = true
+  #
   #   # Use VBoxManage to customize the VM. For example to change memory:
   #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  end
+  # end
   #
   # View the documentation for the provider you're using for more
   # information on available options.
 
-  # Provision with shell commands
-  #
-  # setup shell script
-  $setup = <<SCRIPT
-# update apt packaged
-sudo apt-get update
-
-# Install desktop window manager xfce4
-sudo apt-get install xfce4 -y
-
-# refer to https://wiki.xfce.org/faq#is_it_possible_to_start_xfce_when_i_login_on_the_console
-# for directions on getting xfce4 to startup after or during login
-SCRIPT
-
-  config.vm.provision "shell", inline: $setup
-
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
-  # the file base.pp in the manifests_path directory.
+  # the file wheezy.pp in the manifests_path directory.
   #
   # An example Puppet manifest to provision the message of the day:
   #

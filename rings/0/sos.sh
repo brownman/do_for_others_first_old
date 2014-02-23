@@ -6,9 +6,11 @@ path=`dirname $0`
 
 let 'counter=0'
 #str_remind="great! WOW! $counter"
-str_remind="WhiteBoard Upgraded:---$counter---- times!         WoW!"
-file=$path/share/suspend/wrapper.sh
+
+str_remind="$counter whiteboards"
+file=$path/suspend/suspend.sh
 while [ 1 ];do
+    flite -t "$str_remind" &
     let 'counter+=1'
     file1=$counter.wow
     touch ~/Desktop/$file1
