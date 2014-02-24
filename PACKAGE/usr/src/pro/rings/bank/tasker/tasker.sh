@@ -1,15 +1,15 @@
 #!/bin/bash -e
+echo 'tasker.sh' 
 set -o nounset
 #export SOUND=true
 pushd `dirname $0`
-path=`pwd`
-dir_root=../
+dir_this=`pwd`
 source $dir_root/setup.cfg
 
 echo "dir_root $dir_root"
 ls -l $dir_root
 ROOM=2
-file_list=$path/rooms/room${ROOM}.txt 
+file_list=$dir_this/rooms/room${ROOM}.txt 
 args=()
 
 
@@ -47,7 +47,7 @@ use(){
         cmd="$act_sh ${args[@]}"
         eval "$cmd"
     else
-        echo 'no such script' "$script"
+        echo 'no such script' "$act_sh"
     fi
 
 }

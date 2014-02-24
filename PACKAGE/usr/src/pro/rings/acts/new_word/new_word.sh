@@ -6,7 +6,6 @@ dir_script=`dirname $0`
 file=$dir_script/list.txt
 cmd=${1:-'run'}
 lang=${LANG_DEFAULT:-ru}
-translate_sh="$dir_script/translation/translation.sh"
 
 run(){
     echo 'run()'

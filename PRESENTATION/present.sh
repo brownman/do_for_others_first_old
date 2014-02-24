@@ -4,9 +4,9 @@
 clear
 set -o nounset
 
-dir_root=`pwd`
-pushd $dir_root 
-dir_rc=$dir_root/ALL/RC
+dir_this=`pwd`
+pushd $dir_this 
+dir_rc=$dir_this/ALL/RC
 source  $dir_rc/library.cfg
 
 use packagerc.color.colors
@@ -19,10 +19,12 @@ create_screencast(){
     local signature=`date | cut -d' ' -f4 | sed 's/[: ]/_/g'`
     local title=${signature}__${str_ws}
     echo "title: $title" 
+    $dir_this/STEPS/wrapper.sh "$title"
+ 
 }
 
-run(){
-    echo "run()"
+steps(){
+    echo "steps()"
 
     echo "Presentation:"
     echo "Enter Title:"
@@ -31,7 +33,8 @@ run(){
 
 }
 
-run
+
+steps
 popd
 
 

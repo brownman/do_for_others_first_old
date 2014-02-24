@@ -1,4 +1,5 @@
 #!/bin/bash -e
+echo "script:list.sh"
 set -o nounset
 #$dir_script=/TORRENTS/SCRIPTS
 #file=$dir_script/todo.txt

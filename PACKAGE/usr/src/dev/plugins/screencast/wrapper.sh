@@ -3,7 +3,13 @@
 
 trap breaking SIGINT
 time1=`date | cut -d' ' -f4 | sed 's/:/_/g'`
-file_output="/tmp/animated${time1}.gif"
+title=${1:-$time1}
+dir=/tmp/animated
+if [ ! -d "$dir" ];then
+mkdir $dir
+fi
+
+file_output="/tmp/animated/${title}.gif"
 browser=google-chrome
 resx=1280
 resy=800
@@ -14,7 +20,9 @@ cmd_browser="$browser $file_output"
 
 breaking(){
 echo Breaking..
+
 echo "file_output: $file_output"
+echo "google-chrome $file_output"
 
 }
 

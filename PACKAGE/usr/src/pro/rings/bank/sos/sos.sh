@@ -4,7 +4,7 @@ pushd `dirname $0`
 echo "just suspend me!"
 delay=300
 path=`dirname $0`
-dir_root=../
+dir_root=../../
 
 let 'counter=0'
 #str_remind="great! WOW! $counter"
