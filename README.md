@@ -13,7 +13,6 @@
 - 16-2-2014: plugin: screencast        ++new
 
 
-
 Do For Others First
 =
 step by step instructions:
@@ -49,6 +48,8 @@ Each plugin located under: $project_root/src/1_dev/plugins
 [My whiteboard](./.WHITEBOARD)
 ![whiteboard](./.WHITEBOARD/whiteboard.jpg)
 
+#### Rules:
+- script closer to the root directory must be smaller in size
 
 ref:
 --
@@ -58,3 +59,6 @@ ref:
 [mastering](http://guides.github.com/overviews/mastering-markdown/)
 [editor](http://dillinger.io/)
 [lexers](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
+
+
+

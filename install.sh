@@ -1,49 +1,73 @@
-#!/bin/bash
-pushd `dirname $0`
+#!/bin/bash -e
+source ./basics.cfg
+
 clear
-str_msg_start='start'
-str_msg_end='end'
-#dir=`dirname $0`
-ptrn=`echo "export dir_root=$PWD;source $PWD/setup.cfg"`
-echo "searching for pattern: $ptrn"
-cmd="grep \"$ptrn\" ~/.bashrc"
-
-
-print_color () { 
-        echo -e "\x1B[01;$1m[*]\x1B[0m $2 "
+step1(){
+    #info: create a file - that links between .bashrc and this project
+    #check: file=~/bashrc.additions;echo -e "\nFile: $file\n";cat $file
+    echo step1
+    file=~/bashrc.additions
+    str="export dir_root=$PWD\nsource \$dir_root/setup.cfg"
+    cmd="echo -e \"$str\" > $file"
+    confirm "$cmd"
 }
-
-
-run(){
-print_color 32 "$str_msg_start"
-
-
-
-result=$(eval "$cmd")
-echo  "result: $result"
-if [ "$result" = '' ];then
-
-   print_color 31 "your ~/.bashrc is missing a line which load this project"
-   sleep 1
-   echo "LINE: $ptrn"
-   sleep 1
-   echo "adding this line to your: ~/.bashrc"
-   sleep 2
-   echo "$ptrn" >> ~/.bashrc
-   sleep 1 
-   print_color 32 "DONE!"
-else
-
-    echo "PROJECT ALREADY SUCCESSFULY INSTALLED !"
-    #echo "your ~/.bashrc file contains a line that loads this project's setup"
-    grep setup.cfg ~/.bashrc --color=auto
-    echo "lets load it now!"
-    sleep 5
+step2(){
+    #info:       add last line to file: .bashrc
+    #check:      grep 'source ~/bashrc.additions' ~/.bashrc
+    echo step2
+    str="source ~/bashrc.additions"
+    cmd="echo \"$str\" >> ~/.bashrc"
+    confirm "$cmd"
+}
+step3(){
+    #info: load the setup.cfg
+    #check: use package.color.color;print_color 32 cool
+    echo step3
     source ~/.bashrc
-fi
 
-print_color 32 "$str_msg_end"
 }
-run
-popd
+
+steps(){
+    #info: run all steps
+    #check: cat $0 | grep check:
+    step1
+    step2
+    step3
+}
+
+
+self_echo(){
+    print_func
+    local cmd="$1"
+    local str="$2"
+
+    #echo -e "func: $cmd \ngrep: $str"
+    res=`cat $0 | grep "$cmd" -A 2 | grep "$str"`
+    echo "$res"
+}
+
+self_eval(){
+    print_func
+    local str=`self_echo "$1" "$2"`
+    echo "eval: $str"
+  #  cmd=`echo "$str" | cut -d':' -f1-`
+  # confirm "$cmd" 
+    exiting
+}
+
+
+
+cmd=$1
+
+if [ "$cmd" ];then
+        #echo "SELF:"
+        echo "$cmd()"
+        self_echo "$cmd" info
+        self_echo "$cmd" check
+
+        eval "$cmd" 
+else
+    echo 'supply a step to execute'
+    show_funcs
+fi
 
