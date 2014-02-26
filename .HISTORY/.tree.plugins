@@ -1,0 +1,26 @@
+/home/dao04/JAIL/TREE/snippet/1_dev/plugins
+├── gmail-group
+│   ├── BAK
+│   ├── README.md
+│   ├── script.sh
+│   ├── vars.cfg
+│   └── wrapper.sh
+├── hotkeys
+│   ├── helpers.cfg
+│   ├── HISTORY
+│   ├── install.sh
+│   ├── menu
+│   ├── README.md
+│   ├── script.sh
+│   ├── vars.cfg
+│   └── wrapper.sh
+└── screencast
+    ├── helpers.cfg
+    ├── HISTORY
+    ├── HTML
+    ├── README.md
+    ├── script.sh
+    ├── vars.cfg
+    └── wrapper.sh
+
+8 directories, 15 files
