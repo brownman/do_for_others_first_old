@@ -3,13 +3,28 @@
 
 trap breaking SIGINT
 time1=`date | cut -d' ' -f4 | sed 's/:/_/g'`
-title=${1:-$time1}
-dir=/tmp/animated
-if [ ! -d "$dir" ];then
-mkdir $dir
+#title=${1:-$time1}
+
+
+if [ $# -gt 0 ];then
+   str=`echo "$@" | sed 's/ /_/g'`
+   title="${str}___${time1}"
+else
+    title="$time1"
+fi
+echo "title: $title"
+echo  "press y to confirm the title for this movie:"
+read answer
+if [ "$answer" != y ];then
+    exit
 fi
 
-file_output="/tmp/animated/${title}.gif"
+dir=/tmp1/animated
+if [ ! -d "$dir" ];then
+mkdir -p $dir
+fi
+
+file_output="$dir/${title}.gif"
 browser=google-chrome
 resx=1280
 resy=800

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 #author:    ofer shaham
 #plugin:    gmail-group
 #describe:      utilize shared gmail to act like the mobile application: whatsup 
