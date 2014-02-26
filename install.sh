@@ -1,5 +1,7 @@
 #!/bin/bash -e
-source ./basics.cfg
+source ./rc/lib/group/basics.cfg
+
+
 
 clear
 step1(){

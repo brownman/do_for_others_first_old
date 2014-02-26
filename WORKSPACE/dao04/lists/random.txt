@@ -1,0 +1,5 @@
+echo 2
+echo 3
+date | cut -d' ' -f4 
+tree $dir_workspace
+alias

@@ -1,0 +1,303 @@
+.
+├── 0_LOOPS
+│   ├── bin
+│   │   ├── 0_sos
+│   │   │   └── sos.sh
+│   │   ├── 1_tasker
+│   │   │   ├── README.md
+│   │   │   ├── rooms
+│   │   │   │   ├── room1.txt
+│   │   │   │   ├── room2.txt
+│   │   │   │   ├── room3.txt
+│   │   │   │   └── room4.txt
+│   │   │   └── tasker.sh
+│   │   └── ONGOING
+│   │       ├── 2_croning
+│   │       │   ├── env
+│   │       │   ├── error
+│   │       │   ├── helpers.cfg
+│   │       │   ├── txt
+│   │       │   │   ├── crontab.root.txt
+│   │       │   │   └── crontab.user.txt
+│   │       │   ├── vars.cfg
+│   │       │   └── wrapper.sh
+│   │       ├── 3_after
+│   │       │   ├── plan
+│   │       │   │   ├── ensure.sh
+│   │       │   │   ├── planning14_31_54.txt
+│   │       │   │   ├── steps.txt
+│   │       │   │   ├── STORY
+│   │       │   │   │   └── story.sh
+│   │       │   │   └── txt
+│   │       │   │       └── 0_create_something_new.txt
+│   │       │   └── screens
+│   │       │       ├── priorities.yml
+│   │       │       └── smile.sh
+│   │       └── 4_later
+│   │           └── 10
+│   │               ├── 2
+│   │               ├── 3
+│   │               │   ├── random
+│   │               │   │   ├── helper.cfg
+│   │               │   │   ├── list.txt
+│   │               │   │   └── random.sh
+│   │               │   └── screens
+│   │               │       ├── effective.sh
+│   │               │       ├── jobs.sh
+│   │               │       ├── menus
+│   │               │       │   ├── old2
+│   │               │       │   │   ├── motivation.sh
+│   │               │       │   │   ├── old
+│   │               │       │   │   │   ├── commitment.sh
+│   │               │       │   │   │   └── prespective.sh
+│   │               │       │   │   └── prespective.sh
+│   │               │       │   └── old3
+│   │               │       │       ├── menu0.sh
+│   │               │       │       ├── menu1.sh
+│   │               │       │       ├── menu2.sh
+│   │               │       │       ├── menu3.sh
+│   │               │       │       ├── menu4.sh
+│   │               │       │       └── menu.sh
+│   │               │       ├── morning.sh
+│   │               │       └── old
+│   │               │           ├── menus.sh
+│   │               │           └── options.sh
+│   │               └── 5
+│   │                   └── wallpaper_cheatsheet
+│   ├── README.md
+│   ├── singles
+│   │   ├── commitment
+│   │   ├── list
+│   │   │   ├── list.sh
+│   │   │   └── txt
+│   │   │       ├── done.txt
+│   │   │       ├── general_subject.txt
+│   │   │       ├── list.txt
+│   │   │       └── todo.txt
+│   │   ├── new_word
+│   │   │   ├── list.txt
+│   │   │   └── new_word.sh
+│   │   ├── ONGOING
+│   │   │   ├── loader.sh
+│   │   │   ├── more
+│   │   │   │   ├── commands.sh
+│   │   │   │   ├── recent_koan.py -> ../../1/testing/python2/koans/about_method_bindings.py
+│   │   │   │   └── serial.sh
+│   │   │   ├── tasks
+│   │   │   │   ├── plugins
+│   │   │   │   │   ├── android.sh
+│   │   │   │   │   ├── article
+│   │   │   │   │   │   └── commands.sh
+│   │   │   │   │   ├── bank.sh
+│   │   │   │   │   ├── blogger.sh
+│   │   │   │   │   ├── collaboration.sh
+│   │   │   │   │   ├── cron.sh
+│   │   │   │   │   ├── db.sh
+│   │   │   │   │   ├── deals.sh
+│   │   │   │   │   ├── free_imagination.sh
+│   │   │   │   │   ├── free_speak.sh
+│   │   │   │   │   ├── fslint
+│   │   │   │   │   ├── google.sh
+│   │   │   │   │   ├── homework.sh
+│   │   │   │   │   ├── increase_motivation.sh
+│   │   │   │   │   ├── investigator.sh
+│   │   │   │   │   ├── javascript
+│   │   │   │   │   │   ├── commands.sh
+│   │   │   │   │   │   └── translate.js
+│   │   │   │   │   ├── learn_langs.sh
+│   │   │   │   │   ├── logger.sh
+│   │   │   │   │   ├── must.sh
+│   │   │   │   │   ├── ongoing
+│   │   │   │   │   │   ├── game_essay.sh
+│   │   │   │   │   │   ├── glossary.sh
+│   │   │   │   │   │   ├── pick_word_from_sentence.sh
+│   │   │   │   │   │   └── tasks
+│   │   │   │   │   │       ├── edit.sh
+│   │   │   │   │   │       ├── fetch.sh
+│   │   │   │   │   │       ├── jobs.sh
+│   │   │   │   │   │       ├── mail2.sh
+│   │   │   │   │   │       ├── mail.sh
+│   │   │   │   │   │       ├── plans.sh
+│   │   │   │   │   │       ├── remind.sh
+│   │   │   │   │   │       ├── scrap.sh
+│   │   │   │   │   │       ├── study.sh
+│   │   │   │   │   │       ├── txt_to_png.sh
+│   │   │   │   │   │       └── wallpaper.sh
+│   │   │   │   │   ├── ppa.sh
+│   │   │   │   │   ├── python
+│   │   │   │   │   │   └── run_system_cmd.py
+│   │   │   │   │   ├── random_quote.sh
+│   │   │   │   │   ├── reminder.sh
+│   │   │   │   │   ├── riddle.sh
+│   │   │   │   │   ├── scrap.sh
+│   │   │   │   │   ├── shopping
+│   │   │   │   │   │   └── meteor.txt
+│   │   │   │   │   ├── string_to_buttons.sh
+│   │   │   │   │   ├── suspend.sh
+│   │   │   │   │   ├── take_photo.sh
+│   │   │   │   │   ├── test_case.sh
+│   │   │   │   │   ├── translation.sh
+│   │   │   │   │   ├── wallpaper.sh
+│   │   │   │   │   └── youtube_audio.sh
+│   │   │   │   ├── psaudo.sh
+│   │   │   │   └── tasker.sh
+│   │   │   └── time
+│   │   │       ├── all_tasks.sh
+│   │   │       ├── cli.sh
+│   │   │       ├── create_symlink.sh
+│   │   │       ├── install.sh
+│   │   │       ├── one_cron.sh
+│   │   │       ├── one_shortkey.sh
+│   │   │       ├── one_task.sh
+│   │   │       ├── simple_notification.sh
+│   │   │       ├── single.sh
+│   │   │       ├── startup.sh
+│   │   │       ├── test.sh
+│   │   │       ├── timer.sh
+│   │   │       └── yaml.sh
+│   │   ├── reminder
+│   │   │   ├── list.txt
+│   │   │   └── reminder.sh
+│   │   ├── riddle
+│   │   │   └── riddle.sh
+│   │   ├── single.sh
+│   │   ├── sleep
+│   │   │   └── sleep.sh
+│   │   ├── suspend
+│   │   │   └── suspend.sh
+│   │   └── translation
+│   │       └── translation.sh
+│   ├── struct.cfg
+│   └── wrapper.sh
+├── 1_TEST
+│   ├── README.md
+│   └── TEST
+│       ├── lib
+│       │   └── shunit2
+│       │       ├── bin
+│       │       │   ├── docbookPrep.sh
+│       │       │   ├── extractDocs.pl
+│       │       │   └── which
+│       │       ├── doc
+│       │       │   ├── CHANGES-2.0.txt
+│       │       │   ├── contributors.txt
+│       │       │   ├── design_doc.txt
+│       │       │   ├── LGPL-2.1
+│       │       │   ├── README.txt
+│       │       │   ├── RELEASE_NOTES-2.0.0.txt
+│       │       │   ├── RELEASE_NOTES-2.0.1.txt
+│       │       │   ├── RELEASE_NOTES-2.0.2.txt
+│       │       │   ├── RELEASE_NOTES-2.0.3.txt
+│       │       │   ├── shunit2.html
+│       │       │   ├── style.css
+│       │       │   └── TODO.txt
+│       │       ├── lib
+│       │       │   └── sh
+│       │       │       └── shlib
+│       │       ├── Makefile
+│       │       ├── share
+│       │       │   ├── docbook
+│       │       │   │   └── tldp-xsl
+│       │       │   │       └── 21MAR2004
+│       │       │   │           ├── fo
+│       │       │   │           │   └── tldp-print.xsl
+│       │       │   │           └── html
+│       │       │   │               ├── tldp-common.xsl
+│       │       │   │               └── tldp-one-page.xsl
+│       │       │   └── resources
+│       │       │       └── shelldoc.xslt
+│       │       └── src
+│       │           ├── docbook
+│       │           │   ├── functions.xml
+│       │           │   ├── introduction.xml
+│       │           │   ├── quickstart.xml
+│       │           │   └── shunit2.xml
+│       │           ├── shell
+│       │           │   └── shunit2
+│       │           └── test
+│       │               ├── run-test-suite
+│       │               ├── testAsserts
+│       │               ├── testFailures
+│       │               ├── test-functions.inc
+│       │               ├── testInternalFx
+│       │               └── testSuiteFx
+│       ├── tests
+│       │   ├── about_grep_replace.sh
+│       │   ├── about_grep.sh
+│       │   ├── about_sed.sh
+│       │   └── pending.sh
+│       ├── test.sh
+│       └── test_single.sh
+├── bash
+│   ├── bashrc.fun
+│   ├── cat
+│   │   └── cat.cfg
+│   ├── eval
+│   │   ├── commander.cfg
+│   │   ├── confirm.cfg
+│   │   └── detach.cfg
+│   ├── fs
+│   │   └── rm.cfg
+│   ├── grep
+│   │   ├── finder.cfg
+│   │   └── replace.cfg
+│   ├── history
+│   │   └── save.cfg
+│   ├── lang
+│   │   ├── translate.cfg
+│   │   └── translation.sh
+│   ├── layout
+│   │   └── tree.cfg
+│   ├── ln
+│   │   └── desktop.cfg
+│   ├── menu
+│   ├── ONGOING
+│   │   ├── aliases.cfg
+│   │   ├── array.cfg
+│   │   ├── arr.cfg
+│   │   ├── colors.cfg
+│   │   ├── cron.cfg
+│   │   ├── debug.cfg
+│   │   ├── error.cfg
+│   │   ├── escape.cfg
+│   │   ├── evaluating.cfg
+│   │   ├── file_op.cfg
+│   │   ├── general.cfg
+│   │   ├── grep.cfg
+│   │   ├── gui.cfg
+│   │   ├── history.cfg
+│   │   ├── koan.cfg
+│   │   ├── line.cfg
+│   │   ├── links.cfg
+│   │   ├── meteor.cfg
+│   │   ├── pid.cfg
+│   │   ├── productivity.cfg
+│   │   ├── proxy.cfg
+│   │   ├── random.cfg
+│   │   ├── regex.cfg
+│   │   ├── scrap.cfg
+│   │   ├── signal.cfg
+│   │   ├── sound.cfg
+│   │   ├── struct.cfg
+│   │   ├── utils.cfg
+│   │   ├── vars.cfg
+│   │   ├── yad.cfg
+│   │   └── zenity.cfg
+│   ├── prompt
+│   │   └── history_sync.cfg
+│   ├── proxy
+│   │   ├── proxy1.cfg
+│   │   └── proxy.cfg
+│   ├── sleep
+│   │   └── sleep.cfg
+│   └── template
+│       ├── README.md
+│       └── template
+│           ├── script.sh
+│           └── wrapper.sh
+├── basics.cfg
+├── defaults.cfg
+├── library.cfg
+└── random.cfg
+
+85 directories, 215 files

@@ -1,3 +1,11 @@
+26.2.14
+1. random prompt
+2. testing cfg
+
+
+1. gain new knowledge
+
+#
 0. create a presentation on each run of the $root_dir/script.sh
 1. create a minimal package
 2. install it in the vm

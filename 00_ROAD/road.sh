@@ -3,7 +3,7 @@ set -o nounset
 echo print_got "road.sh got: $@"
 #url:
 #http://www.commandlinefu.com/commands/matching/mp3/bXAz/sort-by-votes
-
+echo "$@" > .history
 
 path=`dirname $0`
 dir_source=${1:-''}
@@ -44,7 +44,20 @@ if [ "$dir_source" ];then
 
             #ffmpeg -i $path_file_old -vn -ar 44100 -ac 2 -ab 192k -f $path_file_new
             #ffmpeg -vcodec copy -acodec copy -i orginalfile -ss 00:01:30 -t 0:0:20 newfile
+            size=`du $path_file_new | cut -f1`
+            
+               if  [ -f "$path_file_new" ] && [ "$size" -lt 1000 ];then
+                cmd="rm \"$path_file_new\""
+                echo "$cmd"
+                eval "$cmd"
+                fi
+
+            if [ ! -f "$path_file_new" ];then
             ffmpeg -i "$path_file_old" -acodec libmp3lame -ab 160k -ar 44100 -ac 2 "$path_file_new"
+            else
+                echo 'skipping creation of already existing file: ' "$path_file_new"
+            fi
+
 
 
             touch $path_file_new
