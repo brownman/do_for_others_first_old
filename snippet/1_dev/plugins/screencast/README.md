@@ -1,3 +1,3 @@
 screencast
 ====
-![demo1](./PRESENTATION/demo1.gif)
+![demo1](./.GIF/demo1.gif)
