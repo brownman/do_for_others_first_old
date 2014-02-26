@@ -1,0 +1,297 @@
+AVAILABLE FUNCS: 
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+request: private.alias.alias
+AVAILABLE FUNCS: 
+request: private.random.random
+AVAILABLE FUNCS: 
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+request: private.alias.alias
+AVAILABLE FUNCS: 
+request: private.random.random
+AVAILABLE FUNCS: 
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+request: private.alias.alias
+AVAILABLE FUNCS: 
+request: private.random.random
+AVAILABLE FUNCS: 
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+request: private.alias.alias
+AVAILABLE FUNCS: 
+request: private.random.random
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+LOADING: library.cfg
+example: use bash.history.save
+LOADING: library.cfg
+example: use bash.history.save
+LOADING: library.cfg
+example: use bash.history.save
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+
+request: private.alias.alias
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+
+request: private.alias.alias
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+
+request: private.alias.alias
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+
+request: private.alias.alias

@@ -35,3 +35,86 @@ echo $hi
 info
 info
 git commit --amend
+LOADING: library.cfg
+example: use bash.history.save
+
+LOADING: defaults.cfg
+LOAD: public .cfg
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+LOAD: private .cfg
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+
+request: private.random.random
+----------------------------------------
+a  random   bash    prompt
+
+\t\t\tscript: act.sh
+~/JAIL/TREE/rc/0_LOOPS/singles ~/JAIL/TREE
+/home/dao04/JAIL/TREE/rc/0_LOOPS/singles/reminder/reminder.sh 
+run()
+~/JAIL/TREE
+
+Random[6/9]
+----------------------------------------
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+LOADING: defaults.cfg
+LOAD: public .cfg
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+LOAD: private .cfg
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+
+request: private.random.random
+----------------------------------------
+a  random   bash    prompt
+
+18:58:41
+
+Random[2/9]
+----------------------------------------
+AVAILABLE FUNCS: 
+LOADING: library.cfg
+example: use bash.history.save
+
+LOADING: defaults.cfg
+LOAD: public .cfg
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+AVAILABLE FUNCS: 
+LOAD: private .cfg
+
+request: private.alias.alias
+AVAILABLE FUNCS: 
+
+request: private.random.random
+----------------------------------------
+a  random   bash    prompt
+
+\t\t\tscript: act.sh
+~/JAIL/TREE/rc/0_LOOPS/singles ~/JAIL/TREE
+/home/dao04/JAIL/TREE/rc/0_LOOPS/singles/reminder/reminder.sh 
+run()
+~/JAIL/TREE
+
+Random[6/9]
+----------------------------------------
+AVAILABLE FUNCS: 

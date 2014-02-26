@@ -1,5 +1,8 @@
-echo 2
-echo 3
+watch -t -n1 "date +%T|figlet"
+tree /mnt/TORRENTS/NEW/NetworkPn1
 date | cut -d' ' -f4 
 tree $dir_workspace
 alias
+
+
+single reminder
