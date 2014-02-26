@@ -1,10 +1,24 @@
 #!/bin/bash -e
-set -o nounset
-echo print_got "road.sh got: $@"
+#echo print_got "road.sh got: $@"
 #url:
 #http://www.commandlinefu.com/commands/matching/mp3/bXAz/sort-by-votes
-echo "$@" > .history
+if [ ! -d "$dir_workspace" ];then
+    
+    echo  'no such workspace' "$dir_workspace"
+    exit
+fi
+export file_txt="$dir_workspace/lists/road.txt"
+echo $file_txt
+if [ ! -f $file_txt ];then
+touch $file_txt    
+exit 1
+else
+echo "$file_txt"
+cat $file_txt
+fi
 
+
+echo "$0 $@" > $file_txt
 path=`dirname $0`
 dir_source=${1:-''}
 if [ "$dir_source" ];then
@@ -15,7 +29,7 @@ if [ "$dir_source" ];then
     #str=`echo $str | sed 's/VIDEO/AUDIO/g'`
     str=`echo $str | rev | cut -d'/' -f1 | rev`
 
-    dir_target=/tmp/AUDIO/$str
+    dir_target=/tmp1/AUDIO/$str
 
 
     type_source=mp4

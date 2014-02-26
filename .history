@@ -34,3 +34,4 @@ save
 echo $hi
 info
 info
+git commit --amend

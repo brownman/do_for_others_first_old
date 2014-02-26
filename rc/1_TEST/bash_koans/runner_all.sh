@@ -1,15 +1,18 @@
-#!/bin/bash 
+#!/bin/bash  -e
 #pushd `dirname $0` >/dev/null
 #print_script
+#path=`dirname $0`
+#path=.
 path=`pwd`
-dir_lib=$dir_rc/lib
+echo "pwd: $path"
+dir_lib=$dir_rc/lib/public
 file_list=$dir_workspace/lists/tested_files.txt
 # Load all files in support
 #for file in `ls $dir_install/support | grep .sh$`; do
 
 
 #source $dir_koans/config.cfg
-source $path/testing.cfg
+source $dir_rc/1_TEST/bash_koans/testing.cfg
 #source $dir_install/testing.cfg
 #done
 
@@ -33,33 +36,34 @@ source $path/testing.cfg
 
 #echo "$cmd"
 reason_of_death(){
-echo "$@"
+    echo reason of death:
+    echo "$@"
 }
 run(){
     source $file_test
     functions=`grep -h test_ $file_test | cut -d '(' -f 1`
     for i in $functions; do
         #rm -rf tmp/*
-        print_color $BLUE "\t\t\t\t\t $i !!!"
+        echo print_color $BLUE "\t\t\t\t\t $i !!!"
         eval "$i"
         echo
         #green1 "  $i"
     done
     #done
 
-return $SUCCESS
+    return $SUCCESS
 } 
 single(){
 
 
-if [  $# -eq 0 ];then
-reason_of_death 'no arguments - no file to test'
-else
-    file_test=$1
-    file_short=`basename $file_test`
-    echo "Test this File: $file_short"
-run
-fi
+    if [  $# -eq 0 ];then
+        reason_of_death 'no arguments - no file to test'
+    else
+        file_test=$1
+        file_short=`basename $file_test`
+        echo "Test this File: $file_short"
+        run
+    fi
 
 }
 
@@ -68,11 +72,12 @@ steps(){
     echo 'steps()'
     echo 'tesing: inline tests from: ' "$dir_lib" 
 
-    grep test_ `find $dir_lib -type f `> $file_list
-    
+
+   find $dir_lib -type f |  xargs grep --exclude-dir=.old test_ | cut -d':' -f1  > $file_list
+
 
     while read line;do
-        single "$line"
+single       "$line"
     done <  $file_list
 
 
