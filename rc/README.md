@@ -15,12 +15,12 @@ tree -L 3 lib/public/color
 
 
 #option2: use the library:
-use public.color.color
 type print_color
-print_color  31 HELLO 
-print_color  31 WORLD
-print_color  31 I 
-print_color  31 AM
-print_color  31 FEELING
-print_color  31 GREAT !!!
+echo
+print_color  31 HELLO
+print_color  32 WORLD
+print_color  33 I
+print_color  34 AM
+print_color  35 FEELING
+print_color  36 GREAT !!!
 ```

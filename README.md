@@ -46,6 +46,9 @@ Each plugin located under: $project_root/src/1_dev/plugins
 * [screencast](./snippet/1_dev/plugins/screencast) - recored your desktop - with the minified way - and save it as animated.gif
 * [gmail-group] (./snippet/1_dev/plugins/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
 
+The Library:
+----------
+* [using the library](./rc) - loading .cfg files using a better syntax than: source filename.cfg 
 
 
 
