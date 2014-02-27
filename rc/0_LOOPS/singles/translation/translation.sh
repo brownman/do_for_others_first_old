@@ -3,6 +3,7 @@
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
+sound=${SOUND:-false}
 declare -A repeater
 repeater["it"]=1
 repeater["en"]=1
@@ -599,7 +600,7 @@ steps(){
     step0
     step1
     step2
-    if [ "$SOUND" = true ];then
+    if [ "$sound" = true ];then
         step3
     else
         echo 'mute sound'
