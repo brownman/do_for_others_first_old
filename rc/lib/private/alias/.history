@@ -1,0 +1,11 @@
+LOADING: library.cfg
+example: use bash.history.save
+
+request: public.grep.replace
+AVAILABLE FUNCS: replace
+
+request: public.prompt.history_sync
+
+request: private.alias.plug
+
+request: private.alias.cd

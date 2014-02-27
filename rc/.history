@@ -1,309 +1,37 @@
-AVAILABLE FUNCS: 
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-request: private.alias.alias
-AVAILABLE FUNCS: 
-request: private.random.random
-AVAILABLE FUNCS: 
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-request: private.alias.alias
-AVAILABLE FUNCS: 
-request: private.random.random
-AVAILABLE FUNCS: 
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-request: private.alias.alias
-AVAILABLE FUNCS: 
-request: private.random.random
-AVAILABLE FUNCS: 
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-request: private.alias.alias
-AVAILABLE FUNCS: 
-request: private.random.random
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-LOADING: library.cfg
-example: use bash.history.save
-LOADING: library.cfg
-example: use bash.history.save
-LOADING: library.cfg
-example: use bash.history.save
-LOADING: library.cfg
-example: use bash.history.save
 
 request: public.grep.replace
-AVAILABLE FUNCS: replace
+.
+SELFISH: 
+Avaliable export: replace
+SELFISH: 
+.
 
 request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-screencast using the library
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-
-request: private.cd.cd
+.
+SELFISH: 
+.
+SELFISH: 
+.
+
+request: private.alias.scripts
+.
+SELFISH: 
+.
+SELFISH: 
+Avaliable alias: alias test
+alias single
+alias translate
+alias screencast
+alias gmail-group
+alias hotkeys
+alias hotkey
+alias presentation
+
+request: private.alias.cd
+.
+SELFISH: 
+.
+SELFISH: 
+Avaliable alias: alias cdworkspace
+alias cdrc
+alias cdproject

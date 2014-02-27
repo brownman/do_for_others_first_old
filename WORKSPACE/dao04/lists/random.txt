@@ -1,8 +1,16 @@
-watch -t -n1 "date +%T|figlet"
-tree /mnt/TORRENTS/NEW/NetworkPn1
-date | cut -d' ' -f4 
-tree $dir_workspace
-alias
+$dir_rc/runner_all.sh
+date +%T|figlet#print the time
+cat *.txt#show steps.txt
+echo -e "reminder:\n  is running? \n 0_sos  1_tasker  2_croning  ONGOING"
+
+tree /mnt/TORRENTS/NEW/NetworkPn1#transport to a new world of knowledge
+date | cut -d' ' # show the time 
+tree $dir_workspace #show the layout
+alias#show installed aliases
+project_testing#run test - and check the project's coverage
+find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | sort | tail -5 #find the recent commands and create an alias out of it
 
 
-single reminder
+
+single reminder#run a plugin/task/act
+
