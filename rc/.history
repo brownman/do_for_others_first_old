@@ -1,24 +1,13 @@
-
-request: public.grep.replace
-.
-SELFISH: 
-Avaliable export: replace
-SELFISH: 
-.
-
-request: public.prompt.history_sync
-.
-SELFISH: 
-.
-SELFISH: 
-.
-
-request: private.alias.scripts
-.
-SELFISH: 
-.
-SELFISH: 
-Avaliable alias: alias test
+----------------------------------------------------------------
+File: /home/dao04/JAIL/TREE/rc/lib/public/grep/replace.cfg
+[01;35m[*][0m *********  Avaliable export: 
+replace
+ ..  .. ----------------------------------------------------------------
+File: /home/dao04/JAIL/TREE/rc/lib/public/prompt/history_sync.cfg
+ ..  ..  .. ----------------------------------------------------------------
+File: /home/dao04/JAIL/TREE/rc/lib/private/alias/scripts.cfg
+ .. [01;32m[*][0m *********  Avaliable alias: 
+alias test
 alias single
 alias translate
 alias screencast
@@ -26,12 +15,10 @@ alias gmail-group
 alias hotkeys
 alias hotkey
 alias presentation
-
-request: private.alias.cd
-.
-SELFISH: 
-.
-SELFISH: 
-Avaliable alias: alias cdworkspace
+ .. ----------------------------------------------------------------
+File: /home/dao04/JAIL/TREE/rc/lib/private/alias/cd.cfg
+ .. [01;32m[*][0m *********  Avaliable alias: 
+alias cdworkspace
 alias cdrc
 alias cdproject
+ .. 

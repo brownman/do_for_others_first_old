@@ -1,39 +1,40 @@
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-search string: IFS
-grep  --exclude-dir=.git IFS . -R --color=auto
-./.old/package/regular/regex.cfg:    lst=$( IFS='|'; echo "${ids[*]}" ); 
-./.old/package/array/str_to_arr.cfg:    IFS=$delimeter read -a arr <<< "$str"
-./public/grep/replace.cfg:    while IFS= read -r -d $'\0' file; do
-./public/bashrc.fun:    while IFS= read -r -d $'' file; do
-./public/ONGOING/regex.cfg:    lst=$( IFS='|'; echo "${ids[*]}" ); 
-./public/ONGOING/array.cfg:    IFS=$delimeter read -a arr <<< "$str"
-./public/ONGOING/array.cfg:            ( IFS="$delimeter"; echo "${arr[*]}" )
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    old_IFS=$IFS
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$'\n'
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$old_IFS
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    old_IFS=$IFS
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$'\n'
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$old_IFS
-search string: IFS
-grep  --exclude-dir=.git IFS . -R --color=auto
-./.old/package/regular/regex.cfg:    lst=$( IFS='|'; echo "${ids[*]}" ); 
-./.old/package/array/str_to_arr.cfg:    IFS=$delimeter read -a arr <<< "$str"
-./public/grep/replace.cfg:    while IFS= read -r -d $'\0' file; do
-./public/bashrc.fun:    while IFS= read -r -d $'' file; do
-./public/ONGOING/regex.cfg:    lst=$( IFS='|'; echo "${ids[*]}" ); 
-./public/ONGOING/array.cfg:    IFS=$delimeter read -a arr <<< "$str"
-./public/ONGOING/array.cfg:            ( IFS="$delimeter"; echo "${arr[*]}" )
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    old_IFS=$IFS
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$'\n'
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$old_IFS
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    old_IFS=$IFS
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$'\n'
-./private/prompt/prompting/screens/menus/old2/motivation.sh:    IFS=$old_IFS
+---> use()
+-------*----------*-----func_lvl: 7
+==============  exist: /home/dao04/JAIL/TREE/rc/lib/public/grep/replace.cfg
+---> coverage() 
+*********  Avaliable export:
+replace
+.
+.
+---> use()
+-------*----------*-----func_lvl: 7
+==============  exist: /home/dao04/JAIL/TREE/rc/lib/public/prompt/history_sync.cfg
+---> coverage() 
+.
+.
+.
+---> use()
+-------*----------*-----func_lvl: 7
+==============  exist: /home/dao04/JAIL/TREE/rc/lib/private/alias/scripts.cfg
+---> coverage() 
+.
+*********  Avaliable alias:
+alias test
+alias single
+alias translate
+alias screencast
+alias gmail-group
+alias hotkeys
+alias hotkey
+alias presentation
+.
+---> use()
+-------*----------*-----func_lvl: 7
+==============  exist: /home/dao04/JAIL/TREE/rc/lib/private/alias/cd.cfg
+---> coverage() 
+.
+*********  Avaliable alias:
+alias cdworkspace
+alias cdrc
+alias cdproject
+.

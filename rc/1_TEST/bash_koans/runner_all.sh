@@ -1,5 +1,5 @@
 #!/bin/bash  -e
-#pushd `dirname $0` >/dev/null
+pushd `dirname $0` >/dev/null
 #print_script
 #path=`dirname $0`
 #path=.
@@ -84,4 +84,4 @@ single       "$line"
 
 }
 steps
-#popd
+popd

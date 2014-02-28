@@ -1,14 +1,18 @@
+#!/bin/bash -e
 echo "LOADING: defaults.cfg"
 export DEBUG=true
 
 
 
-use private.basic.basics
+#use private.basic.basics
 
+use public.proxy.proxy1
 load_many(){
 
 
 #echo "LOAD: public .cfg"
+
+
 use public.grep.replace
 use public.prompt.history_sync
 
@@ -28,6 +32,7 @@ else
 fi
 
 use private.alias.alias
-use private.prompt.random
+
+use private.vars.vars
 
 

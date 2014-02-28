@@ -1,182 +1,37 @@
-svae
-lskdjflksdjflkj
-print_color 43 sldkjf
-print_color 43 orange_wrap_white_text
-idea|piping
-qrencode -s 7 -o qr-wifi.png "WIFI:S:$(zenity --entry --text="Network name (SSID)" --title="Create WiFi QR");T:WPA;P:$(zenity --password --title="Wifi Password");;"
-http://www.viemu.com/vi-vim-cheat-sheet.gif
-use like in python: use eval.commander -> will load exported function 'commander()'
-sve
-sve
-sve
-#vi $dir_rc
-vi $dir_rc
-sve
-lksdjklfjsd
-savae
-svae
-slkdskj
-idea|shut u
-lskdjflksdjf
-lsdkjflskjd
-question|how to paint the sky?
-vi
-svae
-vi
-save
-vi
-save
-finder "print_func\("
-grep|finder "print_func\("
-save
-save
-save
-echo $hi
-info
-info
-git commit --amend
-LOADING: library.cfg
-example: use bash.history.save
-
-LOADING: defaults.cfg
-LOAD: public .cfg
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-LOAD: private .cfg
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-
-request: private.random.random
-----------------------------------------
-a  random   bash    prompt
-
-\t\t\tscript: act.sh
-~/JAIL/TREE/rc/0_LOOPS/singles ~/JAIL/TREE
-/home/dao04/JAIL/TREE/rc/0_LOOPS/singles/reminder/reminder.sh 
-run()
-~/JAIL/TREE
-
-Random[6/9]
-----------------------------------------
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-LOADING: defaults.cfg
-LOAD: public .cfg
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-LOAD: private .cfg
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-
-request: private.random.random
-----------------------------------------
-a  random   bash    prompt
-
-18:58:41
-
-Random[2/9]
-----------------------------------------
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-LOADING: defaults.cfg
-LOAD: public .cfg
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-AVAILABLE FUNCS: 
-LOAD: private .cfg
-
-request: private.alias.alias
-AVAILABLE FUNCS: 
-
-request: private.random.random
-----------------------------------------
-a  random   bash    prompt
-
-\t\t\tscript: act.sh
-~/JAIL/TREE/rc/0_LOOPS/singles ~/JAIL/TREE
-/home/dao04/JAIL/TREE/rc/0_LOOPS/singles/reminder/reminder.sh 
-run()
-~/JAIL/TREE
-
-Random[6/9]
-----------------------------------------
-AVAILABLE FUNCS: 
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.alias
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.plug
-
-request: private.alias.cd
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.plug
-
-request: private.alias.cd
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.plug
-
-request: private.alias.cd
-LOADING: library.cfg
-example: use bash.history.save
-
-request: public.grep.replace
-AVAILABLE FUNCS: replace
-
-request: public.prompt.history_sync
-
-request: private.alias.scripts
-
-request: private.alias.cd
+---> use()
+-------*----------*-----func_lvl: 7
+---> coverage() 
+SELFISH: 
+Avaliable export: replace
+SELFISH: 
+.
+---> use()
+-------*----------*-----func_lvl: 7
+---> coverage() 
+SELFISH: 
+.
+SELFISH: 
+.
+---> use()
+-------*----------*-----func_lvl: 7
+---> coverage() 
+SELFISH: 
+.
+SELFISH: 
+Avaliable alias: alias test
+alias single
+alias translate
+alias screencast
+alias gmail-group
+alias hotkeys
+alias hotkey
+alias presentation
+---> use()
+-------*----------*-----func_lvl: 7
+---> coverage() 
+SELFISH: 
+.
+SELFISH: 
+Avaliable alias: alias cdworkspace
+alias cdrc
+alias cdproject
