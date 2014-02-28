@@ -5,6 +5,7 @@ alias promptE="gvim $dir_rc/lib/private/random/prompt.cfg"
 
 
 export file_list_random=$dir_workspace/lists/random.txt
+alias randomE="gvim $file_list_random"
 randomE(){
     echo 'edit random!'
     sleep 1
