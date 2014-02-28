@@ -66,7 +66,7 @@ use1(){
 
 
     str=''
-    if [ "$1" ];then
+    if [ "$#" -gt 0 ];then
         first=${1:-''}
         str=`echo  "$first"|sed 's_\._/_g'`
     fi
@@ -101,7 +101,9 @@ use1(){
             #        echo "==============  exist: $prefix.sh"
             echo "File: $prefix.sh"
             coverage "$prefix.sh"
-            eval "$prefix.sh \"${args[@]}\""
+            
+            cmd="$prefix.sh ${args[@]}"
+            commander "$cmd"
         fi
     else
         echo 'Tree: '
