@@ -1,5 +1,6 @@
 #!/bin/bash -e
 echo "LOADING: defaults.cfg"
+echo -n '' > alias.optional
 export DEBUG=true
 
 
@@ -32,7 +33,10 @@ else
 fi
 
 use private.alias.alias
-
+sleep 2
 use private.vars.vars
 
-
+use private.prompt.random 
+print_line
+print_color 36 alias_optionals:
+cat alias.optional

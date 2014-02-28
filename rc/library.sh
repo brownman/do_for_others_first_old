@@ -1,8 +1,8 @@
 #!/bin/bash -e
-echo "LOADING: library.sh"
-
+#echo "USING: library.sh"
+#echo -n '' > .alias.optional
 #shlvl
-echo 'example: use public.history.save'
+#echo 'example: use public.history.save'
 selfish(){
     local ptrn="$1"
     local num="$2"
@@ -30,53 +30,77 @@ exiting(){
 
 #echo 'set -o nounset'
 #set -o nounset
-correction(){
-    echo -e "\t\t\tCORRECTION()"  
-    path=${1:-''}
-    item=${2:-''}
-    cmd="grep $item -r $path --color=auto --exclude-dir=.old"
-    echo "but .."
-    echo "you may meant to say:"
-    #echo "$cmd"
-    sleep 4
-    eval "$cmd" | head -5
-    tree -L 2 $dir_root/rc/bash
-    exiting
-}
 func_lvl(){
     echo "-------*----------*-----func_lvl: ${#FUNCNAME[@]}"
 }
 coverage(){
-#    echo '---> coverage() '
-     file="$1"
-           selfish export 3 ' ' 35 "$file"
-            selfish alias 1 '=' 32  "$file"
-            selfish trap 2 ' ' 31 "$file"
+    #    echo '---> coverage() '
+    file="$1"
+    selfish export 3 ' ' 35 "$file"
+    selfish alias 1 '=' 32  "$file"
+    selfish trap 2 ' ' 31 "$file"
 }
-use(){
+add_alias_for(){
+  #  print_color_n 31 'add_alias_for():'
+str="$1"
+type="$2"
+file="${str}.${type}"
+if [ -f "$file" ];then
+base=`basename $str`
+#dir=`dirname $file`
+from="${base}E"
+echo "$from"
+str="alias $from='gvim $file'"
+echo "$str" >> alias.optional
+else
+    echo 'no such file' "$file"
+fi
+
+}
+
+use1(){
     #echo "---> use()"
     #func_lvl
-    args=( "$@" )
+    first="$1"
+    shift
+    if [ $# -gt 0 ];then
+        args=( "$@" )
+    fi
 
-    str=`echo  "${args[@]}"|sed 's_\._/_g'`
+    str=`echo  "$first"|sed 's_\._/_g'`
 
     path="$dir_rc/lib"
     prefix="$path/$str"
+#    echo "???????? prefix: $prefix"
     if [ -f "$prefix.cfg" ];then
 
-print_line
-        echo "File: $prefix.cfg"
-        coverage "$prefix.cfg"
-        source "$prefix.cfg"
- 
-    elif [ -f "$prefix.sh" ];then
+        if [ "${args[@]}" = edit ];then
+           echo gvim "$prefix.cfg"
+            
+        else
 
-#        echo "==============  exist: $prefix.sh"
-        echo "File: $prefix.sh"
-        coverage "$prefix.sh"
-        eval "$prefix.sh"
+add_alias_for "$prefix" "cfg"
+            #print_line
+            echo "File: $prefix.cfg"
+            coverage "$prefix.cfg"
+            source "$prefix.cfg"
+
+        fi
+    elif [ -f "$prefix.sh" ];then
+        if [ "${args[@]}" = edit ];then
+           echo gvim "$prefix.sh"
+        else
+
+add_alias_for "$prefix" "sh"
+
+            #        echo "==============  exist: $prefix.sh"
+            echo "File: $prefix.sh"
+            coverage "$prefix.sh"
+            eval "$prefix.sh \"${args[@]}\""
+        fi
     else
-print_line
+        echo 'Tree: '
+        print_line
         tree "$prefix" -L 2
         print_line
         tree "$prefix" -L 1
@@ -84,5 +108,7 @@ print_line
 
 
 }
-export -f use
-$@
+#export -f use
+
+args=( "$@" )
+use1 "${args[@]}"
