@@ -3,6 +3,8 @@
 #echo -n '' > .alias.optional
 #shlvl
 #echo 'example: use public.history.save'
+echo '_'
+
 selfish(){
     local ptrn="$1"
     local num="$2"
@@ -41,45 +43,48 @@ coverage(){
     selfish trap 2 ' ' 31 "$file"
 }
 add_alias_for(){
-  #  print_color_n 31 'add_alias_for():'
-str="$1"
-type="$2"
-file="${str}.${type}"
-if [ -f "$file" ];then
-base=`basename $str`
-#dir=`dirname $file`
-from="${base}E"
-echo "$from"
-str="alias $from='gvim $file'"
-echo "$str" >> alias.optional
-else
-    echo 'no such file' "$file"
-fi
+    #  print_color_n 31 'add_alias_for():'
+    str="$1"
+    type="$2"
+    file="${str}.${type}"
+    if [ -f "$file" ];then
+        base=`basename $str`
+        #dir=`dirname $file`
+        from="${base}E"
+        echo "$from"
+        str="alias $from='gvim $file'"
+        echo "$str" >> alias.optional
+    else
+        echo 'no such file' "$file"
+    fi
 
 }
 
 use1(){
     #echo "---> use()"
     #func_lvl
-    first="$1"
-    shift
-    if [ $# -gt 0 ];then
+
+
+    str=''
+    if [ "$1" ];then
+        first=${1:-''}
+        str=`echo  "$first"|sed 's_\._/_g'`
+    fi
+    if [ "$#" -gt 1 ];then
+        shift
         args=( "$@" )
     fi
-
-    str=`echo  "$first"|sed 's_\._/_g'`
-
     path="$dir_rc/lib"
     prefix="$path/$str"
-#    echo "???????? prefix: $prefix"
+    #    echo "???????? prefix: $prefix"
     if [ -f "$prefix.cfg" ];then
 
         if [ "${args[@]}" = edit ];then
-           echo gvim "$prefix.cfg"
-            
+            echo gvim "$prefix.cfg"
+
         else
 
-add_alias_for "$prefix" "cfg"
+            add_alias_for "$prefix" "cfg"
             #print_line
             echo "File: $prefix.cfg"
             coverage "$prefix.cfg"
@@ -88,10 +93,10 @@ add_alias_for "$prefix" "cfg"
         fi
     elif [ -f "$prefix.sh" ];then
         if [ "${args[@]}" = edit ];then
-           echo gvim "$prefix.sh"
+            echo gvim "$prefix.sh"
         else
 
-add_alias_for "$prefix" "sh"
+            add_alias_for "$prefix" "sh"
 
             #        echo "==============  exist: $prefix.sh"
             echo "File: $prefix.sh"
@@ -110,5 +115,11 @@ add_alias_for "$prefix" "sh"
 }
 #export -f use
 
-args=( "$@" )
-use1 "${args[@]}"
+if [ $# -gt 0 ];then
+    args=( "$@" )
+    use1 "${args[@]}"
+else
+    use1
+fi
+
+
