@@ -1,24 +1,19 @@
----> use()
--------*----------*-----func_lvl: 7
----> coverage() 
-SELFISH: 
-Avaliable export: replace
-SELFISH: 
-.
----> use()
--------*----------*-----func_lvl: 7
----> coverage() 
-SELFISH: 
-.
-SELFISH: 
-.
----> use()
--------*----------*-----func_lvl: 7
----> coverage() 
-SELFISH: 
-.
-SELFISH: 
-Avaliable alias: alias test
+____________________________________use()___
+_
+replaceE
+File: /home/dao04/JAIL/TREE/rc/lib/public/grep/replace.cfg
+[01;35m[*][0m *********  Avaliable export: 
+replace
+ ..  .. ____________________________________use()___
+_
+history_syncE
+File: /home/dao04/JAIL/TREE/rc/lib/public/prompt/history_sync.cfg
+ ..  ..  .. ____________________________________use()___
+_
+scriptsE
+File: /home/dao04/JAIL/TREE/rc/lib/private/alias/scripts.cfg
+ .. [01;32m[*][0m *********  Avaliable alias: 
+alias test
 alias single
 alias translate
 alias screencast
@@ -26,12 +21,12 @@ alias gmail-group
 alias hotkeys
 alias hotkey
 alias presentation
----> use()
--------*----------*-----func_lvl: 7
----> coverage() 
-SELFISH: 
-.
-SELFISH: 
-Avaliable alias: alias cdworkspace
+ .. ____________________________________use()___
+_
+cdE
+File: /home/dao04/JAIL/TREE/rc/lib/private/alias/cd.cfg
+ .. [01;32m[*][0m *********  Avaliable alias: 
+alias cdworkspace
 alias cdrc
 alias cdproject
+ .. 

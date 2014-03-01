@@ -1,2 +1,2 @@
-/home/dao04/JAIL/TREE/rc/lib/public/grep/replace.cfg
-/home/dao04/JAIL/TREE/rc/lib/public/grep/replace.cfg
+/home/dao04/JAIL/TREE/rc/lib/cfg/public/grep/replace.cfg
+/home/dao04/JAIL/TREE/rc/lib/cfg/public/grep/replace.cfg
