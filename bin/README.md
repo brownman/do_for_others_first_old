@@ -8,8 +8,7 @@ Intro:
 
 - It considred to be the language of choice for a Bash scripter who cares about tagging his scripts for future use.
 
-### 
-Features:
+### Features:
 1. The readiness tag:
 - Assume: the wrapper set to run scripts on readiness level of 1(the strictest)
 - scripts which are tagged as higher - will halt the execution.
