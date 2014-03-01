@@ -1,5 +1,15 @@
 #!/bin/bash -e
-source ./rc/lib/group/basics.cfg
+
+
+file="./rc/lib/share/loader.sh"
+if [ -f "$file" ];then
+    $file
+else
+    echo $0
+    echo exiting
+    exit 1
+fi
+
 
 
 
@@ -9,7 +19,7 @@ step1(){
     #check: file=~/bashrc.additions;echo -e "\nFile: $file\n";cat $file
     echo step1
     file=~/bashrc.additions
-    str="export dir_root=$PWD\nsource \$dir_root/setup.cfg"
+    str="export dir_root=$PWD\n \$dir_root/steps.sh"
     cmd="echo -e \"$str\" > $file"
     confirm "$cmd"
 }

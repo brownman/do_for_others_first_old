@@ -1,8 +1,0 @@
-alias proxy1E='gvim /home/dao04/JAIL/TREE/rc/lib/public/proxy/proxy1.cfg'
-alias replaceE='gvim /home/dao04/JAIL/TREE/rc/lib/public/grep/replace.cfg'
-alias history_syncE='gvim /home/dao04/JAIL/TREE/rc/lib/public/prompt/history_sync.cfg'
-alias scriptsE='gvim /home/dao04/JAIL/TREE/rc/lib/private/alias/scripts.cfg'
-alias cdE='gvim /home/dao04/JAIL/TREE/rc/lib/private/alias/cd.cfg'
-alias aliasE='gvim /home/dao04/JAIL/TREE/rc/lib/private/alias/alias.cfg'
-alias varsE='gvim /home/dao04/JAIL/TREE/rc/lib/private/vars/vars.cfg'
-alias randomE='gvim /home/dao04/JAIL/TREE/rc/lib/private/prompt/random.sh'

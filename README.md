@@ -6,7 +6,7 @@
 - activate plugin: google-group: push lpi-exam-question every 5 minutes
 
 #### ChangeLog:
-
+- 1-3-2014 : interpreter: Selfish - first version for a new language
 - 26-2-2014: workspace: restrict writing permission to the folder: dir_workspace
 - 26-2-2014: divide rc files to: private(series of tasks)/public
 - 26-2-2014: use bash_koans testing + .cfg files at: rc/public 

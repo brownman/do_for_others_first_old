@@ -1,0 +1,6 @@
+#!./bin/selfish
+
+
+steps(){
+echo 'steps'
+}

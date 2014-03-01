@@ -53,7 +53,7 @@ add_alias_for(){
         from="${base}E"
         echo "$from"
         str="alias $from='gvim $file'"
-        echo "$str" >> alias.optional
+        echo "$str" >> $file_alias_tmp
     else
         echo 'no such file' "$file"
     fi
