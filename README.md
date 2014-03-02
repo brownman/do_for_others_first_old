@@ -44,7 +44,7 @@ echo "create or use a plugin:"
 
 Plugins:
 -----------
-![do for others first](./works/do_for_others_first/README.md)
+![do for others first](./works/do_for_others_first)
 
 Each plugin located under: $project_root/rc/lib/CODE/1_READY
 
