@@ -1,6 +1,11 @@
 RULES:
 ====
 #parse this file using bash utility!
+ideas:
+        env:        
+            - assign different wallpaper for different desktop workspaces
+        alias:
+            - running the command: croning/hotkeys from a folder of a plugin adds it
 step1:
     conditions:
         - +1 mindmap === +1 upgrade

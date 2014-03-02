@@ -3,7 +3,6 @@ set -o nounset
 NAME=ofer
 
 #change between false and true - to sound / unsound
-SOUND=true
 sound=$SOUND
 dir_script=`dirname $0`
 file=$dir_script/list.txt

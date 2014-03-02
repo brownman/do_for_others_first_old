@@ -2,7 +2,7 @@
 set -o nounset
 pushd `dirname $0`
 echo "just suspend me!"
-delay=300
+delay=600
 path=`dirname $0`
 
 let 'counter=0'

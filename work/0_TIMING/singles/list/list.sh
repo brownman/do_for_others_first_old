@@ -18,10 +18,14 @@ run(){
     local line=$(gxmessage -file $file -title "$subject"  --timeout $secs -entry )
     update_file "$line" "$file"
 }
+remove_trailing(){
+echo "$@" tr -s " "
+}
+
 update_file(){
     local line="$1"
     local file=$2
-    local time_stamp=`date | cut -d' ' -f4| cut -d':' -f1,2`
+    local time_stamp=`date | tr -s " " | cut -d' ' -f4| cut -d':' -f1,2`
 
 script_translate="$translate_sh"
 cmd="$script_translate $lang $line"

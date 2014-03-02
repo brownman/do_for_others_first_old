@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 # about file:
 # plugin:      translation
@@ -611,7 +611,7 @@ if [ $# -gt 1 ];then
     lang="$1"
     shift
     input="$@"
-    steps 
+    steps & 
 else
     echo reason_of_death "need 2 arguments - got $#"
 fi
