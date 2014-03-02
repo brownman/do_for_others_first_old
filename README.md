@@ -4,6 +4,12 @@
 Do For Others First
 =
 
+#### Design:
+- layout: prompt the tree
+- readme: divide to many , don't link
+- workspace: exist on each sub-project
+- script closer to the root directory must be smaller in size
+
 #### Todo:
 - debian package - easy to install
 - .travis: add tests for: self.sh
@@ -21,10 +27,6 @@ Do For Others First
 - 16-2-2014: plugin: gmail-group       +presentation
 - 16-2-2014: plugin: screencast        ++new
 
-#### Design:
-- layout: prompt the tree
-- readme: divide to many , don't link
-- workspace: exist on each sub-project
 
 
 step by step instructions:
@@ -56,8 +58,7 @@ WhiteBoard:
 ###### [My whiteboard](./WHITEBOARD) - where all should begin
 ![whiteboard](./WHITEBOARD/whiteboard.jpg)
 
-#### Rules:
-- script closer to the root directory must be smaller in size
+
 
 ref:
 --
