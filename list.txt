@@ -1,6 +1,0 @@
-sos is working
-tasker is working
-library is loading
-hotkey is working 
-prompt + random
-

@@ -1,1 +1,0 @@
-1_TEST/bash_koans/runner_all.sh

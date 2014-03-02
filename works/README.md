@@ -9,15 +9,6 @@ A script life-cycle:
 * driving question: Am I really productive ?
 
 
-### use it to document other scripts:
-* project name: Selfish:
-* type: An coverage tool
-* description: execute the commented parts of a bash script.
-* driving question: 
-    - Q:how to encourage testing? 
-    - Q:how to document a script? 
-    - Q:how to determine the level of completeness for a script?
-
 
 
 ### drop it as a snippet - and maybe later upgrade it to a plugin level

@@ -1,15 +1,13 @@
 .
-├── do_for_others_first
-│   ├── 0.0.1
-│   └── README.md
 ├── imagine_first
 │   ├── 0.0.1
 │   └── README.md
 ├── magnify_the_small
 │   ├── 0.0.1
 │   └── README.md
-└── selfish
-    ├── 0.0.1
-    └── README.md
+├── plugins
+│   ├── 0.0.1
+│   └── README.md
+└── README.md
 
-8 directories, 4 files
+6 directories, 4 files
