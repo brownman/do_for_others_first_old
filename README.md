@@ -1,5 +1,9 @@
 
 [![Build Status](https://travis-ci.org/brownman/do_for_others_first.png?branch=develop)](https://travis-ci.org/brownman/do_for_others_first)
+
+Do For Others First
+=
+
 #### Todo:
 - debian package - easy to install
 - .travis: add tests for: self.sh
@@ -22,8 +26,6 @@
 - workspace: exist on each sub-project
 
 
-Do For Others First
-=
 step by step instructions:
 ---------------------------------
 
@@ -34,7 +36,6 @@ sudo apt-get install git
 git clone https://github.com/brownman/do_for_others_first.git
 ./breath.sh
 echo "create or use a plugin:"
-
 ```
 
 ![demo](./.GIF/root.gif)
@@ -42,9 +43,9 @@ echo "create or use a plugin:"
 
 
 
-Plugins:
+Works:
 -----------
-[plugins](./works/plugins)
+* [works](./works) - this project is a composition of couple of sub-projects.
 
 
 
