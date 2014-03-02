@@ -1,6 +1,7 @@
 #!/bin/bash -e
+path=`dirname $0`
 
-file=list.txt
+file=$path/list.txt
 
 
 
