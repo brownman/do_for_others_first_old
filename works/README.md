@@ -27,6 +27,5 @@ About the projects:
     - Q: how to use a keyboard-combination to cautch a flying throught and write it down ?
     - Q: how to wrap a snippet of code to make it maintainable over time ?
 
-
 ## Tree:
-![layout](./.treeL2)
+[layout](./.treeL2)

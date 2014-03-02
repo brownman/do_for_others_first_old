@@ -44,9 +44,8 @@ echo "create or use a plugin:"
 
 Plugins:
 -----------
-![do for others first](./works/do_for_others_first)
+[do for others first](./works/do_for_others_first)
 
-Each plugin located under: $project_root/rc/lib/CODE/1_READY
 
 
 The Library:
@@ -69,6 +68,4 @@ ref:
 [mastering](http://guides.github.com/overviews/mastering-markdown/)
 [editor](http://dillinger.io/)
 [lexers](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)
-
-
-
+[github-guide](http://guides.github.com/)
