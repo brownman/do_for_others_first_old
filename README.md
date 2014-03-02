@@ -16,6 +16,11 @@
 - 16-2-2014: plugin: gmail-group       +presentation
 - 16-2-2014: plugin: screencast        ++new
 
+#### Design:
+- layout: prompt the tree
+- readme: divide to many , don't link
+- workspace: exist on each sub-project
+
 
 Do For Others First
 =
