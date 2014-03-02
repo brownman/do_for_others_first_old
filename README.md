@@ -44,7 +44,7 @@ echo "create or use a plugin:"
 
 Plugins:
 -----------
-[do for others first](./works/plugins)
+[plugins](./works/plugins)
 
 
 
