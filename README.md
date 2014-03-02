@@ -46,7 +46,7 @@ echo "create or use a plugin:"
 
 Works:
 -----------
-* [works](./works) - this project is a composition of couple of sub-projects.
+* [works](./works) - this project consist of few parts.
 
 
 
