@@ -39,12 +39,10 @@ echo "create or use a plugin:"
 
 Plugins:
 -----------
+![do for others first](./works/do_for_others_first/README.md)
 
 Each plugin located under: $project_root/rc/lib/CODE/1_READY
 
-* [hotkeys](./rc/lib/CODE/1_READY/hotkeys) - update the key-combination of your system for ..productivity (obviously! - I wonder why I didn't use this wonderful option till now)
-* [screencast](./rc/lib/CODE/1_READY/screencast) - recored your desktop - with the minified way - and save it as animated.gif
-* [gmail-group] (./rc/lib/CODE/1_READY/gmail-group) - utilize google mail service to allow quick messaging between people who share an email account (Whatsup style).
 
 The Library:
 ----------
@@ -52,8 +50,8 @@ The Library:
 
 
 
-[My whiteboard](./.WHITEBOARD)
-![whiteboard](./.WHITEBOARD/whiteboard.jpg)
+[My whiteboard](./WHITEBOARD)
+![whiteboard](./WHITEBOARD/whiteboard.jpg)
 
 #### Rules:
 - script closer to the root directory must be smaller in size
