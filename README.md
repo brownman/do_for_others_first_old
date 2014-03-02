@@ -48,7 +48,7 @@ echo "create or use a plugin:"
 
 Works:
 -----------
-###### [layout](./works) - this project consist of few parts.
+###### [Layout](./works) - this project consist of few parts.
 
 
 
