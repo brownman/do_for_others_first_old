@@ -4,6 +4,7 @@ A script life-cycle:
 ### A: Options:
 
 ### run it in loop:
+[magnify the small](./magnify_the_small)
 * project name: Magnify The Amall:  
 * type: A productivity tool.
 * driving question: Am I really productive ?
@@ -12,6 +13,8 @@ A script life-cycle:
 
 
 ### drop it as a snippet - and maybe later upgrade it to a plugin level
+[plugins](./plugins)
+[Imagine First](./imagine_first)
 Development level:
 * Imagine first:
 * type: An idea to snippet transformator
@@ -29,6 +32,8 @@ Production level:
     - plugin: hotkeys 
     * description: quickly add a key-combination for a script
 
+### add it to the library - as a configuration file
+[The Library](./root)
 
 ## Tree:
 [layout](./.treeL2)
