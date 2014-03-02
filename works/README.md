@@ -1,7 +1,7 @@
 A script life-cycle: 
 ===
-### Q: where to add my new script?
-### A: Options:
+## Q: where to add my new script?
+## A: Options:
 
 ### run it in loop:
 [magnify the small](./magnify_the_small)
@@ -12,7 +12,7 @@ A script life-cycle:
 
 
 
-### drop it as a snippet - and maybe later upgrade it to a plugin level
+### drop it as a snippet and upgrade it later on:
 [plugins](./plugins)
 [Imagine First](./imagine_first)
 Development level:
@@ -32,8 +32,13 @@ Production level:
     - plugin: hotkeys 
     * description: quickly add a key-combination for a script
 
-### add it to the library - as a configuration file
-[The Library](./root)
+
+
+    
+    
+### add it to the library - as a configuration file:
+* [using the library](./root) - loading .cfg files using a better syntax than: source filename.cfg 
+
 
 ## Tree:
 [layout](./.treeL2)
