@@ -1,3 +1,4 @@
+gvim menu/url.txt 
 gvim menu/options.txt 
 export file=~/Desktop/questions.txt;touch $file;echo `gxmessage -title add_question -file $file -entry` >> $file 2>~/Desktop/errors.txt
 gvim "$dir_plugins/croning/txt/crontab.user.txt" 2>~/Desktop/errors.txt
@@ -9,3 +10,4 @@ google-chrome https://github.com/cesar-rgon/xfce-installer/blob/master/sh/xfce4-
 xcowsay "I love you - because you are  fun"
 echo hi
 echo xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+notify-send cool
