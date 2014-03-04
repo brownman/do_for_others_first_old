@@ -56,7 +56,7 @@ Works:
 WhiteBoard:
 --------
 ###### [My whiteboard](./WHITEBOARD) - where all should begin
-![whiteboard](./WHITEBOARD/whiteboard.jpg)
+![whiteboard](./.wish/WHITEBOARD/whiteboard.jpg)
 
 
 

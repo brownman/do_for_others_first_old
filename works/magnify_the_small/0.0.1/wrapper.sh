@@ -2,6 +2,8 @@
 #example: ./wrapper bin/0_sos/sos.sh
 #set -o nounset
 clear
+pushd `dirname $0`
+
 export dir_root=`pwd`
 
 source struct.cfg
@@ -26,3 +28,5 @@ fi
 
 }
 run
+
+popd

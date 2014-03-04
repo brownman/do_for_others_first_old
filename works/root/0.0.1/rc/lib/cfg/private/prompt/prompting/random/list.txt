@@ -1,5 +1,0 @@
-5|"echo stuff"|"flite -t stuuuuuuuuuff"
-5|"show aliases"|alias
-2|"show the reminder"|reminder
-9|"update priorities"|todo
-10|'learn a new word'|"translate ru dog"
