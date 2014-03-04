@@ -1,18 +1,25 @@
 #!/bin/bash  -e
 pushd `dirname $0` >/dev/null
+if [ "$LIBRARY_LOADED" = true ];then
+    echo '[ok] library was loaded'
+else
+    echo '[error] library was not loaded!'
+    exit 1
+fi
 #print_script
 #path=`dirname $0`
 #path=.
+set -o nounset
 path=`pwd`
 echo "pwd: $path"
-dir_lib=$dir_rc/lib/cfg/public
+dir_target=$dir_library/src/rc/cfg/public
 file_list=$dir_workspace/lists/tested_files.txt
 # Load all files in support
 #for file in `ls $dir_install/support | grep .sh$`; do
 
 
 #source $dir_koans/config.cfg
-source $dir_rc/test/bash_koans/testing.cfg
+source $dir_library/src/test/bash_koans/testing.cfg
 #source $dir_install/testing.cfg
 #done
 
@@ -70,10 +77,10 @@ single(){
 
 steps(){
     echo 'steps()'
-    echo 'tesing: inline tests from: ' "$dir_lib" 
+    echo 'tesing: inline tests from: ' "$dir_target" 
 
 
-   find $dir_lib -type f |  xargs grep --exclude-dir=.old test_ | cut -d':' -f1  > $file_list
+   find $dir_target -type f |  xargs grep --exclude-dir=.old test_ | cut -d':' -f1  > $file_list
 
 
     while read line;do
