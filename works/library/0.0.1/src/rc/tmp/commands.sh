@@ -463,3 +463,101 @@ cfg.public.prompt.history_sync
 source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
 cfg.public.color.color
 source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
+cfg.public.color.printing
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/printing.cfg
+cfg.public.color.color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/color/color.cfg
+cfg.public.history.save
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/history/save.cfg
+cfg.public.prompt.history_sync
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/prompt/history_sync.cfg
