@@ -8,8 +8,8 @@ dir_library=$dir_root/works/library/0.0.1/src/rc
 step0(){
     #info: use exported functions in this script
     #check: use cfg.public.color.color; print_color 32 works!
-    source $dir_library/share/color.cfg
-    source $dir_library/share/basics.cfg
+    source $dir_root/share/color.cfg
+    source $dir_root/share/basics.cfg
 #source struct.cfg
 }
 
@@ -19,7 +19,7 @@ step1(){
     echo step1
     file=~/bashrc.additions
     str="export dir_root=$dir_root; \
-    source  \$dir_root/struct.cfg"
+    \$dir_root/test.sh && source  \$dir_root/loader.cfg"
     cmd="echo -e \"$str\" > $file"
     confirm "$cmd"
 }
