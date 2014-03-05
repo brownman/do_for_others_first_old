@@ -2,5 +2,5 @@
 pushd `dirname $0` >/dev/null
 set -o nounset
 
-source loader.cfg
+source $dir_root/loader.cfg
 popd >/dev/null

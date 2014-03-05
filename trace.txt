@@ -1,0 +1,5 @@
+[check] File:		/home/dao04/JAIL/TREE/steps10.cfg
+[check] Function:		step100
+[check] Test:		     alias aliasEi
+----------------------------------------------------------------
+[check] Clipboard:		vi /home/dao04/JAIL/TREE/steps10.cfg +5

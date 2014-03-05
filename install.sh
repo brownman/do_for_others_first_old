@@ -19,8 +19,9 @@ step1(){
     echo step1
     file=~/bashrc.additions
     str="export dir_root=$dir_root; \
-    \$dir_root/test.sh && source  \$dir_root/loader.cfg"
-    cmd="echo -e \"$str\" > $file"
+        $dir_root/wrapper.sh >/dev/null 2>&1 && echo ok || echo error"
+
+    cmd="echo \"$str\" > $file"
     confirm "$cmd"
 }
 step2(){
