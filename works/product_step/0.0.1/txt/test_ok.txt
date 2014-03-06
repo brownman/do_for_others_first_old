@@ -1,1 +1,0 @@
-alias aliasE='vi /home/dao04/JAIL/TREE/works/product_step/0.0.1/control/private/alias.cfg'

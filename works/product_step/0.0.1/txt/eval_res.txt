@@ -1,0 +1,11 @@
+available sub projects:
+/home/dao04/JAIL/TREE/works
+├── coverage.sh
+├── imagine_first
+├── library
+├── magnify_the_small
+├── plugins
+├── product_step
+└── README.md
+
+5 directories, 2 files

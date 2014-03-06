@@ -11,3 +11,5 @@ xcowsay "I love you - because you are  fun"
 echo hi
 echo xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 notify-send cool
+gmail-notify
+screencast

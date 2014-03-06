@@ -7,3 +7,8 @@ http://drichard.org/mindmaps/
 
 #bash
 http://tldp.org/LDP/abs/html/special-chars.html
+
+#blogs
+http://ubuntuarmy.wordpress.com/2013/12/08/android-notifications-on-linux-never-miss-a-message-again/
+screencast
+gmail-notify

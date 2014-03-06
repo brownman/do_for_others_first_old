@@ -1,4 +1,4 @@
-load the library|source $dir_library.cfg
-load the library|source $dir_library.cfg
-load the library|source $dir_library.cfg
-load the library|source $dir_library.cfg
+- say thanks 
+- breath
+- brash the dog's teeth
+- notify regarding the priority level - count the number of steps
