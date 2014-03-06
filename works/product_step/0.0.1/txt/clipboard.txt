@@ -1,0 +1,1 @@
+echo vi ./cfg/steps10.cfg + | /usr/bin/xsel --clipboard

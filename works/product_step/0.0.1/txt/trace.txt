@@ -1,0 +1,5 @@
+vi ./cfg/steps10.cfg +8
+s10.cfg
+[info] Function:		step100
+[info] Test:		
+[info] Clipboard:		vi ./cfg/steps10.cfg +

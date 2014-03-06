@@ -1,1 +1,1 @@
-/home/dao04/JAIL/TREE/loader.cfg: line 37: alias: aliasEi: not found
+./wrapper.sh: line 21: /home/dao04/JAIL/TREE/test.sh: No such file or directory

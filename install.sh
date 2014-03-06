@@ -8,8 +8,9 @@ dir_library=$dir_root/works/library/0.0.1/src/rc
 step0(){
     #info: use exported functions in this script
     #check: use cfg.public.color.color; print_color 32 works!
-    source $dir_root/share/color.cfg
-    source $dir_root/share/basics.cfg
+#    source $dir_root/works/product_step/0.0.1/share/color.cfg
+ #   source $dir_root/works/product_step/0.0.1/share/basics.cfg
+ echo
 #source struct.cfg
 }
 
@@ -18,11 +19,14 @@ step1(){
     #check: file=~/bashrc.additions;echo -e "\nFile: $file\n";cat $file
     echo step1
     file=~/bashrc.additions
-    str="export dir_root=$dir_root; \
-        $dir_root/wrapper.sh >/dev/null 2>&1 && echo ok || echo error"
+    str="export dir_root=$dir_root;\nsource $dir_root/breath.cfg"
 
-    cmd="echo \"$str\" > $file"
-    confirm "$cmd"
+
+    echo -e "$str" > $file
+#    confirm "$cmd"
+echo ensure
+sleep 1
+vi $file
 }
 step2(){
     #info:       add last line to file: .bashrc

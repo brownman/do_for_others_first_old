@@ -2,7 +2,7 @@
 #http://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast
 
 trap breaking SIGINT
-time1=`date | cut -d' ' -f4 | sed 's/:/_/g'`
+time1=`date | tr -s ' '| cut -d' ' -f4 | sed 's/:/_/g'`
 #title=${1:-$time1}
 
 
