@@ -1,4 +1,0 @@
-[check] File:		/home/dao04/JAIL/TREE/works/product_step/0.0.1/cfg/steps10.cfg
-[check] Function:		step105
-[check] Test:		 declare -a 'dirs=( $dir_works/*/ )'; ls "${dirs[@]}/README.md"
-[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/product_step/0.0.1/cfg/steps10.cfg +47

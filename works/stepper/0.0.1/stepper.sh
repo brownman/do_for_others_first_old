@@ -1,48 +1,69 @@
+#!/bin/bash
+set -o nounset
+step00(){
+path=${path:-''}
+if [[ -z "$path" ]];then
+    reason_of_death  "\$path must be set" "$path"
+else
+    export path=$path
+    echo '[PATH:]  ' $path
+    sleep 2
+fi
+# echo '[STEPS]'
+#    echo "path:$path"
+#    file="$path/steps.cfg"
+#    ls -l $file
+}
+
+step0(){
+
+
+#source settings.cfg
 #depend_package: xsel
 let 'counter=1'
 set -o nounset
 echo -e " \t\t\t[LOADER] "
-export GUI=${BASH_GUI:-false}
-export SHOW_PASSED=false
+#export GUI=${BASH_GUI:-false}
+export GUI=false
+export SHOW_PASSED=true
 show_passed=$SHOW_PASSED
-path=${path:-$dir_product_step}
+#path=${path:-$dir_product_step}
 
 #####################file know its name:
 #file_this=$path/loader.cfg
 #######################################
 ################## clean the log file:
 
-export file_log=$path/txt/log.txt
+export file_log=$path/log/log.txt
+export file_eval_res=$path/log/eval_res.txt
+export file_test_ok=$path/log/test_ok.txt
+export file_test_err=$path/log/test_err.txt
+export file_trace=$path/log/trace.txt
+export file_clip=$path/log/clipboard.txt
+#source $path/share/color.cfg
+#source $path/share/proxy.cfg
 
-export file_eval_res=$path/txt/eval_res.txt
-
-export file_test_ok=$path/txt/test_ok.txt
-export file_test_err=$path/txt/test_err.txt
-
-export file_trace=$path/txt/trace.txt
-export file_clip=$path/txt/clipboard.txt
-
-source $path/share/color.cfg
-source $path/share/proxy.cfg
+}
 ##################
-evaluate_step(){
+evaluate(){
+    #info: run the next stepX()
 
-echo ============
+    echo ============
     print_color 37 '[RUNNING]'
     if [ $# -gt 0 ];then
         cmd="$1"
-#        echo "cmd: $cmd"
+        #        echo "cmd: $cmd"
         eval "$cmd" > $file_eval_res
-                print_file $file_eval_res
+        print_file $file_eval_res
     else
         reason_of_death 'supply a function to evaluage'
     fi
-echo ============
+    echo ============
 }
 
 print_file(){
     local file=$1
-#    echo "File:         $file"
+    #    echo "File:         $file"
     cat $file
 }
 
@@ -79,8 +100,8 @@ coverage(){
             if [ "$res" -eq 0 ];then
                 print_color 32 '[OK]'
                 if [ "$show_passed" = true  ];then
-                print_file $file_test_ok
-            fi
+                    print_file $file_test_ok
+                fi
             else
                 print_color 31 '[ERROR]'
                 print_file $file_test_err
@@ -104,43 +125,53 @@ coverage(){
 
 }
 
-steps(){
-    #info: run all steps: use the level values to determine the amount of allowed steps
-    prefix="$1"
-    str=`cat $path/txt/level${prefix}.txt` 
-    file_cfg=$path/cfg/steps${prefix}.cfg
+step1(){
+    #info: run all steps: use the index values to determine the amount of allowed steps
+
+    file_level="$path/level.txt"
+
+    file_cfg=$path/steps.cfg
+
+    str=`cat $file_level` 
     source $file_cfg
     if [ "$str" != '' ];then
         let "max=$str"
-        echo -e "\t\t\t\t[LEVELS MAX] $max"
+        echo -e "\t\t\t\t[TOTAL STEPS] $max"
 
         START=1
         END=$max
         ## save $START, just in case if we need it later ##
-        level=$START
-        while [[ $level -le $END ]]
+        index=$START
+        while [[ $index -le $END ]]
         do
-print_line
-            func_name="step${prefix}${level}"
+            print_line
+            func_name="step${index}"
             echo
             #print_color_n 37 "[STEP]"
-            echo -e "$prefix>$level/$max" 
+            echo -e "$index/$max" 
             #"$file_cfg" "$func_name"
 
             coverage info 
-            str_step="step${prefix}${level}"
-            evaluate_step "$str_step"
+            str_step="step${index}"
+            evaluate "$str_step"
             coverage check 
-            ((level = level + 1))
+            ((index = index + 1))
             let 'counter+=1'
         done
     else
-        '[error] loading level.txt file'
+        reason_of_death 'no file' "$file_level"
     fi
 }
-steps 00
-steps 10
-print_color_n 32 '[END]' 
-echo 'loader.cfg'
-xcowsay "WoW! $counter  Steps!"
-set +o nounset
+steps(){
+    echo step00
+   step00
+   echo step0
+    step0
+    echo step1
+    step1
+#print_color_n 32 '[END]' 
+#xcowsay "WoW! $counter  Steps!"
+}
+steps
+
+

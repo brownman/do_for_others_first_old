@@ -10,3 +10,4 @@ linux|http://tldp.org/LDP/abs/html/special-chars.html
 #blogs
 later|http://ubuntuarmy.wordpress.com/2013/12/08/android-notifications-on-linux-never-miss-a-message-again/
 listing directories+using the test command|http://wiki.bash-hackers.org/commands/classictest?s[]=command&s[]=not&s[]=found
+linux_from_scratch|http://www.linuxplanet.com/news/linux-top-3-linux-from-scratch-ubuntu-14.01-beta-and-arch-updates.html
