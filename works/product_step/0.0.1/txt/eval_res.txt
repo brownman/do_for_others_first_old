@@ -4,8 +4,9 @@ available sub projects:
 ├── imagine_first
 ├── library
 ├── magnify_the_small
+├── main_menu
 ├── plugins
 ├── product_step
 └── README.md
 
-5 directories, 2 files
+6 directories, 2 files

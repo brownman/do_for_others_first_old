@@ -1,14 +1,12 @@
 #general
-http://www.cyberciti.biz/
-http://askubuntu.com/
-http://www.commandlinefu.com/
-www.google.com/your-mother-is
-http://drichard.org/mindmaps/
+bash|http://www.cyberciti.biz/
+linux|http://askubuntu.com/
+bash|http://www.commandlinefu.com/
+mind-map|http://drichard.org/mindmaps/
 
 #bash
-http://tldp.org/LDP/abs/html/special-chars.html
+linux|http://tldp.org/LDP/abs/html/special-chars.html
 
 #blogs
-http://ubuntuarmy.wordpress.com/2013/12/08/android-notifications-on-linux-never-miss-a-message-again/
-screencast
-gmail-notify
+later|http://ubuntuarmy.wordpress.com/2013/12/08/android-notifications-on-linux-never-miss-a-message-again/
+listing directories+using the test command|http://wiki.bash-hackers.org/commands/classictest?s[]=command&s[]=not&s[]=found

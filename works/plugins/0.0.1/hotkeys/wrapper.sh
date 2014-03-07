@@ -13,12 +13,15 @@ source $dir/vars.cfg
 
 steps(){
    # xfce4-settings-manager
-   if [ "$GUI" = true ];then
-       res=`menu_gui $file_menu`
-   else
-       res=`menu_cli $file_menu`
-   fi
+#   if [ "$GUI" = true ];then
+
+       desc=`menu_gui $file_menu | cut -d'|' -f1`
+       res=`menu_gui $file_menu | cut -d'|' -f2`
+#   else
+#       res=`menu_cli $file_menu`
+#   fi
    echo "res: $res"
+   notify-send "$desc"
    eval "$res"
 
 }
