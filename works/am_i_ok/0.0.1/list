@@ -1,6 +1,6 @@
 #help:     parse each line 
-#commands: echo|notify-send|eval
+#parse_file:grep -v '^#' filename
+#parser: xcowsay|notify-send|eval
 #level:    1
 a cli message|a gui message|flite -t 'line 1'
 do y|do y|flite fine
-

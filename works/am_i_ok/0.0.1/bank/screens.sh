@@ -1,5 +1,9 @@
 #!/bin/bash
-pushd `dirname $0`>/dev/null
+
+dir=$dir_root/WIKI
+
+pushd `$dir`>/dev/null
+file_list=list.txt
 step1(){
     #info: only the  first step
     print_func
@@ -8,8 +12,13 @@ cat list.txt
 }
 step2(){
     print_func
-while read line;do
-    echo "$line"
+while read file;do
+#    echo "$line"
+clear
+
+cat $file
+sleep 3
+#    ls -l $line
 done < $file_list
 }
 

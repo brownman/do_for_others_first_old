@@ -2,7 +2,7 @@
 set -o nounset
 step00(){
     print_func
-    path=${path:-''}
+
     if [[ -z "$path" ]];then
         reason_of_death  "\$path must be set" "$path"
     else
@@ -71,6 +71,7 @@ print_file(){
 }
 
 details(){
+    print_func
     echo -n '' > $file_trace
     echo -e [$str_ptrn] "File:\t\t$file_cfg"  >> $file_trace
     echo -e [$str_ptrn] "Function:\t\t$func_name" >> $file_trace
@@ -177,6 +178,8 @@ steps(){
     #print_color_n 32 '[END]' 
     #xcowsay "WoW! $counter  Steps!"
 }
+
+    path=${1:-"$PWD"}
 steps
 
 

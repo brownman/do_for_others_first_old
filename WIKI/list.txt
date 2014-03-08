@@ -1,5 +1,7 @@
+am_i_ok
+fast_commands.cfg
 list.txt
+priority.txt
 screens.sh
-step1.wiki
-step2.wiki
-step3.wiki
+todo.txt
+wish.txt
