@@ -7,7 +7,11 @@ path=`dirname $0`
 
 let 'counter=0'
 
-
+echo 'please supply a productivity level: 1-5 : 1 is the best'
+read answer
+let 'answer_int=answer*60'
+echo "timeout will be: $answer_int"
+export TIMEOUT_SUSPEND=$answer_int
     dir=$dir_workspace/sos
     if [  ! -d "$dir" ];then
         mkdir -p  $dir
