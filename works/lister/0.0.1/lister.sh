@@ -6,29 +6,26 @@ set -o errtrace
 path_from=`pwd`
 pushd `pwd` >/dev/null
 
+path=$path_from
+if [ "$#" -gt 0 ];then
+    list_name=$1
+else
+    list_name=list
+    #reason_of_death 'supply a file with tasks'
+fi
+#################################
+
 ########################## ARGS
 cover(){
 str=`    cat $1 | grep '(){'`
 echo "available func: $str"
 }
-path=$path_from
-if [ "$#" -gt 0 ];then
-
-    list_name=$1
-else
-    list_name=list
-
-    #reason_of_death 'supply a file with tasks'
-fi
-#################################
 
 get_list(){
     file_list="$path_from/$list_name"
     if [ "$file_list"  ];then
-
         if [ -f "$file_list" ];then
-        print_color 34 '[LIST]'
-        echo "file_list:"
+        print_color_n 34 '[LIST]'
         echo "$file_list"
     else
         reason_of_death 'not a file' "$file_list" 
@@ -44,7 +41,6 @@ create_tmp_list(){
     grep -v '^#' $file_list > $file_list_tmp
     let 'level=0'
 }
-#file_level="$path/level"
 
 
 str_to_arr(){
@@ -57,7 +53,6 @@ str_to_arr(){
 
 set_level(){
     str=`cat  $file_list | grep level: | sed 's/#level://g' | sed 's/ //g'`
-#    echo "setting level to:=$str="
     is_a_number "$str"
     let "level=$str"
     print_color_n 32 "[EFFICIENCY] level is: "
@@ -67,20 +62,10 @@ set_level(){
 }
 set_parser(){
     str=`cat  $file_list | grep parser: | sed 's/#parser://g'`
-    #    echo "$str"
     parser="$str"
-
-    #    echo -n "[parser is:]  "
     sleep 1
-    #    echo "$parser"
-
     str_to_arr "$parser"
     arr_parser=( "${arr[@]}" )
-
-    echo  "[ PARSER   ]" 
-    echo "${#arr_parser[@]}" 
-
-    echo  "${arr_parser[@]}"
     sleep 2
 }
 
@@ -110,7 +95,7 @@ eat(){
 
 
 loop(){
-    print_func
+#    print_func
     let 'counter=1'
   let   "max=$level"
 

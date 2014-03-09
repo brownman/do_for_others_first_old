@@ -4,7 +4,7 @@ pushd `pwd` >/dev/null
 set -o nounset
 
 step0(){
-    print_func
+#    print_func
 
     #source settings.cfg
     #depend_package: xsel
@@ -50,7 +50,7 @@ details(){
 
 
 coverage(){
-    print_func
+#    print_func
 
 
     local file_cfg="$1"
@@ -204,10 +204,10 @@ steps_new(){
     arr=( $str )
     echo "max funcs: ${#arr[@]}"
     for func in ${arr[@]};do
-        echo "func: $func"
+#        echo "func: $func"
 
         coverage $file_cfg $func info
-        coverage $file_cfg $func check
+#        coverage $file_cfg $func check
     done
 
 }
