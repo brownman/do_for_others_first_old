@@ -1,3 +1,0 @@
-1. suspend:     use it with manual timeout
-2. task_cli:    use it with covering
-3. task_gui:    fix plugin: new_word

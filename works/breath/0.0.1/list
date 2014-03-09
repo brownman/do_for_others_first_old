@@ -1,0 +1,22 @@
+#parser: $coverage_sh
+#level: 2
+$path/cfg/validate_root.cfg
+$path/cfg/exports.cfg
+$path/cfg/sourcing.cfg
+$path/cfg/library_defaults.cfg
+$path/cfg/aliases.cfg
+$path/cfg/set_workspace.cfg
+
+every 6 print_rainbow $file_plan
+every 10    indicator
+every 10    simplest_reminder
+cat $dir_root/robot.cfg
+#    print_color 31  'not implemented yet'
+#    print_color 32  'auto alias , auto vi using the library'
+##big_stones
+#later
+##    echo $dir_test/test.sh 
+#    echo $dir_test/test.sh 
+
+
+

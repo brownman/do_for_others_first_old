@@ -1,7 +1,8 @@
-am_i_ok
+must.txt
+pretend.txt
+am_i_ok.txt
 fast_commands.cfg
-list.txt
+measure_progress.txt
 priority.txt
-screens.sh
 todo.txt
 wish.txt

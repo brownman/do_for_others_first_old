@@ -1,0 +1,5 @@
+echo $dir_test/test.sh 
+echo    simplest_reminder
+echo $dir_lister/loop.sh list0
+cd ~/JAIL/TREE/works/lister/0.0.1
+

@@ -1,0 +1,5 @@
+MUST
+- run suspend
+- .fix travis
+- do for others first -> lpi + ank
+- raspberi pie --> bye

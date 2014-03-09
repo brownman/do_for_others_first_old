@@ -1,23 +1,10 @@
 #!/bin/bash
+path=`dirname $0`
+pushd `pwd` >/dev/null
 set -o nounset
-step00(){
-    print_func
-
-    if [[ -z "$path" ]];then
-        reason_of_death  "\$path must be set" "$path"
-    else
-        export path=$path
-        echo '[PATH:]  ' $path
-        sleep 2
-    fi
-    # echo '[STEPS]'
-    #    echo "path:$path"
-    #    file="$path/steps.cfg"
-    #    ls -l $file
-}
 
 step0(){
-print_func
+    print_func
 
     #source settings.cfg
     #depend_package: xsel
@@ -45,30 +32,6 @@ print_func
     #source $path/share/proxy.cfg
 
 }
-##################
-evaluate(){
-    #info: run the next stepX()
-    print_func
-
-    echo ============
-    print_color 37 '[RUNNING]'
-    if [ $# -gt 0 ];then
-        cmd="$1"
-        #        echo "cmd: $cmd"
-        eval "$cmd" > $file_eval_res
-        print_file $file_eval_res
-    else
-        reason_of_death 'supply a function to evaluage'
-    fi
-    echo ============
-}
-
-print_file(){
-    print_func
-    local file=$1
-    #    echo "File:         $file"
-    cat $file
-}
 
 details(){
     print_func
@@ -84,9 +47,16 @@ details(){
     echo "$cmd" > $file_clip
     eval "$cmd"
 }
+
+
 coverage(){
     print_func
-    local str_ptrn="$1"
+
+
+    local file_cfg="$1"
+    local func_name="$2"
+    local str_ptrn="$3"
+
     let 'res=0'
     str_res=`cat $file_cfg | grep $func_name -A 3 | grep $str_ptrn |  sed "s/#$str_ptrn://g" | tr -s ' '`
     #notify-send "=${str_res}="
@@ -130,12 +100,54 @@ coverage(){
 
 }
 
+
+step00(){
+    print_func
+
+    if [[ -z "$path" ]];then
+        reason_of_death  "\$path must be set" "$path"
+    else
+        export path=$path
+        echo '[PATH:]  ' $path
+        sleep 2
+    fi
+    # echo '[STEPS]'
+    #    echo "path:$path"
+    #    file="$path/steps.cfg"
+    #    ls -l $file
+}
+
+##################
+evaluate(){
+    #info: run the next stepX()
+    print_func
+
+    echo ============
+    print_color 37 '[RUNNING]'
+    if [ $# -gt 0 ];then
+        cmd="$1"
+        #        echo "cmd: $cmd"
+        eval "$cmd" > $file_eval_res
+        print_file $file_eval_res
+    else
+        reason_of_death 'supply a function to evaluage'
+    fi
+    echo ============
+}
+
+print_file(){
+    print_func
+    local file=$1
+    #    echo "File:         $file"
+    cat $file
+}
+
 step1(){
     #info: run all steps: use the index values to determine the amount of allowed steps
-print_func
+    print_func
     file_level="$path/level.txt"
 
-    file_cfg=$path/steps.cfg
+
 
     str=`cat $file_level` 
     source $file_cfg
@@ -164,7 +176,7 @@ print_func
             let 'counter+=1'
         done
     else
-        reason_of_death 'no file' "$file_level"
+        reason_of_death 'invalid level' "$str"
     fi
 }
 steps(){
@@ -173,13 +185,39 @@ steps(){
     step00
     echo step0
     step0
+
+    echo step01
+    step01
+
     echo step1
     step1
     #print_color_n 32 '[END]' 
     #xcowsay "WoW! $counter  Steps!"
 }
 
-    path=${1:-"$PWD"}
-steps
+#path=${1:-"$PWD"}
+steps_new(){
+    step0
 
+    source $file_cfg
+    str=`   cat $file_cfg | grep '(){' | sed 's/(){//g'`
+    arr=( $str )
+    echo "max funcs: ${#arr[@]}"
+    for func in ${arr[@]};do
+        echo "func: $func"
 
+        coverage $file_cfg $func info
+        coverage $file_cfg $func check
+    done
+
+}
+if [ $# -gt 0 ];then
+
+    file_cfg=$1
+else
+    reason_of_death 'supply a .cfg file'
+fi
+
+steps_new
+
+popd >/dev/null

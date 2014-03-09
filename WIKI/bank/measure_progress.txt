@@ -1,0 +1,5 @@
+MEASURE PROGRESS
+- by the number of passing unit tests!
+- by the number of files in dir_workspace/this_date
+- times using command: fu
+- times using hotkeys

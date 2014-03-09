@@ -1,2 +1,5 @@
-/home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/grep/replace.cfg
-/home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/public/grep/replace.cfg
+/home/dao04/JAIL/TREE/works/test/0.0.1/tests/about_grep.sh
+/home/dao04/JAIL/TREE/works/test/0.0.1/tests/about_sed.sh
+/home/dao04/JAIL/TREE/works/test/0.0.1/tests/about_sed.sh
+/home/dao04/JAIL/TREE/works/test/0.0.1/tests/about_sed.sh
+/home/dao04/JAIL/TREE/works/test/0.0.1/tests/about_sed.sh
