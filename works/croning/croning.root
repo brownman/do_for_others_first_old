@@ -1,0 +1,15 @@
+SHELL=/bin/bash
+DISPLAY=:0
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+NAME=dao04
+dir_desktop=/home/$NAME/Desktop/croning
+script_croning=$dir_desktop/croning.sh
+* * * * *   /usr/bin/env >$dir_desktop/croning.env.txt
+*/25 * * * * bash -c "dbus-send --system --print-reply     --dest=\"org.freedesktop.UPower\"     /org/freedesktop/UPower     org.freedesktop.UPower.Suspend 2>$dir_desktop/cron_root_err_1.txt"
+*/1 * * * * bash -c "/usr/bin/notify-send reminder 'suspension is alive' 2>$dir_desktop/cron_root_err_2.txt"
+*/5 * * * * bash -c "flite -t 'sos is working' 2>$dir_desktop/cron_root_err_3.txt"
+
+*/1 * * * * bash -c "sleep 7;flite -t 'sport';xcowsay  mind-map;/usr/bin/notify-send mind map 2>$dir_desktop/cron_root_err_4.txt"
+*/1 * * * * bash -c "flite -t 'white board';xcowsay  mind-map;/usr/bin/notify-send mind map 2>$dir_desktop/cron_root_err_4.txt"
+*/5 * * * * bash -c "$script_croning delete" 2>$dir_desktop/cron_root_err_5.txt"
+*/1 * * * * bash -c "$script_croning report" 2>$dir_desktop/cron_root_err_6.txt"

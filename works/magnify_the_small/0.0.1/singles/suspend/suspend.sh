@@ -6,10 +6,12 @@
 # progress bar: http://bash.cyberciti.biz/guide/A_progress_bar_(gauge_box)
 #. $TIMERTXT_CFG_FILE
 echo print_got "suspend.sh got: $@"
+
 timeout=${TIMEOUT_SUSPEND:-60}
+alive=${TIMEOUT_ALIVE:-60}
 echo "timeout suspend set to : $timeout"
 #$TIMEOUT_LET_ME_SLEEP
-env > ~/Desktop/suspend.env.log
+env > $dir_workspace/log/suspend.env.log
 
 
 suspend01(){

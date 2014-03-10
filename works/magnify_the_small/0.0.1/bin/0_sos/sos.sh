@@ -2,25 +2,39 @@
 set -o nounset
 pushd `dirname $0`
 echo "just suspend me!"
-delay=600
+
 path=`dirname $0`
 
 let 'counter=0'
+set_suspend(){
+    echo 'please supply a suspension steps: 1 is the shortest'
+    read answer
+    let 'answer_int=answer*60'
+    echo "timeout will be: $answer_int"
+    export TIMEOUT_SUSPEND=$answer_int
+}
+set_alive(){
+    echo 'please supply a alive steps: 1 is the shortest'
+    read answer
+    let 'answer_int=answer*60'
+    echo "alive will be: $answer_int"
+    export TIMEOUT_ALIVE=$answer_int
 
-echo 'please supply a productivity level: 1-5 : 1 is the best'
-read answer
-let 'answer_int=answer*60'
-echo "timeout will be: $answer_int"
-export TIMEOUT_SUSPEND=$answer_int
-    dir=$dir_workspace/sos
-    if [  ! -d "$dir" ];then
-        mkdir -p  $dir
-    fi
+delay=$TIMEOUT_ALIVE
+}
+
+
+set_alive
+set_suspend
+dir=$dir_workspace/sos
+if [  ! -d "$dir" ];then
+    mkdir -p  $dir
+fi
 file=$suspend_sh
 
 while [ 1 ];do
 
-str_remind="$counter whiteboards"
+    str_remind="$counter whiteboards"
     flite -t "$str_remind" &
     let 'counter+=1'
     file1=$counter.wow

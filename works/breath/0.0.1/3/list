@@ -1,16 +1,18 @@
 #parser: $coverage_sh
-#level: 2
+#level: 3
+#tags: info check
+$path/cfg/random_lpi_homework.cfg
 $path/cfg/validate_root.cfg
 $path/cfg/exports.cfg
 $path/cfg/sourcing.cfg
 $path/cfg/library_defaults.cfg
 $path/cfg/aliases.cfg
 $path/cfg/set_workspace.cfg
+$path/cfg/indicator.cfg
+#$path/cfg/simplest_reminder.cfg
+#$path/cfg/robot.cfg
 
-every 6 print_rainbow $file_plan
-every 10    indicator
-every 10    simplest_reminder
-cat $dir_root/robot.cfg
+#every 6 print_rainbow $file_plan
 #    print_color 31  'not implemented yet'
 #    print_color 32  'auto alias , auto vi using the library'
 ##big_stones

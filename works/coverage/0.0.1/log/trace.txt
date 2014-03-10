@@ -1,4 +1,4 @@
-[info] File:		/home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/validate_root.cfg
-[info] Function:		validate_root
-[info] Test:		
-[info] Clipboard:		vi /home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/validate_root.cfg +1
+[check] File:		/home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/sourcing.cfg
+[check] Function:		sourcing
+[check] Test:		
+[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/sourcing.cfg +2

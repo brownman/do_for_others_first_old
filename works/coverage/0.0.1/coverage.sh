@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 path=`dirname $0`
 pushd `pwd` >/dev/null
 set -o nounset
@@ -10,7 +10,7 @@ step0(){
     #depend_package: xsel
     let 'counter=1'
     set -o nounset
-    echo -e " \t\t\t[LOADER] "
+#    echo -e " \t\t\t[LOADER] "
     #export GUI=${BASH_GUI:-false}
     export GUI=false
     export SHOW_PASSED=true
@@ -21,7 +21,8 @@ step0(){
     #file_this=$path/loader.cfg
     #######################################
     ################## clean the log file:
-
+echo "$path"
+ls "$path/log"
     export file_log=$path/log/log.txt
     export file_eval_res=$path/log/eval_res.txt
     export file_test_ok=$path/log/test_ok.txt
@@ -32,20 +33,48 @@ step0(){
     #source $path/share/proxy.cfg
 
 }
+log_update(){
+    #print_func
 
-details(){
-    print_func
     echo -n '' > $file_trace
     echo -e [$str_ptrn] "File:\t\t$file_cfg"  >> $file_trace
     echo -e [$str_ptrn] "Function:\t\t$func_name" >> $file_trace
     echo -e [$str_ptrn] "Test:\t\t$str_res" >> $file_trace
-    str_goto=`grep $func_name $file_cfg -n | cut -d ':' -f1 `
-    local cmd="vi $file_cfg +$str_goto"
+
+cmd="grep \"$func_name\" \"$file_cfg\" -n -m 1 | cut -d ':' -f1 "
+str_goto=$( eval "$cmd" )
+echo "str_goto: $str_goto"
+    cmd="vi $file_cfg +$str_goto"
     echo -e "[$str_ptrn]" "Clipboard:\t\t$cmd" >> $file_trace
     ##create a lazy file - for fast opening the error line
-    cmd="echo $cmd | /usr/bin/xsel --clipboard"
+
+
     echo "$cmd" > $file_clip
+
+
+}
+log_print(){
+    print_file $file_clip
+    print_file $file_trace
+}
+log_use(){
+
+    cmd="echo $cmd | /usr/bin/xsel --clipboard"
+    echo "$cmd"
+
     eval "$cmd"
+
+
+
+}
+
+details(){
+
+    echo '[DETAILS]'
+    log_update
+    #log_print
+    print_line
+    log_use
 }
 
 
@@ -63,7 +92,7 @@ coverage(){
     if [ "$str_res" ] && [ "$str_res" != ' ' ] ;then
         if [ "$str_ptrn" = check ];then
             #we are interested only if there is an error case
-            print_color_n 37 '[TEST]'
+            print_color_n 37 '[CHECK]'
             echo "$str_res"
 
             #1>$file_trace
@@ -87,6 +116,8 @@ coverage(){
 
             #{ print_eval_res;print_line;details;echo -e >&2 "\n___________________[ERROR] while testing:\n";cat $file_clip;exit 1; } || echo evaluation ok
         elif [ "$str_ptrn" = info ];then
+
+            print_color_n 37 '[INFO]'
             print_color 35 "\t\t$str_res"
         else
             details
@@ -202,12 +233,12 @@ steps_new(){
     source $file_cfg
     str=`   cat $file_cfg | grep '(){' | sed 's/(){//g'`
     arr=( $str )
-    echo "max funcs: ${#arr[@]}"
+#    echo "max funcs: ${#arr[@]}"
     for func in ${arr[@]};do
 #        echo "func: $func"
 
         coverage $file_cfg $func info
-#        coverage $file_cfg $func check
+        coverage $file_cfg $func check
     done
 
 }

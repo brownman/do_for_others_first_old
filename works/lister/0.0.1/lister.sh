@@ -1,8 +1,22 @@
 #!/bin/bash 
-set -o nounset
-set -o errtrace
-#set -o errexit
+echo '[LISTER]'
+sleep 3
+# braceexpand     on
+# errexit         on
+# hashall         on
+# interactive-comments    on
 
+
+#set -o nounset
+#set -o errtrace
+#set -o errexit
+sleep 3
+breakpoint(){
+
+echo breakpoint
+
+}
+#trap breakpoint ERR
 path_from=`pwd`
 pushd `pwd` >/dev/null
 
@@ -53,29 +67,28 @@ str_to_arr(){
 
 set_level(){
     str=`cat  $file_list | grep level: | sed 's/#level://g' | sed 's/ //g'`
-    is_a_number "$str"
     let "level=$str"
     print_color_n 32 "[EFFICIENCY] level is: "
-    sleep 1
+    #sleep 1
     echo "$level "
-    sleep 2
+    #sleep 2
 }
 set_parser(){
     str=`cat  $file_list | grep parser: | sed 's/#parser://g'`
     parser="$str"
-    sleep 1
+    #sleep 1
     str_to_arr "$parser"
     arr_parser=( "${arr[@]}" )
-    sleep 2
+    #sleep 2
 }
 
 set_line(){
     local    line="$1"
-    sleep 1
+    #sleep 1
     str_to_arr "$line"
     arr_line=( "${arr[@]}" )
     #    echo "---[ ${arr_line[@]} ]---"
-    sleep 2
+    #sleep 2
 }
 
 
@@ -86,8 +99,12 @@ eat(){
     local max="${#arr_parser[@]}"
     for (( i=0; i<$max; i++ ))
     do
-        echo     "${arr_parser[i]}:${arr_line[i]}"
-        eval "${arr_parser[i]} ${arr_line[i]}"
+        #echo     "${arr_parser[i]}:${arr_line[i]}"
+eval        "${arr_parser[i]} ${arr_line[i]}"
+res=$?
+if [ "$res" -eq 1 ];then
+    exiting
+fi
     done
 
 
@@ -101,19 +118,20 @@ loop(){
 
     while read line;do
         if [ $counter -eq $max ];then
-echo            breaking
+#echo            breaking
             break
         fi
-        echo  -n "[ $counter ]"
+        echo -n '--------------------- '
+        print_color 33 "..${counter}.."
         if [ "$line" ];then
             if [ "$counter" -le $max ];then
 
 
-                print_color 32 "[EAT]"
+                #print_color 32 "[EAT]"
                 set_line "$line"
                 eat
 
-                print_line
+                #print_line
             else
                 print_color_n 31 "[SKIP] "
                 echo "$line"

@@ -1,1 +1,1 @@
-echo vi /home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/validate_root.cfg +1 | /usr/bin/xsel --clipboard
+vi /home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/sourcing.cfg +2

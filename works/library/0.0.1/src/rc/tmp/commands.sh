@@ -1537,3 +1537,7 @@ cfg/share/validate
 source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/share/validate.cfg
 cfg/share/brace
 source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/share/brace.cfg
+cfg/share/color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/share/color.cfg
+cfg/share/color
+source /home/dao04/JAIL/TREE/works/library/0.0.1/src/rc/cfg/share/color.cfg
