@@ -17,10 +17,13 @@ say(){
 if [ $# -gt 0 ];then
     num=$1
 #    say "got $num"
-    #str=`echo "$cmd" | sed 's/ /_/g'`
+
    # /usr/bin/notify-send "$num"
     line=`cat $path/list.txt | head -$num | tail -1`
-    res=$(    gxmessage -entrytext "$line" -title croning )
+
+    str=`echo "$line" | sed 's/ /_/g'`
+    #res=$(    gxmessage -entrytext "$line" -title croning )
+    notify-send "$str"
     say "$line"
     cmd="$line"
     echo "$cmd"

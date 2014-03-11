@@ -235,6 +235,7 @@ steps(){
 
 #path=${1:-"$PWD"}
 steps_new(){
+    dependencies
     step0
 
     source $file_cfg

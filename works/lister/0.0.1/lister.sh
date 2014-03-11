@@ -100,9 +100,15 @@ eat(){
     for (( i=0; i<$max; i++ ))
     do
         #echo     "${arr_parser[i]}:${arr_line[i]}"
-eval        "${arr_parser[i]} ${arr_line[i]}"
+
+cmd="${arr_parser[i]} ${arr_line[i]}"
+eval        "$cmd"
+
 res=$?
 if [ "$res" -eq 1 ];then
+    echo -n '[COMMAND] ' 
+    echo "$cmd"
+    echo "exited with an error:"
     exiting
 fi
     done

@@ -1,4 +1,4 @@
-[check] File:		.breath.cfg
-[check] Function:		steps
+[check] File:		/home/dao04/JAIL/TREE/works/breath/0.0.1/3/cfg/indicator.cfg
+[check] Function:		indicator
 [check] Test:		
-[check] Clipboard:		vi .breath.cfg +89
+[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/breath/0.0.1/3/cfg/indicator.cfg +1
