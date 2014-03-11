@@ -5,7 +5,7 @@
     pushd `dirname $0`>/dev/null
     path=`pwd`
     reset
-
+dir_test="$path/tests"
 trigger_runner(){
     if [ "$runner_name" = shunit2 ];then
     print_func
@@ -28,8 +28,8 @@ step1(){
     print_func
     echo 'decide which runner'
     export dir_runner=$dir_vendor/bash_koans
-    export runner=$dir_runner/runner_all.sh
-#    export runner=$dir_vendor/shunit2/src/shell/shunit2
+#    export runner=$dir_runner/runner_all.sh
+    export runner=$dir_vendor/shunit2/src/shell/shunit2
     export     runner_name=`basename $runner`
 
     cmd="vi $dir_runner" 

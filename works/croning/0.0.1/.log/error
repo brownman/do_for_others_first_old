@@ -1,3 +1,5 @@
-gxmessage: message text is required
-Try `gxmessage --help' for more information
-rm: cannot remove `/tmp/CRONING/INDICATORS/*': No such file or directory
+No protocol specified
+gxmessage: unable to initialize GTK
+No protocol specified
+
+(xcowsay:14844): Gtk-WARNING **: cannot open display: :0
