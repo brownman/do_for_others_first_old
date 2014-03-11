@@ -1,4 +1,5 @@
-
+0.0.2
+==
 ### Coverage: documenting/testing 
 * project name: Selfish:
 * type: An coverage tool
