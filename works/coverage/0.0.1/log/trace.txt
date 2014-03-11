@@ -1,4 +1,4 @@
-[check] File:		/home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/sourcing.cfg
-[check] Function:		sourcing
+[check] File:		.breath.cfg
+[check] Function:		steps
 [check] Test:		
-[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/breath/0.0.1/cfg/sourcing.cfg +2
+[check] Clipboard:		vi .breath.cfg +89

@@ -1,1 +1,0 @@
-/home/dao04/JAIL/TREE/works/coverage/0.0.1/coverage.sh: line 102: dir_works: unbound variable

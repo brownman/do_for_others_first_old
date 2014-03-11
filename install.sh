@@ -4,7 +4,9 @@ set -o nounset
 path=`dirname $0`
 dir_root=`pwd`
 dir_library=$dir_root/works/library/0.0.1/src/rc
-
+show_funcs(){
+    cat $0 | grep '(){' | sed 's/(){//g'
+}
 step0(){
     #info: use exported functions in this script
     #check: use cfg.public.color.color; print_color 32 works!
@@ -19,7 +21,7 @@ step1(){
     #check: file=~/bashrc.additions;echo -e "\nFile: $file\n";cat $file
     echo step1
     file=~/bashrc.additions
-    str="export dir_root=$dir_root;\nsource $dir_root/breath.cfg"
+    str="export dir_root=$dir_root;\nsource $dir_root/.breath.cfg"
 
 
     echo -e "$str" > $file

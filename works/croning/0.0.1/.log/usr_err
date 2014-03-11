@@ -1,0 +1,4 @@
+notify-send '1 minute'
+
+gxmessage: message text is required
+Try `gxmessage --help' for more information

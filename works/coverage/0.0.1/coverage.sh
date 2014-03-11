@@ -1,7 +1,14 @@
 #!/bin/bash 
+#depend_func: print_color print_color_n reason_of_death
 path=`dirname $0`
 pushd `pwd` >/dev/null
 set -o nounset
+
+dependencies(){
+    cat $0 | grep depend_func
+    sleep 2
+}
+
 
 step0(){
 #    print_func

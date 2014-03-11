@@ -1,0 +1,3 @@
+notify-send '1 minute'
+notify-send '2 minutes'
+rm /tmp/CRONING/INDICATORS/*
