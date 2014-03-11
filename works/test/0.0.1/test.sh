@@ -61,7 +61,7 @@ steps(){
 
 
 steps
-
+bash
 #$dir_test/about_grep_replace.sh
 popd>/dev/null
 

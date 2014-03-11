@@ -4,4 +4,5 @@ language: bash
 #    - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx
 
 script:
-    - bash TREE/works/test/0.0.1
+    - bash works/test/0.0.1/test.sh
+
