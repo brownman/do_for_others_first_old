@@ -7,7 +7,7 @@ set -o nounset
 pushd `dirname $0`
 SOUND=false
 path=`dirname $0`
-secs=15
+secs=7
 lang=ru
 subject=${1:-general_subject}
 file=$dir_workspace/lists/txt/$subject.txt
@@ -16,9 +16,9 @@ touch $file
 
 msg(){
     local line=''
-    while [ "$line" = '' ];do
+  #  while [ "$line" = '' ];do
         line=$(gxmessage -file $file -title "$subject"  --timeout $secs -entry )
-    done
+  #  done
     update_file "$line" "$file"
 }
 remove_trailing(){
