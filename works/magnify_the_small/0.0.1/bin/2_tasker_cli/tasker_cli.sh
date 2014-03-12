@@ -73,7 +73,7 @@ single(){
             parse $line           
             use
         else
-            echo 'empty line'
+            reason_of_death 'empty line'
             return
         fi
     done < $file_list

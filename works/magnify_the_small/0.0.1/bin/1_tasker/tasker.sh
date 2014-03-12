@@ -9,9 +9,12 @@ echo "dir_root $dir_root"
 ls -l $dir_root
 
 echo 'which room to load ?'
-read answer
+#read answer
 
-num=${answer:-2}
+num=2
+#${answer:-2}
+echo "$num"
+sleep 2
 file_list=$dir_workspace/lists/rooms/room${num}.txt
 args=()
 
@@ -72,7 +75,7 @@ single(){
             parse $line           
             use
         else
-            echo 'empty line'
+            reason_of_death 'empty line'
             return
         fi
     done < $file_list
@@ -83,7 +86,7 @@ loop(){
     echo 'loop()'
 
     let 'counter=1'
-    while [ 1 ];do
+#    while [ 1 ];do
 
 
         touch $dir/round${counter}.txt
@@ -94,7 +97,7 @@ loop(){
         single
 
         let 'counter+=1'
-    done
+ #   done
 }
 install
 ensure

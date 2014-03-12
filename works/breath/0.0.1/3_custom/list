@@ -1,4 +1,4 @@
-#parser: $coverage_sh
+#parser: source|$coverage_sh
 #level: 3
 #tags: info check
 #$path/cfg/validate_root.cfg
@@ -7,8 +7,8 @@
 #$path/cfg/library_defaults.cfg
 #$path/cfg/aliases.cfg
 #$path/cfg/set_workspace.cfg
-$path/cfg/indicator.cfg
-$path/cfg/random_lpi_homework.cfg
+cfg/random_lpi_homework.cfg
+cfg/indicator.cfg
 #$path/cfg/simplest_reminder.cfg
 #$path/cfg/robot.cfg
 

@@ -1,1 +1,2 @@
-- use the library to load all share/*.cfg
+- fix testing 
+- fix coverage

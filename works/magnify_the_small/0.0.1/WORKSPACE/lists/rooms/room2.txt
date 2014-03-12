@@ -1,7 +1,8 @@
+new_word
 reminder
 list todo
 sleep 6
 reminder 
 list done
 sleep 6
-new_word
+

@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/bin/bash -e
 
 # about file:
 # plugin:      translation
 # description: translate 1 line of text to many languages by choice
-sound=${SOUND:-false}
+export sound=$SOUND
+#{SOUND:-true}
 declare -A repeater
 repeater["it"]=1
 repeater["en"]=1
@@ -600,18 +601,18 @@ steps(){
     step0
     step1
     step2
-    if [ "$sound" = true ];then
+#    if [ "$sound" = true ];then
         step3
-    else
-        echo 'mute sound'
-    fi
+ #   else
+  #      reason_of_death 'mute sound' "sound $sound"
+  #  fi
 }
 
 if [ $# -gt 1 ];then
     lang="$1"
     shift
     input="$@"
-    steps & 
+    steps  
 else
     echo reason_of_death "need 2 arguments - got $#"
 fi

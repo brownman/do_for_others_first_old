@@ -1,6 +1,8 @@
 #!/bin/bash 
+path_self=`dirname $0`
+pushd "$PWD">/dev/null
 echo '[LISTER]'
-sleep 3
+#sleep 3
 # braceexpand     on
 # errexit         on
 # hashall         on
@@ -10,17 +12,13 @@ sleep 3
 #set -o nounset
 #set -o errtrace
 #set -o errexit
-sleep 3
+#sleep 3
 breakpoint(){
 
-echo breakpoint
+    echo breakpoint
 
 }
 #trap breakpoint ERR
-path_from=`pwd`
-pushd `pwd` >/dev/null
-
-path=$path_from
 if [ "$#" -gt 0 ];then
     list_name=$1
 else
@@ -31,21 +29,21 @@ fi
 
 ########################## ARGS
 cover(){
-str=`    cat $1 | grep '(){'`
-echo "available func: $str"
+    str=`    cat $1 | grep '(){'`
+    echo "available func: $str"
 }
 
 get_list(){
-    file_list="$path_from/$list_name"
+    file_list="$list_name"
     if [ "$file_list"  ];then
         if [ -f "$file_list" ];then
-        print_color_n 34 '[LIST]'
-        echo "$file_list"
+            print_color_n 34 '[LIST]'
+            echo "$file_list"
+        else
+            reason_of_death 'not a file' "$file_list" 
+        fi
     else
-        reason_of_death 'not a file' "$file_list" 
-    fi
-else
-    reason_of_death 'supply a list of tasks'
+        reason_of_death 'supply a list of tasks'
     fi
 
 
@@ -78,7 +76,11 @@ set_parser(){
     parser="$str"
     #sleep 1
     str_to_arr "$parser"
+
     arr_parser=( "${arr[@]}" )
+    num="${#arr[@]}"
+    echo '[PARSER]'
+    echo "run $num commands on every item from the list"
     #sleep 2
 }
 
@@ -95,55 +97,58 @@ set_line(){
 
 
 
+
 eat(){
     local max="${#arr_parser[@]}"
     for (( i=0; i<$max; i++ ))
     do
         #echo     "${arr_parser[i]}:${arr_line[i]}"
+        script="${arr_parser[i]}" 
+        file="${arr_line[i]}"
+     [   type $script 1>/dev/null 2>&1 ]  && { reason_of_death 'invalid script' "$script" ;}
+        if [ -f "$file" ];then
 
-cmd="${arr_parser[i]} ${arr_line[i]}"
-eval        "$cmd"
+            cmd="$script $file"
+            eval        "$cmd"
 
-res=$?
-if [ "$res" -eq 1 ];then
-    echo -n '[COMMAND] ' 
-    echo "$cmd"
-    echo "exited with an error:"
-    exiting
-fi
+            res=$?
+            if [ "$res" -eq 1 ];then
+                echo -n '[COMMAND] ' 
+                echo "$cmd"
+                echo "exited with an error:"
+                exiting
+            fi
+        else 
+            reason_of_death 'not a file' "$file"
+        fi
     done
-
-
 }
 
 
 loop(){
-#    print_func
+    #    print_func
     let 'counter=1'
-  let   "max=$level"
+    let   "max=$level"
 
     while read line;do
         if [ $counter -eq $max ];then
-#echo            breaking
+            #echo            breaking
             break
         fi
         echo -n '--------------------- '
         print_color 33 "..${counter}.."
         if [ "$line" ];then
             if [ "$counter" -le $max ];then
-
-
                 #print_color 32 "[EAT]"
                 set_line "$line"
                 eat
-
                 #print_line
             else
                 print_color_n 31 "[SKIP] "
                 echo "$line"
             fi
         else
-echo reason_of_death 'empty line'
+            echo reason_of_death 'empty line'
         fi
         let 'counter+=1'
     done < $file_list_tmp 
@@ -160,4 +165,5 @@ steps(){
 
 
 steps
-popd >/dev/null
+
+popd>/dev/null

@@ -1,0 +1,4 @@
+[info] File:		.breath.cfg
+[info] Function:		quick_commands
+[info] Test:		
+[info] Clipboard:		vi .breath.cfg +24

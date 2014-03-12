@@ -1,3 +1,5 @@
-notify-send '1 minute'
+~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh
+gxmessage "$dir_root"
+bash -c tasker_gui
 notify-send '2 minutes'
 rm /tmp/CRONING/INDICATORS/*

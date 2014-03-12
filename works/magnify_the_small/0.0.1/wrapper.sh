@@ -1,6 +1,10 @@
 #!/bin/bash -e
 #example: ./wrapper bin/0_sos/sos.sh
 #set -o nounset
+str='magnify the small'
+flite "$str"
+notify-send "$str"
+xcowsay "$str"
 clear
 ########################### RULES ********
 # - use a wallpaper task to print the logs as output-of-the-day - on the desktop wallpaper!
@@ -13,6 +17,7 @@ pushd `dirname $0`
 export dir_root=`pwd`
 ############################################
 source setup.cfg
+notify-send "sound: $SOUND"
 # - export structure:           where is the workspace ?
 # - export vars:                run with sound?
 # - create folders/symlinks:    desktop lymlink exist ?
