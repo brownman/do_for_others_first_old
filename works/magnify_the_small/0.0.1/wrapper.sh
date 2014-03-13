@@ -38,7 +38,7 @@ run(){
 }
 steps(){
 
-    install_trap
+#    install_trap
 print_func
 print_func_content "$0" "steps"
 

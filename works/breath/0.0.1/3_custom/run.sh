@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/bash -e
 pushd `dirname $0`>/dev/null
+export path=`pwd`
 $lister_sh
 
-cmd="cd $PWD"
-echo "$cmd" | /usr/bin/xsel --clipboard
-echo "vi"
+#cmd="cd $PWD"
+#echo "$cmd" | /usr/bin/xsel --clipboard
+#echo "vi"
 
 
-echo 'updating the clipboard'
 popd>/dev/null

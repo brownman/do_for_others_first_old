@@ -1,0 +1,347 @@
+flite: trace echo notify-send()
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+flite: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: cmd: cat "/home/dao04/JAIL/TREE/works/library/0.0.2/src/rc/cfg/share/validate.cfg" | grep trap  | cut -d" " -f2|xargs
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+flite: trace echo notify-send()
+every_other_time: [SKIP] logging library use
+layouts: caller layouts
+layouts: caller layouts
+reminder_txt: caller reminder_txt
+reminder_txt: caller reminder_txt
+reminder_txt: caller reminder_txt
+reminder_txt: caller reminder_txt
+step2: caller step2
+layouts: caller layouts
+layouts: caller layouts
+reminder_txt: caller reminder_txt
+reminder_txt: caller reminder_txt
+reminder_txt: caller reminder_txt
+reminder_txt: caller reminder_txt
+step2: caller step2
+layouts: caller layouts
+layouts: caller layouts
+step2: caller step2
+layouts: caller layouts
+layouts: caller layouts
+step2: caller step2
+layouts: caller layouts
+layouts: caller layouts
+step2: caller step2
+layouts: caller layouts
+layouts: caller layouts
+step2: caller step2
+layouts: caller layouts
+layouts: caller layouts
+step2: caller step2
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+layouts: caller: layouts
+layouts: caller: layouts
+step2: caller: step2
+step2: caller: step2

@@ -17,7 +17,7 @@ touch $file
 msg(){
     local line=''
   #  while [ "$line" = '' ];do
-        line=$(gxmessage -file $file -title "$subject"  --timeout $secs -entry )
+        line=$(gxmessage -file $file -title "$subject"  --timeout $secs -entry $GXMESSAGE )
   #  done
     update_file "$line" "$file"
 }

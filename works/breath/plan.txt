@@ -1,2 +1,5 @@
+- 
+- regular expression steps(measurements)
+- hotkeys
 - fix testing 
 - fix coverage

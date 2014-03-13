@@ -1,8 +1,10 @@
 #!/bin/bash 
-#depend_func: print_color print_color_n reason_of_death
-path=`dirname $0`
-pushd `pwd` >/dev/null
 set -o nounset
+#depend_func: print_color print_color_n reason_of_death
+path_self=`dirname $0`
+path=${path:-''}
+pushd `pwd` >/dev/null
+
 
 dependencies(){
     cat $0 | grep depend_func
@@ -10,34 +12,34 @@ dependencies(){
 }
 
 
-step0(){
-#    print_func
+set_vars(){
+    #    print_func
 
     #source settings.cfg
     #depend_package: xsel
     let 'counter=1'
     set -o nounset
-#    echo -e " \t\t\t[LOADER] "
+    #    echo -e " \t\t\t[LOADER] "
     #export GUI=${BASH_GUI:-false}
     export GUI=false
     export SHOW_PASSED=true
     show_passed=$SHOW_PASSED
-    #path=${path:-$dir_product_step}
+    #path_self=${path_self:-$dir_product_step}
 
     #####################file know its name:
-    #file_this=$path/loader.cfg
+    #file_this=$path_self/loader.cfg
     #######################################
     ################## clean the log file:
-echo "$path"
-ls "$path/log"
-    export file_log=$path/log/log.txt
-    export file_eval_res=$path/log/eval_res.txt
-    export file_test_ok=$path/log/test_ok.txt
-    export file_test_err=$path/log/test_err.txt
-    export file_trace=$path/log/trace.txt
-    export file_clip=$path/log/clipboard.txt
-    #source $path/share/color.cfg
-    #source $path/share/proxy.cfg
+    echo "$path_self"
+    ls "$path_self/log"
+    export file_log=$path_self/log/log.txt
+    export file_eval_res=$path_self/log/eval_res.txt
+    export file_test_ok=$path_self/log/test_ok.txt
+    export file_test_err=$path_self/log/test_err.txt
+    export file_trace=$path_self/log/trace.txt
+    export file_clip=$path_self/log/clipboard.txt
+    #source $path_self/share/color.cfg
+    #source $path_self/share/proxy.cfg
 
 }
 log_update(){
@@ -48,9 +50,9 @@ log_update(){
     echo -e [$str_ptrn] "Function:\t\t$func_name" >> $file_trace
     echo -e [$str_ptrn] "Test:\t\t$str_res" >> $file_trace
 
-cmd="grep \"$func_name\" \"$file_cfg\" -n -m 1 | cut -d ':' -f1 "
-str_goto=$( eval "$cmd" )
-echo "str_goto: $str_goto"
+    cmd="grep \"$func_name\" \"$file_cfg\" -n -m 1 | cut -d ':' -f1 "
+    str_goto=$( eval "$cmd" )
+    echo "str_goto: $str_goto"
     cmd="vi $file_cfg +$str_goto"
     echo -e "[$str_ptrn]" "Clipboard:\t\t$cmd" >> $file_trace
     ##create a lazy file - for fast opening the error line
@@ -65,14 +67,9 @@ log_print(){
     print_file $file_trace
 }
 log_use(){
-
+print_func
     cmd="echo $cmd | /usr/bin/xsel --clipboard"
-    echo "$cmd"
-
-    eval "$cmd"
-
-
-
+    update_clipboard "$cmd"
 }
 
 details(){
@@ -86,7 +83,7 @@ details(){
 
 
 coverage(){
-#    print_func
+    #    print_func
 
 
     local file_cfg="$1"
@@ -139,19 +136,21 @@ coverage(){
 }
 
 
-step00(){
+ensure_path(){
     print_func
 
     if [[ -z "$path" ]];then
-        reason_of_death  "\$path must be set" "$path"
+        reason_of_death  "path must be set" "$path"
     else
-        export path=$path
-        echo '[PATH:]  ' $path
+        export path_self=$path_self
+        echo '[path_self:]  ' $path_self
         sleep 2
     fi
+
+
     # echo '[STEPS]'
-    #    echo "path:$path"
-    #    file="$path/steps.cfg"
+    #    echo "path_self:$path_self"
+    #    file="$path_self/steps.cfg"
     #    ls -l $file
 }
 
@@ -183,7 +182,7 @@ print_file(){
 step1(){
     #info: run all steps: use the index values to determine the amount of allowed steps
     print_func
-    file_level="$path/level.txt"
+    file_level="$path_self/level.txt"
 
 
 
@@ -233,21 +232,32 @@ steps(){
     #xcowsay "WoW! $counter  Steps!"
 }
 
-#path=${1:-"$PWD"}
+#path_self=${1:-"$PWD"}
 steps_new(){
-    dependencies
-    step0
+    #dependencies
+    ensure_path
+    set_vars
 
     source $file_cfg
     str=`   cat $file_cfg | grep '(){' | sed 's/(){//g'`
     arr=( $str )
-#    echo "max funcs: ${#arr[@]}"
-    for func in ${arr[@]};do
-#        echo "func: $func"
 
-        coverage $file_cfg $func info
-        coverage $file_cfg $func check
-    done
+    max="${#arr[@]}"
+
+        echo "max funcs: $max"
+    if [ "$max" -gt 0 ];then
+        funcs="${arr[@]}"
+        for func in $funcs;do
+                    echo "func: $func"
+            coverage $file_cfg $func info
+            coverage $file_cfg $func check
+        done
+    else
+        cmd="vi $path_self/$file_cfg"
+        update_clipboard "$cmd"
+        reason_of_death 'file has 0 functions' "$file_cfg"
+    fi
+
 
 }
 if [ $# -gt 0 ];then
