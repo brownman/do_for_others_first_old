@@ -1,5 +1,6 @@
-#parser: $coverage_sh
+#parser: \$coverage_shh
 #validation: assert_file_not_empty
+#validation2: assert_file_not_empty
 #level: 3
 #tags: info check
 #$path/cfg/validate_root.cfg
@@ -8,6 +9,7 @@
 #$path/cfg/library_defaults.cfg
 #$path/cfg/aliases.cfg
 #$path/cfg/set_workspace.cfg
+#cfg/slkdjflksrandom_lpi_homework.cfg
 cfg/random_lpi_homework.cfg
 cfg/indicator.cfg
 #$path/cfg/simplest_reminder.cfg

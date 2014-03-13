@@ -65,15 +65,18 @@ set_commented(){
     local subject="$1"
 
     cmd="cat  $file_list | grep \"$subject:\" | sed \"s/#${subject}: //g\" "
+    #remove trailing
+        cmd=$(echo "$cmd" | sed -e 's/^ *//g' -e 's/ *$//g');
+
     #| sed 's/ //g'"
     #echo "$cmd"
     str=$( eval "$cmd" )
 
 
-#    echo -n "str:"
- #   echo "$str"
+    #    echo -n "str:"
+    #   echo "$str"
 
- #   print_line
+    #   print_line
 
     cmd="$subject=$str"
     echo "$cmd"
@@ -87,29 +90,33 @@ set_commented(){
 set_validation(){
     set_commented "validation"
 }
+set_validation2(){
+    set_commented "validation2"
+}
+
 set_level(){
     set_commented "level"
 }
 
 
 #set_level1(){
- #   str=`cat  $file_list | grep level: | sed 's/#level://g' | sed 's/ //g'`
- #   let "level=$str"
+#   str=`cat  $file_list | grep level: | sed 's/#level://g' | sed 's/ //g'`
+#   let "level=$str"
 #    print_color_n 32 "[EFFICIENCY] level is: "
-    #sleep 1
- #   echo "$level "
-    #sleep 2
+#sleep 1
+#   echo "$level "
+#sleep 2
 #}
 set_parser(){
-    str=`cat  $file_list | grep parser: | sed 's/#parser://g'`
-    parser="$str"
+        set_commented "parser"
+
     #sleep 1
     str_to_arr "$parser"
 
     arr_parser=( "${arr[@]}" )
     num="${#arr[@]}"
     echo '[PARSER]'
-#    echo "run $num commands on every item from the list"
+    #    echo "run $num commands on every item from the list"
     #sleep 2
 }
 
@@ -122,54 +129,114 @@ set_line(){
     #sleep 2
 }
 
+switch_std(){
+
+    3>&1 1>&2 2>&3
+   
+}
+test_std(){
+ 
+switch_std
+echo to_1 >&1
+echo to_2 >&2
+
+switch_std
+echo to_1 >&1
+echo to_2 >&2
 
 
+}
 
 
+ttt(){
+
+        print_color_n 31 '[ttt]'
+  #          breakpoint_line $LINENO
+    
+    if [ $# -gt 0 ];then
+        local cmd="$@"
+
+        echo -n  "[$cmd]"
+        res=0
+
+#switch_std
+           [  eval "$cmd" 1>/tmp/1 2>&1 ]  && {  res=1; } || { res=0; }
+
+#            switch_std
+            echo "[res] $res" >&2
+ if [ "$res" -eq 1 ];then
+     reason_of_death "invalid command" "$cmd" 3
+ fi
+#{ echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
+    else
+        reason_of_death "empty command" 
+    fi
+
+           sleep 4
+#            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
+}
 
 eat(){
+
+
+
     local max="${#arr_parser[@]}"
     for (( i=0; i<$max; i++ ))
     do
         #echo     "${arr_parser[i]}:${arr_line[i]}"
         script="${arr_parser[i]}" 
-        file="${arr_line[i]}"
-           type $script 1>/dev/null 2>&1   &&  reason_of_death 'invalid script' "$script" 
+        line="${arr_line[i]}"
 
-#       echo "line: $LINENO" 
- #      echo "line: ${LINENO[0]}" 
-#          breakpoint_line
+#        cmd="ls \"$script\""
+        #    eval "$cmd"
 
-          #"${LINENO[0]}"
+        #breakpoint_line $LINENO
+        # eval "$cmd" 1>/dev/null 2>&1   &&  echo >&2 reason_of_death 'invalid script' "$script" 
+
+        #test "$cmd"
+
+        #            eval "$cmd" >/dev/null 2>&1 && { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; } || { echo ok;} 
+        #           sleep 10
+        #            eval "$cmd" >/dev/null 2>&1 || { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
+        #       echo "line: $LINENO" 
+        #      echo "line: ${LINENO[0]}" 
+        #          breakpoint_line
+
+        #"${LINENO[0]}"
+        if [ -n "$validation2" ];then
+            cmd="type $validation2"
+            ttt "$cmd"
+            #          echo "$cmd"
+            cmd="$validation2 $script"
+            ttt "$cmd"
+            #commander "$cmd"
+            #reason_of_death 'invalid validation' "$validation" 
+
+        fi
+
         if [ -n "$validation" ];then
-           cmd="type $validation"
- #          echo "$cmd"
+            cmd="type $validation"
+            ttt "$cmd"
 
-
- 
-            eval "$cmd" >/dev/null 2>&1 || { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $validation"; }
-
-#commander "$cmd"
-breakpoint_line $LINENO
-                     #reason_of_death 'invalid validation' "$validation" 
-            cmd="$validation $file"
-            eval "$cmd"
+            cmd="$validation $line"
+            ttt "$cmd"
+            #            eval "$cmd"
             res=$?
             if [ $res -eq 0  ];then
 
-                cmd="$script $file"
+                cmd="$script $line"
                 eval        "$cmd"
 
                 res=$?
                 if [ "$res" -eq 1 ];then
                     #                echo -n '[COMMAND] ' 
                     #                echo "$cmd"
-                    # echo "exited with an error:"
+                     echo "exited with an error:"
                     #                echo '[LISTER]'
                     exiting
                 fi
             else 
-                reason_of_death 'not a file' "$file"
+                reason_of_death 'validation failed' "$cmd"
             fi
         else
             reason_of_death "empty tag: validation"
@@ -215,7 +282,9 @@ steps(){
     create_tmp_list
 
     set_level
+
     set_validation
+    set_validation2
     set_parser
     loop
 }

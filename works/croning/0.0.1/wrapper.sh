@@ -3,6 +3,7 @@
 ################################## start
 path=`dirname $0`
 num="${1:-1}"
+echo "using the default task: $num"
 sleep "$num"
 #########################################
 
