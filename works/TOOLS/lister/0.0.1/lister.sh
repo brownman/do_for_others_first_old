@@ -150,30 +150,50 @@ echo to_2 >&2
 
 ttt(){
 
-        print_color_n 31 '[ttt]'
+        print_color 31 '[TEST] '
   #          breakpoint_line $LINENO
     
     if [ $# -gt 0 ];then
         local cmd="$@"
 
-        echo -n  "[$cmd]"
-        res=0
+        echo -n "[ cmd ] "
+        echo "$cmd"
+        let 'res=0'
 
 #switch_std
-           [  eval "$cmd" 1>/tmp/1 2>&1 ]  && {  res=1; } || { res=0; }
+`eval "$cmd" 1>/tmp/out 2>/tmp/err`
+
+#1>/tmp/1 2>&1 
+res=$?
+#{ let 'res=1';notify-send 1; } || { let 'res=0';notify-send 0; }
+             #{  res=1; } || { res=0; }
+
+#            echo "[res] $res" >&2
+
+ #          sleep 4
+
 
 #            switch_std
-            echo "[res] $res" >&2
+
+
+
  if [ "$res" -eq 1 ];then
-     reason_of_death "invalid command" "$cmd" 3
+echo -n '[err] '
+        cat /tmp/err  | head -1
+
+
+     reason_of_death "invalid command" "$cmd" 2
+ else
+echo -n '[out] '
+cat /tmp/out  | head -1
+
  fi
 #{ echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
     else
         reason_of_death "empty command" 
     fi
 
-           sleep 4
-#            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
+   #            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
 }
 
 eat(){

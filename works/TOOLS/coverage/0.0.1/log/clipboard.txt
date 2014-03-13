@@ -1,1 +1,1 @@
-vi .breath.cfg +24
+vi cfg/random_lpi_homework.cfg +2

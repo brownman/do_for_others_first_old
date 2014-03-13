@@ -1,4 +1,4 @@
-[info] File:		.breath.cfg
-[info] Function:		quick_commands
-[info] Test:		
-[info] Clipboard:		vi .breath.cfg +24
+[check] File:		cfg/random_lpi_homework.cfg
+[check] Function:		check_homework
+[check] Test:		
+[check] Clipboard:		vi cfg/random_lpi_homework.cfg +2

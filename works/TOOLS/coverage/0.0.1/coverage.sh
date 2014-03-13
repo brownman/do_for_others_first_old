@@ -68,8 +68,8 @@ log_print(){
 }
 log_use(){
 print_func
-    cmd="echo $cmd | /usr/bin/xsel --clipboard"
     update_clipboard "$cmd"
+    exiting
 }
 
 details(){
@@ -91,7 +91,7 @@ coverage(){
     local str_ptrn="$3"
 
     let 'res=0'
-    str_res=`cat $file_cfg | grep $func_name -A 3 | grep $str_ptrn |  sed "s/#$str_ptrn://g" | tr -s ' '`
+    str_res=`cat $file_cfg | grep $func_name -A 3 | grep \#$str_ptrn |  sed "s/#$str_ptrn://g" | tr -s ' '`
     #notify-send "=${str_res}="
     if [ "$str_res" ] && [ "$str_res" != ' ' ] ;then
         if [ "$str_ptrn" = check ];then

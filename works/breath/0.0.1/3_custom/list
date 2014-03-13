@@ -1,6 +1,7 @@
-#parser: \$coverage_shh
+#parser: \$coverage_sh
 #validation: assert_file_not_empty
-#validation2: assert_file_not_empty
+#validation2: type
+#assert_file_not_empty
 #level: 3
 #tags: info check
 #$path/cfg/validate_root.cfg
