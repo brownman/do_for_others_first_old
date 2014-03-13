@@ -2,7 +2,7 @@
 set -o nounset
 #depend_func: print_color print_color_n reason_of_death
 path_self=`dirname $0`
-path=${path:-''}
+path=${path:-$PWD}
 pushd `pwd` >/dev/null
 
 
@@ -262,7 +262,10 @@ steps_new(){
 }
 if [ $# -gt 0 ];then
 
-    file_cfg=$1
+
+    filename=$1
+
+    file_cfg=$path/$filename
 else
     reason_of_death 'supply a .cfg file'
 fi
