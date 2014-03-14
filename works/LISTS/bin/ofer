@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pushd `pwd`>/dev/null
+path_self=`dirname $0`
+`ls -1 $list` 
+res=$?
+if [ "$res" -eq 0 ];then
+    echo 'list exist'
+else
+    echo 'no list in current directory'
+fi
+
+popd>/dev/null

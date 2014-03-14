@@ -1,4 +1,0 @@
-[check] File:		/home/dao04/JAIL/TREE/works/breath/0.0.1/3_custom/cfg/random_lpi_homework.cfg
-[check] Function:		check_homework
-[check] Test:		
-[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/breath/0.0.1/3_custom/cfg/random_lpi_homework.cfg +2

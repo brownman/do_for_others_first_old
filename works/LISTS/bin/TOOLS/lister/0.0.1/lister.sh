@@ -66,7 +66,7 @@ set_commented(){
 
     cmd="cat  $file_list | grep \"$subject:\" | sed \"s/#${subject}: //g\" "
     #remove trailing
-        cmd=$(echo "$cmd" | sed -e 's/^ *//g' -e 's/ *$//g');
+    cmd=$(echo "$cmd" | sed -e 's/^ *//g' -e 's/ *$//g');
 
     #| sed 's/ //g'"
     #echo "$cmd"
@@ -79,10 +79,11 @@ set_commented(){
     #   print_line
 
     cmd="$subject=$str"
-    echo "$cmd"
+#    echo "$cmd"
     eval "$cmd"
-    print_color_n 32 "[$subject] is: "
-    echo "$str"
+    #echo -n "[SET_COMMENTED]" 
+    echo -en "\t [ $subject ]"
+    echo -e "\t$str"
 
 
 
@@ -108,7 +109,7 @@ set_level(){
 #sleep 2
 #}
 set_parser(){
-        set_commented "parser"
+    set_commented "parser"
 
     #sleep 1
     str_to_arr "$parser"
@@ -132,17 +133,17 @@ set_line(){
 switch_std(){
 
     3>&1 1>&2 2>&3
-   
+
 }
 test_std(){
- 
-switch_std
-echo to_1 >&1
-echo to_2 >&2
 
-switch_std
-echo to_1 >&1
-echo to_2 >&2
+    switch_std
+    echo to_1 >&1
+    echo to_2 >&2
+
+    switch_std
+    echo to_1 >&1
+    echo to_2 >&2
 
 
 }
@@ -150,50 +151,49 @@ echo to_2 >&2
 
 ttt(){
 
-        print_color 31 '[TEST] '
-  #          breakpoint_line $LINENO
-    
+#echo -ne  "\t"
+    #          breakpoint_line $LINENO
+
     if [ $# -gt 0 ];then
         local cmd="$@"
 
-        echo -n "[ cmd ] "
-        echo "$cmd"
+        #  echo -n "[ cmd ] "
+          echo -e "\t$cmd"
         let 'res=0'
 
-#switch_std
-`eval "$cmd" 1>/tmp/out 2>/tmp/err`
+        #switch_std
+        `eval "$cmd" 1>/tmp/out 2>/tmp/err`
 
-#1>/tmp/1 2>&1 
-res=$?
-#{ let 'res=1';notify-send 1; } || { let 'res=0';notify-send 0; }
-             #{  res=1; } || { res=0; }
+        #1>/tmp/1 2>&1 
+        res=$?
+        #{ let 'res=1';notify-send 1; } || { let 'res=0';notify-send 0; }
+        #{  res=1; } || { res=0; }
 
-#            echo "[res] $res" >&2
+        #            echo "[res] $res" >&2
 
- #          sleep 4
-
-
-#            switch_std
+        #          sleep 4
 
 
-
- if [ "$res" -eq 1 ];then
-echo -n '[err] '
-        cat /tmp/err  | head -1
+        #            switch_std
 
 
-     reason_of_death "invalid command" "$cmd" 2
- else
-echo -n '[out] '
-cat /tmp/out  | head -1
 
- fi
-#{ echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
+        if [ "$res" -eq 1 ];then
+            echo -n '[err] '
+            cat /tmp/err  | head -1
+            reason_of_death "test failed" "$cmd" 2
+        else
+            cmd0='echo -n [out] '
+            cmd='cat /tmp/out  | head -1'
+            every 10 "$cmd0;$cmd" 'trace [SKIP] presenting /tmp/out'
+
+        fi
+        #{ echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
     else
         reason_of_death "empty command" 
     fi
 
-   #            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
+    #            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
 }
 
 eat(){
@@ -207,7 +207,7 @@ eat(){
         script="${arr_parser[i]}" 
         line="${arr_line[i]}"
 
-#        cmd="ls \"$script\""
+        #        cmd="ls \"$script\""
         #    eval "$cmd"
 
         #breakpoint_line $LINENO
@@ -251,7 +251,7 @@ eat(){
                 if [ "$res" -eq 1 ];then
                     #                echo -n '[COMMAND] ' 
                     #                echo "$cmd"
-                     echo "exited with an error:"
+                    echo "exited with an error:"
                     #                echo '[LISTER]'
                     exiting
                 fi
@@ -295,17 +295,19 @@ loop(){
     done < $file_list_tmp 
 
 }
+sets(){
+print_color 33 '[SETS]'
+    set_level
+    set_validation
+    set_validation2
+    set_parser
 
+}
 steps(){
     export
     get_list
     create_tmp_list
-
-    set_level
-
-    set_validation
-    set_validation2
-    set_parser
+sets    
     loop
 }
 

@@ -1,3 +1,4 @@
+#!../bin/ofer
 #parser: \$coverage_sh
 #validation: assert_file_not_empty
 #validation2: type

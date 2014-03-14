@@ -52,7 +52,7 @@ log_update(){
 
     cmd="grep \"$func_name\" \"$file_cfg\" -n -m 1 | cut -d ':' -f1 "
     str_goto=$( eval "$cmd" )
-    echo "str_goto: $str_goto"
+    #echo "str_goto: $str_goto"
     cmd="vi $file_cfg +$str_goto"
     echo -e "[$str_ptrn]" "Clipboard:\t\t$cmd" >> $file_trace
     ##create a lazy file - for fast opening the error line
@@ -128,7 +128,7 @@ coverage(){
             reason_of_death "[TAG] is not recognized - please add an handler for it before continue" "$str_ptrn"
         fi
     else
-        echo [UNCOVERED:]
+#        echo [UNCOVERED:]
         details
         reason_of_death "Empty tag: $str_ptrn" "$func_name" 
     fi
@@ -137,14 +137,14 @@ coverage(){
 
 
 ensure_path(){
-    print_func
+ #   print_func
 
     if [[ -z "$path" ]];then
         reason_of_death  "path must be set" "$path"
     else
         export path_self=$path_self
-        echo '[path_self:]  ' $path_self
-        sleep 2
+  #      echo '[path_self:]  ' $path_self
+   #     sleep 2
     fi
 
 
@@ -235,7 +235,7 @@ steps(){
 #path_self=${1:-"$PWD"}
 steps_new(){
     #dependencies
-    ensure_path
+    #ensure_path
     set_vars
 
     source $file_cfg

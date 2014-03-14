@@ -18,7 +18,19 @@ set_user(){
     fi
     notify-send "$user"
 }         
+set_timing(){
+time=`date | tr -s ' ' | cut -d' ' -f4 | sed 's/:/_/g'`
+
+notify-send "set timing" "$time"
+time_minute=`echo "$time" | cut -d':' -f3`
+
+notify-send "set timing" "$time_minute"
+
+}
+
+
 run(){
+    task_index=$(set_timing)
     eval "$path/croning.sh $num" 2>$file_error
 }
 wrap_runner(){
