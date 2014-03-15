@@ -1171,3 +1171,72 @@ every,every_other_time: [SKIP] running function: layouts
 every,log_use: [skip] printing: file_aliases
 every,every_other_time: [SKIP] running function: layouts
 every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+sleep1,layouts: caller: layouts
+sleep1,layouts: caller: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+sleep1,layouts: caller: layouts
+sleep1,layouts: caller: layouts
+every,every_other_time: [SKIP] running function: layouts
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+every,every_other_time: [SKIP] running function: layouts
+every,log_use: [skip] printing: file_aliases
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/question.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/shopping.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/life.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/question.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/shopping.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/life.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/question.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/shopping.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/life.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/question.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/shopping.txt
+install_trap,print_file: invalid file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/life.txt
+install_trap,print_file: empty file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/question.txt
+install_trap,print_file: empty file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/shopping.txt
+install_trap,print_file: empty file /home/dao04/JAIL/TREE/works/breath/0.0.1/txt/life.txt
+assert_cmd_is_valid,traverse_dir_with_cmd: command is valid xcowsay

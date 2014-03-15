@@ -1,8 +1,8 @@
 #!/bin/bash
 export dir_root=`pwd`
 cmd="$dir_root/works/test/0.0.1/test.sh"
-source $dir_root/.breath.cfg
+#source $dir_root/.breath.cfg
 echo "$cmd"
 eval "$cmd"
 
-echo "vi $cmd" | /usr/bin/xsel --clipboard
+#echo "vi $cmd" | /usr/bin/xsel --clipboard

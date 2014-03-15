@@ -1,6 +1,6 @@
 /usr/bin/xsel: Can't open display: (null)
 : Connection refused
 
-(xcowsay:19286): Gtk-WARNING **: cannot open display: :0
+(xcowsay:4405): Gtk-WARNING **: cannot open display: :0
 
-(xcowsay:19300): Gtk-WARNING **: cannot open display: :0
+(xcowsay:4414): Gtk-WARNING **: cannot open display: :0

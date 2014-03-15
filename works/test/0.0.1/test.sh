@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash 
 #dir=package/do-for-others-first-0.0.1/usr/local/src/do-for-others-first/
 #wrapper=$dir/breath.sh
 ############################################  Directory structure:  ######################\
@@ -8,7 +8,6 @@ echo "dir_root:$dir_root"
 set -o nounset
 pushd `dirname $0`>/dev/null
 path=`pwd`
-reset
 dir_tests="$path/tests"
 dir_vendor="$dir_root/vendor"
 trigger_runner(){

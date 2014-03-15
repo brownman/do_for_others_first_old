@@ -21,7 +21,11 @@ step1(){
     #check: file=~/bashrc.additions;echo -e "\nFile: $file\n";cat $file
     echo step1
     file=~/bashrc.additions
-    str="export dir_root=$dir_root;\nsource $dir_root/.breath.cfg"
+    str="export dir_root=$dir_root;\n \
+    \nsource $dir_root/breath.cfg;\n \
+    alias cdroot='cd \$dir_root'" 
+
+    #source $dir_root/.helper.cfg \
 
 
     echo -e "$str" > $file
