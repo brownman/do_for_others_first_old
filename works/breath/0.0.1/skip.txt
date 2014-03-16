@@ -1,6 +1,2 @@
-export_from_works
-export_from_ofer
-export_from_vars
-export_from_works
 export_from_ofer
 export_from_vars

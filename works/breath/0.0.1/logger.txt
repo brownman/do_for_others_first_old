@@ -2,7 +2,7 @@ assert_file_exist,sourcing: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/WORKSPACE/dao04
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/vendor/0.0.1
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/breath/0.0.1
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/library/0.0.2
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1
 assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/exports.cfg
-assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works
-assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/WORKSPACE/dao04
-assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/vendor/0.0.1
