@@ -1,8 +1,9 @@
 #!/bin/bash 
+set -o nounset
 #dir=package/do-for-others-first-0.0.1/usr/local/src/do-for-others-first/
 #wrapper=$dir/breath.sh
 ############################################  Directory structure:  ######################\
-    export     runner_name='shunit'
+export     runner_name=${1:-shunit}
 echo "runner is $runner_name"
 echo "dir_root:$dir_root"
 set -o nounset
@@ -11,7 +12,7 @@ path=`pwd`
 dir_tests="$path/tests"
 dir_vendor="$dir_root/vendor"
 trigger_runner(){
-    if [ "$runner_name" = shunit2 ];then
+    if [ "$runner_name" = shunit ];then
         print_func
         #trigger_runner
         echo "[RUNNER] $runner"
@@ -33,7 +34,7 @@ step1(){
 
     if [ "$runner_name" = shunit ];then
 
-        export runner=$dir_vendor/0.0.1/shunit2/src/shell/shunit2
+        export runner=$dir_vendor/0.0.1/shunit/src/shell/shunit2
     else
         export dir_runner=$dir_vendor/bash_koans
         export runner=$dir_runner/runner_all.sh
@@ -54,7 +55,7 @@ step1(){
 
 step3(){
     print_func
-    if [ "$runner_name" = shunit2 ];then
+    if [ "$runner_name" = shunit ];then
         $dir_tests/about_grep.sh
         $dir_tests/about_sed.sh
     else

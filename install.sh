@@ -22,7 +22,7 @@ step1(){
     echo step1
     file=~/bashrc.additions
     str="export dir_root=$dir_root;\n \
-    \nsource $dir_root/breath.cfg;\n \
+    \nsource \$dir_root/breath.cfg;\n \
     alias cdroot='cd \$dir_root'" 
 
     #source $dir_root/.helper.cfg \

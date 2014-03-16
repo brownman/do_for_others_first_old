@@ -1,0 +1,14 @@
+
+
+
+#info: exporting stuff
+#check: [ -d $dir_works ]
+# echo -n '[exportingS FILE_STRUCTURE]'
+
+#exporting dir_bash_koans "$dir_root/vendor/0.0.1/bash_koans"
+#source $dir_bash_koans/testing.cfg
+
+#           echo 'exporting Dir_X'
+
+# echo "works workspace plugins vendor coverage how_am_i"
+
