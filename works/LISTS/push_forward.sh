@@ -1,3 +1,3 @@
-#!/bin/bash
-print_script
+#!/bin/bash -e
+#print_script
 echo smaller
