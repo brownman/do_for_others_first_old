@@ -1,5 +1,6 @@
 ESTIMATE:
 - show lists - until 10:30
+- make sandwitch
 #- magnify the small
 #- do for others first
 #- breath

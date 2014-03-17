@@ -1,6 +1,7 @@
 assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/helper.cfg
 assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/breath.cfg
-assert_file_exist,sourcing: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/exports.cfg
+assert_file_exist,sourcing: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/export.cfg
+assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/export.cfg
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works
 export dir_works=/home/dao04/JAIL/TREE/works
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/WORKSPACE/dao04
@@ -15,5 +16,17 @@ assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/library/0.0.2
 export dir_library=/home/dao04/JAIL/TREE/works/library/0.0.2
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1
 export dir_magnify=/home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1
-assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/breath/0.0.1/exports.cfg
-assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/push_forward.sh
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1
+export dir_coverage=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/wrapper/0.0.1
+export dir_wrapper=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/wrapper/0.0.1
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1
+export dir_lister=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1
+assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1/lister.sh
+assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1/coverage.sh
+assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/wrapper/0.0.1/wrapper.sh
+assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans
+export dir_koans=/home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans
+assert_file_exist,sourcing: file exist /home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans/testing.cfg
+assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans/testing.cfg
+assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/list.sh

@@ -3,6 +3,10 @@ set -o nounset
 #depend_func: print_color print_color_n reason_of_death
 path_self=`dirname $0`
 path=${path:-$PWD}
+echo '[COVERAGE]'
+echo "path: $path"
+echo "path_self: $path_self"
+sleep 3
 pushd `pwd` >/dev/null
 
 
@@ -68,6 +72,7 @@ log_print(){
 }
 log_use(){
 print_func
+echo
     update_clipboard "$cmd"
     exiting
 }
@@ -244,7 +249,10 @@ steps_new(){
 
     max="${#arr[@]}"
 
+
+        echo "funcs: ${arr[@]}"
         echo "max funcs: $max"
+        sleep 2
     if [ "$max" -gt 0 ];then
         funcs="${arr[@]}"
         for func in $funcs;do

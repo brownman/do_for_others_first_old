@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash  
 
 set -o nounset
 #set -o pipefail
@@ -8,7 +8,7 @@ set -o nounset
 
 path=${path:-"$PWD"}
 path_self=`dirname $0`
-pushd "$PWD">/dev/null
+pushd "$path">/dev/null
 echo '[LISTER]'
 #sleep 3
 # braceexpand     on
@@ -249,10 +249,10 @@ eat(){
 
                 res=$?
                 if [ "$res" -eq 1 ];then
-                    #                echo -n '[COMMAND] ' 
-                    #                echo "$cmd"
+                                    echo -n '[COMMAND] ' 
+                                    echo "$cmd"
                     echo "exited with an error:"
-                    #                echo '[LISTER]'
+                                    echo '[LISTER]'
                     exiting
                 fi
             else 

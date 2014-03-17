@@ -1,13 +1,19 @@
 #!/bin/bash
+echo hi
+exiting
 
 pushd `pwd`>/dev/null
 path_self=`dirname $0`
-`ls -1 $list` 
-res=$?
-if [ "$res" -eq 0 ];then
+
+dir=$path_self
+ls -l ` 
+file=$dir/list
+
+
+if [ -f "$file" ];then
     echo 'list exist'
 else
-    echo 'no list in current directory'
+    reason_of_death  'no list in current directory' "$dir"
 fi
 
 popd>/dev/null

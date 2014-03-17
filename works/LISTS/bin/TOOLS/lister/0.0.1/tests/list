@@ -1,5 +1,5 @@
 #help:     parse each line 
 #parse_file:grep -v '^#' filename
-#parser: echo|notify-send|$coverage_sh
+#parser: echo|notify-send|\$coverage_sh
 #level:    2
-cover|cover|$path_from/cfg/rainbow.cfg
+cover|cover|cfg/rainbow.cfg

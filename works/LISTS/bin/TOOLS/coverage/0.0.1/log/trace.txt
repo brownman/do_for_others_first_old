@@ -1,4 +1,4 @@
-[check] File:		/home/dao04/JAIL/TREE/works/LISTS/screens/cfg/random_lpi_homework.cfg
-[check] Function:		check_homework
-[check] Test:		
-[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/LISTS/screens/cfg/random_lpi_homework.cfg +2
+[info] File:		/home/dao04/JAIL/TREE/works/LISTS/screens/cfg/random_lpi_homework.cfg
+[info] Function:		check_homework
+[info] Test:		
+[info] Clipboard:		vi /home/dao04/JAIL/TREE/works/LISTS/screens/cfg/random_lpi_homework.cfg +2
