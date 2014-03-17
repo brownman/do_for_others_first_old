@@ -1,7 +1,9 @@
-- magnify the small
-- do for others first
-- breath
-- run sos
-- run tasker
-- run croning
-- use hotkeys
+ESTIMATE:
+- show lists - until 10:30
+#- magnify the small
+#- do for others first
+#- breath
+#- run sos
+#- run tasker
+#- run croning
+#- use hotkeys
