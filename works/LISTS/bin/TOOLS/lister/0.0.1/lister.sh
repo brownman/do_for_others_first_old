@@ -289,7 +289,7 @@ loop(){
                 echo "$line"
             fi
         else
-            echo reason_of_death 'empty line'
+            warning 'empty line'
         fi
         let 'counter+=1'
     done < $file_list_tmp 

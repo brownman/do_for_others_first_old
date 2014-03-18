@@ -11,4 +11,22 @@
 #           echo 'exporting Dir_X'
 
 # echo "works workspace plugins vendor coverage how_am_i"
+#-=-=-
+
+
+#type reason_of_death
+#        export file_helper=$dir_breath/.helper.cfg
+#       source  $file_helper
+#        log_reset
+
+#        load_cfg $file_.helper
+#tree $dir_breath
+#export_struct
+#    library_use
+#    library_defaults
+#    quick_commands
+#   remind_of_recent
+#  custom_list
+#    every_other_time
+#    log_use
 

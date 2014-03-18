@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash 
 print_script
 
 path=`dirname $0`
@@ -13,8 +13,8 @@ ls -l
 file=list
 if [ -f $file ];then
     
-#lister
-$lister_sh
+echo lister_sh
+ eval "$lister_sh" 
 #$dir/list
 else
 reason_of_death 'file not found' "$file"    

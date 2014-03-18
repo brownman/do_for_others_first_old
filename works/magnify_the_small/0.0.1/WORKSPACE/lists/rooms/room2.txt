@@ -1,3 +1,4 @@
+suspend_awake
 new_word
 reminder
 list todo

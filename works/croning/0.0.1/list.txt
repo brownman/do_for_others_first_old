@@ -1,5 +1,2 @@
 running tasker_gui|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh
-empty cron|echo
-empty cron|echo
-empty cron|echo
 removing cron indicators|rm /tmp/CRONING/INDICATORS/*

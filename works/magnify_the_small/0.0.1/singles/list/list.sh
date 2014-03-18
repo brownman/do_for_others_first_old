@@ -5,6 +5,8 @@ set -o nounset
 #file=$dir_script/todo.txt
 #file=/tmp/todo.txt
 pushd `dirname $0`
+
+    script_translate="$translate_sh"
 SOUND=false
 path=`dirname $0`
 secs=7
@@ -19,22 +21,23 @@ msg(){
   #  while [ "$line" = '' ];do
         line=$(gxmessage -file $file -title "$subject"  --timeout $secs -entry $GXMESSAGE )
   #  done
-    update_file "$line" "$file"
+    update_file "$file" "$line" 
 }
 remove_trailing(){
     echo "$@" tr -s " "
 }
 
 update_file(){
-    local line="$1"
-    local file=$2
-    local time_stamp=`date | tr -s " " | cut -d' ' -f4| cut -d':' -f1,2`
 
-    script_translate="$translate_sh"
+    local file=$1
+    local line="$2"
+    local time_stamp=`date | tr -s " " | cut -d' ' -f4| cut -d':' -f1,2`
+if [ -n "$line" ];then
+    echo 'translating' "$line"
     cmd="$script_translate $lang $line"
     echo "$cmd"
     eval "$cmd"
-
+fi
     if [ "$line" = delete ];then
         echo -n '' > $file
 

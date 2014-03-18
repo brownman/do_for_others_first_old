@@ -1,27 +1,46 @@
-#!/bin/bash -e
-echo "\t\t\tscript: act.sh"
+#!/bin/bash 
+#echo "\t\t\tscript: act.sh"
 set -o nounset
 
-pushd `dirname $0`
-
-    path=`dirname $0`
+path=`dirname $0`
+pushd "$path">/dev/null
+#######################set args
 task_name=${1:-''}
+
+if [ $# -gt 0 ];then
+
 shift
-args=${@:-''}
+    args=( "$@" )
+else
+    args=()
+fi
+
+#${@:-''}
+##############################
+run(){
+
 
 if [ "$task_name" ];then
-
     script=$path/$task_name/$task_name.sh
-    
+
     if [ -f "$script" ];then
-        echo "$script $args"
-        eval "$script $args"
+        if [ "${#args[@]}" -gt 0 ];then
+        words="${args[@]}"
+        notify-send "$script" "$words" 
+        sleep 5
+        eval "$script ${args[@]}"
+        else
+        eval "$script"
+        fi
     else
-        echo 'no such file:' "$script"
-        exiting
+        echo reason_of_death 'invalid task name' "$task_name"
+        reason_of_death 'no such file:' "$script"
     fi
 else
-    echo 'supply a task name'
-    exiting
+    print_layout
+    reason_of_death 'supply a task name'
 fi
-popd
+
+}
+run
+popd>/dev/null

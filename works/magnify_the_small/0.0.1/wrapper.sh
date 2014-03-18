@@ -1,6 +1,7 @@
 #!/bin/bash -e
+clear
 #example: ./wrapper bin/0_sos/sos.sh
-#set -o nounset
+set -o nounset
 str='magnify the small'
 flite "$str"
 notify-send "$str"
@@ -40,9 +41,9 @@ steps(){
 
 #    install_trap
 print_func
-print_func_content "$0" "steps"
+#print_func_content "$0" "steps"
 
-print_layout
+#print_layout
 
 
 [ -n "$task" ] && generate_indicator "$task"
@@ -54,3 +55,4 @@ task=${1:-''}
 steps
 
 popd
+set +o nounset

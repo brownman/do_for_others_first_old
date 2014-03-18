@@ -2,22 +2,28 @@
 #info: create symlink at: /tmp/CRONING 
 #
 #
-dir_croning=`pwd`
+
 export(){
-#dir_croning=/tmp/CRONING
-dir_indicator=$dir_croning/INDICATORS
-dir_usr=$dir_indicator/usr
-dir_admin=$dir_indicator/admin
-script=$PWD/croning.sh
+dir_croning=`pwd`
+dir_indication=$dir_croning/INDICATION
+dir_env=$dir_croning/env
+dir_log=$dir_croning/log
+script=$dir_croning/wrapper.sh
+dir_target=/tmp/CRONING
 }
+
 create(){
-mkdir $dir_croning
-mkdir $dir_indicator
-mkdir $dir_usr
-mkdir $dir_admin
+#[ ! -d  "$dir_target"  ] && mkdir $dir_target
+echo
 }
+
 link(){
-ln -s $dir_croning /tmp/CRONING
+ln -s $PWD  /tmp/CRONING
+
+#$dir_indication /tmp/CRONING/INDICATION
+#ln -s $dir_env /tmp/CRONING/env
+#ln -s $dir_log /tmp/CRONING/log
+#ln -s $script /tmp/CRONING/wrapper.sh
 }
 
 steps(){
