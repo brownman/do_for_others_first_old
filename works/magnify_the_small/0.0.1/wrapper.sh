@@ -1,23 +1,16 @@
-#!/bin/bash -e
-clear
+#!/bin/bash 
 #example: ./wrapper bin/0_sos/sos.sh
 set -o nounset
-str='magnify the small'
-flite "$str"
-notify-send "$str"
-xcowsay "$str"
 clear
-########################### RULES ********
-# - use a wallpaper task to print the logs as output-of-the-day - on the desktop wallpaper!
-# - handeling of errors - must be set here - because the loop must always running - because it is the best indicator for the user's efforts and effectivity !
-#
-# - project is a sub-project and it is independant of external changes!
-# - reason: sos.sh must run no-metter what!
-###########################################
 pushd `dirname $0`
+clear
 export dir_root=`pwd`
 ############################################
-source setup.cfg
+source setup.cfg 1>/dev/null
+################################### dirty
+#echo "$@" | xsel --clipboard
+#echo "$@" >> log_wrapper.txt
+#notify-send "wrapper got" "$@"
 notify-send "sound: $SOUND"
 # - export structure:           where is the workspace ?
 # - export vars:                run with sound?
@@ -27,31 +20,42 @@ notify-send "sound: $SOUND"
 
 
 run(){
-    if [ "$task" ];then
-        cmd="$task" 
+    if [ "$script" ];then
+        if [ "${#args[@]}" -gt 0 ];then
+            cmd="$script ${args[@]}" 
+        else
+            cmd="$script"
+        fi
+
+
+
         echo "$cmd"
         eval "$cmd"
     else
-        echo "supply a task"
+        echo "supply a script"
         cat $0 | grep example -m1
     fi
 
 }
 steps(){
-
-#    install_trap
-print_func
-#print_func_content "$0" "steps"
-
-#print_layout
-
-
-[ -n "$task" ] && generate_indicator "$task"
-[ -n "$task" ] && run
+    print_func
+    res_str=$( echo "$script" | grep 'bin/' )
+    res_num=$?
+    [ $res_num -eq 0 ] && generate_indicator "$script"
+    [ -n "$script" ] && [ -f "$dir_root/$script" ] && run 
 }
 
+args=()
+script=${1:-''} 
+if [ $# -gt 1 ];then
+    shift
+    args=( "$@" )
+fi
 
-task=${1:-''}
+
+
+
+#[ -f "$dir_root/$script" ] && steps
 steps
 
 popd

@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash 
 echo 'tasker.sh' 
 #export SOUND=true
 pushd `dirname $0`
@@ -86,7 +86,7 @@ loop(){
     echo 'loop()'
 
     let 'counter=1'
-#    while [ 1 ];do
+    while [ 1 ];do
 
 
         touch $dir/round${counter}.txt
@@ -97,7 +97,7 @@ loop(){
         single
 
         let 'counter+=1'
- #   done
+   done
 }
 install
 ensure

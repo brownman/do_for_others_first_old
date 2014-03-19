@@ -1,2 +1,10 @@
-running tasker_gui|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh
+remind me to smile|$dir_magnify/wrapper.sh singles/single.sh reminder
+running tasker|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh
 removing cron indicators|rm /tmp/CRONING/INDICATORS/*
+remind me of shalva|notify-send x
+remind me to push order forward|notify-send x
+remind to call him or her|notify-send x
+remind of breathing|notify-send x
+magnify the small|notify-send x
+2 minutes|notify-send x
+1 minute passed|notify-send x

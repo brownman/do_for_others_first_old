@@ -1,4 +1,5 @@
-suspend_awake
+suspend_awake 5
+sleep 60
 new_word
 reminder
 list todo
@@ -6,4 +7,7 @@ sleep 6
 reminder 
 list done
 sleep 6
-
+suspend_awake 60
+sleep 60
+suspend
+plugins_menu

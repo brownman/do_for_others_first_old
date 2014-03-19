@@ -55,12 +55,6 @@ assert_string_not_empty,assert_dir_exist: string has X chars: 57
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1
 exporting,export_from_lists: export dir_lister=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1
 export dir_lister=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1
-assert_string_not_empty,assert_file_exist: string has X chars: 67
-assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/lister/0.0.1/lister.sh
-assert_string_not_empty,assert_file_exist: string has X chars: 71
-assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1/coverage.sh
-assert_string_not_empty,assert_file_exist: string has X chars: 69
-assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/wrapper/0.0.1/wrapper.sh
 assert_string_not_empty,assert_dir_exist: string has X chars: 46
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans
 exporting,export_for_testing: export dir_koans=/home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans

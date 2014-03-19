@@ -13,13 +13,15 @@ speak(){
 }
 say(){
     str="$1"
-    /usr/games/xcowsay "$str"
-    /usr/bin/notify-send "$str"
+    flite -t "$str"
+    /usr/games/xcowsay "$num : $str"
+    /usr/bin/notify-send "$num : $str"
 }
 run(){
     cmd1="vi $0"
     update_clipboard "$cmd1"
     line=`cat $path/list.txt | head -$num | tail -1`
+    notify-send "croning: $num" "$line"
     desc=`echo "$line" | cut -d'|' -f1`
     cmd=`echo "$line" | cut -d'|' -f2`
     #    str=`echo "$line" | sed 's/ /_/g'`

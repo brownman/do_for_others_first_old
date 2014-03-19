@@ -3,6 +3,9 @@ ESTIMATE:
 - how many times practice sport ?
 
 ENSURE:
+- sos - even minimal
+- tasker - even minimal 
+- count rounds and show it on the wallpaper!
 - ensure that cron  is auto - awake
 
 

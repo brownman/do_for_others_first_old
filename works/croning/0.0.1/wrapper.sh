@@ -1,12 +1,16 @@
-#!/bin/bash
+#!/bin/bash 
 pushd `dirname $0`
-
+echo "$@" >> log_wrapper.txt
 ################################## start
 path=`dirname $0`
 num="${1:-1}"
 notify-send "croning choose:" " $num"
 sleep "$num"
 #########################################
+exiting(){
+echo exiting
+exit 1
+}
 print_file(){
     file=$1
     echo
@@ -32,7 +36,8 @@ exports(){
 }
    
 set_env(){
-    /usr/bin/env -i $( cat $file_env )
+    /usr/bin/env -i $( cat $file_env ) >/dev/null
+echo
 }
 set_user(){
     if [ "$(id -u)" != "0" ]; then
@@ -43,16 +48,55 @@ set_user(){
     notify-send "$user"
 }         
 set_timing(){
-time=`date | tr -s ' ' | cut -d' ' -f4 | sed 's/:/_/g'`
-notify-send "set timing" "$time"
-time_minute=`echo "$time" | cut -d':' -f3`
+    echo 'set  timing'
+date1=`date | tr -s ' ' | cut -d' ' -f4 | sed 's/:/_/g'`
+notify-send "set timing" "$date1"
+time=`echo "$date1" | cut -d':' -f3`
+time_minute=`echo $time | cut -d'_' -f2 `
 notify-send "set timing" "$time_minute"
+echo "time minute: $time_minute"
+#cmd="num=$time_minute/5"
+#let "num=$time_minute/5"
+#echo "$cmd"
+#eval "$cmd"
+#echo "num is: $num "
+
+}
+pick_task(){
+#    http://www.cyberciti.biz/faq/bash-for-loop/
+   echo 'pick task' 
+
+#echo "minutes: $time_minute"
+let 'max=10'
+echo  "number of tasks:"
+let "i=$max"
+while [ $i -gt 0 ];do
+
+cmd="let \"num=$time_minute%$i\""
+echo "$cmd"
+eval  "$cmd"
+#       echo
+#       echo "num is: $num"
+        if [ $num -eq 0  ];then
+let            "choose=$max-$i"
+            echo "task index chosen:" "$choose"
+
+            break
+        else
+               echo "$i"
+
+        fi
+
+        let 'i-=1'
+    done
 }
 
-
 run(){
-    task_index=$(set_timing)
-    eval "$path/croning.sh $num" 
+    print_func
+    #task_index=$(set_timing)
+    set_timing
+    pick_task
+    eval "$path/croning.sh $choose" 
 
 #    print_file $file_out
 #    print_file $file_err
@@ -60,7 +104,9 @@ run(){
 wrap_runner(){
     [ -f $file_err  ] && rm $file_err
 cmd=run
-    eval "$cmd" 2>$file_err 1>$file_out
+
+    eval "$cmd" 2>$file_err 
+    #1>$file_out
     cat $file_err
     cmd="gxmessage -file $file_err -title 'wrap croning'"
     [ -s $file_err  ] && eval "$cmd"

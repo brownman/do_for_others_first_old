@@ -1,4 +1,4 @@
 rm: missing operand
 Try `rm --help' for more information.
-/tmp/CRONING/wrapper.sh: line 63: $file_err: ambiguous redirect
+/tmp/CRONING/wrapper.sh: line 108: $file_err: ambiguous redirect
 gxmessage: can't get message from both -file and command line
