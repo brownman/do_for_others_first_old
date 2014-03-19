@@ -1,12 +1,23 @@
 #!/bin/bash 
+#set -o nounset
 pushd `dirname $0`
-echo "$@" >> log_wrapper.txt
+#echo "$@" >> $log_wrapper.txt
 ################################## start
 path=`dirname $0`
 num="${1:-1}"
 notify-send "croning choose:" " $num"
 sleep "$num"
 #########################################
+print_func(){
+    echo 'print_func:'
+    echo -e "\t\tfunc: ${FUNCNAME[1]}"
+}
+update_logger(){
+print_func
+echo "$@" >>  $dir_log/log.txt
+}
+
+
 exiting(){
 echo exiting
 exit 1
@@ -31,8 +42,10 @@ exports(){
     create_dir "$dir_env"
     #set file names to be used later
     file_env=$dir_env/env.cfg
-    file_log_err=$dir_log/err
+    file_err=$dir_log/err
+
     file_log_out=$dir_log/out
+    file_list=$path/list.txt
 }
    
 set_env(){
@@ -67,13 +80,15 @@ pick_task(){
    echo 'pick task' 
 
 #echo "minutes: $time_minute"
-let 'max=10'
+max=`cat $file_list | wc -l`
+let "max=$max"
+notify-send "croning bank:" "$max"
 echo  "number of tasks:"
 let "i=$max"
 while [ $i -gt 0 ];do
 
 cmd="let \"num=$time_minute%$i\""
-echo "$cmd"
+#echo "$cmd"
 eval  "$cmd"
 #       echo
 #       echo "num is: $num"
@@ -83,7 +98,7 @@ let            "choose=$max-$i"
 
             break
         else
-               echo "$i"
+               echo -n "."
 
         fi
 
@@ -108,17 +123,39 @@ cmd=run
     eval "$cmd" 2>$file_err 
     #1>$file_out
     cat $file_err
-    cmd="gxmessage -file $file_err -title 'wrap croning'"
+    str_time=`ls -l $dir_log/err |  tr -s ' ' | cut -d' ' -f8`
+    echo $str_time
+    cmd="gxmessage -file $file_err -title \"croning error: $str_time\""
+    echo "$cmd"
     [ -s $file_err  ] && eval "$cmd"
 }
 
+print_file(){
+    file=$1
+echo $file
+echo '----'
+cat $file
+}
+show_last_error(){
 
+    file=$dir_log/err
+    if [ -s "$file" ];then
+    gxmessage -file "$file" -title 'cron has errors!'
+    exiting
+else
+    echo '[status] file errors is empty'
+fi
+}
 steps(){
-    set_user
     exports
+show_last_error
+    #set_user
+update_logger
     set_env
     wrap_runner
+
 }
+
 steps
 
 popd

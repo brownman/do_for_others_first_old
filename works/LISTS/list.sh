@@ -14,6 +14,7 @@ file=list
 if [ -f $file ];then
     
 echo lister_sh
+sleep1 5
  eval "$lister_sh" 
 #$dir/list
 else

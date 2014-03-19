@@ -1,15 +1,18 @@
-#!/bin/bash 
+#!/bin/bash  
 #example: ./wrapper bin/0_sos/sos.sh
 set -o nounset
-clear
+
 pushd `dirname $0`
-clear
 export dir_root=`pwd`
 ############################################
 source setup.cfg 1>/dev/null
+echo -n '' > $file_logger
+update_logger "$0" "$@"
+
 ################################### dirty
 #echo "$@" | xsel --clipboard
 #echo "$@" >> log_wrapper.txt
+
 #notify-send "wrapper got" "$@"
 notify-send "sound: $SOUND"
 # - export structure:           where is the workspace ?
@@ -59,4 +62,5 @@ fi
 steps
 
 popd
+#. ./sctrace.sh
 set +o nounset

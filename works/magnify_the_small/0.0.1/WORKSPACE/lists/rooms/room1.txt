@@ -1,5 +1,4 @@
-sleep 4
-sleep 300
-suspend
-sleep 300
-
+sleep 10
+awake 30
+sleep 10
+reminder

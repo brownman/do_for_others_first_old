@@ -31,10 +31,6 @@ assert_string_not_empty,assert_dir_exist: string has X chars: 42
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/croning/0.0.1
 exporting,export_from_works: export dir_croning=/home/dao04/JAIL/TREE/works/croning/0.0.1
 export dir_croning=/home/dao04/JAIL/TREE/works/croning/0.0.1
-assert_string_not_empty,assert_dir_exist: string has X chars: 42
-assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/library/0.0.2
-exporting,export_from_works: export dir_library=/home/dao04/JAIL/TREE/works/library/0.0.2
-export dir_library=/home/dao04/JAIL/TREE/works/library/0.0.2
 assert_string_not_empty,assert_dir_exist: string has X chars: 52
 assert_dir_exist,exporting: dir exist /home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1
 exporting,export_from_works: export dir_magnify=/home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1
@@ -64,5 +60,8 @@ assert_file_exist,sourcing: file exist /home/dao04/JAIL/TREE/vendor/0.0.1/bash_k
 sourcing,export_for_testing: sourcing /home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans/testing.cfg
 assert_string_not_empty,assert_file_exist: string has X chars: 58
 assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/vendor/0.0.1/bash_koans/testing.cfg
-assert_string_not_empty,assert_file_exist: string has X chars: 42
-assert_file_exist,aliasing_file: file exist /home/dao04/JAIL/TREE/works/LISTS/list.sh
+assert_string_not_empty,assert_file_exist: string has X chars: 71
+assert_file_exist,exporting: file exist /home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1/coverage.sh
+exporting,alias_quick_cmd: export sh_coverage=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1/coverage.sh
+export sh_coverage=/home/dao04/JAIL/TREE/works/LISTS/bin/TOOLS/coverage/0.0.1/coverage.sh
+assert_string_not_empty,assert_file_exist: string has X chars: 12

@@ -1,25 +1,26 @@
 #!/bin/bash  -e
+print_script
+update_logger "$0"  "$@"
+#echo "[ARGS] [ $# ]  $$"
 
-echo -e "\t\t\tscript: single.sh"
-notify-send "single.sh" "$@"
+#echo -e "\t\t\tscript: single.sh"
+#notify-send "single.sh" "$@"
 set -o nounset
 path=`dirname $0`
-pushd "$path">/dev/null
+#pushd "$path">/dev/null
 #######################set args
 ######################################
 task_name=${1:-''}
 if [ $# -gt 0 ];then
 shift
     args=( "$@" )
-else
-    args=()
 fi
 #########################################
 
 if [ -n "$task_name" ];then
 
 echo "TASK_NAME: $task_name"
-    script=$task_name/$task_name.sh
+    script=$dir_singles/$task_name/$task_name.sh
     if [ ! -f  "$script" ];then
         reason_of_death 'invalid script' "$script"
         
@@ -55,4 +56,4 @@ run(){
 
 }
 run
-popd>/dev/null
+#popd>/dev/null

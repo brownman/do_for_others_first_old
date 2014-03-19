@@ -1,0 +1,2 @@
+/home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh [  2  ]  singles/single.sh reminder
+singles/single.sh [  1  ]  reminder

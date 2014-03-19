@@ -1,3 +1,23 @@
+project
+-=-=-=
+- shortkeys
+- database which indicated the usage of .cfg
+- crons
+- WALLPAPER UPDATE PLUGIN!
+- automate the testing - bashprompt-> actually do the testing!
+
+
+READINESS - CHECK:
+----------------------
+- is sos running
+- is tasker gui - running
+- doeas cli-promt - show the recent pending feature ???
+- does wallpaper updating and showing the  number of rounds ?
+- does travis working
+- the library is being use to load .cfg files?
+- did u set readiness level for all script?
+- magnify the smalll uses the library ?
+
 ESTIMATE:
 - how many rounds of tasker  ?
 - how many times practice sport ?

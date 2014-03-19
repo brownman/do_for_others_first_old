@@ -1,17 +1,18 @@
-#!/bin/bash 
+#!/bin/bash -e 
 echo 'tasker.sh' 
+update_logger "$0" "$@"
 #export SOUND=true
-pushd `dirname $0`
+#pushd `dirname $0`
 dir_this=`pwd`
 #source $dir_root/setup.cfg
 
-echo "dir_root $dir_root"
-ls -l $dir_root
+#echo "dir_root $dir_root"
+#ls -l $dir_root
 
-echo 'which room to load ?'
+echo 'loading room: '
 #read answer
 
-num=2
+num=${1:-2}
 #${answer:-2}
 echo "$num"
 sleep 2
@@ -60,6 +61,7 @@ use(){
     if [ -f "$single_sh" ];then
 
         cmd="$single_sh ${args[@]}"
+        echo "$cmd"
         eval "$cmd"
     else
         echo 'no such script' "$single_sh"
@@ -103,4 +105,4 @@ install
 ensure
 loop
 
-popd
+#popd

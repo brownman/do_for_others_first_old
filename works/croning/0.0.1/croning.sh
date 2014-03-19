@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash  -e
 set -o nounset
 pushd `dirname $0` >/dev/null
 str="croning is alive"
@@ -13,8 +13,8 @@ speak(){
 }
 say(){
     str="$1"
-    flite -t "$str"
     /usr/games/xcowsay "$num : $str"
+    flite -t "$str"
     /usr/bin/notify-send "$num : $str"
 }
 run(){
