@@ -30,3 +30,131 @@
 #    every_other_time
 #    log_use
 
+argss(){
+    echo 
+    #     echo '[REQUEST]' "$input"   
+    #     shift
+    #     if [ "$#" -gt 0 ];then
+    #         args=( "$@" )
+    #         words="${args[@]:-''}"
+    #     fi
+}
+
+
+search_file(){
+    print_func
+    #echo $prefix
+    #ls $prefix.cfg
+    if [ -f "$prefix.cfg" ];then
+        if [ "$words" = edit ];then
+            echo gvim "$prefix.cfg"
+        else
+            #print_line
+            #            echo "File: $prefix.cfg"
+            filename_cfg=`basename $prefix.cfg`
+            echo "[ $filename_cfg]"
+            cmd="source $prefix.cfg" 
+            echo "$first" >> $dir_tmp/commands.sh
+            echo "$cmd" >> $dir_tmp/commands.sh
+            #            echo "$cmd"
+            eval  "$cmd" 1>/dev/null
+            add_alias_for "$prefix" "cfg"
+            coverage1 "$prefix.cfg"
+        fi
+    elif [ -f "$prefix.sh" ];then
+        if [ "$words" = edit ];then
+            echo gvim "$prefix.sh"
+        else
+            add_alias_for "$prefix" "sh"
+            #        echo "==============  exist: $prefix.sh"
+            echo "File: $prefix.sh"
+            coverage1 "$prefix.sh"
+            cmd="$prefix.sh ${args[@]}"
+            eval "$cmd"
+        fi
+    else
+        echo
+    fi
+}
+
+
+#echo 'set -o nounset'
+#set -o nounset
+coverage1(){
+    #    echo '---> coverage1() '
+    file="$1"
+    selfish 'export ' 3 ' ' 38 "$file"
+    selfish 'alias ' 1 '=' 32  "$file"
+    selfish 'trap ' 2 ' ' 31 "$file"
+}
+
+nothing(){
+
+    print_func
+    if [ $# -gt 0 ];then
+        args=( "$@" )
+        use1 "${args[@]}"
+    else
+        use1
+    fi
+}
+
+add_alias_for(){
+    print_func
+    local input="$1"
+    type="$2"
+    file="${input}.${type}"
+    if [ -f "$file" ];then
+        base=`basename $input`
+        #        from="${base}E"
+        #        input="alias $from='gvim $file'"
+        #        echo "$input" >> $file_aliases
+        #        eval "$input"
+        from="edit_${base}"
+        #echo  -e "$from\t"
+        input="alias $from='vim $file'"
+        echo "$input" >> $file_aliases
+        #eval "$input"
+        #source $file_aliases
+        #        print_color 35 "[ ALIASES ] which generated dynamicly:"
+        #        cat $file_aliases
+    else
+        reason_of_death 'no such file' "$file"
+    fi
+}
+
+selfish(){
+    #    echo 'selfish()'
+    local ptrn="$1"
+    local num="$2"
+    local delimeter="$3"
+    local color="$4"
+    local path3="$5"
+
+
+    cmd="cat \"$path3\" | grep $ptrn | cut -d\"$delimeter\" -f${num}|xargs"
+    #    echo "cmd: $cmd"
+    local input=$( eval "$cmd" )
+    #input=`cat "$path3" | grep $ptrn | cut -d"$delimeter" -f${num}|xargs -0 echo` #print many lines
+
+
+    if [ -n "$input" ];then
+        print_color $color "$input"
+        #        echo "$ptrn"
+        #        echo "$input" 
+        #   else 
+        #        echo 'no grepping for pattern: ' "$ptrn"
+        #        echo -n ' .. '
+    fi
+    #>> .history
+}
+
+
+#print_shlvl
+#echo "USING: library.sh"
+#echo -n '' > .alias.optional
+#shlvl
+#echo 'example: use public.history.save'
+#echo '_'
+#print_shlvl
+

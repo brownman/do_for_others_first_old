@@ -1,10 +1,10 @@
-#!/bin/bash  
+#!/bin/bash   
 #example: ./wrapper bin/0_sos/sos.sh
 set -o nounset
-
 pushd `dirname $0`
 export dir_root=`pwd`
 ############################################
+clear
 source setup.cfg 1>/dev/null
 echo -n '' > $file_logger
 update_logger "$0" "$@"

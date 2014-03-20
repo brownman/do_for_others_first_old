@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 #readiness: 2 of 5
 #about: sos.sh - run a loop with only 1 task: suspend
 #type: looper

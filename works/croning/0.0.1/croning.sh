@@ -4,8 +4,8 @@ pushd `dirname $0` >/dev/null
 str="croning is alive"
 path=`dirname  $0`
 update_clipboard(){
-    notify-send 'update the clipboard' 'croning.sh'
-echo "$1" | /usr/bin/xsel --clipboard
+   echo  notify-send 'update the clipboard' 'croning.sh'
+#echo "$1" | /usr/bin/xsel --clipboard
 }
 speak(){
     str="$1"
