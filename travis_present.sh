@@ -18,10 +18,12 @@ while read line;do
 
     alias_name=`    echo "$line" | cut -d'=' -f1 | sed "s/alias//g"`
     file=`    echo "$line" | cut -d'=' -f2 | sed "s/'//g"`
-    echo "$file"
+
     if [ -f $file ];then
+
+    echo "$file"
         echo exist
-        ls -l $file
+        #ls -l $file
 
     eval $file
     else

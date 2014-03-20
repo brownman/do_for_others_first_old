@@ -1,3 +1,7 @@
+- breath
+- rest
+- have fun
+
 project
 -=-=-=
 - shortkeys
