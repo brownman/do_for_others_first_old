@@ -11,7 +11,7 @@ timeout=${TIMEOUT_SUSPEND:-60}
 alive=${TIMEOUT_ALIVE:-60}
 echo "timeout suspend set to : $timeout"
 #$TIMEOUT_LET_ME_SLEEP
-env > $dir_workspace/log/suspend.env.log
+#env > $dir_workspace/log/suspend.env.log
 
 
 suspend01(){
@@ -37,6 +37,7 @@ xcowsay 'suspend!'
     echo "$elapsed"
     if [[ $elapsed -lt $timeout ]];then
         echo "let me sleep for at least $timeout seconds"
+        flite -t 'let me sleep'
         sleep 5
         eval suspend01
     else

@@ -1,6 +1,20 @@
+list:
+------
+- sos  / cron for suspending
+- tasker - for trails
+- hotkeys - set ?
+- croning - set
+
+
+- homework riddles
+
+
+general
+--------
 - breath
 - rest
 - have fun
+- eat
 
 project
 -=-=-=

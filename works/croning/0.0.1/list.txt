@@ -1,4 +1,4 @@
-remind me to smile|$dir_magnify/wrapper.sh singles/single.sh reminder
+remind me to smile|$dir_magnify/wrapper.sh singles/single.sh list todo
 running tasker|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh 1
 running tasker|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh 2
 removing cron indicators|rm /tmp/CRONING/INDICATORS/*

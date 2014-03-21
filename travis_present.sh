@@ -1,4 +1,6 @@
 #!/bin/bash 
+env | grep LOGNAME --color=auto
+sleep 5
 source breath.cfg
 set -o nounset
 

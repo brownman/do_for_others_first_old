@@ -1,6 +1,6 @@
 #!../bin/ofer
 
-#parser: \$coverage_sh
+#parser: \$sh_coverage
 #validation: assert_file_not_empty
 #validation2: type
 #assert_file_not_empty
