@@ -1,0 +1,6 @@
+do for others first#cat plan.txt \| head -1
+present the project structure#tree -L 2
+source the layout#source layout.cfg
+load the library|
+
+#create aliases|

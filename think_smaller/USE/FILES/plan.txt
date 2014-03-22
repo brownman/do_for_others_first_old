@@ -1,0 +1,57 @@
+list:
+------
+- sos  / cron for suspending
+- tasker - for trails
+- hotkeys - set ?
+- croning - set
+
+
+- homework riddles
+
+
+general
+--------
+- breath
+- rest
+- have fun
+- eat
+
+project
+-=-=-=
+- shortkeys
+- database which indicated the usage of .cfg
+- crons
+- WALLPAPER UPDATE PLUGIN!
+- automate the testing - bashprompt-> actually do the testing!
+
+
+READINESS - CHECK:
+----------------------
+- is sos running
+- is tasker gui - running
+- doeas cli-promt - show the recent pending feature ???
+- does wallpaper updating and showing the  number of rounds ?
+- does travis working
+- the library is being use to load .cfg files?
+- did u set readiness level for all script?
+- magnify the smalll uses the library ?
+
+ESTIMATE:
+- how many rounds of tasker  ?
+- how many times practice sport ?
+
+ENSURE:
+- sos - even minimal
+- tasker - even minimal 
+- count rounds and show it on the wallpaper!
+- ensure that cron  is auto - awake
+
+
+
+#- magnify the small
+#- do for others first
+#- breath
+#- run sos
+#- run tasker
+#- run croning
+#- use hotkeys
