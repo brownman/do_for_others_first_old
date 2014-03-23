@@ -1,14 +1,18 @@
 #!/bin/bash -e
 set -o nounset
 
-file_steps=steps.txt
+file_list=steps.txt
 file_logger=logger.txt
 export TIMEOUT_SLEEP=4
-
+update_clipboard(){
+local cmd="$1"
+echo "$cmd" | xsel --clipboard
+}
 proxy(){
     if [ $# -gt 0 ];then
-        cmd="$1"
-        args=()
+       local cmd="$1"
+        
+      local   args=()
         shift
 
         if [ $# -gt 0 ];then
@@ -23,8 +27,8 @@ proxy(){
     fi
 }
 commander(){
-    args=( "$@" )
-    cmd="${args[@]}"
+local     args=( "$@" )
+ local    cmd="${args[@]}"
 echo "$cmd" >> $file_logger
 
 eval "$cmd"
@@ -38,15 +42,17 @@ proxy sleep 2
 
 }
 steps(){
+    let 'counter=1'
     while read line;do
         proxy clear
-        title=$(    echo "$line" | cut -d'#' -f1 )
-        cmd=$(    echo "$line" | cut -d'#' -f2 )
+        local title=$(    echo "$line" | cut -d'#' -f1 )
+        local cmd=$(    echo "$line" | cut -d'#' -f2 )
         echo -ne "$title\t\t"
-
+        update_clipboard "vi $file_list +${counter}"
         commander "$cmd"
         proxy sleep "$TIMEOUT_SLEEP"
-    done<$file_steps
+        let 'counter+=1'
+    done<$file_list
 }
 
 
