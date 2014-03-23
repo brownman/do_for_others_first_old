@@ -1,8 +1,14 @@
 #!/bin/bash -e
 set -o nounset
 
-file_list=steps.txt
-file_logger=logger.txt
+path=`pwd`
+pushd `dirname $path`>/dev/null
+
+dir_txt=$path/txt
+dir_cfg=$path/cfg
+
+file_list=$dir_txt/list.txt
+file_logger=$dir_txt/logger.txt
 export TIMEOUT_SLEEP=4
 update_clipboard(){
 local cmd="$1"
@@ -45,8 +51,8 @@ steps(){
     let 'counter=1'
     while read line;do
         proxy clear
-        local title=$(    echo "$line" | cut -d'#' -f1 )
-        local cmd=$(    echo "$line" | cut -d'#' -f2 )
+        local title=$(    echo "$line" | cut -d':' -f1 )
+        local cmd=$(    echo "$line" | cut -d':' -f2 )
         echo -ne "$title\t\t"
         update_clipboard "vi $file_list +${counter}"
         commander "$cmd"
@@ -57,5 +63,5 @@ steps(){
 
 
 steps
-
+popd>/dev/null
 set +o nounset

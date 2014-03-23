@@ -1,0 +1,4 @@
+tree /mnt/TORRENTS/NEW > tree.txt
+sudo mount /dev/sda5 /mnt
+
+

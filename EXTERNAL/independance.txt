@@ -1,0 +1,5 @@
+word a day|
+play a lecture|
+ask a wiki article|
+ask cli fu|
+

@@ -1,0 +1,104 @@
+RULES:
+===
+pending:
+         menu: 
+            - yaml based menu
+            - use it for:
+                executing tasks
+                testing 
+
+goals:
+    build_a_lazy_language:
+        command: robot
+        description:
+            - use the command:robot
+            - let the robot do the job for you
+        - commands:
+            - teach me X
+    entry_points:
+            - upon moods
+    estimate_progress:
+            - set rules for inspecting scripts --> grade them on a readiness scale
+            - use indicators - and estimate the level of effectivity
+
+cake-of-time:
+    out-of-project:
+             awareness: to external codes/knowledge/lectures
+             watch: recent lecture
+             easy_questions:   recent question
+    project: 
+             first:  run  the  1st list: which update alises of the system
+             second: run  a list which update the wallpaper 
+    
+             
+
+
+builtins:
+         test:
+            - report readiness level upon a standard
+            - travis presentation -  abs guide + jail
+         coverage:
+            - scan a folder of plugins + give grades + save the error log
+            - abc
+         travis:    
+            - jail - run external scripts
+            - presentation
+         presentation:
+            - use this yaml to generate a menu based on .yml files
+
+folders:            
+    lists:   
+            randomness:
+                - show a quote
+                - learn 1 word
+                - show wiki facts
+
+            quick_commands_installation:
+                - when exporting a dir - do auto aliasing for quick:
+                - edit a file 
+                - cd to a dir
+    code:
+            proxy:   log everything
+            library: cover each load of .cfg
+    workspace:
+            - echo day has its own folder
+
+
+layout:
+        tools:
+             lister: 
+                simple: loop over list.txt - run each line
+                smart:  loop over list.txt + use comments to be used by a parse
+             coverage:  describe a function/script + use comments to be used by a parser
+             stacker:   view the stack trace
+             wrapper:   wrap a script and catch its error
+             parser:    run the wrapper and parse its stderr output for quick jumping to the buggy line
+             proxy:     log every command - 
+
+
+
+            #run a list with cmd: list
+            #run a list in a wrapper: wrap list
+            #run wrapper in a parse: parse wrap list
+            
+            test:
+             travis:         presentation
+             test:           koans or shunit
+             logs_as_wallpaper:        update wallpaper- with the recent logs     environment-friendly:      project_of_the_day:          - desktop wallpaper
+
+lists_index:
+                 layout:  load the library asap - then use it else-where
+                 croning: crontab has 1 record -> run the croning list -> that is a proxy for running cron jobs
+                 hotkeys: set xfce4 hotkeys 
+ 
+readiness_level:
+    standard:          - cover every .cfg         cover every .sh
+    fun_level:         - what proved effective ?
+
+
+
+reasoning:
+    - prefer list above code
+    - minimum configuration before loading the library
+    - exporting X --> trigger aliases
+
