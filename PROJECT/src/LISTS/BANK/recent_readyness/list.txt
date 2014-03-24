@@ -1,8 +1,0 @@
-do for others first:                 cat $dir_txt/plan.txt | head -1
-present the project structure:       tree -L 2
-source the layout:                   source layout.cfg
-load the library:                    source library.cfg
-aware of next lecture:               echo $dir_recents/lecture.txt
-do for others first:                 echo $dir_recents/others.txt
-
-#create aliases|

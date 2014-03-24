@@ -1,0 +1,46 @@
+clear
+recent failing test|shunit 1
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt | tails -1
+clear
+recent failing test|cat $dir_txt/logger.txt | tails -1

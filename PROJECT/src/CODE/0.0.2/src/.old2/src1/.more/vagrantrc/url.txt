@@ -1,6 +1,0 @@
-http://vimeo.com/fideloper
-
-
-An Introduction to Analyzing Server Logs
-from Chris Fidao PLUS 2 weeks ago ALL AUDIENCES
-A quick description of using tail, zgrep and other tools to find and analyze server logs.
