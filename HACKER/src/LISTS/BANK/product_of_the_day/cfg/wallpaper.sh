@@ -14,7 +14,7 @@ file_original=/usr/share/xfce4/backdrops/xubuntu-precise-right.png
 file_before=/tmp/before.png #copy of the original
 file_after=/tmp/after.png #compose: txt_image + background
 file_text_image=/tmp/text.png #convert txt to image
-file_tmp=$DATA_DIR/tmp/wallpaper.tmp
+file_tmp=/tmp/wallpaper.tmp
 
 amount=4
 

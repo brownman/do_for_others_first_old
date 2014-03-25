@@ -11,9 +11,7 @@ export TIMEOUT_SLEEP=4
 create_dirs(){
     dir_txt=$path/txt
     dir_cfg=$path/cfg
-    dir_sh=$path/sh
     ensure dir_exist "$dir_cfg"
-    ensure dir_exist "$dir_sh"
     ensure dir_exist "$dir_txt"
 
 file_logger=$dir_txt/logger.txt
@@ -26,7 +24,10 @@ step1(){
         local title=$(    echo "$line" | cut -d':' -f1 )
         local cmd=$(    echo "$line" | cut -d':' -f2 )
         echo -ne "$title\t\t"
-        update_clipboard "cd `dirname $file_list`;vi $file_list +${counter}"
+
+        local cmd1="pushd `dirname $file_list`;vi $file_list +${counter};popd"
+        update_clipboard  "$cmd1"
+        assert string_has_content "$cmd"
         proxy "$cmd"
         #proxy1 sleep "$TIMEOUT_SLEEP"
         let 'counter+=1'
