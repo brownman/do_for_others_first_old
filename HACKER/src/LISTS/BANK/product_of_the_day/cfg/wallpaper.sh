@@ -1,5 +1,5 @@
-#!/bin/bash  -e
-set -o nounset
+#!/bin/bash  
+set +o nounset
 #about file: user yaml category: wallpaper for generating new desktop background
 #dependencies: imagemagic
 #utilize: one.yaml , data/tmp/wallpaper.tmp
@@ -9,28 +9,17 @@ set -o nounset
 #http://www.imagemagick.org/Usage/text/#pango_markup
 
 notify-send 'wallapaper' 'plugin'
-
-file_original=/usr/share/xfce4/backdrops/xubuntu-precise-right.png
+exports(){
+print_func
+file_original=/tmp/xfce.png
+#/usr/share/xfce4/backdrops/xubuntu-precise-right.png
 file_before=/tmp/before.png #copy of the original
 file_after=/tmp/after.png #compose: txt_image + background
 file_text_image=/tmp/text.png #convert txt to image
 file_tmp=/tmp/wallpaper.tmp
-
 amount=4
-
-run(){
-    #efficiency_image
-    backup
-    #show $file_before
-
-    #gedit $file_txt
-    trigger
-   
-
-    replace
- cmd="xloadimage $file_after"
-    optional1 "$cmd"
 }
+
 #efficiency_image(){
 #    #http://www.imagemagick.org/Usage/text/#pango_markup
 #    local file_txt=$DATA_DIR/pango/text_data.txt
@@ -48,7 +37,7 @@ run(){
 #}
 
 parse_line_of_wallpaper(){
-
+print_func
     local filename=$( echo "$line" | awk -F ' ' '{print $1}' )
     local file_txt=$DATA_DIR/log/$filename.log
 
@@ -79,10 +68,10 @@ trace parse_line_of_wallpaper "$filename"
 trigger(){
     trace trigger
     lines=()
-    file_to_lines $file_tmp
-    trace "lines: ${lines[@]}"
+    echo file_to_lines $file_tmp
+    echo trace "lines: ${lines[@]}"
     local cmd='parse_line_of_wallpaper'
-    execute_lines
+   echo  execute_lines
 }
 
 generate(){
@@ -127,7 +116,7 @@ replace(){
     #update xfce desktop
     notify-send 'update wallaper' 
     xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s ~/Pictures/lubuntu-default-wallpaper-2.png 
-    sleep1 4
+    #sleep1 4
     xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s $file_after
     xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitor0/image-path -s $file_after
 }
@@ -146,7 +135,21 @@ show(){
 
 
 
+steps(){
+    exports
+    #efficiency_image
+    backup
+    #show $file_before
+
+    #gedit $file_txt
+    trigger
+   
+
+    replace
+ cmd="xloadimage $file_after"
+    echo optional1 "$cmd"
+}
 
 
-run
+steps
 set +o nounset

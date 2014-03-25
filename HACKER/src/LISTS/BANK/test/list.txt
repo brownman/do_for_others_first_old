@@ -1,4 +1,5 @@
 recent failing test:cat $dir_txt/logger.txt | tail -1
+catch the error: source $dir_cfg/goto_bug.cfg
 coverage of all code in the new library: 
 abs-guide presentation+parser:
 wallpaper food - recent logs:

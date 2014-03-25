@@ -25,7 +25,7 @@ step1(){
         local cmd=$(    echo "$line" | cut -d':' -f2 )
         echo -ne "$title\t\t"
 
-        local cmd1="pushd `dirname $file_list`;vi $file_list +${counter};popd"
+        local cmd1="pushd `dirname $file_list`;vi $file_list +${counter}"
         update_clipboard  "$cmd1"
         assert string_has_content "$cmd"
         proxy "$cmd"

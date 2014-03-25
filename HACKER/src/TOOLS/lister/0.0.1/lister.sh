@@ -54,13 +54,6 @@ create_tmp_list(){
 }
 
 
-str_to_arr(){
-    #depend on: arr
-    local str="$1"
-    local delimeter=${2-'|'}
-    IFS=$delimeter read -a arr <<< "$str"
-    #result: arr
-}
 set_commented(){
     local subject="$1"
 
