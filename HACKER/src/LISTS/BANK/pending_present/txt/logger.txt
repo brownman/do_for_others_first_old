@@ -1,0 +1,136 @@
+clear
+  ls -l $dir_list
+sleep 4
+clear
+run_list $dir_test
+clear
+  ls -l $dir_list
+sleep 4
+clear
+run_list $dir_test
+clear
+  ls -l $dir_list
+sleep 4
+clear
+run_list $dir_test
+clear
+  echo hiiiiiiii
+sleep 4
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_lists/test
+clear
+  echo hiiiiiiii
+sleep 4
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_lists/test
+clear
+  echo hiiiiiiii
+sleep 4
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_lists/test
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/test
+exiting 1
+clear
+ ls -l "$dir_list"
+sleep 4
+clear
+run_list $dir_list/product_of_the_day
+exiting 1
+clear
+run_list $dir_list/product_of_the_day
+exiting 1
+clear
+run_list $dir_list/product_of_the_day
+flite -t dir_exist
+exiting 1
+clear
+run_list $dir_list/product_of_the_day
+flite -t dir_exist
+exiting 1
+clear
+run_list $dir_list/product_of_the_day
+flite -t dir exist
+exiting 1
+clear
+run_list $dir_list/product_of_the_day
+flite -t dir exist
+exiting 1
+clear
+run_list $dir_list/product_of_the_day
+figlet product_of_the_day
+xcowsay list: product_of_the_day
+/home/dao04/JAIL/TREE/HACKER/src/TOOLS/lister/0.0.1/list.sh
+sleep 4
+clear
+run_list $dir_list/test
+figlet test
+xcowsay list: test
+/home/dao04/JAIL/TREE/HACKER/src/TOOLS/lister/0.0.1/list.sh
+clear
+run_list $dir_list/product_of_the_day
+clear
+run_list $dir_list/product_of_the_day
+sleep 4
+clear
+run_list $dir_list/test

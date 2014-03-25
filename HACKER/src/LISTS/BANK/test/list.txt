@@ -1,4 +1,4 @@
-recent failing test|cat $dir_txt/logger.txt | tails -1
+recent failing test|cat $dir_txt/logger.txt | tail -1
 coverage of all code in the new library|shunit 2
 abs-guide presentation+parser|shunit3
 wallpaper food - recent logs|shunit 4

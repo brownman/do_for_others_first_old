@@ -6,6 +6,8 @@ pushd "$path">/dev/null
 
 dir_txt=$path/txt
 dir_cfg=$path/cfg
+[ ! -d "$dir_cfg" ] && mkdir $dir_cfg
+[ ! -d "$dir_txt" ] && mkdir $dir_txt
 
 file_list=$path/list.txt
 file_logger=$dir_txt/logger.txt
@@ -14,7 +16,7 @@ update_clipboard(){
 local cmd="$1"
 echo "$cmd" | xsel --clipboard
 }
-proxy(){
+proxy1(){
     if [ $# -gt 0 ];then
        local cmd="$1"
         
@@ -40,23 +42,23 @@ echo "$cmd" >> $file_logger
 eval "$cmd"
 }
 sleeper(){
-        proxy sleep 2
+        proxy1 sleep 2
         echo -ne "------->"
-proxy sleep 2
+proxy1 sleep 2
         echo -ne "\t------->"
-        #proxy xcowsay "$title"
+        #proxy1 xcowsay "$title"
 
 }
 steps(){
     let 'counter=1'
     while read line;do
-        proxy clear
+        proxy1 clear
         local title=$(    echo "$line" | cut -d':' -f1 )
         local cmd=$(    echo "$line" | cut -d':' -f2 )
         echo -ne "$title\t\t"
         update_clipboard "vi $file_list +${counter}"
         commander "$cmd"
-        proxy sleep "$TIMEOUT_SLEEP"
+        proxy1 sleep "$TIMEOUT_SLEEP"
         let 'counter+=1'
     done<$file_list
 }

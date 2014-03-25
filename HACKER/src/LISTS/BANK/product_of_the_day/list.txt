@@ -1,0 +1,2 @@
+update wallpaper:   echo do it now!
+do x: xcowsay y

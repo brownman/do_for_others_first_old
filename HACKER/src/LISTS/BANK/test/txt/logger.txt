@@ -44,3 +44,20 @@ clear
 recent failing test|cat $dir_txt/logger.txt | tails -1
 clear
 recent failing test|cat $dir_txt/logger.txt | tails -1
+clear
+recent failing test|cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+sleep 4
+clear
+abs-guide presentation+parser|shunit3
+sleep 4
+clear
+wallpaper food - recent logs|shunit 4
+sleep 4
+clear
+recent failing test|cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
