@@ -61,3 +61,142 @@ recent failing test|cat $dir_txt/logger.txt | tail -1
 sleep 4
 clear
 coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+recent failing test|cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+coverage of all code in the new library|shunit 2
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+shunit 2
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+shunit 2
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+shunit 2
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+shunit 2
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls $dir_units
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+shunit3
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+shunit 4
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+shunit 4
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+shunit 4
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+shunit 4
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+shunit 4
+clear
+cat $dir_txt/logger.txt | tail -1
+sleep 4
+clear
+ ls -l
+sleep 4
+clear
+
+sleep 4
+clear
+
+sleep 4
+clear
+shunit 4

@@ -1,5 +1,5 @@
 #!/bin/bash -e
-path=`pwd`
+path=`dirname $0`
 pushd "$path">/dev/null
     dir_units=$path/units
     file_test=$dir_units/test_error.sh

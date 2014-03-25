@@ -1,9 +1,10 @@
-recent failing test|cat $dir_txt/logger.txt | tail -1
-coverage of all code in the new library|shunit 2
-abs-guide presentation+parser|shunit3
-wallpaper food - recent logs|shunit 4
-parse yaml - traverse and explain about the structure|shunit 5
-present changelogs and readme files|shunit 6
-show the setup for: hotkeys,croning|shunit 7
-estimate progress - indicate which jobs are running|shunit 8
+recent failing test:cat $dir_txt/logger.txt | tail -1
+show tree: ls -l
+coverage of all code in the new library: 
+abs-guide presentation+parser:
+wallpaper food - recent logs:shunit 4
+parse yaml - traverse and explain about the structure:shunit 5
+present changelogs and readme files:shunit 6
+show the setup for: hotkeys,croning:shunit 7
+estimate progress - indicate which jobs are running:shunit 8
 

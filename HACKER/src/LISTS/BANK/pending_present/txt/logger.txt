@@ -134,3 +134,28 @@ run_list $dir_list/product_of_the_day
 sleep 4
 clear
 run_list $dir_list/test
+clear
+run_list $dir_list/product_of_the_day
+sleep 4
+clear
+run_list $dir_list/test
+clear
+run_list $dir_list/product_of_the_day
+sleep 4
+clear
+run_list $dir_list/test
+clear
+run_list $dir_list/product_of_the_day
+sleep 4
+clear
+run_list $dir_list/test
+clear
+run_list $dir_list/product_of_the_day
+sleep 4
+clear
+run_list $dir_list/test
+clear
+run_list $dir_list/product_of_the_day
+sleep 4
+clear
+run_list $dir_list/test

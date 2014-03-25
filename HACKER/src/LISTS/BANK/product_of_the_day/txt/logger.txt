@@ -28,3 +28,33 @@ sleep 4
 clear
  xcowsay y
 sleep 4
+clear
+   echo do it now!
+sleep 4
+clear
+ xcowsay y
+sleep 4
+clear
+   echo do it now!
+sleep 4
+clear
+ xcowsay y
+sleep 4
+clear
+   echo do it now!
+sleep 4
+clear
+ xcowsay y
+sleep 4
+clear
+   echo do it now!
+sleep 4
+clear
+ xcowsay y
+sleep 4
+clear
+   echo do it now!
+sleep 4
+clear
+ xcowsay y
+sleep 4
