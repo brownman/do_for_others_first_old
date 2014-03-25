@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 set -o nounset
 #depend_func: print_color print_color_n reason_of_death
 path_self=`dirname $0`
@@ -192,7 +192,14 @@ step1(){
 
 
     str=`cat $file_level` 
+if [ -f "$file_cfg" ];then
+
     source $file_cfg
+else
+reason_of_death "file not exist" "$file_cfg"
+fi
+
+
     if [ "$str" != '' ];then
         let "max=$str"
         echo -e "\t\t\t\t[TOTAL STEPS] $max"
@@ -242,8 +249,13 @@ steps_new(){
     #dependencies
     #ensure_path
     set_vars
+if [ -f "$file_cfg" ];then
 
     source $file_cfg
+else
+    reason_of_death "file not exist" "$file_cfg"
+fi
+
     str=`   cat $file_cfg | grep '(){' | sed 's/(){//g'`
     arr=( $str )
 

@@ -77,7 +77,7 @@ wrap_runner(){
         if [ -s "$file_error"  ];then
             #cmd1="gxmessage -file $file_error -title 'wrap errors'"
             #eval "$cmd1"
-
+present_file $file_error
             local line=`cat $file_error`
             parse_error_line "$line"
 

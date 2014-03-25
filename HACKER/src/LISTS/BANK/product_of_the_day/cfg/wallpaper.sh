@@ -1,4 +1,4 @@
-#!/bin/bash  
+#!/bin/bash  -e
 set +o nounset
 #about file: user yaml category: wallpaper for generating new desktop background
 #dependencies: imagemagic
@@ -136,19 +136,20 @@ show(){
 
 
 steps(){
-    exports
+    print_func
+$sh_coverage    exportsi
     #efficiency_image
-    backup
+$sh_coverage    backup
     #show $file_before
 
     #gedit $file_txt
-    trigger
+$sh_coverage    trigger
    
 
-    replace
- cmd="xloadimage $file_after"
-    echo optional1 "$cmd"
+$sh_coverage    replace
 }
+# cmd="xloadimage $file_after"
+#    echo optional1 "$cmd"
 
 
 steps
