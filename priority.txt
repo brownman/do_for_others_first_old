@@ -1,0 +1,15 @@
+
+activity: present list of task + add trap for editing a file
+independent - presentation: remind of life priorities
+
+workspace is install per this day - and has files
+awareness for recent pushes/prograss
+run vendors code in a subshell
+
+
+
+order
+manual source a .cfg - is out
+test tools active working  - croning / hotkeys / wallpaper/ list/wrapper
+library is being use 
+

@@ -1,6 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash 
 set -o nounset
-#depend_func: print_color print_color_n reason_of_death
+#depend_func: print_color print_color_n proxy reason_of_death
 path_self=`dirname $0`
 path=${path:-$PWD}
 echo '[COVERAGE]'
@@ -119,7 +119,7 @@ coverage(){
                 print_color 31 '[ERROR]'
                 print_file $file_test_err
                 details
-                reason_of_death 'test failed'
+                proxy reason_of_death 'test failed'
             fi
 
 
@@ -130,12 +130,12 @@ coverage(){
             print_color 35 "\t\t$str_res"
         else
             details
-            reason_of_death "[TAG] is not recognized - please add an handler for it before continue" "$str_ptrn"
+            proxy reason_of_death "[TAG] is not recognized - please add an handler for it before continue" "$str_ptrn"
         fi
     else
 #        echo [UNCOVERED:]
         details
-        reason_of_death "Empty tag: $str_ptrn" "$func_name" 
+        proxy reason_of_death "Empty tag: $str_ptrn" "$func_name" 
     fi
 
 }
@@ -145,7 +145,7 @@ ensure_path(){
  #   print_func
 
     if [[ -z "$path" ]];then
-        reason_of_death  "path must be set" "$path"
+        proxy reason_of_death  "path must be set" "$path"
     else
         export path_self=$path_self
   #      echo '[path_self:]  ' $path_self
@@ -172,7 +172,7 @@ evaluate(){
         eval "$cmd" > $file_eval_res
         print_file $file_eval_res
     else
-        reason_of_death 'supply a function to evaluage'
+        proxy reason_of_death 'supply a function to evaluage'
     fi
     echo ============
 }
@@ -196,7 +196,7 @@ if [ -f "$file_cfg" ];then
 
     source $file_cfg
 else
-reason_of_death "file not exist" "$file_cfg"
+proxy reason_of_death "file not exist" "$file_cfg"
 fi
 
 
@@ -225,7 +225,7 @@ fi
             let 'counter+=1'
         done
     else
-        reason_of_death 'invalid level' "$str"
+        proxy reason_of_death 'invalid level' "$str"
     fi
 }
 steps(){
@@ -253,7 +253,7 @@ if [ -f "$file_cfg" ];then
 
     source $file_cfg
 else
-    reason_of_death "file not exist" "$file_cfg"
+    proxy reason_of_death "file not exist" "$file_cfg"
 fi
 
     str=`   cat $file_cfg | grep '(){' | sed 's/(){//g'`
@@ -275,7 +275,7 @@ fi
     else
         cmd="vi $path_self/$file_cfg"
         update_clipboard "$cmd"
-        reason_of_death 'file has 0 functions' "$file_cfg"
+        proxy reason_of_death 'file has 0 functions' "$file_cfg"
     fi
 
 
@@ -287,7 +287,7 @@ if [ $# -gt 0 ];then
 
     file_cfg=$path/$filename
 else
-    reason_of_death 'supply a .cfg file'
+    proxy reason_of_death 'supply a .cfg file'
 fi
 
 steps_new
