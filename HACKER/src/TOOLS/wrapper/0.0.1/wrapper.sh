@@ -1,4 +1,5 @@
 #!/bin/bash 
+proxy print_script
 set -o nounset
 ################################## start
 args=()
@@ -6,32 +7,32 @@ args=()
 if [ "$#" -gt 0  ];then
     args=( "$@" )
 else
-    echo reason_of_death 'supply arguments'
+proxy reason_of_death 'supply arguments'
 fi
 #########################################
 
 parse_error_line(){
-    print_func_n
-  local   line="$1"
+    proxy  print_func_n
+    local   line="$1"
     if [ -n "$line" ];then
-        trace "[LINE] $line"
-       local arr=()
- str_to_arr "$line" ':'
-      local   max="${#arr[@]}"
-      echo "maxX: $max"
-      echo "arr: ${arr[@]}"
+        proxy   proxy trace "[LINE] $line"
+        local arr=()
+        proxy  str_to_arr "$line" ':'
+        local   max="${#arr[@]}"
+        echo "maxX: $max"
+        echo "arr: ${arr[@]}"
         if [ "$max" -gt 1 ];then
-            trace            echo '[DETAILS]' 
-            trace       echo "file:" "${arr[0]}"
-            trace  echo "line:" "${arr[1]}"
-            trace    echo "msg:" "${arr[2]}"
-            trace   echo
+            proxy trace            echo '[DETAILS]' 
+            proxy trace       echo "file:" "${arr[0]}"
+            proxy trace  echo "line:" "${arr[1]}"
+            proxy trace    echo "msg:" "${arr[2]}"
+            proxy trace   echo
             str_line=$(echo "${arr[1]}" | sed 's/line//g'| sed 's/ //g')
             str_file="${arr[0]}"
             str_command="${arr[2]}"
             str_msg="${arr[3]}"
             cmd="vi $str_file +$str_line"
-            echo "$cmd"
+            proxy echo "$cmd"
             msg=`echo "$str_command" "$str_msg" | sed 's/ /_/g'`
             # notify-send "parse_msg:" "$msg"
             proxy            update_clipboard "$cmd"
@@ -70,31 +71,31 @@ wrap_runner(){
         [ -f "$file_error"  ] && rm $file_error
         [ -f "$file_out"  ] && rm $file_out
         ##################################    run##########
-        echo -ne "[COMMAND] " 
-        echo "$cmd"
+      proxy  echo -ne "[COMMAND] " 
+      proxy   echo "$cmd"
         (  eval "bash -e $cmd" 2>$file_error 1>$file_out )
         ######################################################3
         if [ -s "$file_error"  ];then
             #cmd1="gxmessage -file $file_error -title 'wrap errors'"
             #eval "$cmd1"
-present_file $file_error
+          proxy  present_file $file_error
             local line=`cat $file_error`
-            parse_error_line "$line"
+         proxy   parse_error_line "$line"
 
         fi
         if [ -s "$file_out"  ];then
             cmd1="cat $file_out"
-            eval "$cmd1"
+          proxy  "$cmd1"
         fi
     else
-        echo reason_of_death 'no arguments'
+ proxy reason_of_death 'no arguments'
     fi
 }
 
 set_dir_for_logs(){
     dir_log=$path_self/log
     if [ -d "$dir_log" ];then
-        tree -L 2 $dir_log
+     proxy   tree -L 2 $dir_log
         #echo
     else
         proxy reason_of_death 'invalid directory' "$dir_log"

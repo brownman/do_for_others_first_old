@@ -1,6 +1,7 @@
-update the wallpaper:run_list $dir_list/product_of_the_day
-run the tests:run_list $dir_list/test
-load the library:run_list $dir_list/install_project
-run vendor's code:run_list $dir_list/vendor_work
-present the last pending feature in each list: ls -l "$dir_list"
+remind big stones:$dir_list/reminder
+#run vendor's code:run_list $dir_list/vendor_work
+#update the wallpaper:run_list $dir_list/product_of_the_day
+#run the tests:run_list $dir_list/test
+#load the library:run_list $dir_list/install_project
+#present the last pending feature in each list: ls -l "$dir_list"
 

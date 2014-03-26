@@ -1,0 +1,37 @@
+#!/bin/bash
+set -o nounset
+print_file00(){
+    file=$1
+    echo '--'
+    echo "[ $file ]"
+    echo
+    cat -n $file | head -4
+    echo '--'
+}
+export -f print_file00
+
+type $sh_wrapper 1>/dev/null 2>/dev/null
+res=$?
+echo "result: wrapper is active? " 
+echo "$res"
+sleep 3
+
+if [ "$res" -eq 0  ];then
+    cmd="bash -c $sh_wrapper entry_point.cfg"
+else
+    cmd="bash -c ./entry_point.cfg"
+fi
+
+( eval "$cmd" 1>/tmp/out 2>/tmp/err )
+print_file00 '/tmp/out'
+print_file00 '/tmp/err'
+#cmd="ls  /tmp/log/* | xargs print_file00"
+#cmd="find /tmp/log -iname '*.txt' -exec print_file00 '{}' \;"
+ IFS=$'\n'; for i in `find /tmp/log -iname '*.txt'`; do print_file00 "$i"; done
+
+
+
+
+#echo "$cmd"
+#eval "$cmd"
+set +o nounset

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 set -o nounset
 #depend_func: print_color print_color_n reason_of_death
 path_self=`dirname $0`
