@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0062)http://docs.oracle.com/cd/E37670_01/E36387/html/ol_cj_sec.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3.13&nbsp;Configuring and Using Chroot Jails</title><link rel="stylesheet" type="text/css" href="./3.13 Configuring and Using Chroot Jails_files/mvl.css"><meta name="generator" content="DocBook XSL Stylesheets V1.77.1"><link rel="home" href="http://docs.oracle.com/cd/E37670_01/E36387/html/index.html" title="Oracle® Linux"><link rel="up" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_implement_sec.html" title="Chapter 3 Implementing Oracle Linux Security"><link rel="prev" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_nmon_sec.html" title="3.12 Configuring Access to Network Services"><link rel="next" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_lxc_sec.html" title="3.14 Configuring and Using Linux Containers"><style type="text/css"></style></head><body><div class="navheader"><table width="100%" summary="Navigation header"><tbody><tr><th colspan="3" align="center">3.13&nbsp;Configuring and Using Chroot Jails</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_nmon_sec.html">Prev</a>&nbsp;</td><th width="60%" align="center">Chapter&nbsp;3&nbsp;Implementing Oracle Linux Security</th><td width="20%" align="right">&nbsp;<a accesskey="n" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_lxc_sec.html">Next</a></td></tr></tbody></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="ol_cj_sec"></a>3.13&nbsp;Configuring and Using Chroot Jails</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_cj_sec.html#ol_servcj_sec">3.13.1 Running DNS and FTP Services in a Chroot Jail</a></span></dt><dt><span class="section"><a href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_cj_sec.html#ol_createcj_sec">3.13.2 Creating a Chroot Jail</a></span></dt><dt><span class="section"><a href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_cj_sec.html#ol_usecj_sec">3.13.3 Using a Chroot Jail</a></span></dt></dl></div><p>A <span class="command"><strong>chroot</strong></span> operation changes the apparent root directory for a running
+      process and its children. It allows you to run a program with a root directory other than
+        <code class="literal">/</code>. The program cannot see or access files outside the designated
+      directory tree. Such an artificial root directory is called a <span class="emphasis"><em>chroot
+      jail</em></span>, and its purpose is to limit the directory access of a potential attacker. The
+      chroot jail locks down a given process and any user ID that it is using so that all they see
+      is the directory in which the process is running. To the process, it appears that the
+      directory in which it is running is the root directory.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><div class="admon-title">Note</div><p>The <span class="command"><strong>chroot</strong></span> mechanism cannot defend against intentional tampering or
+      low-level access to system devices by privileged users. For example, a
+        <span class="command"><strong>chroot</strong></span>
+      <code class="literal">root</code> user could create device nodes and mount file systems on them. A
+      program can also break out of a chroot jail if it can gain <code class="literal">root</code> privilege
+      and use <code class="literal">chroot()</code> to change its current working directory to the real
+        <code class="literal">root</code> directory. For this reason, you should ensure that a chroot jail
+      does not contain any <code class="literal">setuid</code> or <code class="literal">setgid</code> executables that
+      are owned by <code class="literal">root</code>.</p></div><p>For a <span class="command"><strong>chroot</strong></span> process to be able to start successfully, you must
+      populate the <span class="command"><strong>chroot</strong></span> directory with all required program files,
+      configuration files, device nodes, and shared libraries at their expected locations relative
+      to the level of the <span class="command"><strong>chroot</strong></span> directory.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ol_servcj_sec"></a>3.13.1&nbsp;Running DNS and FTP Services in a Chroot Jail</h3></div></div></div><p>If the DNS name service daemon (<code class="literal">named</code>) runs in a chroot jail, any
+        hacker that enters your system via a BIND exploit is isolated to the files under the chroot
+        jail directory. Installing the <code class="literal">bind-chroot</code> package creates the
+          <code class="literal">/var/named/chroot</code> directory, which becomes the chroot jail for all BIND
+        files.</p><p>You can configure the <code class="literal">vsftpd</code> FTP server to automatically start chroot
+        jails for clients. By default, anonymous users are placed in a chroot jail. However, local
+        users that access an <code class="literal">vsftpd</code> FTP server are placed in their home
+        directory. Specify the <code class="literal">chroot_local_user=YES</code> option in the
+          <code class="literal">/etc/vsftpd/vsftpd.conf</code> file to place local users in a chroot jail
+        based on their home directory.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ol_createcj_sec"></a>3.13.2&nbsp;Creating a Chroot Jail</h3></div></div></div><p>To create a chroot jail:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Create the directory that will become the root directory of the chroot jail, for
+              example:</p><p>
+              </p><pre class="programlisting"># <strong class="userinput"><code>mkdir /home/oracle/jail</code></strong></pre><p>
+            </p></li><li class="listitem"><p>Use the <span class="command"><strong>ldd</strong></span> command to find out which libraries are required by
+              the command that you intend to run in the chroot jail, for example
+                <span class="command"><strong>/bin/bash</strong></span>:</p><p>
+              </p><pre class="programlisting"># <strong class="userinput"><code>ldd /bin/bash</code></strong>
+	linux-vdso.so.1 =&gt;  (0x00007fff56fcc000)
+	libtinfo.so.5 =&gt; /lib64/libtinfo.so.5 (0x0000003ad1200000)
+	libdl.so.2 =&gt; /lib64/libdl.so.2 (0x0000003abe600000)
+	libc.so.6 =&gt; /lib64/libc.so.6 (0x0000003abe200000)
+	/lib64/ld-linux-x86-64.so.2 (0x0000003abde00000)</pre><p>
+            </p></li><li class="listitem"><p>Create subdirectories of the chroot jail's root directory that have the same
+              relative paths as the command binary and its required libraries have to the real root
+              directory, for example:</p><p>
+              </p><pre class="programlisting"># <strong class="userinput"><code>mkdir /home/oracle/jail/bin</code></strong>
+# <strong class="userinput"><code>mkdir /home/oracle/jail/lib64</code></strong></pre><p>
+            </p></li><li class="listitem"><p>Copy the binary and the shared libraries to the directories under the chroot
+              jail's root directory, for
+              example:</p><pre class="programlisting"># <strong class="userinput"><code>cp /bin/bash /home/oracle/jail/bin</code></strong>
+# <strong class="userinput"><code>cp /lib64/{libtinfo.so.5,libdl.so.2,libc.so.6,ld-linux-x86-64.so.2}</code></strong> \
+  <strong class="userinput"><code>/home/oracle/jail/lib64</code></strong></pre></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="ol_usecj_sec"></a>3.13.3&nbsp;Using a Chroot Jail</h3></div></div></div><p>To run a command in a chroot jail in an existing directory
+        (<em class="replaceable"><code>chroot_jail</code></em>), use the following command:</p><p>
+      </p><pre class="programlisting"># <strong class="userinput"><code>chroot <em class="replaceable"><code>chroot_jail</code></em> <em class="replaceable"><code>command</code></em></code></strong></pre><p>
+    </p><p>If you do not specify a command argument, <span class="command"><strong>chroot</strong></span> runs the value of the
+          <code class="literal">SHELL</code> environment variable or <code class="literal">/bin/sh</code> if
+          <code class="literal">SHELL</code> is not set.</p><p>For example, to run <span class="command"><strong>/bin/bash</strong></span> in a chroot jail (having previously set
+        it up as described in <a class="xref" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_cj_sec.html#ol_createcj_sec" title="3.13.2 Creating a Chroot Jail">Section&nbsp;3.13.2, “Creating a Chroot Jail”</a>):</p><pre class="programlisting"># <strong class="userinput"><code>chroot /home/oracle/jail</code></strong>
+bash-4.1# <strong class="userinput"><code>pwd</code></strong>
+/
+bash-4.1# <strong class="userinput"><code>ls</code></strong>
+bash: ls: command not found
+bash-4.1# <strong class="userinput"><code>exit</code></strong>
+exit
+#</pre><p>You can run built-in shell commands such as <span class="command"><strong>pwd</strong></span> in this shell, but
+        not other commands unless you have copied their binaries and any required shared libraries
+        to the chroot jail.</p><p>For more information, see the <code class="literal">chroot(1)</code> manual page.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tbody><tr><td width="40%" align="left"><a accesskey="p" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_nmon_sec.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a accesskey="u" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_implement_sec.html">Up</a></td><td width="40%" align="right">&nbsp;<a accesskey="n" href="http://docs.oracle.com/cd/E37670_01/E36387/html/ol_lxc_sec.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">3.12&nbsp;Configuring Access to Network Services&nbsp;</td><td width="20%" align="center"><a accesskey="h" href="http://docs.oracle.com/cd/E37670_01/E36387/html/index.html">Home</a></td><td width="40%" align="right" valign="top">&nbsp;3.14&nbsp;Configuring and Using Linux Containers</td></tr></tbody></table></div><div class="copyright-footer"><div class="mediaobject"><img src="./3.13 Configuring and Using Chroot Jails_files/OracleLogo.png" width="133" height="18" alt="Oracle logo"></div><p>
+        Copyright © 2013, Oracle and/or its affiliates. All rights
+        reserved.
+      <a href="http://docs.oracle.com/cd/E37670_01/E36387/html/cpyr.htm#oracle-notice">Legal Notices</a></p></div></body></html>

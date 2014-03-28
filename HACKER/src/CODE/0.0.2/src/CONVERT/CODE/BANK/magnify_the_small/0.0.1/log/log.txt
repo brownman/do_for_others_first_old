@@ -1,2 +1,1 @@
-/home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh [  2  ]  bin/1_tasker/tasker.sh 2
-bin/1_tasker/tasker.sh [  1  ]  2
+./wrapper.sh [  2  ]  bin/1_tasker/tasker.sh 1

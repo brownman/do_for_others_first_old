@@ -1,0 +1,7 @@
+am_i_ok
+fast_commands.cfg
+list.txt
+priority.txt
+screens.sh
+todo.txt
+wish.txt

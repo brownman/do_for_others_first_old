@@ -4,17 +4,20 @@ set -o nounset
 pushd `dirname $0`
 export dir_root=`pwd`
 ############################################
-clear
-source setup.cfg 1>/dev/null
+proxy clear
+
+cmd="source setup.cfg 1>/dev/null"
+
+proxy "$cmd"
 echo -n '' > $file_logger
-update_logger "$0" "$@"
+proxy update_logger "$0" "$@"
 
 ################################### dirty
 #echo "$@" | xsel --clipboard
 #echo "$@" >> log_wrapper.txt
 
 #notify-send "wrapper got" "$@"
-notify-send "sound: $SOUND"
+proxy notify-send "sound: $SOUND"
 # - export structure:           where is the workspace ?
 # - export vars:                run with sound?
 # - create folders/symlinks:    desktop lymlink exist ?

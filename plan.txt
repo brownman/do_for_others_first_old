@@ -1,7 +1,0 @@
-run tasker:         cd $dir_magnify;./wrapper.sh
-recent lecture:     cd EXTERNAL;./run.sh
-vendor:             cd $dir_vendor;./iris
-use project:        cd TEST;./test.sh
-run vendor code: $dir_vendor/run.sh
-watch a lecture: vlc `cat lecture.txt`
-awareness to pending feature: source $dir_library/use.cfg

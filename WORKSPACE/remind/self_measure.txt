@@ -1,0 +1,7 @@
+SELF - measure:
+tasker is  running ?:cd INDEPENDANT/ORDER/; ./wrapper.sh
+hotkeys are installed?:cd INDEPENDANT/ORDER/hotkeys;cat list.txt
+suspend.sh is runing by cron ?:locate suspend.sh; echo ln -s suspend.sh /tmp/CRONING;echo sudo crontab -l
+library is installed
+
+

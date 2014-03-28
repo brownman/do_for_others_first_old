@@ -1,0 +1,3 @@
+cd_croning:cd ~/JAIL/TREE/INDEPENDANT_SO_PROXIED/CODE/BANK/croning/0.0.1
+croning+suspend:cp /home/dao04/JAIL/TREE/HACKER/src/CODE/0.0.2/src/CONVERT/CODE/BANK/magnify_the_small/0.0.1/singles/suspend/suspend.sh /tmp
+hotkeys+cmd:echo add cmd to hotkeys.menu

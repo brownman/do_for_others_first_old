@@ -1,0 +1,3 @@
+add_to_robot:teach the robot a new command:gxmessage
+update_yaml_menu:edit .yaml and test the new menu
+
