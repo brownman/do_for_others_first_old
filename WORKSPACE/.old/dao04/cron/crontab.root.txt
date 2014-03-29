@@ -1,9 +1,0 @@
-SHELL=/bin/bash
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games
-#HOME=/home/guest
-#MAILTO=guest
-DISPLAY=:0 
-* * * * *   /usr/bin/env > ~/Desktop/cron-env
-* * * * *  bash -c "$dir_root/project/bin/croning.sh"
-
-

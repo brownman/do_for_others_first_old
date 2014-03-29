@@ -1,0 +1,4 @@
+run the recent vendor app:reason - it is great:/home/dao04/JAIL/TREE/ROUTES/VENDOR/recent.cfg
+show the list of available lectures:reason - 1 minute is cool:/home/dao04/JAIL/TREE/ROUTES/LECTURE/recent.cfg
+remind of project pending feature:reason - fun:/home/dao04/JAIL/TREE/ROUTES/PROJECT/recent.cfg
+
