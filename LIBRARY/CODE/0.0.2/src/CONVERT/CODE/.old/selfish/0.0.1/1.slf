@@ -1,0 +1,8 @@
+#!./bin/selfish 
+env
+
+
+steps(){
+echo 'steps'
+}
+steps
