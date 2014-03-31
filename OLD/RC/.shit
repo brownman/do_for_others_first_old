@@ -1,0 +1,15 @@
+proxy(){
+    local args=( "$@" )
+    local cmd="${args[@]}"
+    local base=`basename $0`
+    echo  "[$base] [cmd] [ $cmd ]" >> /tmp/proxy
+    ( eval "$cmd" ) 1>/dev/null 2>/dev/null
+    local res=$?
+    if [ "$res" -eq 0 ];then
+       eval "$cmd"
+    else
+        #error code
+        echo "[warning][code:$res]" >> /tmp/proxy
+    fi
+}
+
