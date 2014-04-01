@@ -1,0 +1,10 @@
+new_word
+reminder
+list todo
+sleep 6
+reminder 
+list done
+sleep 6
+awake 60
+lecture_recent
+plugins_menu
