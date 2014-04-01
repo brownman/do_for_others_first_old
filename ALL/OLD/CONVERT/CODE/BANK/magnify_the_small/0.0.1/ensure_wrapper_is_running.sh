@@ -2,7 +2,9 @@ let 'counter_death=0'
 func(){
 while [ 1 ];do
     cowsay "new life: $counter_death"
-local   cmd="./wrapper.sh bin/1_tasker/tasker.sh"
+#local   cmd="./wrapper.sh bin/1_tasker/tasker.sh"
+
+cmd="$sh_wrapper ./wrapper.sh"
    echo "$cmd"
    (   eval "$cmd" 2>/tmp/err )
 
@@ -18,3 +20,4 @@ local   cmd="./wrapper.sh bin/1_tasker/tasker.sh"
 done
 }
 func
+
