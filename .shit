@@ -1,0 +1,15 @@
+if [ $res -eq 1 ]; then
+        local str=`echo "$action" | sed 's/_/ /g'`;
+        echo proxy flite -t "$str";
+        echo 'returning/exiting';
+        if [ $0 = "bash" ]; then
+            cmd="returning $res";
+            echo proxy "$cmd";
+        else
+            cmd="exiting $res";
+            echo proxy "$cmd";
+        fi;
+    else
+        echo '[OK]'
+    fi
+
