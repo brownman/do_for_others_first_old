@@ -1,7 +1,7 @@
-echo https://github.com/0k/shyaml
+#echo https://github.com/0k/shyaml
 start(){
-print_color 32  '1. present yaml'
-print_color 33  '2. test'
+proxy print_color 32  '1. present yaml'
+proxy print_color 33  '2. test'
 }
 
 search_dir_tests(){
