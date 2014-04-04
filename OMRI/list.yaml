@@ -1,0 +1,107 @@
+voice_recognition:
+    title: use google voice API
+    cmd: echo hi
+    url: http://www.thegeekstuff.com/2009/05/sound-exchange-sox-15-examples-to-manipulate-audio-files/#more-486
+
+
+LESSON_LEARNED:
+===================
+4. Get Audio File Information
+
+The stat option can provide lot of statistical information about a given audio file. The -e flag tells sox not to generate any output other than the statistical information.
+
+$ sox foo.wav -e stat
+
+
+
+1. Combine Multiple Audio Files to Single File
+
+With the -m flag, sox adds two input files together to produce its output. The example below adds first_part.wav and second_part.wav leaving the result in whole_part.wav. You can also use soxmix command for this purpose.
+
+$ sox -m first_part.wav second_part.wav whole_part.wav
+
+
+
+7. Record a Voice File
+
+‘play’ and ‘rec’ commands are companion commands for sox . /dev/dsp is the digital sampling and digital recording device. Reading the device activates the A/D converter for sound recording and analysis. /dev/dsp file works for both playing and recording sound samples.
+
+$ sox -t ossdsp /dev/dsp test.wav
+You can also use rec command for recording voice. If SoX is invoked as ‘rec’ the default sound device is used as an input source.
+
+$ rec -r 8000 -c 1 record_voice.wav
+
+
+
+9. Changing the Sampling Size of a Sound File
+
+If we increase the sampling size , we will get better quality. Sample Size for audio is most often expressed as 8 bits or 16 bits. 8bit audio is more often used for voice recording.
+
+-b Sample data size in bytes
+-w Sample data size in words
+-l Sample data size in long words
+-d Sample data size in double long words
+The following example will convert 8-bit audio file to 16-bit audio file.
+
+$ sox -b input.wav -w output.wav
+
+
+
+
+10. Changing the Number of Channels
+
+The following example converts mono audio files to stereo.  Use Option -c to specify the number of channels .
+
+$ sox mono.wav -c 2 stereo.wav
+There are methods to convert stereo sound files to mono sound.  i.e to get a single channel from stereo file.
+
+
+
+
+
+Selecting a Particular Channel
+This is done by using the avg effect with an option indicating what channel to use. The options are -l for left, -r for right, -f for front, and -b for back.  Following example will extract the left channel
+
+$ sox stereo.wav -c 1 mono.wav avg -l
+Average the Channels
+$ sox stereo.wav -c 1 mono.wav avg
+
+
+
+
+
+11. Audio Converter – Music File Format Conversion
+
+Sox is useful to convert one audio format to another. i.e from one encoding (ALAW, MP3) to another. Sox can recognize the input and desired output formats by parsing the file name extensions . It will take infile.ulaw and creates a GSM encoded file called outfile.gsm. You can also use sox to convert wav to mp3.
+
+$ sox infile.ulaw outfile.gsm
+If the file doesn’t have an extension in its name , using ‘-t’ option we can express our intention . Option -t  is used to specify the encoding type .
+
+$ sox -t ulaw infile -t gsm outfile
+
+
+
+
+
+15. Convert Raw Audio File to MP3 Music File
+
+There is no way to directly convert raw to mp3 file because mp3 will require compression information from raw file . First we need to convert raw to wav. And then convert wav to mp3.  In the exampe below, option -h indicates high quality.
+
+Convert Raw Format to Wav Format:
+
+$ sox -w -c 2 -r 8000 audio1.raw audio1.wav
+Conver Wav Format to MP3 Format:
+
+$ lame -h audio1.wav audio1.mp3
+
+This article was written by SelvaGaneshan. 
+
+
+
+13. Speed up the Sound in an Audio File
+
+To speed up or slow down the sound of a file, use speed to modify the pitch and the duration of the file. This raises the speed and reduces the time. The default factor is 1.0 which makes no change to the audio. 2.0 doubles speed, thus time length is cut by a half and pitch is one interval higher.
+
+Syntax: sox input.wav output.wav speed factor
+
+$ sox input.wav output.wav speed 2.0

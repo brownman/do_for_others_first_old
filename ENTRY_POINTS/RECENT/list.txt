@@ -1,0 +1,7 @@
+share questions|cd OMRI/projects/plugins/0.0.1
+library dir|cd /home/dao04/JAIL/TREE/BANK/TOOLS/BANK/library
+fix lister|cd BANK/TOOLS/BANK/lister/0.0.1/
+omri script|LAB/BANK/steps.sh
+sed presentation|TREE/PRESENT/sed.sh
+
+

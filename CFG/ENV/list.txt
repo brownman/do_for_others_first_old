@@ -1,4 +1,0 @@
-proxy.cfg
-set.cfg
-every.cfg
-random.cfg
