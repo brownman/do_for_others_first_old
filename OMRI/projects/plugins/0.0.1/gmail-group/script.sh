@@ -17,7 +17,9 @@
 set -o nounset
 #echo "shell level: $SHLVL"
 dir_self=`dirname $BASH_SOURCE`
+source $dir_self/vars.cfg
 source $dir_self/../breath.cfg
+
 print_script
 
 
