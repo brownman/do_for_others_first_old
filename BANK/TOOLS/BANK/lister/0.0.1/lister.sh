@@ -1,4 +1,5 @@
 #!/bin/bash  
+#info: parse a list of cetain types which determined by the commented part
 
 set -o nounset
 #set -o pipefail

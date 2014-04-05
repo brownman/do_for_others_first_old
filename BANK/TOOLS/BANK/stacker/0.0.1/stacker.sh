@@ -1,4 +1,5 @@
 #!/bin/bash -e
+#info: show the stack
 tree
 path=`dirname $0`
 source $path/cfg/config2.cfg

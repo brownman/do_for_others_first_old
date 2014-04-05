@@ -1,4 +1,5 @@
 #!/bin/bash 
+#info: simple lister: run every line at list.txt
 #question: is 'let 'x=9' is local?
 set -o nounset
 

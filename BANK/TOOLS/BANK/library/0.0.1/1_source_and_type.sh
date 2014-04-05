@@ -1,3 +1,4 @@
+#info: export the found functions to a new file at /tmp
 #file=${1:-/home/dao04/JAIL/TREE/BANK/CFG/REGULAR/.old/PRE-LIB/SPLIT_ME/helper.cfg}
 dir_self=`dirname $BASH_SOURCE`
 

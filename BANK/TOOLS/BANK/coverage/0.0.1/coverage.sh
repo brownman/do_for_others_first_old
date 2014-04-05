@@ -1,4 +1,5 @@
 #!/bin/bash 
+#info: cover functions
 set -o nounset
 #depend_func: print_color print_color_n proxy reason_of_death
 path_self=`dirname $0`
@@ -71,8 +72,8 @@ log_print(){
     print_file $file_trace
 }
 log_use(){
-print_func
-echo
+    print_func
+    echo
     update_clipboard "$cmd"
     exiting
 }
@@ -133,7 +134,7 @@ coverage(){
             proxy reason_of_death "[TAG] is not recognized - please add an handler for it before continue" "$str_ptrn"
         fi
     else
-#        echo [UNCOVERED:]
+        #        echo [UNCOVERED:]
         details
         proxy reason_of_death "Empty tag: $str_ptrn" "$func_name" 
     fi
@@ -142,14 +143,14 @@ coverage(){
 
 
 ensure_path(){
- #   print_func
+    #   print_func
 
     if [[ -z "$path" ]];then
         proxy reason_of_death  "path must be set" "$path"
     else
         export path_self=$path_self
-  #      echo '[path_self:]  ' $path_self
-   #     sleep 2
+        #      echo '[path_self:]  ' $path_self
+        #     sleep 2
     fi
 
 
@@ -192,12 +193,12 @@ step1(){
 
 
     str=`cat $file_level` 
-if [ -f "$file_cfg" ];then
+    if [ -f "$file_cfg" ];then
 
-    source $file_cfg
-else
-proxy reason_of_death "file not exist" "$file_cfg"
-fi
+        source $file_cfg
+    else
+        proxy reason_of_death "file not exist" "$file_cfg"
+    fi
 
 
     if [ "$str" != '' ];then
@@ -249,12 +250,12 @@ steps_new(){
     #dependencies
     #ensure_path
     set_vars
-if [ -f "$file_cfg" ];then
+    if [ -f "$file_cfg" ];then
 
-    source $file_cfg
-else
-    proxy reason_of_death "file not exist" "$file_cfg"
-fi
+        source $file_cfg
+    else
+        proxy reason_of_death "file not exist" "$file_cfg"
+    fi
 
     str=`   cat $file_cfg | grep '(){' | sed 's/(){//g'`
     arr=( $str )
@@ -262,13 +263,13 @@ fi
     max="${#arr[@]}"
 
 
-        echo "funcs: ${arr[@]}"
-        echo "max funcs: $max"
-        sleep 2
+    echo "funcs: ${arr[@]}"
+    echo "max funcs: $max"
+    sleep 2
     if [ "$max" -gt 0 ];then
         funcs="${arr[@]}"
         for func in $funcs;do
-                    echo "func: $func"
+            echo "func: $func"
             coverage $file_cfg $func info
             coverage $file_cfg $func check
         done
@@ -280,16 +281,20 @@ fi
 
 
 }
-if [ $# -gt 0 ];then
+if [ $0 = $BASH_SOURCE];then
+
+    if [ $# -gt 0 ];then
 
 
-    filename=$1
+        filename=$1
 
-    file_cfg=$path/$filename
-else
-    proxy reason_of_death 'supply a .cfg file'
+        file_cfg=$path/$filename
+    else
+        proxy reason_of_death 'supply a .cfg file'
+    fi
+
+    steps_new
+
+
 fi
-
-steps_new
-
 popd >/dev/null

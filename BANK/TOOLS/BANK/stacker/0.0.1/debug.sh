@@ -1,4 +1,5 @@
 #!/bin/bash
+#info: update PS4 to enable colorful debugging
 #url: http://wiki.bash-hackers.org/scripting/debuggingtips?s[]=trace
  
 #color_def="~/.colorrc"

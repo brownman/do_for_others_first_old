@@ -1,4 +1,4 @@
-
+#info: search a func from root dir
 #http://unix.stackexchange.com/questions/18811/how-to-obtain-inverse-behavior-for-tail-and-head
 set -o nounset
 clear

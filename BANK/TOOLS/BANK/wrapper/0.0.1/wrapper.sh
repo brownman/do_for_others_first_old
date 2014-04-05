@@ -1,4 +1,5 @@
 #!/bin/bash -e
+#info: execute a script and print its errors
 proxy print_script
 set -o nounset
 ################################## start
