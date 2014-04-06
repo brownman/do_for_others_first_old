@@ -1,3 +1,3 @@
-load pre|source $dir_root/BANK/CFG/PRE/breath.cfg
-load env|source $dir_root/BANK/CFG/ENV/breath.cfg
-load regular|source $dir_root/BANK/CFG/REGULAR/breath.cfg
+load pre|$dir_root/BANK/CFG/PRE/breath.cfg
+load env|$dir_root/BANK/CFG/ENV/breath.cfg
+load regular|$dir_root/BANK/CFG/REGULAR/breath.cfg
