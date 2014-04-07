@@ -26,4 +26,13 @@ local cmd="cat $BASH_SOURCE | grep level | sed 's/#level://g'"
 
         done
     }
+trap_err(){
+#print_shlvl
+    print_color 31 "[TRAP] $?"
+        local str_caller=`    caller`
+        local cmd="vi +${str_caller}"
+        proxy "update_clipboard \"$cmd\""
+#        return 0
+        proxy go_home
+}
 

@@ -1,0 +1,11 @@
+exporting(){
+   local var=$1
+   local value=$2
+   echo -n "[ $var ] "
+   present1 pv "$value"
+local cmd="export ${var}=${value}"
+proxy "$cmd"
+    }
+
+
+
