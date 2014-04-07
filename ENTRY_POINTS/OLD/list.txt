@@ -1,0 +1,16 @@
+setting verbosity level|increase awareness to the environment - show the project global vars: debug/verbose/sound/present mode / etc|ENV
+backup proxy|encourage writing new tests|BACKUP
+bashrc friend|bashrc load functions from the library|BASHRC
+remind recent|remind me what I planned to do|RECENT
+show quick command|show me the quick commands and layouts|QUICK
+
+
+
+catch every error|CATCH
+log every step|PROXY
+random by weight|RANDOM
+set color red for errors|TRAP
+
+
+
+

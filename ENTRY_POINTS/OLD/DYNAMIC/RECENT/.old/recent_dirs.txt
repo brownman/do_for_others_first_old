@@ -6,6 +6,3 @@ fix lister|BANK/TOOLS/BANK/lister/0.0.1/
 omri script|LAB/BANK/steps.sh
 sed presentation|TREE/PRESENT/sed.sh
 
-
-
-

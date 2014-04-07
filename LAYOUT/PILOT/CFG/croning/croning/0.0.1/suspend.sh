@@ -1,1 +1,0 @@
-/home/dao04/JAIL/TREE/works/magnify_the_small/0.0.1/singles/suspend/suspend.sh

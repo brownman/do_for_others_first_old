@@ -18,7 +18,7 @@ echo
 }
 
 link(){
-ln -s $PWD  /tmp/CRONING
+ln -sf $PWD  /tmp/CRONING
 
 #$dir_indication /tmp/CRONING/INDICATION
 #ln -s $dir_env /tmp/CRONING/env

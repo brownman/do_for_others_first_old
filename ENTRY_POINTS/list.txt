@@ -1,11 +1,1 @@
-setting verbosity level|ENV
-catch every error|CATCH
-log every step|PROXY
-show quick command|QUICK
-random by weight|RANDOM
-
-set color red for errors|TRAP
-
-
-
 
