@@ -13,3 +13,72 @@ if [ $res -eq 1 ]; then
         echo '[OK]'
     fi
 
+run_dir(){
+    echo -n "[ run_dir] "
+        echo $dir
+        local dir0="$1"
+        local dir=`echo "$dir0"`
+#local dir_self=$(where_am_i)
+#  local dir_self=$( echo `dir_self` )
+#`dirname $BASH_SOURCE`
+
+        if [ -d "$dir" ];then
+            print_color 34 "[RUN_DIR] $dir";
+
+    local            file="$dir/breath.cfg"
+        [ -f "$file" ] && { source $file; } || { echo 'file not found' "$file";return 0 ; }
+        else
+            echo "no such dir:" "=_${dir}_=" 
+                proxy       go_home 
+                fi 
+                proxy sleep 5
+}
+callers(){
+    print_color 35 '[callers]'
+        present1 figlet CALLERS
+        local count=0
+        local res=0
+        local max="${#BASH_LINENO[@]}"
+        let 'max-=1'
+        while [ "$count" -lt  "$max" ];do
+            echo -n "$count of $max : "
+                local str_caller=$( caller "$count" )
+#if [ "$str_callers" = '' ];then
+#    break
+#    else
+                echo "vi +${str_caller}" 2>/dev/null
+#    fi
+
+                let 'count+=1'
+                done
+}
+
+
+       esac
+ 
+    case "$type" in 
+    echo)
+        /bin/echo $@
+    normal)
+        echo "$desc"
+        ;;
+    figlet)
+        eval "figlet '$desc'";
+    proxy sleep 2
+        ;;
+    notify-send)
+        eval "notify-send '$desc' '$desc2'"
+        ;;
+    pv)
+        eval "pv '$desc'"
+        ;;
+    toilet)
+        eval "toilet --gay \"$desc\"";
+    proxy sleep 2
+        ;;
+    *)
+        eval "print_color 31 'present of type: $1 not defined '"
+        go_home
+        ;;
+    esac
+
