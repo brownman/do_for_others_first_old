@@ -1,10 +1,16 @@
 #!/bin/bash  
 #info: parse a list of cetain types which determined by the commented part
 
-set -o nounset
+cmd="set -o nounset"
+every 3 "$cmd"
 #set -o pipefail
 
-
+reason_of_death(){
+echo "reason of death"
+echo "$1"
+echo "$2"
+exit
+}
 
 
 path=${path:-"$PWD"}
@@ -40,10 +46,10 @@ get_list(){
             proxy print_color_n 34 '[LIST]'
             echo "$file_list"
         else
-            proxy reason_of_death 'not a file' "$file_list" 
+            proxy "reason_of_death 'not a file' \"$file_list\"" 
         fi
     else
-        proxy reason_of_death 'supply a list of tasks'
+        reason_of_death 'supply a list of tasks'
     fi
 
 
@@ -175,16 +181,16 @@ ttt(){
         if [ "$res" -eq 1 ];then
             echo -n '[err] '
             cat /tmp/err  | head -1
-            proxy reason_of_death "test failed" "$cmd" 2
+            reason_of_death "test failed" "$cmd" 2
         else
             cmd0='echo -n [out] '
             cmd='cat /tmp/out  | head -1'
             every 10 "$cmd0;$cmd" 'trace [SKIP] presenting /tmp/out'
 
         fi
-        #{ echo >&2 "[ error ] $cmd"; proxy reason_of_death "invalid command: " " $cmd"; }
+        #{ echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
     else
-        proxy reason_of_death "empty command" 
+        reason_of_death "empty command" 
     fi
 
     #            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
@@ -205,13 +211,13 @@ eat(){
         #    eval "$cmd"
 
         #breakpoint_line $LINENO
-        # eval "$cmd" 1>/dev/null 2>&1   &&  echo >&2 proxy reason_of_death 'invalid script' "$script" 
+        # eval "$cmd" 1>/dev/null 2>&1   &&  echo >&2 reason_of_death 'invalid script' "$script" 
 
         #test "$cmd"
 
-        #            eval "$cmd" >/dev/null 2>&1 && { echo >&2 "[ error ] $cmd"; proxy reason_of_death "invalid command: " " $cmd"; } || { echo ok;} 
+        #            eval "$cmd" >/dev/null 2>&1 && { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; } || { echo ok;} 
         #           sleep 10
-        #            eval "$cmd" >/dev/null 2>&1 || { echo >&2 "[ error ] $cmd"; proxy reason_of_death "invalid command: " " $cmd"; }
+        #            eval "$cmd" >/dev/null 2>&1 || { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
         #       echo "line: $LINENO" 
         #      echo "line: ${LINENO[0]}" 
         #          breakpoint_line
@@ -224,7 +230,7 @@ eat(){
             cmd="$validation2 $script"
             ttt "$cmd"
             #commander "$cmd"
-            #proxy reason_of_death 'invalid validation' "$validation" 
+            #reason_of_death 'invalid validation' "$validation" 
 
         fi
 
@@ -250,10 +256,10 @@ eat(){
                     exiting
                 fi
             else 
-                proxy reason_of_death 'validation failed' "$cmd"
+                reason_of_death 'validation failed' "$cmd"
             fi
         else
-            proxy reason_of_death "empty tag: validation"
+            reason_of_death "empty tag: validation"
         fi
 
     done
@@ -309,7 +315,7 @@ if [ "$#" -gt 0 ];then
     list_name=$1
 else
     list_name=list
-    #proxy reason_of_death 'supply a file with tasks'
+    #reason_of_death 'supply a file with tasks'
 fi
 steps
 

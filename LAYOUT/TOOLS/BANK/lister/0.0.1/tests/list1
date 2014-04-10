@@ -1,0 +1,6 @@
+#help:     parse each line 
+#parse_file:grep -v '^#' filename
+#parser: echo|notify-send|echo
+#|\$coverage_sh
+#level:    2
+zbabun|sababa
