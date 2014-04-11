@@ -1,0 +1,5 @@
+funcs.cfg
+env.cfg
+quick.cfg
+save.cfg
+proxy.cfg

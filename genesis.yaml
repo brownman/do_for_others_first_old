@@ -1,0 +1,34 @@
+Todo:
+  - create layout for all the sub-layouts
+  - system.hotkeys
+  - linconnect+shyaml
+
+ChangeLog:
+  - start mvc: use layout before loading/using project
+  - add save command to cli searches
+
+
+
+day:  friday
+date: 11.4.2014
+
+    
+
+
+big_stones_first:
+  life:
+    shalva: check if parents are at home
+  project:
+    motivation: do for others first - think how happy will it be to utilize gmail_group all of us!
+    self_presenting:
+      project_readiness: add layout features
+      layout: dont exit if error - only print level of readiness :test/presentation/lists available/coverage level
+        presentations: 
+          imagine_first: motivation for pushing forward an idea
+          recent_places: url i need to visit
+
+  system:
+      wallpaper: change base upon workspace
+      hotkeys:   control+f1 - pop up robot which serve a question | search 
+      croning:
+
