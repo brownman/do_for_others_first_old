@@ -82,3 +82,24 @@ callers(){
         ;;
     esac
 
+read_tag(){
+    local file=$1
+    local funcs=$2
+    local tag=$3
+    echo -e "\t\t[ $func ]"
+    #alias "$func=\"echo $func\""
+
+
+    local str=$( cat $file | grep $func -A 1 | grep $tag )
+    if [ -n "$str" ];then
+        echo -ne "\t\t\t[ $tag ] "
+        echo $str
+    else 
+        echo "[ERROR] empty tag $tag"
+        local cmd="vi $file"
+        update_clipboard "$cmd"
+        proxy go_home
+    fi
+    #| tail -1 
+}
+

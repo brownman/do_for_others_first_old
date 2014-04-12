@@ -1,2 +1,12 @@
+exo-open http://google.com zoo israel
+
 exo-open https://github.com/brownman/brownman.github.com/edit/master/README.md
 
+https://www.google.co.il/?gfe_rd=cr&ei=yhNJU9rADKeAiAbzpIDYAQ#q=%D7%92%D7%9F+%D7%97%D7%99%D7%95%D7%AA
+https://www.google.co.il/?gfe_rd=cr&ei=yhNJU9rADKeAiAbzpIDYAQ#q=%D7%92%D7%9F+%D7%97%D7%99%D7%95%D7%
+https://www.google.co.il/?gfe_rd=cr&ei=yhNJU9rADKeAiAbzpIDYAQ#q=%D7%92%D7%9F+%D7%97%D7%99%D7%95%D7%
+https://www.google.co.il/?gfe_rd=cr&ei=yhNJU9rADKeAiAbzpIDYAQ#q=%D7%92%D7%9F+%D7%97%D7%99%D7%95%D7%
+https://www.google.co.il/?gfe_rd=cr&ei=yhNJU9rADKeAiAbzpIDYAQ#q=%D7%92%D7%9F+%D7%97%D7%99%D7%95%D7%
+https://www.google.co.il/?gfe_rd=cr&ei=yhNJU9rADKeAiAbzpIDYAQ#q=%D7%92%D7%9F+%D7%97%D7%99%D7%95%D7%
+12_21_40
+12_21_40
