@@ -1,4 +1,5 @@
 #!/bin/bash
+export runner="bash -x"
 every 4 "set -o nounset"
 pushd `dirname $0`>/dev/null
 echo "[WRAPPER]"
@@ -12,7 +13,7 @@ steps(){
 export     dir_root=`where_am_i $0`
 if [ -n "$cmd" ];then
     source $dir_root/setup.cfg
-    proxy "$runner_debug $cmd"
+    proxy "$runner $cmd"
 else
     echo supply a script to wrap
 fi

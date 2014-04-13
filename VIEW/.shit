@@ -1,0 +1,10 @@
+if [ $0 = bash ];then
+    exec 1>/dev/null
+    ptrn="$dir_self/BANK/*"
+    export MODE=mute
+else
+    str="$1"
+    export action_type=`higher $str`
+    export MODE=$action_type
+fi
+

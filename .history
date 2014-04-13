@@ -14,3 +14,4 @@ cd /home/dao04/JAIL/TREE/.TRICK && echo   bash
 cd /tmp && echo   tree -L 2
 cd /home/dao04/JAIL/TREE/VIEW/BANK/PILOT/CFG/magnify_the_small/0.0.1 && echo   ./looper.sh bin/0_sos/sos.sh 
 cd /home/dao04/JAIL/TREE/VIEW/BANK/TOOLS/BANK/stacker/0.0.1 && echo   ls
+cd /home/dao04/JAIL/TREE/VIEW/PENDING/WRAPPER/OLD/CFG/CFG1/stacker/0.0.1 && echo   ls
