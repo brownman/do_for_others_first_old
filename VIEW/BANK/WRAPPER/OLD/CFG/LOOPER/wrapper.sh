@@ -1,14 +1,16 @@
 #!/bin/bash -e
 #info: execute a script and print its errors
-proxy print_script
+echo  proxy print_script
 set -o nounset
 ################################## start
+export file_error=/tmp/err
+export file_out=/tmp/out
 args=()
 #path_self=`dirname $0`
 if [ "$#" -gt 0  ];then
     args=( "$@" )
 else
-proxy reason_of_death 'supply arguments'
+echo  proxy reason_of_death 'supply arguments'
 fi
 #########################################
 
@@ -39,10 +41,10 @@ parse_error_line(){
             proxy            update_clipboard "$cmd"
 
         else
-            proxy  reason_of_death 'incorrect parsing of line' "$file"
+echo            proxy  reason_of_death 'incorrect parsing of line' "$file"
         fi
     else
-        proxy  reason_of_death 'got empty line from file' "$file"
+    echo    proxy  reason_of_death 'got empty line from file' "$file"
     fi
 }
 
@@ -89,7 +91,7 @@ wrap_runner(){
           proxy  "$cmd1"
         fi
     else
- proxy reason_of_death 'no arguments'
+echo proxy reason_of_death 'no arguments'
     fi
 }
 
@@ -99,7 +101,7 @@ set_dir_for_logs(){
      proxy   tree -L 2 $dir_log
         #echo
     else
-        proxy reason_of_death 'invalid directory' "$dir_log"
+    echo    proxy reason_of_death 'invalid directory' "$dir_log"
     fi
 
 

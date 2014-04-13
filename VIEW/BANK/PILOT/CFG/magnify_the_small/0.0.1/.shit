@@ -242,4 +242,11 @@ zenity1(){
 
     echo "$res"
 }
+exec 2>/tmp/err
+trap_err(){
+gxmessage -file /tmp/err -title 'found error'
+go_home
+}
+trap trap_err ERR
+
 

@@ -92,11 +92,13 @@ play1(){
                 #declare  -i  counter
                 local counter=0
                 while [[  $counter -lt  $times1 ]]; do
-                    play -V1 -q  "$1"
+
+                ( play -V1 -q  "$1" &)
+                proxy sleep 2
                     (( counter++ ))
                 done
             else
-                play -V1 -q  "$1"
+                ( play -V1 -q  "$1" &)
             fi
             export PLAYING_ON=false
         else

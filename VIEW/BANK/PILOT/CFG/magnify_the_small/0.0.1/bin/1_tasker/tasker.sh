@@ -47,7 +47,7 @@ if [ -f "$file_list_room" ];then
     echo
 
 else
-    reason_of_death "no such file" "$file_list_room"
+    echo reason_of_death "no such file" "$file_list_room"
 fi
 
     echo 'delay: 5 seconds'
@@ -72,14 +72,13 @@ parse(){
 use(){
     print_func
     echo 'use()'
-    if [ -f "$single_sh" ];then
+    if [ -f "$dir_root/$single_sh" ];then
 
-        cmd="$single_sh ${args[@]}"
-        echo "$cmd"
-        eval "$cmd"
+        cmd="$dir_root/$single_sh ${args[@]}"
+        proxy "$cmd"
     else
         echo 'no such script' "$single_sh"
-        exiting
+    proxy    go_home
     fi
 
 }

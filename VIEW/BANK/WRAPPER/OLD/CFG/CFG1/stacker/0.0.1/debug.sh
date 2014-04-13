@@ -113,7 +113,9 @@ if [ $# -gt 0 ]; then
          ;;
          *)
             FLAGS=-x
-            PS4="${level_color}+${script_color}"'(${BASH_SOURCE##*/}:${linenum_color}${LINENO}${script_color}):'" ${funcname_color}"
+
+            PS4="${level_color}+${script_color}"'(${0##*/}:${linenum_color}${LINENO}${script_color}):'" ${funcname_color}"
+            #PS4="${level_color}+${script_color}"'(${BASH_SOURCE##*/}:${linenum_color}${LINENO}${script_color}):'" ${funcname_color}"
             export PS4
             SCRIPT=$1
          ;;

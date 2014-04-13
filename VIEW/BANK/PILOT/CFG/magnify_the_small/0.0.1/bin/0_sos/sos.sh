@@ -1,11 +1,14 @@
-#!/bin/bash -e
+#!/bin/bash 
+echo "[SOS]"
+figlet --gay "[SOS]"
 #readiness: 2 of 5
 #about: sos.sh - run a loop with only 1 task: suspend
 #type: looper
 #tasks: suspend
 #help:  execute tasks in a loop
 #use:   set time period for: suspension/alive 
-
+zbabun
+touch /slkdjfklf
 set -o nounset
 pushd `dirname $0`
 path=`dirname $0`

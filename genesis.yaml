@@ -1,16 +1,22 @@
-Todo:
+Ensure:
+  - give yourself comfort: count points: 
   - be creative - how can I do for others first ... think...
-  - ok - now run to the other  workspace and work for 1 minute ! - I 
-  - sos is working ?
+  - prefer the easy first - and make the next step from the starting point = layout
+  - if stack ------------> try harder and think: what whould i do if was more flexible
+  - can life be more easy and fun ?   --- if so --- how ?
+  - layout present every activity ?
+  - sos is working ? 
   - tasker is working ?
-  - create layout for all the sub-layouts
-  - system.hotkeys
-  - linconnect+shyaml
+  - ok - now run to the other  workspace and work for 1 minute ! - I 
 
-ChangeLog:
-  - start mvc: use layout before loading/using project
-  - add save command to cli searches
+Todo:
+  - xfce4: auto setup workspaces: eclipse /securitytube etc.
+  - quick_alias: add  for adding a hotkey: f1 will trigger singles.list todo 
+  - layout: present  nested layouts
 
+Done:
+  new_commands:
+    - quick_genesis
 
 
 day:  friday
