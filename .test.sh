@@ -1,4 +1,5 @@
-source .trick.cfg
+source $dir_root/.trick.cfg
+echo 'enter loop'
 while :;do
 ascii_art
 proxy sleep 10
