@@ -12,6 +12,11 @@ subject:
         robot: find all files with pattern X run command Y until char Z
         syntax: -iname $where $who -exec $cmd {} $finish_char; 
         util: find
+    world_appearance:
+        util: /etc/services
+        options:
+            - port 23 is open --> stop service telnet!
+
       
 smart_cli_use:
     flag: exec

@@ -9,6 +9,7 @@ Ensure:
   - sos is working ? 
   - tasker is working ?
   - ok - now run to the other  workspace and work for 1 minute ! - I 
+  - f1 is working
 
 Todo:
   - xfce4: auto setup workspaces: eclipse /securitytube etc.
@@ -40,6 +41,6 @@ big_stones_first:
 
   system:
       wallpaper: change base upon workspace
-      hotkeys:   control+f1 - pop up robot which serve a question | search 
+      hotkeys:   control+f1 - pop up robot which serve a question \| search 
       croning:
 
