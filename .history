@@ -16,3 +16,5 @@ cd /home/dao04/JAIL/TREE/VIEW/BANK/PILOT/CFG/magnify_the_small/0.0.1 && echo   .
 cd /home/dao04/JAIL/TREE/VIEW/BANK/TOOLS/BANK/stacker/0.0.1 && echo   ls
 cd /home/dao04/JAIL/TREE/VIEW/PENDING/WRAPPER/OLD/CFG/CFG1/stacker/0.0.1 && echo   ls
 cd /home/dao04/JAIL/TREE/VIEW/PENDING/MAGNIFY/BANK && echo  298  ls
+cd /home/dao04 && echo   echo doxygen boo bsh-javainterpreter
+cd /home/dao04 && echo   echo aptitude -> securitytools
