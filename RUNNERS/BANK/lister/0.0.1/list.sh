@@ -47,7 +47,7 @@ if [ "$res" -eq 1  ];then
 }
 
 
-create_dirs
+#create_dirs
 step1
 popd>/dev/null
 set +o nounset

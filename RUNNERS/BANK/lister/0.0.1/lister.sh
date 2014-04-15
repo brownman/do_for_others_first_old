@@ -36,7 +36,7 @@ cover(){
     echo "available func: $str"
 }
 export(){
-    file_list="$path/$list_name"
+    file_list="$path/$file_name"
     file_list_tmp=/tmp/file_list_tmp
 }
 get_list(){
@@ -312,9 +312,9 @@ proxy    loop
 }
 
 if [ "$#" -gt 0 ];then
-    list_name=$1
+    file_name=$1
 else
-    list_name=list
+    file_name=list.txt
     #reason_of_death 'supply a file with tasks'
 fi
 steps
