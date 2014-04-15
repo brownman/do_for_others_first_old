@@ -1,1 +1,0 @@
-LISTER/list.sh

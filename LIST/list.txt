@@ -1,2 +1,2 @@
-.tricks
-.robot
+PENDING/tricks.cfg
+

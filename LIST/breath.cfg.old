@@ -1,0 +1,12 @@
+steps(){
+bash -c $dir_root/LIST/.indicator.cfg
+sleep 4
+source "$dir_root/LIST/trick.cfg"
+every 2 "bash -c ~/JAIL/TREE/.robot.cfg"
+every 10 "bash -c $dir_root/.test.sh"
+}
+
+
+#( set -e; steps )
+#&& { steps; }
+steps
