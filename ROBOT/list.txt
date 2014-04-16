@@ -1,0 +1,3 @@
+sourcing PENDING/tricks.cfg
+running PENDING/robot.cfg
+
