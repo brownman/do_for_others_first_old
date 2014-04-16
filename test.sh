@@ -14,15 +14,19 @@ ls /usr/bin
 }
 
 step5(){
-   wget -qO - http://www.asciiartfarts.com/random.cgi | sed -n '/<pre>/,/<\/pre>/p' | sed -n '/<table*/,/<\/table>/p' | sed '1d' | sed '$d' | recode html..ascii;
+   wget -qO - http://www.asciiartfarts.com/random.cgi | sed -n '/<pre>/,/<\/pre>/p' | sed -n '/<table*/,/<\/table>/p' | sed '1d' | sed '$d'
+   #| recode html..ascii;
 }
 
 
 steps(){
 #step1
-step3
-step4
+#step3
+#step4
+while 1:;do
 step5
+sleep 10
+done
 }
 
 steps
