@@ -1,5 +1,9 @@
 #!/bin/bash
+
 set -o nounset
+export dir_root=`dirname $0`
+source $dir_root/.0_effort.cfg
+
 step1(){
 $dir_root/LAB/breath.cfg
 }
