@@ -2,3 +2,5 @@ fast look for an old function
 quick  debug : set -x
 trap error + nounset: where is it?
 quick splitting a file with multiple functions to saperate files - one .cfg file per func
+robot - speak/get questions/be nice and funny
+fu - quick_query

@@ -1,10 +1,10 @@
 language: bash
-before_script:
-    - export dir_root=`pwd`
+#before_script:
+#    - export dir_root=`pwd`
 #before_script:
 #     - export dir_root="$PWD"
 #    - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx
 
 script:
-    - bash -c "$dir_root/.test.sh"
+    - bash -c "$PWD/test.sh"
 
