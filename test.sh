@@ -25,10 +25,13 @@ steps(){
 #step1
 #step3
 #step4
-while :;do
+#while :;do
 step5
 sleep 10
-done
+#done
+step5
+sleep 10
+step5
 }
 
 steps
