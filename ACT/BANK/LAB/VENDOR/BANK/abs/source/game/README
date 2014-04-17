@@ -1,0 +1,152 @@
+                          QUACKEY
+
+
+Installation
+------------
+
+The "qky.sh" script requires an ASCII UNIX-format word list file,
+one word per line, installed in /usr/share/dict.
+The name of the file must be "word.list" ...
+
+A suggested list is the script author's "yawl" word list package.
+http://bash.neuralshortcircuit.com/yawl-0.3.2.tar.gz
+  or
+http://ibiblio.org/pub/Linux/libs/yawl-0.3.2.tar.gz
+
+To run the script, simply type:   sh qky.sh
+Better yet, rename the qky.sh file to qky and make it directly
+executable by a "chmod 755 qky" and then copy it to the /usr/local/bin
+directory (as root). After that simply typing qky in an xterm or Gnome
+terminal invokes the script. (Repeat for the other scripts you wish
+to install.)
+
+As root, copy the "qky.6" man page file to /usr/local/share/man/man6
+if you wish.
+
+
+
+News
+----
+
+Version 0.2:
+
+Now part of this package is a "qkyv.sh" script that implements a
+_vulnerable_ version of Quackey.
+
+To run that script, simply type:   sh qkyv.sh   ... etc.
+
+...
+
+Version 0.3:
+05/22/08
+
+Added 9-letter word display to qkyv.sh (vulnerable version).
+My chief beta tester, my wife, had complained about this.
+
+Added "qkyv2.sh":
+Same as "qkyv.sh" but with listing of all possible 7+ letter
+anagrams appended to auto-save file.
+
+...
+
+Version 0.4:
+05/26/08
+
+Added "qbot.sh":
+This is a bot that has the computer play Quackey with any arbitrary
+letter set you give it. Shows just how much better machines are at
+anagramming than humans.
+
+
+Version 0.4.01:
+06/07/08
+
+Expanded "qbot.sh" to include 10-letter words.
+
+
+Version 0.4.02:
+06/17/08
+
+Added a man page (qky.6). Copy this file (as root) to
+/usr/local/share/man/man6.
+
+
+To run the script, simply type:   sh qbot.sh LETTERSET
+For example,   sh qbot.sh etaoinshrdlu
+   or
+               sh qbot.sh
+               and the script will ask you to input the letterset.
+
+The letterset is typically 10 or 13 letters, or something in that range.
+
+Among uses for the Quackey bot are:
+o Seeing what words you missed on a Quackey round
+  (input the same letter set to the bot).
+o Generating length-sorted word lists with interesting lettersets.
+  (May be saved to a file, for example:
+   sh qbot.sh etaoinshrdlu > etaoinshrdlu.savefile.txt
+o Cheating at on-line Scrabble.*
+     
+     * Do I feel guilty about creating a tool that can be used for
+       Scrabble cheating? Not a bit. Scrabble is a stupid game for
+       humans to waste their time on. Not to mention that it's trademarked
+       and owned by a corporate monopoly that sues everyone in sight.
+
+
+
+History
+-------
+
+My first contact with Perquackey was an article in a 1979 issue of
+_Creative Computing_. David E. Powers had written the game in Level
+II BASIC for the TRS-80 Model I. A few hours of typing in the listing
+and pressing <RUN/ENTER> gave me a black-and-white screen full of word
+columns that I anagrammed from a randomly generated letter set and
+the resultant scores. The program checked whether the input words were
+constructable and scored them accordingly. It was up to me, the player,
+to validate the words by looking them up in a paper dictionary.
+
+The program was good enough to make me wish that . . . it were just a
+little better, perhaps with an automatic word validity check against an
+in-memory dictionary. But, at the time, my coding skills weren't quite
+up to the task.
+
+Here's a sample of Powers' original code:
+
+  2050 FOR LR=1 TO LP+3
+  2060   T$=MID$(W$(LP,LQ),LR,1)
+  2070   IN=INSTR(LX$,T$)
+  2080   IF IN=0 THEN 2110
+  2090   MID$(LX$,IN,1)=" "
+  2100   GOTO 2130
+  2110   F(LP,LQ)=1
+  2120   ON LP+1 GOSUB 3840, 3860, 3880, 3900, 3920, 3940, 3960
+  2230 NEXT LR
+
+Whew! Makes you glad you have the option to code in Bash.
+
+While Powers' program in a sense "inspired" me, I most certainly didn't
+port, translate, or even have it at hand when I wrote qky.sh. BASIC
+spaghetti code is pretty much useless as a template. Better to start
+fresh.
+
+Compare the above snippet with an excerpt from qky.sh that, I suppose,
+accomplishes pretty much the same thing.
+
+  while [ "$idx" -lt "$strlen" ]
+  do
+    is_found=$(expr index "${local_LS[*]}" "${local_word:idx:1}")
+    if [ "$is_found" -eq "$NONCONS" ] # Not constructable!
+    then
+      echo "$FAILURE"; return
+    else
+      ((pos = ($is_found - 1) / 2))   # Compensate for spaces betw. letters!
+      local_LS[pos]=$NULL             # Zero out used letters.
+      ((idx++))                       # Bump index.
+    fi
+  done
+
+While I can't claim to be anything resembling a virtuoso scripter,
+I'd say my code is somewhat of an improvement on the original. On the
+other hand, Mr. Powers has likely improved his own coding skills over
+the past three decades and could possibly run rings around me now. . . .

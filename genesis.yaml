@@ -43,6 +43,6 @@ big_stones_first:
 
   system:
       wallpaper: change base upon workspace
-      hotkeys:   control+f1 - pop up robot which serve a question \| search 
-      croning:
+      hotkeys:   control+f1 - pop up robot which serve a question : search 
+      croning:   ?
 
