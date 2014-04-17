@@ -1,3 +1,10 @@
+
+trap_sigint(){
+clear
+return
+}
+
+trap trap_sigint SIGINT
 stepping(){
     sleep 1
     clear
@@ -8,7 +15,7 @@ grepping "$cmd" reason
 
 echo $cmd
 sleep 1
-eval "$cmd"
+( eval "$cmd" )
 sleep 2
 }
 
