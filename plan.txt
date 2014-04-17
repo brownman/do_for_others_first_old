@@ -1,1 +1,9 @@
-make f1 working!|type hotkeys_add
+cool
+iiif1 +  the robot of workspace  + gui menu 
+f1 calls the comforting  robot
+model: load also the runners: alias for debug/ alias  for fu / alias for trap/ alias  for library-multi-func splitter
+
+done:
+make presentation correction
+
+
