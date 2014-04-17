@@ -28,6 +28,7 @@ steps(){
 while :;do
 step5
 sleep 14
+reset
 done
 }
 
