@@ -1,3 +1,4 @@
+#info: add a snippet through a gui helper
 reset
 history1(){
 grep "$1" -lr --exclude-dir='.git' "$dir_root" | grep .cfg

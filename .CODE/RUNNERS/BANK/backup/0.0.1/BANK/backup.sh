@@ -1,3 +1,4 @@
+#info: backup the proxy - and watch if any progress has been made - if not : advice to go to google, etc
 backup_proxy(){
 echo "[BACKUP PROXY]"
 

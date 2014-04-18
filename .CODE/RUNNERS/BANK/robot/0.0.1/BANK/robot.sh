@@ -1,4 +1,5 @@
 #!/bin/bash 
+#info: everything is easy for the robot - and he knows many languages - let him deal with the hardest tasks
 clear
 echo '[robot]'
 #set -o nounset
@@ -136,7 +137,7 @@ loop(){
 steps(){
     
     set_env
-    sdf
+    #sdf
     #print_env
     loop
 }

@@ -1,2 +1,3 @@
-notify-send x
-xcowsay y
+echo gvim $dir_self/list.txt
+echo notify-send x
+echo xcowsay y
