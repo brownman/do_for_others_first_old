@@ -1,0 +1,2 @@
+show x|notify-send x
+show y|xcowsay y

@@ -1,8 +1,13 @@
-cool
+fix: sourcing :step1
+step2
+
+tos: robot is working  + gui menu
+create a list of commands - alt+f1 will trigger the 1st line, etc.
+SOURCE/ touch: translate.cfg --> read a line from douglas adams book + translateit  ! soo cool!
 iiif1 +  the robot of workspace  + gui menu 
 f1 calls the comforting  robot
 model: load also the runners: alias for debug/ alias  for fu / alias for trap/ alias  for library-multi-func splitter
-
+test: investigate debug.sh trap.sh etc... pattern regular exp
 done:
 make presentation correction
 
