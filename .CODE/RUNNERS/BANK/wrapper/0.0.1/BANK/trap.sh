@@ -1,3 +1,4 @@
+#info: trap the error - including shopt: nounset
 lib_name='trap'
 lib_version=20121026
 
