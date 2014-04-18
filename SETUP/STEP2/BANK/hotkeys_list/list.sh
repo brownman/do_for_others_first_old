@@ -15,7 +15,7 @@ line="$( eval $line_cmd )"
 
 cmd="hotkey_add $counter '$line'"
 echo "$cmd"
-proxy sleep 1
+#proxy sleep 1
 proxy "$cmd"
 let 'counter+=1'
 done<$file_list

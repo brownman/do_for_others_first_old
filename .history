@@ -19,3 +19,4 @@ cd /home/dao04/JAIL/TREE/VIEW/PENDING/MAGNIFY/BANK && echo  298  ls
 cd /home/dao04 && echo   echo doxygen boo bsh-javainterpreter
 cd /home/dao04 && echo   echo aptitude -> securitytools
 cd /home/dao04/JAIL/TREE/.CODE/RUNNERS/PENDING/robot/0.0.1/BANK && echo   ./robot.sh 
+cd /home/dao04/JAIL/TREE/SETUP/STEP2/BANK/hotkeys_list && echo   ls

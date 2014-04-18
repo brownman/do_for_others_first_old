@@ -1,21 +1,21 @@
-#!/bin/bash 
+#!/bin/bash
 #info: everything is easy for the robot - and he knows many languages - let him deal with the hardest tasks
-clear
-echo '[robot]'
 #set -o nounset
-
-
-echo '[ROBOT] ask for the smallest - but yet - possible'
-sleep 3
-
-echo 'save your answers in a  snippet'
 #_ __ ___ | |__   ___ | |_ 
 #| '__/ _ \| '_ \ / _ \| __|
 #| | | (_) | |_) | (_) | |_ 
 #|_|  \___/|_.__/ \___/ \__|
 #####################
-exec 2>/tmp/err
+#exec 2>/tmp/err
+intro(){
+clear
+echo '[robot]'
+echo '[ROBOT] ask for the smallest - but yet - possible'
+echo 'save your answers in a  snippet'
+}
+
 traps(){
+    print_func
 #url:    http://stackoverflow.com/questions/64786/error-handling-in-bash
     local str=$1
     echo "[ trap ] $str > $_ "
@@ -34,12 +34,14 @@ traps(){
 }
 
 set_env(){
-
+print_func
     dir_self=$( where_am_i )
     dir_txt=$dir_self/txt
     SMART=false
     timeout=20
 
+    }
+    set_traps(){
     #`dirname $0`
     trap traps err ERR
     trap traps sighup SIGHUP
@@ -48,9 +50,10 @@ set_env(){
     #ERR
     trap traps sigterm SIGTERM
     #ERR
-}
 
-proxy(){
+    }
+
+proxy1(){
     local args=( $@ )
     local cmd="${args[@]}"
     echo "$cmd" >> $dir_txt/proxy.txt
@@ -64,6 +67,7 @@ random_line(){
 
 }
 say(){
+    print_func
     echo say
     #try to trigger the command in a sub-shell - then report the results with hopefully - a  smiling robot
     local type=$1
@@ -76,6 +80,7 @@ say(){
 
 
 search_db(){
+    print_func
     if [ "$SMART" = false ];then
         local     line=$( cat "$file_commands" | grep  -m 1 "$cmd" )
     else
@@ -84,6 +89,7 @@ search_db(){
     return $?
 }
 try(){
+    print_func
     echo try
     local cmd="$@"
     search_db
@@ -97,7 +103,7 @@ try(){
 
 }
 found(){
-
+print_func
     local text=$( echo "$line" | cut -d'#' -f1 )      
     local text_ws=$( echo "$text" | sed 's/ /_/g' )
     local cmd=$( echo "$line" | cut -d'#' -f2 )      
@@ -117,6 +123,7 @@ found(){
 }
 
 loop(){
+    print_func
     echo '[ loop ]'
     proxy "flite -t 'the robot thinks - it is easy - try him - and correct him'"
 
@@ -135,7 +142,8 @@ loop(){
     done
 }
 steps(){
-    
+    print_func
+    intro
     set_env
     #sdf
     #print_env
