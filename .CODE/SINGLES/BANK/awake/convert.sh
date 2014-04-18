@@ -1,4 +1,5 @@
 #!/bin/bash
+#info: 
 pushd `basename $0`>/dev/null
 file=$1
 user=$LOGNAME

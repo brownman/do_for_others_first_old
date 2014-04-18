@@ -1,4 +1,5 @@
 #!/bin/bash
+#info: awake is auto suspension
 print_script
 #http://www.howtoforge.com/linux_setting_suid_sgid_bits
 #http://stackoverflow.com/questions/6119254/how-to-run-a-script-with-root-authority-in-linux

@@ -1,4 +1,6 @@
 #!/bin/bash -e
+#info: translate using google translate webpage
+#example: translation ru dog #sabaka...
 
 # about file:
 # plugin:      translation
