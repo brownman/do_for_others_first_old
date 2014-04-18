@@ -7,13 +7,15 @@ set -o nounset
 #file=/tmp/todo.txt
 pushd `dirname $0`
 
-    script_translate="$translate_sh"
+    script_translate="$single_translation"
 SOUND=false
 path=`dirname $0`
 secs=7
 lang=ru
 subject=${1:-general_subject}
-file=$dir_workspace/lists/txt/$subject.txt
+dir_tmp=/tmp
+#$dir_workspace/lists/txt/
+file=/tmp/$subject.txt
 file_tmp=/tmp/list_$subject.tmp.txt
 touch $file
 
