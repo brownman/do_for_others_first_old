@@ -193,3 +193,113 @@ echo "vi +$str_caller # $cmd" >> /tmp/proxy;
 };
 
 
+export dir_zero=~/JAIL/TREE
+export dir_root=$dir_root/PROJECT
+export dir_bank=$dir_root/BANK
+alias cdroot="cd $dir_root"
+
+alias cdroot2="cd $dir_root2"
+alias cdsetup="pushd  $dir_root2/SETUP;gvim .;popd"
+
+alias cdmovie="cd ~/JAIL/TREE/ACT/PENDING/3_WORKSPACE/BANK/vikings"
+alias cdworkspace="cd $dir_root2/ACT/BANK/WORKSPACE/BANK"
+alias cdhotkeys="cd $dir_root2/SETUP/STEP2/BANK/hotkeys_list"
+#alias locate="echo try-sudo updatedb && /usr/bin/locate;"
+echo "LOADING QUICK.cfg"
+shopt -s expand_aliases
+#alias quick_robot="$runner_robot"
+alias quickE="vi $BASH_SOURCE"
+export_funcs(){
+#alias pending="pending ${BASH_SOURCE[0]} ${LINENO[0]} ${BASH_LINENO[0]} caller"
+    export -f proxy
+        export -f go_home
+        export -f assert
+        export -f print_color
+
+}
+reminder(){
+#pending export -f print_file
+    echo -ne  "[viewS]"
+#alias | grep 'cd_\|view\|quick' 
+#        alias | grep view --color=auto | cut -d'=' -f1
+
+        local cmd1="alias | grep quick --color=auto | cut -d'=' -f1 > /tmp/quick"
+        eval "$cmd1"
+        random_line "/tmp/quick"
+#local cmd="every 5 \"$cmd1\" \"robot $cmd1\""
+#echo "$cmd"
+#3        proxy "every 5 '$cmd1'"
+
+}
+
+
+exports(){
+    export dir_root=$dir_root
+        export dir_view=$dir_root/view
+        export dir_cfg=$dir_root/CFG
+
+        export dir_code=$dir_root/CODE
+        export dir_entry=$dir_root/ENTRY_POINTS
+        export dir_view=$dir_root/VIEW
+        export dir_snippet=$dir_view/scripts/save_your_snippets
+        export dir_plugins=$dir_view/projects/plugins/0.0.1
+        export dir_tools=$dir_view/TOOLS
+
+        export dir_tools_bank=$dir_tools/BANK
+        export dir_library=$dir_tools_bank/library/0.0.1
+        export dir_stacker=$dir_tools_bank/stacker/0.0.1
+        export dir_coverage=$dir_tools_bank/coverage/0.0.1
+        export dir_lister=$dir_tools_bank/lister/0.0.1
+
+        export dir_vendor="$dir_root/VENDOR/0.0.1"
+        
+
+}
+export_vars(){
+    echo
+}
+aliases(){
+#CD
+        alias cd_view="cd $dir_view"
+
+        alias cd_tools="cd $dir_tools"
+        alias cd_library="cd $dir_library"
+#view
+        alias view_snippet="source $dir_snippet/breath.cfg"
+        alias view_tools="source $dir_tools/breath.cfg"
+        alias view_vendor="source $dir_vendor/breath.cfg"
+#QUICK
+        alias quick_makes_me_happy="cd $dir_view/"
+        alias quick_breath="$dir_self/RECENT/breath.cfg"
+        alias quick_listE="vi $dir_root/list.txt"
+        alias quick_debug="$dir_stacker/debug.sh"
+        alias quick_log="echo /tmp/proxy;print_line;cat -n /tmp/proxy | tail -5;echo;echo; echo /tmp/err;print_line; cat -n /tmp/err"
+
+        alias log="echo /tmp/proxy;print_line;cat -n /tmp/proxy | tail -5;echo;echo; echo /tmp/err;print_line; cat -n /tmp/err"
+        alias quick_pend="cat /tmp/pending | tail -5"
+        alias quick_set1="set +o nounset"
+alias tool_lister="$dir_lister/lister.sh"
+alias tool_coverage="$dir_coverage/coverage.sh"
+
+alias layout='cd $dir_view'
+#alias layoutPendingSource='source $dir_view/breath.cfg'
+#alias layoutPendingRun='$dir_view/breath.cfg pending'
+#alias layoutTestingSource='source $dir_view/breath.cfg'
+alias breath="source ./breath.cfg"
+alias quick_bookmark="save"
+
+alias quick_sos="~/JAIL/TREE/VIEW/BANK/PILOT/CFG/magnify_the_small/0.0.1/wrapper.sh bin/0_sos/sos.sh"
+
+alias quick_tasker="~/JAIL/TREE/VIEW/BANK/PILOT/CFG/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh"
+alias quick_genesis="vi $dir_root/genesis.yaml"
+alias quick_split="echo source $file; echo alias X or export Y"
+#alias runner_debug="vi /home/dao04/JAIL/TREE/VIEW/BANK/TOOLS/BANK/wrapper/0.0.1/BANK/stacker/0.0.1/debug.sh"
+#alias runner_debug=~/JAIL/TREE/VIEW/PENDING/WRAPPER/OLD/CFG/CFG1/stacker/0.0.1/debug.sh
+#alias runner_debug="/home/dao04/JAIL/TREE/VIEW/BANK/TOOLS/BANK/stacker/0.0.1/debug.sh"
+#alias toilet="/usr/bin/toilet --gay"
+}
+#present(){
+#    
+#    alias | grep quick --color=auto
+#    }
+

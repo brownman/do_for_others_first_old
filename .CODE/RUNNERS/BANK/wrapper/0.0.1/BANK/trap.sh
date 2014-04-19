@@ -261,7 +261,9 @@ function backtrace
     done
 }
 if [ $BASH_SOURCE = $0 ];then
+    echo exiting
     exit 0
 else
+    echo returning
 return 0
 fi

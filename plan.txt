@@ -1,5 +1,6 @@
 fix: sourcing :step1
 step2
+fu: query: syntax highlight in the terminal
 
 tos: robot is working  + gui menu
 create a list of commands - alt+f1 will trigger the 1st line, etc.
