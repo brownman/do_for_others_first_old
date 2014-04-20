@@ -32,3 +32,33 @@ traps(){
         gvim $file
     fi
 
+          caller_is)
+
+                #    proxy gxmessage "$( caller )" -title 'caller_is'
+                #notify-send 'call sleep' "$(caller)"
+local funcname="${FUNCNAME[2]}"
+#        regex='^([a-z]{1,}) ([0-9]{1,})$'
+
+#local        regex="^proxy\$"
+#([0-9])\$"
+#  regex="^${error_file}\$|^${error_file}\s+|\s+${error_file}\s+|\s+   ${error_file}\$"
+#              if [[ "$_backtrace" =~ $regex ]]
+
+        
+            #if [[ $error_lineno =~ $regex ]]
+
+            #xcowsay "funcname: $funcname"
+
+                if [ "$item" = "${funcname}" ] || [ "${item}1" = "$funcname" ];then
+
+#                 { echo "OK caller is proxy" ;res=0; }
+echo -n ''
+res=0
+                    else
+
+                 { echo "ERROR - caller is not $item" ;} 
+                        fi
+
+
+                ;;
+
