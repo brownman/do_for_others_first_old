@@ -1,0 +1,34 @@
+proxy1(){
+    local args=( $@ )
+    local cmd="${args[@]}"
+    echo "$cmd" >> $dir_txt/proxy.txt
+
+    (    eval "$cmd" 2>/tmp/err 1>/tmp/out )
+}
+
+
+traps(){
+    print_func
+    echo traps
+    #url:    http://stackoverflow.com/questions/64786/error-handling-in-bash
+    local str="$1"
+    echo "[ trap ] $str > $_ "
+    case  "$str" in
+        err)
+
+            local cmd="gxmessage -file /tmp/err -title '[ trap ] err' -timeout $timeout"
+            eval "$cmd"
+            ;;
+        *)
+            echo 
+            ;;
+    esac
+
+    say fail
+}
+
+    if [ ! -s $file  ];then
+        proxy xcowsay "create new file $file"
+        gvim $file
+    fi
+

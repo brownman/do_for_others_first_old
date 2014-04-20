@@ -1,5 +1,6 @@
-#!/bin/bash -e
-set -o nounset
+#!/bin/bash 
+#every 4 'set -x'
+#set -o nounset
 #. $file_trap
 #info: robot + speech recognition
 #details: everything is easy for the robot - and he knows many languages - let him deal with the hardest tasks
@@ -9,25 +10,62 @@ set -o nounset
 #| | | (_) | |_) | (_) | |_ 
 #|_|  \___/|_.__/ \___/ \__|
 #####################
-#exec 2>/tmp/err
+
+echo exec 2>/tmp/err
+safe(){
+proxy    present print_color_n 35 "[SAFE]  "
+    local act=$1
+    echo "$act"
+
+    case $act in
+        start)
+cmd="backup_steps"
+echo "$cmd"
+eval "$cmd"
+        echo
+        ;;
+    finish)
+        echo
+[ -s /tmp/proxy ] && { tail -1 /tmp/proxy; }
+[ -s /tmp/err ] && { cat /tmp/err; }
+        ;;
+    *)
+        proxy present print_color 31 '[ERROR] invalid option: $act'
+        echo zzzz
+        ;;
+esac
+}
+trigger(){
+    local args=( $@ )
+    local cmd="${args[@]}"
+    echo $cmd
+}
 cat(){
     if [ $# -eq 1 ];then
         local file=$1
+
+        local util=`which cat`
         if [ -f "$file" ];then
-            local num_lines=$( cat $file  |  wc -l )
+            local num_lines=$( $util $file  |  wc -l )
             #$( wc -l $file | cut -d' ' -f1 )
             if [ -s $file ] && [ $num_lines -gt 0 ];then
-                local util=`which cat`
+
                 eval "$util $file"
             else
                 present print_color 31 "create file $file"
                 gvim $file
             fi
         else
-            present print_color 31 "[ERROR] cat() - needs only 1 argument: the target file"
+            #     present print_color 31 "[ERROR] cat\(\) - needs only 1 argument: the target file"
+
+            gvim $file
+            echo ERROR  - need 1 arg
+
+
         fi
 
     fi
+    go_home
 }
 print_func(){
     echo "${FUNCNAME[1]}"
@@ -37,26 +75,6 @@ intro(){
     echo '[robot]'
     echo '[ROBOT] ask for the smallest - but yet - possible'
     echo 'save your answers in a  snippet'
-}
-
-traps(){
-    print_func
-    echo traps
-    #url:    http://stackoverflow.com/questions/64786/error-handling-in-bash
-    local str="$1"
-    echo "[ trap ] $str > $_ "
-    case  "$str" in
-        err)
-
-            local cmd="gxmessage -file /tmp/err -title '[ trap ] err' -timeout $timeout"
-            eval "$cmd"
-            ;;
-        *)
-            echo 
-            ;;
-    esac
-
-    say fail
 }
 
 set_env(){
@@ -76,6 +94,10 @@ set_env(){
     timeout=20
 
 }
+traps(){
+    present print_color 31 "trap [code]$? [args]$@ "
+    proxy sleep 2
+}
 set_traps(){
     #`dirname $0`
     trap traps err ERR
@@ -85,25 +107,13 @@ set_traps(){
     #ERR
     trap traps sigterm SIGTERM
     #ERR
-
 }
 
-proxy1(){
-    local args=( $@ )
-    local cmd="${args[@]}"
-    echo "$cmd" >> $dir_txt/proxy.txt
-
-    (    eval "$cmd" 2>/tmp/err 1>/tmp/out )
-}
 
 random_line(){
     echo 'random_line'
     local type="$1"
     local file=/tmp/${type}.txt
-    if [ ! -s $file  ];then
-        proxy xcowsay "create new file $file"
-        gvim $file
-    fi
 
 
     num=$(        cat $file | wc  -l )
@@ -155,48 +165,65 @@ found(){
     local text_ws=$( echo "$text" | sed 's/ /_/g' )
     local cmd=$( echo "$line" | cut -d'#' -f2 )      
     local file_cmd_out=/tmp/${text_ws}
-    if [ -s "$file_cmd_out" ];then
+    local file="$file_cmd_out"
+#update params
+local title="$text"
+local entrytext="$cmd"
+
+    if [ -s "$file" ];then
         #show the latest results for this command
-        local cmd_new=$( gxmessage -entrytext "$cmd" -file $file_cmd_out -timeout $timeout -title "$text" )
+#        local cmd_new=$( gxmessage -entrytext "$cmd" -file $file_cmd_out -timeout $timeout -title "$text" )
+cmd_new=$( gxmessage_file "$file" "$title" "$entrytext" )
     else
-        local cmd_new=$( gxmessage -entrytext "$cmd" "$text" -timeout $timeout )
+ #       local cmd_new=$( gxmessage -entrytext "$cmd" "$text" -timeout $timeout )
+ cmd_new=$( gxmessage_text "$text"  "$title" "$entrytext" )
     fi
 
     #evaludate in sub-shell
 
-    echo "[running in sub-shell] $cmd_new"
-     eval "$cmd_new" 
-     #1>$file_cmd_res 2>/tmp/err 
+    echo "[later run in sub-shell] $cmd_new"
+    trigger "$cmd_new" 
+    #1>$file_cmd_res 2>/tmp/err 
 
 }
-
+uuu
 loop(){
     print_func
     echo '[ loop ]'
-    proxy "flite -t 'the robot thinks - it is easy - try him - and correct him'"
+    echo     proxy "flite -t 'the robot thinks - it is easy - try him - and correct him'"
 
     local str_robot_ask=''
+    local file=$file_recent
     while :;do
-        local cmd="gxmessage -timeout $timeout -file $file_recent -title 'imagine easiness - how is it really?' -entrytext \"$str_robot_ask\""
-
+        #cat $file        
+        assert file_has_content "$file"
+#        local cmd="gxmessage -timeout $timeout -file $file -title 'imagine easiness - how is it really?' -entrytext \"$str_robot_ask\""
+local title="imagine easiness"
+local entrytext="$str_robot_ask"
+gxmessage_file "$file" "$title" "$entrytext"
         local str_robot_ask=$( random_line intro )
         local    answer=$( eval "$cmd" )
         if [ "$answer" = exit ];then
             echo breaking
             break;
         else
-proxy            sleep 1
-           try "$answer"
+            proxy            sleep 1
+            try "$answer"
         fi
-proxy sleep 1
+        proxy sleep 1
+        break
     done
 }
+
 steps(){
+
     print_func
+
+    safe start
+    set_traps
     intro
     set_env
-    #sdf
-    #print_env
     loop
+    safe finish
 }
 steps
