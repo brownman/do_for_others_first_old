@@ -1,28 +1,26 @@
-#!/bin/bash  
+#!/bin/bash  -e
 #info: parse a list of cetain types which determined by the commented part
 
-cmd="set -o nounset"
-every 3 "$cmd"
-#set -o pipefail
-proxy(){
-    local args=( $@ )
-    local cmd="${args[@]}"
-    eval "$cmd"
-}
+set -o nounset
+path=`pwd`
+proxy echo "path is : $path"
+proxy sleep 4
+pushd "$path">/dev/null
+#cmd="set -o nounset"
+#set_path(){
+#path=${path:-"$PWD"}
+#path_self=`dirname $0`
+#}
 
 
 reason_of_death(){
 echo "reason of death"
-echo "$1"
-echo "$2"
-exit
+echo "why: ${1:-''}"
+echo "who: ${2:-''}"
+go_home
 }
 
 
-path=${path:-"$PWD"}
-path_self=`dirname $0`
-pushd "$path">/dev/null
-echo '[LISTER]'
 #sleep 3
 # braceexpand     on
 # errexit         on
@@ -41,15 +39,12 @@ cover(){
     str=`    cat $1 | grep '(){'`
     echo "available func: $str"
 }
-export(){
-    file_list="$path/$file_name"
-    file_list_tmp=/tmp/file_list_tmp
-}
 get_list(){
+    
 
     if [ "$file_list"  ];then
         if [ -f "$file_list" ];then
-            proxy print_color_n 34 '[LIST]'
+            proxy present print_color_n 34 '[LIST] '
             echo "$file_list"
         else
             proxy "reason_of_death 'not a file' \"$file_list\"" 
@@ -60,48 +55,49 @@ get_list(){
 
 
 }
-create_tmp_list(){
 
-    grep -v '^#' $file_list > $file_list_tmp
-    let 'level=0'
-}
 
 
 set_commented(){
     local subject="$1"
-
-    cmd="cat  $file_list | grep \"$subject:\" | sed \"s/#${subject}: //g\" "
+local cmd="cat  $file_list | grep \"$subject:\" "
+local str_res=$( proxy "$cmd" )
+echo "subject: $subject ,res: $str_res "
+go_home
+#    local     str=$( )
+    #| sed \"s/#${subject}: //g\" )
+#echo "$str"
+return
     #remove trailing
-    cmd=$(echo "$cmd" | sed -e 's/^ *//g' -e 's/ *$//g');
-
+    cmd1=$(eval "$cmd" | sed -e 's/^ *//g' -e 's/ *$//g');
     #| sed 's/ //g'"
     #echo "$cmd"
-    str=$( eval "$cmd" )
-
-
+    str=$( eval "$cmd1" )
     #    echo -n "str:"
     #   echo "$str"
 
     #   proxy print_line
 
-    cmd="$subject=$str"
+    cmd2="$subject=$str"
 #    echo "$cmd"
-    eval "$cmd"
-    #echo -n "[SET_COMMENTED]" 
+    eval "$cmd2"
+    echo -n "[SET_COMMENTED]" 
     echo -en "\t [ $subject ]"
     echo -e "\t$str"
 
-
-
 }
 set_validation(){
+    print_func
     set_commented "validation"
 }
 set_validation2(){
+
+    print_func
     set_commented "validation2"
 }
 
 set_level(){
+    print_func
     set_commented "level"
 }
 
@@ -114,11 +110,13 @@ set_level(){
 #   echo "$level "
 #sleep 2
 #}
-set_parser(){
+set_arr_parser(){
+
+    print_func
     set_commented "parser"
 
     #sleep 1
-    str_to_arr "$parser"
+    str_to_arr "$parser" '|'
 
     arr_parser=( "${arr[@]}" )
     num="${#arr[@]}"
@@ -127,7 +125,9 @@ set_parser(){
     #sleep 2
 }
 
-set_line(){
+set_arr_line(){
+
+    print_func
     local    line="$1"
     #sleep 1
     str_to_arr "$line"
@@ -138,11 +138,13 @@ set_line(){
 
 switch_std(){
 
+    print_func
     3>&1 1>&2 2>&3
 
 }
 test_std(){
 
+    print_func
     switch_std
     echo to_1 >&1
     echo to_2 >&2
@@ -157,6 +159,7 @@ test_std(){
 
 ttt(){
 
+    print_func
 #echo -ne  "\t"
     #          breakpoint_line $LINENO
 
@@ -205,6 +208,7 @@ ttt(){
 eat(){
 
 
+    print_func
 
     local max="${#arr_parser[@]}"
     for (( i=0; i<$max; i++ ))
@@ -273,9 +277,11 @@ eat(){
 
 
 loop(){
+
+    print_func
     #    proxy print_func
     let 'counter=1'
-    let   "max=$level"
+    local max="$level"
 
     while read line;do
         if [ $counter -eq $max ];then
@@ -287,7 +293,7 @@ loop(){
         if [ "$line" ];then
             if [ "$counter" -le $max ];then
                 proxy print_color 32 "[EAT]" "$line"
-                set_line "$line"
+                set_arr_line "$line"
                 eat
                 #proxy print_line
             else
@@ -302,27 +308,36 @@ loop(){
 
 }
 sets(){
-proxy print_color 33 '[SETS]'
-proxy    set_level
- proxy   set_validation
- proxy   set_validation2
-proxy    set_parser
+
+    print_func
+
+    set_commented "level"
+# proxy   set_validation
+# proxy   set_validation2
+#proxy    set_arr_parser
 
 }
 steps(){
-proxy    export
+
+    print_func
  proxy   get_list
   proxy   create_tmp_list
 proxy sets    
 proxy    loop
 }
-
+############################################################### start
 if [ "$#" -gt 0 ];then
-    file_name=$1
+    #args
+    file_list="$1"
+    assert file_has_content "$file_list"
+
+    #info: clean file - rm  the commented lines 
+    file_list_tmp=/tmp/file_list_tmp
+    grep -v '^#' $file_list > $file_list_tmp
+    #get some indication
+    let level=$(    cat $file_list_tmp | wc -l )
 else
-    file_name=list.txt
-    #reason_of_death 'supply a file with tasks'
+    reason_of_death 'supply a file with tasks'
 fi
-steps
 
 popd>/dev/null
