@@ -3,6 +3,12 @@
 #imagine: calling the robot / and triggering workspace-gui-menu
 #pending: update the list.txt
 #details: update xfce hotkeys from a list.txt
+     #xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F1" -t string -s "gvim $dir_root/plan.txt" --create
+
+echo
+
+ type install_hotkey
+
 steps(){
 dir_self=`where_am_i $0`
 file_list=$dir_self/list.txt

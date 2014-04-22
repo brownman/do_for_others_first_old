@@ -1,10 +1,10 @@
-#!/bin/bash  -e
+#!/bin/bash -x 
 #info: parse a list of cetain types which determined by the commented part
 
-set -o nounset
+every 4 "set -o nounset"
+. $dir_root/.file_quick_trap.cfg
 path=`pwd`
 proxy echo "path is : $path"
-proxy sleep 4
 pushd "$path">/dev/null
 #cmd="set -o nounset"
 #set_path(){
@@ -17,7 +17,8 @@ reason_of_death(){
 echo "reason of death"
 echo "why: ${1:-''}"
 echo "who: ${2:-''}"
-go_home
+echo exiting
+exit
 }
 
 
@@ -329,8 +330,7 @@ proxy    loop
 if [ "$#" -gt 0 ];then
     #args
     file_list="$1"
-    assert file_has_content "$file_list"
-
+proxy     assert file_has_content "$file_list"
     #info: clean file - rm  the commented lines 
     file_list_tmp=/tmp/file_list_tmp
     grep -v '^#' $file_list > $file_list_tmp

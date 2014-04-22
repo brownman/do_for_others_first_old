@@ -1,0 +1,23 @@
+1. hotkeys-f1:show list.txt f2: source again
+2. tool.lister
+3. remove duplications: aliasing/exportint --> put  into .CODE/
+
+runners:  fu available??? 
+xfce tricks + fu
+SOURCE/ - add aliasing_dir/file + exporting
+google: webmin+voice.ip
+runners_ +add fu
+fu: query: syntax highlight in the terminal
+fu: repeat +vlc
+
+tos: robot is working  + gui menu
+create a list of commands - alt+f1 will trigger the 1st line, etc.
+SOURCE/ touch: translate.cfg --> read a line from douglas adams book + translateit  ! soo cool!
+iiif1 +  the robot of workspace  + gui menu 
+f1 calls the comforting  robot
+model: load also the runners: alias for debug/ alias  for fu / alias for trap/ alias  for library-multi-func splitter
+test: investigate debug.sh trap.sh etc... pattern regular exp
+done:
+make presentation correction
+
+
