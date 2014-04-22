@@ -303,3 +303,41 @@ alias quick_split="echo source $file; echo alias X or export Y"
 #    alias | grep quick --color=auto
 #    }
 
+if [ "${FUNCNAME[1]}" = proxy ];then
+    proxy present  print_color 31 "assert must be called directly  - not through proxy"
+    proxy go_home
+fi
+    set -e
+
+set_arr_line(){
+    arr=()
+    print_func
+    local    line="$@"
+    #sleep 1
+    str_to_arr "$line"
+    arr_line=( "${arr[@]}" )
+
+    num="${#arr[@]}"
+
+    echo '[LINE]'
+    echo "run $num commands on every item from the list"
+    echo "---[ ${arr_line[@]} ]---"
+
+    #sleep 2
+}
+
+reason_of_death(){
+    echo "reason of death"
+    echo "why: ${1:-''}"
+    echo "who: ${2:-''}"
+    echo exiting
+    exit
+}
+
+
+
+        if [ $counter -lt $max ];then
+            echo            breaking
+            break
+        fi
+

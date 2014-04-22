@@ -1,25 +1,30 @@
-#!/bin/bash -x 
+#!/bin/bash  
+set -o nounset
 #info: parse a list of cetain types which determined by the commented part
-
-every 4 "set -o nounset"
-. $dir_root/.file_quick_trap.cfg
 path=`pwd`
-proxy echo "path is : $path"
+
 pushd "$path">/dev/null
+#declare -A arr_line
+
+arr_line=()
+arr_parser=()
+#declare -A arr_parser
+
+reason_of_death(){
+    echo "reason of death"
+    echo "why: ${1:-''}"
+    echo "who: ${2:-''}"
+    echo exiting
+    exit
+}
+
+
+
 #cmd="set -o nounset"
 #set_path(){
 #path=${path:-"$PWD"}
 #path_self=`dirname $0`
 #}
-
-
-reason_of_death(){
-echo "reason of death"
-echo "why: ${1:-''}"
-echo "who: ${2:-''}"
-echo exiting
-exit
-}
 
 
 #sleep 3
@@ -41,65 +46,71 @@ cover(){
     echo "available func: $str"
 }
 get_list(){
-    
-
-    if [ "$file_list"  ];then
+    print_func
+    if [ -f "$file_list"  ];then
         if [ -f "$file_list" ];then
-            proxy present print_color_n 34 '[LIST] '
+            #            type proxy
+#            proxy present print_color_n 34 "LIST.." 
+            #proxy present pv list
+            #print_color_n 34 LIST 
             echo "$file_list"
         else
-            proxy "reason_of_death 'not a file' \"$file_list\"" 
+            reason_of_death 'not a file' $file_list 
         fi
     else
+
         reason_of_death 'supply a list of tasks'
     fi
 
 
 }
 
-
-
-set_commented(){
-    local subject="$1"
-local cmd="cat  $file_list | grep \"$subject:\" "
-local str_res=$( proxy "$cmd" )
-echo "subject: $subject ,res: $str_res "
-go_home
-#    local     str=$( )
-    #| sed \"s/#${subject}: //g\" )
-#echo "$str"
-return
+remove_trailing(){
     #remove trailing
     cmd1=$(eval "$cmd" | sed -e 's/^ *//g' -e 's/ *$//g');
+
+}
+
+set_commented(){
+
+    echo -n "[SET_COMMENTED] " 
+    local subject="$1"
+    #set -x
+    #    print_func
+
+    local cmd="cat  $file_list | grep $subject | sed 's/#$subject: //g'"
+    #sed "s/#level: //g" 
+    local str_res=$( proxy  $cmd )
+    #echo "subject: $subject ,res: $str_res "
+    #go_home
+    #    local     str=$( )
+    #| sed \"s/#${subject}: //g\" )
+    #echo "$str"
     #| sed 's/ //g'"
     #echo "$cmd"
-    str=$( eval "$cmd1" )
+    #
+    #str=$( eval "$cmd1" )
     #    echo -n "str:"
     #   echo "$str"
 
     #   proxy print_line
 
-    cmd2="$subject=$str"
-#    echo "$cmd"
-    eval "$cmd2"
-    echo -n "[SET_COMMENTED]" 
-    echo -en "\t [ $subject ]"
-    echo -e "\t$str"
+    if [ -n "$str_res" ];then
+        echo -en "\t [ $subject ]"
+        echo -e "\t$str_res"
 
-}
-set_validation(){
-    print_func
-    set_commented "validation"
-}
-set_validation2(){
+        local cmd2="export $subject='$str_res'"
+        #    echo "$cmd"
+        echo "$cmd2"
+        proxy "$cmd2"
+    else
 
-    print_func
-    set_commented "validation2"
-}
+        echo gvim ${file_list} 
+        reason_of_death 'tag has no value ' "$subject"
+    fi
 
-set_level(){
-    print_func
-    set_commented "level"
+    #set +x
+
 }
 
 
@@ -111,31 +122,55 @@ set_level(){
 #   echo "$level "
 #sleep 2
 #}
-set_arr_parser(){
+set_arr_tmp(){
+    local tmp="$1"
+#    print_func
+    local var="\$$tmp"
+    local content=$( eval echo $var )
+ #   go_home
+    echo "[set array for ] tmp > $tmp"
+    echo "[set array for ] var > $var"
+    echo "[set array for ] content > $content"
+    if [ -n "$content" ];then
+        #print_func
+        #set_commented "parser"
+        #sleep 1
+#        declare -a arr
+       # =()
+#        echo str_to_arr "$content" 
+  #      go_home
+        str_to_arr "$content" 
+        
 
-    print_func
-    set_commented "parser"
+#        cmd="export arr_${tmp}='$arr_${tmp}'"
+ #       echo proxy "$cmd"
+        num="${#arr[@]}"
+       # echo "[ arr ( $num ) ] ${arr[@]}"
 
-    #sleep 1
-    str_to_arr "$parser" '|'
+eval  "export arr_${tmp}=( ${arr[@]} )"
+local var_res=$( echo "\${arr_${tmp}[@]}" )
+echo "var_res: $var_res"
+eval echo "$var_res"
+        #echo 
+        #cmd="
+        
 
-    arr_parser=( "${arr[@]}" )
-    num="${#arr[@]}"
-    echo '[PARSER]'
-    #    echo "run $num commands on every item from the list"
-    #sleep 2
+       # "
+#echo proxy present        print_color 31  "$cmd"
+       # echo  "$cmd"
+       # eval "$cmd"
+        
+        echo "${arr_line[@]}" || {          echo "${arr_parser[@]}" ; }
+#echo "${arr_$\{tmp\}[@]}"
+        #    echo '[tmp]'
+        #    echo "run $num commands on every item from the list"
+        #sleep 2
+    else
+        reason_of_death 'var is not set' "$var"
+
+    fi
 }
 
-set_arr_line(){
-
-    print_func
-    local    line="$1"
-    #sleep 1
-    str_to_arr "$line"
-    arr_line=( "${arr[@]}" )
-    #    echo "---[ ${arr_line[@]} ]---"
-    #sleep 2
-}
 
 switch_std(){
 
@@ -161,14 +196,14 @@ test_std(){
 ttt(){
 
     print_func
-#echo -ne  "\t"
-    #          breakpoint_line $LINENO
+    #echo -ne  "\t"
+    breakpoint_line $LINENO
 
     if [ $# -gt 0 ];then
         local cmd="$@"
 
         #  echo -n "[ cmd ] "
-          echo -e "\t$cmd"
+        echo -e "\t$cmd"
         let 'res=0'
 
         #switch_std
@@ -191,7 +226,7 @@ ttt(){
         if [ "$res" -eq 1 ];then
             echo -n '[err] '
             cat /tmp/err  | head -1
-            reason_of_death "test failed" "$cmd" 2
+            reason_of_death "test failed" "$cmd" 
         else
             cmd0='echo -n [out] '
             cmd='cat /tmp/out  | head -1'
@@ -205,74 +240,76 @@ ttt(){
 
     #            http://unix.stackexchange.com/questions/42728/what-does-31-12-23-do-in-a-script
 }
+validate(){
+    #        cmd="ls \"$script\""
+    #    eval "$cmd"
 
+    #breakpoint_line $LINENO
+    # eval "$cmd" 1>/dev/null 2>&1   &&  echo >&2 reason_of_death 'invalid script' "$script" 
+
+    #test "$cmd"
+
+    #            eval "$cmd" >/dev/null 2>&1 && { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; } || { echo ok;} 
+    #           sleep 10
+    #            eval "$cmd" >/dev/null 2>&1 || { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
+    #       echo "line: $LINENO" 
+    #      echo "line: ${LINENO[0]}" 
+
+    #"${LINENO[0]}"
+    if [ -n "$validation2" ];then
+        cmd="type $validation2"
+        ttt "$cmd"
+        #          echo "$cmd"
+        cmd="$validation2 $script"
+        ttt "$cmd"
+        #commander "$cmd"
+        #reason_of_death 'invalid validation' "$validation" 
+    fi
+    if [ -n "$validation" ];then
+        cmd="type $validation"
+        ttt "$cmd"
+
+        cmd="$validation $line"
+        ttt "$cmd"
+        #            eval "$cmd"
+        res=$?
+    else
+        reason_of_death "empty tag: validation"
+    fi
+
+
+}
 eat(){
 
+    local max="${#arr_parser[@]}"
 
     print_func
-
-    local max="${#arr_parser[@]}"
+    echo "max is $max"
+    go_home
     for (( i=0; i<$max; i++ ))
     do
         #echo     "${arr_parser[i]}:${arr_line[i]}"
+        echo "[focus] $i"
         script="${arr_parser[i]}" 
         line="${arr_line[i]}"
+    
+       # if [ $res -eq 0  ];then
+#  else 
+#            reason_of_death 'validation failed' "$cmd"
+#        fi
 
-        #        cmd="ls \"$script\""
-        #    eval "$cmd"
-
-        #breakpoint_line $LINENO
-        # eval "$cmd" 1>/dev/null 2>&1   &&  echo >&2 reason_of_death 'invalid script' "$script" 
-
-        #test "$cmd"
-
-        #            eval "$cmd" >/dev/null 2>&1 && { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; } || { echo ok;} 
-        #           sleep 10
-        #            eval "$cmd" >/dev/null 2>&1 || { echo >&2 "[ error ] $cmd"; reason_of_death "invalid command: " " $cmd"; }
-        #       echo "line: $LINENO" 
-        #      echo "line: ${LINENO[0]}" 
-        #          breakpoint_line
-
-        #"${LINENO[0]}"
-        if [ -n "$validation2" ];then
-            cmd="type $validation2"
-            ttt "$cmd"
-            #          echo "$cmd"
-            cmd="$validation2 $script"
-            ttt "$cmd"
-            #commander "$cmd"
-            #reason_of_death 'invalid validation' "$validation" 
-
-        fi
-
-        if [ -n "$validation" ];then
-            cmd="type $validation"
-            ttt "$cmd"
-
-            cmd="$validation $line"
-            ttt "$cmd"
-            #            eval "$cmd"
+           local cmd="$script $line"
+            echo "[running] $cmd"
+            proxy        "$cmd"
             res=$?
-            if [ $res -eq 0  ];then
-
-                cmd="$script $line"
-                eval        "$cmd"
-
-                res=$?
-                if [ "$res" -eq 1 ];then
-                                    echo -n '[COMMAND] ' 
-                                    echo "$cmd"
-                    echo "exited with an error:"
-                                    echo '[LISTER]'
-                    exiting
-                fi
-            else 
-                reason_of_death 'validation failed' "$cmd"
+            if [ "$res" -eq 1 ];then
+                echo -n '[COMMAND] ' 
+                echo "$cmd"
+                echo "exited with an error:"
+                echo '[LISTER]'
+                exiting
             fi
-        else
-            reason_of_death "empty tag: validation"
-        fi
-
+      
     done
 }
 
@@ -281,28 +318,34 @@ loop(){
 
     print_func
     #    proxy print_func
-    let 'counter=1'
-    local max="$level"
-
+    local counter=1
+    local max=$level
     while read line;do
-        if [ $counter -eq $max ];then
-            #echo            breaking
-            break
-        fi
-        echo -n '--------------------- '
-        proxy print_color 33 "..${counter}.."
-        if [ "$line" ];then
-            if [ "$counter" -le $max ];then
-                proxy print_color 32 "[EAT]" "$line"
-                set_arr_line "$line"
-                eat
+#        echo -n '--------------------- '
+        #proxy present print_color 33 "..${counter}.."
+
+        if [ -n "$line" ];then
+
+            if [ $counter -le $max ];then
+
+        echo $counter
+            echo  "line: $line"
+#echo                 proxy print_color 32 "[EAT]" "$line"
+#arr_line=()
+                set_arr_tmp "line"
+                
+                echo "line.size: ${#arr_line[@]}"
+               # echo should eat now
+               # echo eat
                 #proxy print_line
-            else
-                proxy print_color_n 31 "[SKIP] "
-                echo "$line"
+        #    else
+                #proxy print_color_n 31 "[SKIP LINE] "
+                #echo "$line"
+#                echo $counter
+         #       echo 'skipping'
             fi
         else
-            warning 'empty line'
+        echo    warning 'empty line'
         fi
         let 'counter+=1'
     done < $file_list_tmp 
@@ -313,29 +356,37 @@ sets(){
     print_func
 
     set_commented "level"
-# proxy   set_validation
-# proxy   set_validation2
-#proxy    set_arr_parser
+    set_commented "validation"
+    set_commented "validation2"
+    set_commented "parser"
+
+    set_arr_tmp parser
 
 }
 steps(){
-
     print_func
- proxy   get_list
-  proxy   create_tmp_list
-proxy sets    
-proxy    loop
+    #get_list
+
+    sets    
+    loop
 }
 ############################################################### start
 if [ "$#" -gt 0 ];then
     #args
-    file_list="$1"
-proxy     assert file_has_content "$file_list"
+    quick_rollet
+
+    #proxy echo "path is : $path"
+
+    #. $dir_root/.000_file_quick_trap.cfg
+
+    file_list=${1:-"$dir_root/.list.txt"}
+    assert file_has_content "$file_list"
     #info: clean file - rm  the commented lines 
     file_list_tmp=/tmp/file_list_tmp
     grep -v '^#' $file_list > $file_list_tmp
     #get some indication
-    let level=$(    cat $file_list_tmp | wc -l )
+#echo     let level=$(    cat $file_list_tmp | wc -l )
+    steps
 else
     reason_of_death 'supply a file with tasks'
 fi
