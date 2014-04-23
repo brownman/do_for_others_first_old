@@ -1,0 +1,6 @@
+#
+echo presenting - prior to loading the project !
+echo think about it
+    echo trapping control+c is important for updating the big stones first
+    echo that is exactly y - lister is so important - more  than hotkeys..
+    echo if backup indicate no progress - so every 5 do : cd to the test directory ! 

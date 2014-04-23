@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 set -o nounset
 
 #info: robot think that everything is easy
@@ -10,9 +10,9 @@ update_file(){
 }
 set_env(){
     print_func
-    mode_translate=false
-    dir_robot=$dir_root/.WORKSPACE/robot/txt
-    [ ! -d $dir_robot ] && { mkdir -p $dir_robot ;}
+  mode_translate=${MODE_TRANSLATE:-false}
+    dir_robot=$( $file_server $dir_root/.WORKSPACE/BANK/DIR/robot/txt )
+#    [ ! -d $dir_robot ] && { mkdir -p $dir_robot ;} || { echo dir robot exist; }
 }
 
 
@@ -22,11 +22,15 @@ robot_feels(){
     local file=$dir_robot/${str}.txt
     [ ! -f $file ] && { touch $file;echo 'empty_line' > $file ; gvim $file; }
     local line=$(    random_line "$file" )
+
+
     robot_says "$line"
-if [ $mode_translate = true ];then
+if [ "$mode_translate" = true ];then
+    echo translate..
      $single_translation ru "$line"
      $single_translation ar "$line"
      $single_translation it "$line"
+     proxy sleep 1
 fi
  }
 
@@ -38,7 +42,7 @@ local     args=$( proxy present echo $@ )
     print_func
 
     local cmd="$args"
-    proxy present print_color_n 32 "."
+#    proxy present print_color 32 "."
     proxy present pv "$cmd"
     
 }
@@ -56,7 +60,7 @@ robot_cli(){
     robot_says "what the hell is  [ $text ] \?"
     read command
     local        items=( $command )
-    assert num_not_zero "${#items[@]}"
+#proxy    assert num_not_zero "${#items[@]}"
     update_file        "${items[@]}" $file_robot
     finish
 
