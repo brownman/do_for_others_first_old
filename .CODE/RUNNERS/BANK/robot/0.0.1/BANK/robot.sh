@@ -1,6 +1,8 @@
-#!/bin/bash 
-set -o nounset
+#!/bin/bash
 
+#. $file_trap
+#. $file_debug
+set -o nounset
 #info: robot think that everything is easy
 update_file(){
     file="$1"
@@ -9,10 +11,16 @@ update_file(){
     echo "$str" > $file
 }
 set_env(){
+    #set -x
+
+set -e
     print_func
   mode_translate=${MODE_TRANSLATE:-false}
-    dir_robot=$( $file_server $dir_root/.WORKSPACE/BANK/DIR/robot/txt )
+    dir_robot=$( $file_server "$dir_root/.WORKSPACE/BANK/DIR/robot/txti" )
+#    assert dir_exist "$dir_robot"
 #    [ ! -d $dir_robot ] && { mkdir -p $dir_robot ;} || { echo dir robot exist; }
+set +e
+#set +x
 }
 
 
@@ -37,7 +45,8 @@ fi
 robot_says(){
 
 
-local     args=$( proxy present echo $@ )
+#local     args=$( proxy present echo $@ )
+local args=( $@ )
 
     print_func
 
@@ -77,7 +86,10 @@ steps(){
 clear
 cmd_please="$@"
 
+    type set_env
+proxy     sleep 3
     set_env
+
 if [ -n "$cmd_please" ];then
 
 

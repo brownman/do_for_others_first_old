@@ -1,0 +1,213 @@
+#!/bin/bash
+reset
+#set -x
+#source $dir_root/.3
+quick(){
+    echo presentation remind of  the big stones
+        alias robot="robot_steps"
+
+}
+i_have_my(){
+    local tag=$1
+        local funcname=${FUNCNAME[1]}
+    cmd="cat $file_runner | grep $funcname -A 2 | grep $tag"
+        eval "$cmd"
+}
+tty_clear(){
+#url: http://unix.stackexchange.com/questions/3981/how-to-clear-terminal-after-logging-out
+    echo    clear>"$file_output"
+}
+
+breaking(){
+
+    local str_caller=`caller`
+#echo $FUNCNAME
+        print_color 35 "[^B]"
+        local cmd="gvim +${str_caller}" 
+        echo  "$cmd"
+        update_clipboard "$cmd"
+        break
+}
+trap_sigint_first(){
+    echo  $FUNCNAME
+        breaking
+}
+trap_err_first(){
+
+    str_caller=`caller`    
+
+        echo "$FUNCNAME"
+        echo
+        [ -s /tmp/err ] &&   { cat /tmp/err ;}
+    echo
+        cmd="gvim +${str_caller}"
+
+
+        echo "$cmd"
+#proxy sleep 2
+        breaking
+#proxy go_home
+
+}
+
+debug_now(){
+    set -x
+}
+step_struct(){
+    source $dir_root/.WORKSPACE/BANK/CFG/1_struct.cfg
+}
+
+step_source1(){
+#source $dir_root/bashrc_additions.cfg
+    echo silent sourcing 
+        source $dir_production/PROJECT/PENDING/0_SOURCE/STEP1/breath.cfg 
+#1>/tmp/out
+
+#1>/tmp/out
+#1>/tmp/out
+}
+step_source2(){
+    source $dir_production/PROJECT/PENDING/0_SOURCE/STEP2/breath.cfg 
+}
+step_imagine(){
+    bash -c $dir_root/IMAGINE/breath.cfg
+
+}
+step_export_funcs(){
+    source $dir_root/.CODE/PRESENT/sos_cfg_for_presentation.cfg
+        echo
+
+}
+step_set_trap(){
+    trap trap_err_first ERR
+        trap trap_sigint_first SIGINT
+}
+stepper(){
+#clear
+#    local  str="$@"
+#    set -u
+#    echo $@
+
+    local args=( $@ )
+        local cmd="${args[@]}"
+        local str="$cmd"
+
+        echo -n "[ $FUNCNAME ]"
+############################ intro
+        local str_min=$( echo "${args[1]}" | sed 's/step_//g' | sed 's/_/ /g' )
+        local str_type=$( echo "${args[0]}" | cut -d'_' -f1 )
+#    local str_show=${MODE_DEBUG:-true}
+
+        echo -ne "[$str_type] $str_min \t\t"
+#####################################################
+#        proxy sleep 2
+#echo       "  eval \"$str\" >>$file_output"
+        if [ "$MODE_TTY" =  true ];then
+            eval "$cmd" >"$file_output"
+        else
+            eval "$cmd"
+                fi
+
+                res=$?
+                if [ $res -ne 0 ];then
+                    print_color 31 "\t "
+                        breaking
+                else
+
+                    print_color 32 "\t "
+                        fi
+}
+step_explain_self(){
+    echo think neat 
+        echo
+        type steps
+        proxy sleep 2
+}
+source_it(){
+    echo $FUNCNAME
+        eval "$@" 
+}
+run_it(){
+    $(   eval "$@"  )
+}
+step_setup(){
+    bash -c     $dir_workspace/BANK/LISTS/SETUP/breath.cfg 
+#1>/tmp/out
+}
+step_test(){
+    echo test
+
+}
+step_set_env(){
+#reset
+#set -o nounset
+    exec 2>/tmp/err
+
+        export MODE_DEBUG=false
+        export MODE_TTY=true
+        export MODE_SMOKE=true              
+        export     MODE_TRANSLATE=true
+        export file_output=/dev/tty2
+
+
+        step_set_runner
+
+##########################step_time_consumers ######################
+#        export     MODE_TRAP=false
+#        export     MODE_proxy sleep=false
+
+
+}
+step_set_env_type(){
+    type step_set_env
+} 
+step_set_runner(){
+    export file_runner=${BASH_SOURCE:-$0}
+    echo "[ setting ] [ file_runner ] $file_runner"
+        alias firstE="gvim $file_runner"
+        sleep  3
+}
+
+
+loop(){
+#info: loop over a list of commands: 2 options: source_it/run_it
+#reason: list is wonderful but tearsome if not sourcing the library first
+#    print_color 35 OK
+        echo $FUNCNAME
+        local dir_self=$( dirname $file_runner )
+        local file_list=$dir_self/list.txt
+        local counter=1
+        while read line;do
+            if        [  "$line" ];then
+                echo -n  "${counter}. "
+#                    echo $line
+                    eval "$line"
+                    echo
+            else
+                echo "--------- empty line"
+                    breaking
+                    fi
+                    let 'counter += 1'
+                    done<"$file_list"
+}
+cheat(){
+#info: source the library first
+#reason: encourage updating saperate  files and group them under folders instead of increasing dis-order by updating some: helper.cfg
+    echo $FUNCNAME
+
+        stepper source_it       step_struct
+        stepper source_it       step_source1 
+        echo         i_have_my reason
+}
+
+
+steps (){
+    echo $FUNCNAME
+        type step_set_env | grep export | sed 's/export //g'
+        step_set_env
+#        type cheat
+ #       cheat
+ #       print_color 36 done
+        loop
+}
+steps

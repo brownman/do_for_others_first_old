@@ -1,9 +1,6 @@
-echo xcowsay f7
-echo gvim $dir_self/list.txt 
-echo notify-send source $0
-echo notify-send boom
-echo notify-send source $dir_self/list.sh
-echo robot_gui
+echo xcowsay f6
+echo gedit $dir_self/list.txt
+echo source $dir_self/list.sh
 echo $dir_root/ENTER/BANK/proxy.sh hotkey
 echo gvim $dir_root/genesis.yaml
 echo gvim $dir_root/plan.txt

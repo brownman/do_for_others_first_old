@@ -14,6 +14,7 @@ echo
 steps(){
 dir_self=`where_am_i $0`
 file_list=$dir_self/list.txt
+ln -sf $file_list /tmp/list.txt
 let 'counter=1'
 while read line_cmd;do
 #    echo "$line_cmd"
@@ -24,7 +25,7 @@ line="$( eval $line_cmd )"
 cmd="hotkey_set $counter \"$line\""
 echo "[cmd] $cmd"
 #proxy sleep 1
- eval "$cmd" 
+ eval "$cmd"  1>/dev/null
 res=$?
 if [ $res -ne 0 ];then
     echo ERROOOOOOOOR
