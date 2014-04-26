@@ -1,3 +1,7 @@
+
+~/JAIL/TREE/.WORKSPACE/SNIPPETS
+
+    echo  "-------------------------- [ $file_runner ] ----------------------------------"
 1. hotkeys-f1:show list.txt f2: source again
 2. tool.lister
 3. remove duplications: aliasing/exportint --> put  into .CODE/
