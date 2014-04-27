@@ -1,4 +1,5 @@
 #!/bin/bash  
+clear
 set -o nounset
 #info: parse a list of cetain types which determined by the commented part
 path=`pwd`
@@ -147,8 +148,8 @@ set_arr_tmp(){
         num="${#arr[@]}"
        # echo "[ arr ( $num ) ] ${arr[@]}"
 
-eval  "export arr_${tmp}=( ${arr[@]} )"
-local var_res=$( echo "\${arr_${tmp}[@]}" )
+eval  "export arr_${tmp}=( \"${arr[@]}\" )"
+local var_res="\${arr_${tmp}[@]}"
 echo "var_res: $var_res"
 eval echo "$var_res"
         #echo 
@@ -160,7 +161,8 @@ eval echo "$var_res"
        # echo  "$cmd"
        # eval "$cmd"
         
-        echo "${arr_line[@]}" || {          echo "${arr_parser[@]}" ; }
+     #   echo "${arr_line[@]}"
+    #|| {          echo "${arr_parser[@]}" ; }
 #echo "${arr_$\{tmp\}[@]}"
         #    echo '[tmp]'
         #    echo "run $num commands on every item from the list"
@@ -313,23 +315,31 @@ eat(){
     done
 }
 
-
+#present_array(){
+#local str=$1
+#echo \$\{\$str\[\@]}
+#}
 loop(){
 
     print_func
     #    proxy print_func
-    local counter=1
+
+   line_breakpoint 
+    array_print arr_parser
+
+    local counter=0
     local max=$level
     while read line;do
 #        echo -n '--------------------- '
         #proxy present print_color 33 "..${counter}.."
 
+            if [ $counter -le $max ];then
         if [ -n "$line" ];then
 
-            if [ $counter -le $max ];then
 
-        echo $counter
-            echo  "line: $line"
+
+        print_color 32 $counter
+print_color 33  "line: $line"
 #echo                 proxy print_color 32 "[EAT]" "$line"
 #arr_line=()
                 set_arr_tmp "line"
@@ -343,10 +353,13 @@ loop(){
                 #echo "$line"
 #                echo $counter
          #       echo 'skipping'
-            fi
+
         else
         echo    warning 'empty line'
         fi
+    else
+        echo counter larger than max
+            fi
         let 'counter+=1'
     done < $file_list_tmp 
 
@@ -356,8 +369,8 @@ sets(){
     print_func
 
     set_commented "level"
-    set_commented "validation"
-    set_commented "validation2"
+    #set_commented "validation"
+    #set_commented "validation2"
     set_commented "parser"
 
     set_arr_tmp parser
@@ -373,7 +386,12 @@ steps(){
 ############################################################### start
 if [ "$#" -gt 0 ];then
     #args
-    quick_rollet
+    #quick_rollet
+    every 3 'set -o nounset'
+
+    every 13 'set -x'
+
+    every 3 'set -e'
 
     #proxy echo "path is : $path"
 

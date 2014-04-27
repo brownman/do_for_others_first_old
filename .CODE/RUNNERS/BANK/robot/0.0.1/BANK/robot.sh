@@ -1,4 +1,10 @@
 #!/bin/bash
+#info: the robot of workspaces
+
+
+str=`caller`
+echo robot.sh caller is [  $caller ]
+return
 
 #. $file_trap
 #. $file_debug
@@ -16,7 +22,7 @@ set_env(){
 set -e
     print_func
   mode_translate=${MODE_TRANSLATE:-false}
-    dir_robot=$( $file_server "$dir_root/.WORKSPACE/BANK/DIR/robot/txti" )
+    dir_robot=$( $file_server "$dir_root/.WORKSPACE/BANK/DIR/robot/txt" )
 #    assert dir_exist "$dir_robot"
 #    [ ! -d $dir_robot ] && { mkdir -p $dir_robot ;} || { echo dir robot exist; }
 set +e
@@ -96,7 +102,7 @@ if [ -n "$cmd_please" ];then
     str_cmd=`echo "$cmd_please" | sed 's/ /_/g'`
     file="$dir_robot/$str_cmd"
 
-    (       proxy update_clipboard "gvim $file" )
+#    (       proxy update_clipboard "gvim $file" )
     if [ -f $file ];then
         cmd="chmod u+x $file; eval $file"
         nl $file

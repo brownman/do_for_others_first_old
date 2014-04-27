@@ -1,0 +1,6 @@
+    line=${1:-$LINENO};
+    print_line;
+    print_line;
+    print_color 33 "[BREAKPOINT ON LINE x HAS BEEN SET]";
+    cmd="vi $0 +$line";
+

@@ -25,3 +25,4 @@ cd /home/dao04/JAIL/TREE/PRODUCT && echo   cd PRODUCT/
 cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS/SETUP/INSTALL/BANK/hotkeys_list && echo   cd hotkeys_list/
 cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/CFG && echo   ls
 cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS/SETUP/INSTALL/BANK/hotkeys_list && echo   savev
+cd /home/dao04/JAIL/TREE/PRODUCT/PROJECT/PENDING/0_SOURCE && echo  835  ls
