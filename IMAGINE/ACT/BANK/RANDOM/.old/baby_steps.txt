@@ -1,9 +1,0 @@
-1
-update file: quick.cfg
-add line:
-alias cd_library
-
-2
-use lib
-add aliasing_file to quick.cfg
-

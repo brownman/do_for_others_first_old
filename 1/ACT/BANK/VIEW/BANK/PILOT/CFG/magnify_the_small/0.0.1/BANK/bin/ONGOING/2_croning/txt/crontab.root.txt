@@ -1,0 +1,14 @@
+DISPLAY=:0
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+NAME=dao04
+
+dir_plugins=/home/$NAME/JAIL/PROJECT/src/plugins
+file_error=$dir_plugins/croning/error/root.txt
+file_env=$dir_plugins/croning/env/root.txt
+
+* * * * *   /usr/bin/env >$file_env
+*/10 * * * * bash -c "dbus-send --system --print-reply     --dest=\"org.freedesktop.UPower\"     /org/freedesktop/UPower     org.freedesktop.UPower.Suspend 2>$file_error"
+*/5 * * * * bash -c "$dir_plugins/croning/croning.sh suspend"
+*/1 * * * * bash -c "$dir_plugins/croning/croning.sh alive"
+

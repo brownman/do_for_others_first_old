@@ -1,1 +1,0 @@
-../../../../TOOLS/BANK/wrapper/0.0.1/choose_runner.sh

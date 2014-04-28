@@ -79,7 +79,7 @@ set_commented(){
     #set -x
     #    print_func
 
-    local cmd="cat  $file_list | grep $subject | sed 's/#$subject: //g'"
+    local cmd="cat  $file_list | grep \"#${subject}\" | sed 's/#$subject: //g'"
     #sed "s/#level: //g" 
     local str_res=$( proxy  $cmd )
     #echo "subject: $subject ,res: $str_res "
@@ -100,7 +100,7 @@ set_commented(){
         echo -en "\t [ $subject ]"
         echo -e "\t$str_res"
 
-        local cmd2="export $subject='$str_res'"
+        local cmd2="export string_$subject='$str_res'"
         #    echo "$cmd"
         echo "$cmd2"
         proxy "$cmd2"
@@ -383,6 +383,34 @@ steps(){
     sets    
     loop
 }
+test_setup(){
+#setup
+file_list=/tmp/list.txt
+[ -f $file_list ] && { /bin/rm $file_list; }
+touch $file_list
+echo "#parser: echo" > $file_list
+#test
+str_res=`cat $file_list`
+
+assertEquals "$str_res" "x"
+}
+test_populate_array(){
+local str=$1
+set_commented parser
+echo "${#arr_parser[@]}"
+arr_print arr_parser
+}
+test_populate_string(){
+local str=$1
+set_commented parser
+echo $string_parser
+}
+
+tests(){
+test_setup
+test_populate_string parser
+#test_populate_array parser
+}
 ############################################################### start
 if [ "$#" -gt 0 ];then
     #args
@@ -404,7 +432,8 @@ if [ "$#" -gt 0 ];then
     grep -v '^#' $file_list > $file_list_tmp
     #get some indication
 #echo     let level=$(    cat $file_list_tmp | wc -l )
-    steps
+    tests
+    #steps
 else
     reason_of_death 'supply a file with tasks'
 fi

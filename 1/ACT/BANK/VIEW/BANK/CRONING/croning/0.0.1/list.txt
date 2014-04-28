@@ -1,0 +1,12 @@
+remind me to smile|$dir_magnify/wrapper.sh singles/single.sh list todo
+running tasker|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh 1
+running tasker|~/JAIL/TREE/works/magnify_the_small/0.0.1/wrapper.sh bin/1_tasker/tasker.sh 2
+removing cron indicators|rm /tmp/CRONING/INDICATORS/*
+remind me of shalva|notify-send x
+remind me to push order forward|notify-send x
+remind to call him or her|notify-send x
+remind of breathing|notify-send x
+magnify the small|notify-send x
+check if tasker is running|$dir_croning/indicator.sh
+2 minutes|flite -t 'learn a new word'
+1 minute passed|flite -t 'another minute has passed'

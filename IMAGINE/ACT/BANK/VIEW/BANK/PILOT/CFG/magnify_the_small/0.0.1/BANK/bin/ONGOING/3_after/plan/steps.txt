@@ -1,9 +1,0 @@
-croning is running ?
-suspend is working properly ?
-hotkeys are installed ?
-do you practive a new language ?
-
-
-
-
-

@@ -1,0 +1,1 @@
+vim ident|http://vim.wikia.com/wiki/VimTip83

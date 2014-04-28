@@ -1,0 +1,13 @@
+: <<'COMMENT1'
+    for dir in $dirs;do
+        local dirname=$( basename $dir )
+[ ! -d $dir/cfg ] &&        { mkdir $dir/cfg; }
+        ls $dir/cfg
+        #mv $dir/* $dir/cfg
+        touch $dir/breath.cfg
+    done
+
+go_home
+COMMENT1
+
+

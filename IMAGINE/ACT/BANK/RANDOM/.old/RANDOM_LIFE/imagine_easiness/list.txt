@@ -1,5 +1,0 @@
-a voice recognitions | imagine how easy is just to connect the java code to java koans ?
-hotkeys| think how cool will it be that control+f1 will call a nice robot that will store any question that popped up to my mind
-
-
-

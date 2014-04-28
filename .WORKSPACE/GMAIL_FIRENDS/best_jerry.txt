@@ -1,1 +1,0 @@
-https://github.com/oloc/scripts/blob/master/instick #automation for debian.iso to usb using dd wget etc

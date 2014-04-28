@@ -1,7 +1,0 @@
-#level: 2
-#parser: echo
-this is line 1
-and another line
-
-
-dont reach this line

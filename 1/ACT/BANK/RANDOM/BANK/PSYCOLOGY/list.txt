@@ -1,0 +1,1 @@
+echo before suspensin do : 50 persent play audio: learn_lang

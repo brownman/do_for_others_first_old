@@ -1,3 +1,0 @@
-show abs file|cat $dir_abs/list.txt
-fortune+cowsay|ascii_cast
-koans|run java_koans or python koans etc...

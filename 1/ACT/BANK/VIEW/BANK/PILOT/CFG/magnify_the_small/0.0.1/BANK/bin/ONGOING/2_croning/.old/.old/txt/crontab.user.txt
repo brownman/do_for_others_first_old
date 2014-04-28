@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games
+DISPLAY=:0 
+NAME=$LOGNAME
+* * * * *   /usr/bin/env > /home/$NAME/Desktop/ENV_CRON_USER.txt
+* * * * *  bash -c "$dir_plugins/croning/croning.sh"
+

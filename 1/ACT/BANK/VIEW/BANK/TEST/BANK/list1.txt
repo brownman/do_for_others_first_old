@@ -1,0 +1,3 @@
+variable dir_root?echo $dir_root
+quick cd to parent dir?alias \| grep cdrooti
+

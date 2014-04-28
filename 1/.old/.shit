@@ -1,0 +1,33 @@
+export dir_root=~/JAIL/TREE
+alias cdroot="cd $dir_root"
+export file_first=$dir_root/.0_effort.cfg
+export file_struct=$dir_root/.00_struct.cfg
+
+
+step0(){
+bash -c $dir_root/HIGHER_SELF/breath.cfg
+}
+step1(){
+local cmd="source $file_first"
+echo eval "$cmd"
+}
+step2(){
+#local runner=$dir_root/RUNNERS/BANK/debug.sh
+local runner=~/JAIL/TREE/RUNNERS/PENDING/wrapper/0.0.1/BANK/debug.sh
+local cmd=$( $runner $file_first )
+eval "$cmd"
+}
+step3(){
+set -o  nounset
+file_first=$dir_root/.0_effort.cfg
+cmd="set -e;source $file_first"
+every 2 "echo running noisy;sleep 2;eval $cmd" "echo running muted;sleep 2; eval $cmd 1>/dev/null"
+res=$?
+[ $res -eq 0 ] && { print_color 32 'GENIUS!' ;} || { print_color 31 'YET.. A GENIUS' ;}
+if  [  $res -eq 1 ];then
+cmd1="trap_steps; eval $cmd"
+(eval $cmd1)
+fi
+set +o  nounset
+}
+

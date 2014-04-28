@@ -1,0 +1,4 @@
+sleep 10
+awake 30
+sleep 10
+reminder

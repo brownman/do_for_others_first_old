@@ -1,3 +1,6 @@
+#info: trap with gxmessage
+#pending: add tests
+#imagine: present /tmp/err + entrytext: gvim +caller
 alias trapE="vi $BASH_SOURCE"
 exec 2>/tmp/err
 trap_err_2(){

@@ -1,3 +1,6 @@
+1. use aliasing_dir, exporting : etc + lister to: eliminate PRODUCT/ and move to .CODE/RUNNERS/list.txt  - it is enough !
+
+
 gui menu - make sure to refresh the memory regarding this file- indepandantly !
 -0-0-0-0-0=
 keys

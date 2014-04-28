@@ -1,0 +1,28 @@
+subject:
+    routing_packets:
+        robot: update routing table - set default address for the gateway
+        q1: after connecting to a v.p.n -> what's get changed ?
+        q2: how to connect to multiple gateways 
+        tag: route + gateway + default gateway
+        util: route
+    graphic_server:
+        robot: change the color depth
+        util: x_win_info
+    regexp:
+        robot: find all files with pattern X run command Y until char Z
+        syntax: -iname $where $who -exec $cmd {} $finish_char; 
+        util: find
+    world_appearance:
+        util: /etc/services
+        options:
+            - port 23 is open --> stop service telnet!
+
+      
+smart_cli_use:
+    flag: exec
+    q1: which tools support this option ?
+    tag: exec
+    
+sections:
+    110.2: security for host
+

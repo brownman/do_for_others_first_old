@@ -1,0 +1,52 @@
+1.  install freeradius* & install freedradius-ldap
+2. edit /etc/raddb/clients.conf. to configure youre web server as a rdiuse client
+
+	example:
+	client 192.168.0.120 {
+#       # secret and password are mapped through the "secrets" file.
+        secret      = testing_secret
+#       shortname   = liv1
+}
+
+
+3. Create an entry in /etc/raddb/proxies.conf to direct authontication requests to the wikid server
+
+	examle:
+	Proxy - the WiKID server:
+	realm NULL {
+        type            = radius
+        authhost        = localhost:1812
+        accthost        = localhost
+        secret          = testing_secret
+}
+
+4. In /etc/radius.conf add the following to allow proxy requests, enable ldap authorization, and pap authentication.
+
+  # Lightweight Directory Access Protocol (LDAP)
+        #
+        #  This module definition allows you to use LDAP for
+        #  authorization and authentication.
+        #
+
+	ldap {
+		server = "localhost"
+		basedn = "dc=wikidsystems,dc=com"
+		filter = "(uid=%{Stripped-User-Name:-%{User-Name}})"
+
+		start_tls = no
+
+
+      access_attr = "dialupAccess"
+
+		dictionary_mapping = ${raddbdir}/ldap.attrmap
+
+		ldap_connections_number = 5
+
+		edir_account_policy_check=no
+		timeout = 4
+		timelimit = 3
+		net_timeout = 1
+
+	}
+5. use the folowing link to configure the wikid server
+http://www.howtoforge.com/wikid-openldap-freeradius-howto-p2

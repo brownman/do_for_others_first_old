@@ -1,2 +1,0 @@
-youtube-downloader exist?   type youtube-dl
-youtube-dl --help

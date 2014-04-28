@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Wine_vcs2
-Exec=env WINEPREFIX="/home/dao04/.wine" wine C:\\\\windows\\\\command\\\\start.exe /Unix /home/dao04/.wine/dosdevices/c:/users/Public/Start\\ Menu/Programs/Visual\\ CertExam\\ Suite/Visual\\ CertExam\\ Manager.lnk
-Type=Application
-StartupNotify=true
-Path=/home/dao04/.wine/dosdevices/c:/Program Files/Visual_CertExam_Suite
-Icon=A659_manager.0
