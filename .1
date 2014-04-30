@@ -32,14 +32,16 @@ exporting(){
 }
 exports(){
 #   export dir_root $dir_root 
-        exporting dir_production $dir_root/PRODUCT
-        exporting dir_workspace $dir_root/.WORKSPACE
+        exporting dir_product $dir_root/PRODUCT
+        exporting dir_workspace $dir_root0/.WORKSPACE
+
+        exporting dir_code $dir_root0/.CODE
         #exporting dir_enter $dir_root/.ENTER
-            exporting dir_project $dir_production/PROJECT
-                exporting dir_bank $dir_project/BANK
+            #exporting dir_project $dir_production/PROJECT
+            #    exporting dir_bank $dir_project/BANK
 #    exporting dir_act  dir_bank/ACT
                 #exporting dir_setup $dir_bank/SETUP
-                exporting dir_source $dir_bank/SOURCE
+           #     exporting dir_source $dir_bank/SOURCE
 
 }
 steps(){

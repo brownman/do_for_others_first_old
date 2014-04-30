@@ -81,7 +81,7 @@ set_commented(){
 
     local cmd="cat  $file_list | grep \"#${subject}\" | sed 's/#$subject: //g'"
     #sed "s/#level: //g" 
-    local str_res=$( proxy  $cmd )
+    local str_res=$( eval  "$cmd" )
     #echo "subject: $subject ,res: $str_res "
     #go_home
     #    local     str=$( )
@@ -106,7 +106,7 @@ set_commented(){
         proxy "$cmd2"
     else
 
-        echo gvim ${file_list} 
+        echo "gvim ${file_list}"
         reason_of_death 'tag has no value ' "$subject"
     fi
 
@@ -407,6 +407,7 @@ echo $string_parser
 }
 
 tests(){
+    type $FUNCNAME
 test_setup
 test_populate_string parser
 #test_populate_array parser
