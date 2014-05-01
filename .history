@@ -28,3 +28,10 @@ cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS/SETUP/INSTALL/BANK/hotkeys_list &
 cd /home/dao04/JAIL/TREE/PRODUCT/PROJECT/PENDING/0_SOURCE && echo  835  ls
 cd /home/dao04/JAIL/TREE/LISTS/TEST && echo   ls
 cd /home/dao04/JAIL/TREE/LISTS/TEST && echo   step1
+cd /home/dao04/JAIL/TREE/.CODE/SNIPPET2/BANK/FILES && echo   ls
+cd /home/dao04/JAIL/TREE/LISTS/SETUP/INSTALL/BANK/wallpaper && echo   exit
+cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS && echo   pwd
+cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS && echo   saveS
+cd /home/dao04/JAIL/TREE/.CODE && echo   cd .CODE
+cd /home/dao04/JAIL/TREE/.CODE && echo   cd .CODE
+cd /home/dao04/JAIL/TREE/.CODE/GUI && echo   pwd

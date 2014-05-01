@@ -1,0 +1,3 @@
+test_yad_is_working
+test_menu_from_list
+

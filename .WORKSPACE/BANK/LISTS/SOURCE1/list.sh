@@ -28,7 +28,10 @@ shopt -s expand_aliases
 file_runner=${BASH_SOURCE:-$0}
 alias source1="vi $file_runner"
 
+
 dir_self=`where_am_i $file_runner`
+
+alias list1="vi $dir_self/list.txt"
 dir_prefix=$dir_root/.CODE
 file_list=$dir_self/list.txt
 
