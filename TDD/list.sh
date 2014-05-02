@@ -30,7 +30,7 @@ parse_tag(){
 }
 step1(){
     #    print_color 34 " - - - - - - -  - - -[PENDING] - - - - - - "
-    toilet1 GENIUS
+
     #flite1 "your are a genius - trust me - i know what i say - it is a long, long  time since I notice you and .... anyway ..... fuck off" &
     flite1 success
     while read line;do
@@ -58,7 +58,15 @@ file_runner=${BASH_SOURCE:-$0}
 dir_self=`where_am_i $file_runner`
 file_list_tmp=$dir_self/list.txt
 str_focus=`cat focus`
-pv1 "[ focus ] $str_focus"
+print_color_n 32 "[ F O C U S ] "
+
+pv1 "close your eyes now"
+pv1 "try to remember ....................."
+pv1 "about the pending features.."
+pv1 "imagine the greatest !"
+pv1 "genius!!!!!!!!!!!!!!"
+pv1 "........................................................"
+    toilet1 $str_focus
 str_res=`cat $file_list_tmp | grep $str_focus`
 
 file_list=/tmp/list
