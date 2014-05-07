@@ -1,5 +1,0 @@
-make f1 - reponsive - for adding new snippets !
-a new dialog will be opened upon pressing F1 and you will be able to enter:
-url:
-/home/dao04/JAIL/TREE/.CODE/SOS/.old/BASHRC_SOS/print_color.cfg
-http://www.cyberciti.biz/faq/how-to-linux-disable-or-turn-off-beep-sound-for-terminal/

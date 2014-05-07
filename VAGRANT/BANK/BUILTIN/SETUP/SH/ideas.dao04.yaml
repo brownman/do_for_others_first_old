@@ -1,0 +1,384 @@
+gvim no bip
+
+
+NO BIP
+-=-=-=-=-=-=
+http://vim.wikia.com/wiki/Disable_beeping
+Put the following in vimrc:
+
+set noeb vb t_vb=
+Put the following in gvimrc:
+
+set vb t_vb=
+
+
+
+dpkg --add-architecture i386
+apt-get update
+apt-get install wine-bin:i386
+bip
+
+nixcraft
+search: tar
+res: http://www.cyberciti.biz/faq/tar-extract-linux/
+
+
+interesting
+-=-=-=-=-
+
+
+http://tldp.org/LDP/lkmpg/2.6/html/index.html
+
+CREATE NEW SNIPPETS FROM:
+===============================
+search: fix clock
+res1:
+http://linuxpoison.blogspot.co.il/2010/01/how-to-synchronize-system-clock-with.html
+res2:
+http://linuxpoison.blogspot.co.il/2008/02/howto-set-hardware-clock.html
+cmd:
+sudo /sbin/hwclock --systohc
+
+
+search : create deb
+url: http://linuxpoison.blogspot.co.il/2008/10/debian-package-creator.html
+
+
+search: staticip
+where: google
+res: 
+https://www.google.co.il/search?q=debian+static+ip&oq=debian+static+ip&aqs=chrome..69i57j0l5.10144j0j7&sourceid=chrome&es_sm=121&ie=UTF-8
+
+kernel:
+-=-=-=
+search: bip
+res:
+http://tldp.org/LDP/lkmpg/2.6/html/index.html
+
+github queies:
+-=-=-
+search: YAD:
+resaults:  
+- https://github.com/jmmadruga/Linux-Install-Scripts/blob/master/ubuntu-yad-lara.sh
+search: jail
+resaults
+
+must
+-=-=-=-
+level:
+bashrc
+no bip
+blacklist pcspkr
+blacklist snd_pcsp
+Add this two lines to your /etc/modprobe.d/blacklist.conf
+
+gnome-terminal - disable the bell
+progress bar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+security-illustrated
+-=-=-
+http://www.unixwiz.net/techtips/ssh-agent-forwarding.html
+
+ubuntu minimal -24 mb
+---
+http://mummila.net/nuudelisoppa/2012/02/16/booting-ubuntus-minimal-cd-iso-from-grub2/
+
+http://download.tuxfamily.org/netbootcd/NetbootCD-current.iso
+
+
+downloader
+-0-0-0
+wget -c URL or curl -C - -L -O URL. 
+curl -C - -L -O http://cdimage.debian.org/debian-cd/7.4.0/amd64/iso-cd/debian-7.4.0-amd64-CD-1.iso
+
+COMMANDLINE fu
+==-=-=-=
+http://www.commandlinefu.com/commands/matching/clock/Y2xvY2s=/sort-by-votes
+http://www.commandlinefu.com/commands/matching/ntp/bnRw/sort-by-votes
+hwclock --systohc -utc
+http://www.panticz.de/MultiBootUSB
+
+XBMC
+--=-=-=-=-=-=-
+BUILD A COMPUTER
+http://mymediaexperience.com/htpc-builds/
+http://www.maximumpc.com/article/features/12_essential_tips_using_xbmc_perfect_media_hub
+
+http://mirrors.xbmc.org/releases/XBMCbuntu/xbmcbuntu-13~beta4_amd64.iso  
+
+NIXCRAFT
+-=-=-=-=-=-=-=-=-=-=-=-=-=
+bind
+http://www.cyberciti.biz/faq/bind-alias-range-of-ip-address-in-linux/
+http://mymediaexperience.com/integrate-netflix-and-hulu-into-xbmc/
+shop
+http://mymediaexperience.com/htpc-builds/
+
+
+
+snippet
+=-=-=-=-=
+mariam-webster:
+http://www.commandlinefu.com/commands/matching/merriam-webster/bWVycmlhbS13ZWJzdGVy/sort-by-votes
+
+
+
+
+priorities
+---------------
+update parser.sh to - pr
+fix unfound funcs - u
+
+
+later
+---------
+
+
+http://www.commandlinefu.com/commands/matching/cowsay/Y293c2F5/sort-by-votes
+
+http://www.commandlinefu.com/commands/view/8307/find-out-the-starting-directory-of-a-script#comment
+
+
+
+tcpdump -w - |pv -bert >/dev/null
+
+sudo -s "echo 1 > /proc/sys/net/ipv4/icmp_echo_ignore_all"
+project
+-=-=-=
+- shortkeys
+- database which indicated the usage of .cfg
+- crons
+- WALLPAPER UPDATE PLUGIN!
+- automate the testing - bashprompt-> actually do the testing!
+
+
+READINESS - CHECK:
+----------------------
+- is sos running
+- is tasker gui - running
+- doeas cli-promt - show the recent pending feature ???
+- does wallpaper updating and showing the  number of rounds ?
+- does travis working
+- the library is being use to load .cfg files?
+- did u set readiness level for all script?
+- magnify the smalll uses the library ?
+
+
+
+
+
+
+update todo/done using magnify 
+
+ntpdate pool.ntp.org && hwclock --systohc && hwclock --adjust
+http://www.cyberciti.biz/networking/nmap-command-examples-tutorials/
+
+
+boris@hargal.co.il
+052-88-33-492
+boris.milevsky
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RASPBERII PII
+http://www.zdnet.com/raspberry-pi-how-i-spent-almost-150-on-a-35-computer-7000020574/
+
+
+1089392921
+1I997LBX1
+http://www.bizportal.co.il/Quote/Bond/GeneralView/1123256
+
+setxkbmap -option grp:switch,grp:alt_shift_toggle us,il
+
+find -iname '*mp3' -exec mid3iconv {} \;
+
+
+
+
+http://www.cyberciti.biz/faq/?s=shell+level   
+
+plugin: Hotkeys
+==========
+
+how to use ?
+------------------
+```
+#add 1 command to:
+#vi menu/options.txt 
+#
+##test our addition:
+#./wrapper.sh
+#
+##set the key-combination:            alt+f3: to execute: ./wrapper.sh
+#cd plugins/hotkeys - we are there !
+#- xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F3" -t string -s "$PWD/wrapper.sh" --create
+#```
+#I am sure - that's feeling is what a pilot feels  when he navigates through clouds in the blue sky !
+#
+# :)
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+# plugin: gmail-group
+# -------------------------------
+# running:
+#       - ./breath.sh gmail-group
+#       edit:
+#               open file: vars.cfg
+#                       and set your password and username
+#                       edit:
+#                               gmail-notify configuration..
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#                               just
+#
+#
+#
+#
+#
+#                               step by step instructions !!!!!!!!!!!!!!
+#                               ---------------------------------
+#                               #1)
+#                                sudo apt-get install git
+#
+#                                #2)
+#                                 git clone https://github.com/brownman/do_for_others_first.git
+#
+#                                 #3)
+#                                 cd do_for_others_first
+#                                 ./breath.sh
+#
+#                                 #4)
+#                                 #create or use a plugin:
+#
+#                                   Commands:
+#                                       -=-=-=-=-=-
+#                                       0) sudo apt-get install git
+#                                       1) git clone 
+#                                       2) run the script: ./breath.sh
+#                                       3) create/use a Plugin
+#
+#                                       that's all for now :)
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#                                       SPELL
+#                                       check-word() { echo "$1" | aspell -a ;}
+#                                       check-list() { cat "$1" | aspell list ;}
+#                                       check-file() { aspell check "$1" ;}
+#
+#                                       debian locals - add language : hebrew
+#                                       sudo dpkg-reconfigure locales
+#
+#
+#                                       apps \ metacity \ keybinding_commands
+#
+#
+#
+#                                       -=-=-=-=-
+#
+#                                                   args=( "$p" )
+#                                                               util=$path/run.sh
+#                                                                           if [ -f "$util" ];then
+#                                                                                           print_status "proccessing:"
+#
+#
+#                                                                                           cmd="$util ${args[@]}"
+#                                                                                           $cmd
+#                                                                                                       fi
+#
+#
+#
+#
+#                                                                                                       A voice chat through DropBox - that's it ! :) — Edit
+#
+#
+#
+#
+#                                                                                                       sudo apt-get  install irssi smuxi
+#
+#                                                                                                       /connect irc.debian.org
+#
+#
+#
+#                                                                                                       You're just substituting Latin phrases meaning almost the exact same thing, "id est" (it is) and "exempli gratia" (example for free).  In fact, you're often better off just using the English phrases in most contexts.  But if you've found somebody using them and aren't quite sure what they mean, just
+#                                                                                                       substitute the English equivalent and the meaning of the sentence should be clear.
+#
+#
+#
+#                                                                                                       1. Summary - remove to Objectives
+#                                                                                                       2.fix - looking for a challenging position X ..
+#                                                                                                       3.per job- only programming / only qa
+#                                                                                                       4.experince - before education
+#                                                                                                       education - remove '..lpi to here.. '
+#                                                                                                       5.+ 300 hours - hands-on course
+#                                                                                                       6.the project - Open source
+#                                                                                                       7. contributions: narrow to : 2/3 lines - under which organization i did it
+#                                                                                                       8.Military service - add numbers - who used the project etc
+#                                                                                                       9. if the position is not for graphics  - eliminate its details! - and group it to 1 line only,.
+#                                                                                                       10.flash - freelance which forum it served and what its popularity/how many users/ how much money it makes... etc
+#                                                                                                       11.languages: reading/writing/speaking
+#

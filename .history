@@ -35,3 +35,4 @@ cd /home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS && echo   saveS
 cd /home/dao04/JAIL/TREE/.CODE && echo   cd .CODE
 cd /home/dao04/JAIL/TREE/.CODE && echo   cd .CODE
 cd /home/dao04/JAIL/TREE/.CODE/GUI && echo   pwd
+cd /home/dao04/JAIL/TREE/BASHRC_REMINDER/croning/0.0.1 && echo   ls

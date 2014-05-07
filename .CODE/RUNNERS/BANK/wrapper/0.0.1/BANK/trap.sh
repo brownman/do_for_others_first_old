@@ -2,7 +2,7 @@
 lib_name='trap'
 lib_version=20121026
 
-stderr_log="/tmp/err2"
+stderr_log="/tmp/err"
 
 #
 # TO BE SOURCED ONLY ONCE:
@@ -79,7 +79,7 @@ function exit_handler ()
     if test -f "$stderr_log"
         then
             stderr=$( tail -n 1 "$stderr_log" )
-            rm "$stderr_log"
+    #        /bin/rm "$stderr_log"
     fi
 
     #
@@ -260,10 +260,13 @@ function backtrace
         let "i=i+1"
     done
 }
-if [ $BASH_SOURCE = $0 ];then
+start(){
+if [ $0 != bash ];then
+#if [ $BASH_SOURCE = $0 ];then
     echo exiting
     exit 0
 else
     echo returning
 return 0
 fi
+}

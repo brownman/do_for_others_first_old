@@ -1,0 +1,2 @@
+echo x #show x
+echo y #show yi

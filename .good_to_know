@@ -1,0 +1,14 @@
+i7$ : dao04@localhost:~/JAIL/TREE$ sudo vi /etc/default/
+acpid           cron            hdparm          ntpdate
+acpi-support    cups            hwclock         pulseaudio
+alsa-base       dbus            kdm.d/          rcS
+anacron         devpts          keyboard        rsync
+asterisk        ebtables        libvirt-bin     rsyslog
+avahi-daemon    exim4           libvirt-guests  saned
+bluetooth       extlinux        locale          ssh
+bridge-utils    fake-hwclock    minissdpd       tmpfs
+bsdmainutils    google-chrome   networking      useradd
+cacerts         grub            nfs-common      virtualbox
+console-setup   halt            nss             wicd
+crda            hddtemp         ntfs-3g         
+7$ : dao04@localhost:~/JAIL/TREE$ sudo vi /etc/default/wicd
