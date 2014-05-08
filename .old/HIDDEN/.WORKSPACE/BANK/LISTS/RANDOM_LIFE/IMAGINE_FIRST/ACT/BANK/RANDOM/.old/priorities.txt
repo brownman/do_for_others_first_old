@@ -1,4 +1,0 @@
-tasker_gui
-croning
-hotkeys
-LAYOUT/project_layout 

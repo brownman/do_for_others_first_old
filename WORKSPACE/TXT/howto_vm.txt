@@ -1,7 +1,0 @@
-focus:
-    http://devo.ps/blog/2013/09/25/vagrant-docker-and-ansible-wtf.html
-
-later:
-    https://gist.github.com/dergachev/3866825
-    http://briceno.mx/2012/10/easy-guide-to-create-a-vagrant-box-from-virtualbox/
-    http://fabiorehm.com/blog/2013/04/28/lxc-provider-for-vagrant/

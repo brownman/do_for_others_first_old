@@ -1,5 +1,0 @@
-random life from the genesis?                cat ~/.bashrc | grep "export -f every"
-pilot is ready with (1-project.txt +  2-life.txt) ?                xfce-query -s keyboard-layout | grep f1
-crontab user has suspend.sh?                 crontab -l | grep cp | grep suspend.sh
-
-

@@ -1,1 +1,0 @@
-vi /home/dao04/JAIL/TREE/works/LISTS/screens/cfg/random_lpi_homework.cfg +2

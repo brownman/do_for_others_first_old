@@ -1,3 +1,0 @@
-which func choosen to handle errors?
-do I print the env_vars when error occures
-

@@ -1,2 +1,0 @@
-xfconf-query --channel xfce4-keyboard-shortcuts --property "/commands/custom/<Super>q" --create --type string --set "exo-open --launch TerminalEmulator"
-https://github.com/cesar-rgon/xfce-installer/blob/master/sh/xfce4-config.sh

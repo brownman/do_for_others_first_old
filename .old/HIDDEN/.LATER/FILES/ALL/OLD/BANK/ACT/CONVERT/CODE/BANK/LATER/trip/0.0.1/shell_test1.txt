@@ -1,6 +1,0 @@
-dao04@localhost:~/JAIL/TREE/works/magnify_the_small/0.0.1$ echo $BASH
-$BASH                        $BASH_CMDS                   $BASH_LINENO                 $BASH_SOURCE
-$BASH_ALIASES                $BASH_COMMAND                $BASHOPTS                    $BASH_SUBSHELL
-$BASH_ARGC                   $BASH_COMPLETION_COMPAT_DIR  $BASHPID                     $BASH_VERSINFO
-$BASH_ARGV                   $BASH_GUI                    $BASH_REMATCH                $BASH_VERSION
-

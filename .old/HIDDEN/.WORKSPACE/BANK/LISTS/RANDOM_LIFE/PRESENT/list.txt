@@ -1,4 +1,0 @@
-present_motivation
-remind_runners
-setup_hotkeys
-remind_mission

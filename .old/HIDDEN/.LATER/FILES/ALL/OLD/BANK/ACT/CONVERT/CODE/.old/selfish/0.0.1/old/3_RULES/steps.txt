@@ -1,4 +1,0 @@
-1. git flow feature start X
-2. testing step1() - with bash_koans
-3. add step_x() to script.sh
-

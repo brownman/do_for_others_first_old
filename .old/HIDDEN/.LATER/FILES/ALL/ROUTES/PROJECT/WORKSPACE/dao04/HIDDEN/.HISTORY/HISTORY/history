@@ -1,3 +1,0 @@
-man -t bash | ps2pdf - filename.pdf
-save
-sdlfjsdf

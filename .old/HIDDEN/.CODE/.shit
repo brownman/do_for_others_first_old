@@ -1,6 +1,0 @@
-install_trap(){
-    exec 2>/tmp/err
-        trap trap_err ERR
-        export -f trap_err_0
-}
-

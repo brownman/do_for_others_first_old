@@ -1,3 +1,0 @@
-http://www.binarytides.com/install-virtualbox-4-3-ubuntu/
-http://www.binarytides.com/install-wine-debian-wheezy/
-http://www.binarytides.com/linux-commands-hardware-info/

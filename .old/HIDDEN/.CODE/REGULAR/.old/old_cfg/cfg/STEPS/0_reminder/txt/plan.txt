@@ -1,2 +1,0 @@
-vendor: use iris
-test+1: cover_func

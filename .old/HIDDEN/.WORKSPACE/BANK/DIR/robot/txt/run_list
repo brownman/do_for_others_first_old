@@ -1,2 +1,0 @@
-pushd $dir_root>/dev/null
-./lister.sh

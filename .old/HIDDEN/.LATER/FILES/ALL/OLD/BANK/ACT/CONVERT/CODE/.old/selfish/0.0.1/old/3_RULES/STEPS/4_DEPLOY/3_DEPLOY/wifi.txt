@@ -1,2 +1,0 @@
-sudo ettercap -T -w out.pcap -i wlan0 -M ARP
-http://www.commandlinefu.com/commands/matching/wlan0/d2xhbjA=/sort-by-votes

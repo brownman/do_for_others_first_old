@@ -1,5 +1,0 @@
-run the recent vendor app:reason - it is great:ROUTES/VENDOR/recent.cfg
-show the list of available lectures:reason - 1 minute is cool:ROUTES/LECTURE/recent.cfg
-remind of project pending feature:reason - fun:ROUTES/PROJECT/recent.cfg
-
-alias cdvendor="cd ~/JAIL/TREE/ROUTES/VENDOR/0.0.1/.old/iris_voice_automation/src"

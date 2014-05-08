@@ -1,9 +1,0 @@
-
-it is the start of creating a new plugin!
-=
-
-1. add an alias for quick insert of a command
-2. use a shortkey - gui version
-3. use a cli shortcut - bind keys to the command: quick
-
-

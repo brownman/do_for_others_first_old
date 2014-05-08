@@ -1,1 +1,0 @@
-../ROBOT/BANK/RUNNERS/BANK/wrapper/BANK/debug.sh

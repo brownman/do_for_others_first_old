@@ -1,2 +1,0 @@
-make a mind map - then talk
-first testing file - should only present the project structure

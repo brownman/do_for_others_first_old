@@ -1,4 +1,0 @@
-quick commands: cd_layout ----> bashrc loads breath which load QUICK/quick.cfg --> change it to struct.cfg
-commands available: quick_?? --> show quick_debug quick_trap + quick_debug_test quick_trap_test
-suspend with lecture: symlink /tmp to the project and run a lecture right after the suspension --> first : only update suspend.sh later transform it to a list/loop
-

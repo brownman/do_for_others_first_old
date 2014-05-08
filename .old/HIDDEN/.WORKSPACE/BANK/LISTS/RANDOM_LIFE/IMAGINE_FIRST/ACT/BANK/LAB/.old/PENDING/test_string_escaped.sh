@@ -1,1 +1,0 @@
-../BANK/test_string_escaped.sh

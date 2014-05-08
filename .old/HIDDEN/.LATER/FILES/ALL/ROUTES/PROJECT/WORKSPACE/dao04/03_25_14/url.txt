@@ -1,1 +1,0 @@
-http://timmurphy.org/2011/05/26/piping-stderr-in-unix/

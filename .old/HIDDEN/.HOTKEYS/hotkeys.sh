@@ -1,1 +1,0 @@
-/home/dao04/.SHIT/.old/.old/install1/src/OLD/hotkeys/1/hotkeys.sh

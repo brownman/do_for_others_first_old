@@ -1,3 +1,0 @@
-  ls -la  --sort=time
-  http://www.maketecheasier.com/remove-bloatware-from-android-device/
-  cat search_items.txt | while read i; do surfraw google -browser=firefox $i; done

@@ -1,7 +1,0 @@
-ensure tools has presentation|$dir_root/TOOLS/present.sh
-ensure tools has test|$dir_root/TOOLS/test.sh
-ensure tools has a test flag|$dir_root/TOOLS/breath.cfg
-ensure quick commands are enabled|alias proxyE
-
-
-alias setE; alias proxyE; alias cdtools;alias test_tools

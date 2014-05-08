@@ -1,3 +1,0 @@
-funcs.cfg
-env.cfg
-quick.cfg

@@ -1,4 +1,0 @@
-1_RUNNERS
-2_SINGLES
-3_SNIPPET
-list2.txt

@@ -1,1 +1,0 @@
-https://wiki.archlinux.org/index.php/pm-utils#Resume_from_suspend_shuts_down_instead_of_wake_up

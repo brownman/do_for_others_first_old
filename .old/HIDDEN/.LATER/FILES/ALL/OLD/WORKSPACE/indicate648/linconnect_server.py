@@ -1,1 +1,0 @@
-/home/dao04/JAIL/TREE/LINK/android/linconnect/LinConnectServer/main/linconnect_server.py

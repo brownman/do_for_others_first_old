@@ -1,3 +1,0 @@
-  ps -eo pcpu,pid,args | sort -n
-slow2() { ionice -c3 renice -n 20 $(pstree `pidof $1` -p -a -u -A|gawk 'BEGIN{FS=","}{print $2}'|cut -f1 -d " ") ; }
-  slow down CPU and IO for process and its offsprings.

@@ -1,8 +1,0 @@
-http://stackoverflow.com/questions/1491514/exclude-svn-directories-from-grep
-
-If you have GNU Grep, it should work like this:
-
-grep --exclude-dir=".svn"
-If happen to be on a Unix System without GNU Grep, try the following:
-
-grep -R "whatever you like" *|grep -v "\.svn/*" 

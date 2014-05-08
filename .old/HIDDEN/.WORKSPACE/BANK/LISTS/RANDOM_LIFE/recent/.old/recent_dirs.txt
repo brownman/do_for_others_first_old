@@ -1,8 +1,0 @@
-save a snippet|/home/dao04/JAIL/TREE/OMRI/scripts/save_your_snippets
-gmail group|/home/dao04/JAIL/TREE/OMRI/projects/plugins/0.0.1/gmail-group
-share questions|OMRI/projects/plugins/0.0.1
-library dir|/home/dao04/JAIL/TREE/BANK/TOOLS/BANK/library
-fix lister|BANK/TOOLS/BANK/lister/0.0.1/
-omri script|LAB/BANK/steps.sh
-sed presentation|TREE/PRESENT/sed.sh
-

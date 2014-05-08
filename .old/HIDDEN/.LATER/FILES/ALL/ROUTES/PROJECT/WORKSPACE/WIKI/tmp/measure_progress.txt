@@ -1,1 +1,0 @@
-../bank/measure_progress.txt

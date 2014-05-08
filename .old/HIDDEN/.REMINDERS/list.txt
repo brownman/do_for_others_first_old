@@ -1,9 +1,0 @@
-BACKUP|1. encourage testing if logs indicates 0 progress between runs
-ENV|1. set flags 2.development OR production mode / 3.language to learn
-FUNCS|1. encourage the sourcing of code which located at the CODE/
-QUICK|1. export dir_stracture for fast navigation 2. alias quick_* commands
-RECENT|1. remind of my goals 2. their priority level 3.randomly remind about the reason
-TRAP|1. load trap after sourcing 2.make it available to other tool 3.wrap the primary script with external trapper - for handling bugs
-
-RANDOM|1. show random layout
-BASHRC

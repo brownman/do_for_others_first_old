@@ -1,9 +1,0 @@
-#parser: ls
-#dir_prefix: $dir_root0/.CODE
-SYSTEM
-PROXY 
-PROJECT  
-GENERAL  
-UTILS  
-FILE_OP  
-INSTALL

@@ -1,1 +1,0 @@
-../FILES/ALL/OLD/BANK/LIBRARY/CODE/0.0.2/src/TOOLS/lister/0.0.1/lister.sh

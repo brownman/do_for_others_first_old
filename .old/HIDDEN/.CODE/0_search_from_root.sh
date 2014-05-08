@@ -1,1 +1,0 @@
-SEARCH_THIS_FOLDER/0_search_from_root.sh

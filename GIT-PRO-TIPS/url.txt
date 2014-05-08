@@ -1,0 +1,7 @@
+http://rypress.com/tutorials/git/tips-and-tricks.html
+http://root.cern.ch/drupal/content/git-tips-and-tricks
+http://adit.io/posts/2013-08-16-five-useful-git-tips.html
+http://www.andyjeffries.co.uk/25-tips-for-intermediate-git-users/
+https://ochronus.com/git-tips-from-the-trenches/
+http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks
+http://gitready.com/

@@ -1,8 +1,0 @@
-[ caller ] bash
-[ 0_SYSTEM ]
-[ 11_PROXY ]
-[ 12_PROJECT ]
-[ 13_GENERAL ]
-[ 21_UTILS ]
-[ 22_FILE_OP ]
-[ 3_INSTALL ]

@@ -1,6 +1,0 @@
-[check] File:		/home/dao04/JAIL/TREE/works/product_step/0.0.1/steps.cfg
-[check] Function:		step2
-[check] Test:		 type exiting 
- alias aliasE
-[check] Clipboard:		vi /home/dao04/JAIL/TREE/works/product_step/0.0.1/steps.cfg +17
-42

@@ -1,1 +1,0 @@
-cd /home/dao04/JAIL/TREE/PROJECT/PENDING/1_SETUP/INSTALL/BANK/hotkeys_list && echo   ls
