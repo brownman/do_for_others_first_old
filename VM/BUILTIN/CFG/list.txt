@@ -1,0 +1,12 @@
+LOCAL/finder.cfg
+LOCAL/replace.cfg
+LOCAL/save.cfg
+PROMPT/history_sync.cfg
+SCRIPTING/ensure_escaped.cfg
+SCRIPTING/every.cfg
+SCRIPTING/follow_symlinks.cfg
+SCRIPTING/proxy.cfg
+SCRIPTING/random.cfg
+SCRIPTING/where_am_i.cfg
+URL/fu.cfg
+URL/informative.cfg

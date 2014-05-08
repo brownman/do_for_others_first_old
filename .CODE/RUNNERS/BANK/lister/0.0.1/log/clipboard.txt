@@ -1,0 +1,2 @@
+echo vi /home/dao04/JAIL/TREE/works/product_step/0.0.1/steps.cfg +17
+42 | /usr/bin/xsel --clipboard

@@ -1,0 +1,8 @@
+remind me to smile|                   robot run task list todo
+remind me of shalva|                  notify-send shalshal needs
+remind me of shalva|                  notify-send Kuka wants_u
+remind me to push order forward|      notify-send 'push 1 thing only' 'or.. even less! stand up for me please!' 
+remind to call him or her|            notify-send 'talk or call or send' 'he stil waits for you' 
+remind of breathing|                  notify-send 'just remind you' 
+magnify the small|                    notify-send 'a simple reminder' 
+learn a new word|                     robot teach new word

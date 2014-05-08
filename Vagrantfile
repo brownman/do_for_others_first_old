@@ -10,17 +10,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  #config.vm.box = "base"
-  config.vm.box = "lucid32"
+  config.vm.box = "precise64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
-
-
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  # config.vm.box_url = "http://domain.com/path/to/above.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -36,12 +30,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # your network.
   # config.vm.network :public_network
 
-config.ssh.forward_x11 = true
-#- If true, X11 forwarding over SSH connections is enabled. Defaults to false.
-
   # If true, then any SSH connections made will enable agent forwarding.
   # Default value: false
-   config.ssh.forward_agent = true
+  # config.ssh.forward_agent = true
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -67,7 +58,7 @@ config.ssh.forward_x11 = true
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
   # You will need to create the manifests directory and a manifest in
-  # the file base.pp in the manifests_path directory.
+  # the file precise64.pp in the manifests_path directory.
   #
   # An example Puppet manifest to provision the message of the day:
   #

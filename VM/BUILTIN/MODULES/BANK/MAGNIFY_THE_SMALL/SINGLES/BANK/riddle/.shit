@@ -1,0 +1,6 @@
+depend(){
+apt-get source abs-
+wget http://pcleon.if.ufrgs.br/debian/pool/non-free/a/abs-guide/abs-guide_6.6-1_all.deb
+sudo dpkg -i /$filename
+}
+

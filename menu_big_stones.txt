@@ -1,0 +1,1 @@
+WORKSPACE/TXT/menu_big_stones.txt

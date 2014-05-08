@@ -1,7 +1,0 @@
-1.the script should check that the dropbox service is alive
-2.the script should check if there are new mp3 files at ~/Dropbox/VOICES
-3.If new audio files have been discovered - play them only
-4.the script will let the user record  audio from the Mic and save it to mp3
-5.Exampe for  filename: lior_Sunday_12_54_00.mp3
-6.save your script at ~/Dropbox/hackeru/plugins/yourNAme
-#Hint: use commandlinefu website
