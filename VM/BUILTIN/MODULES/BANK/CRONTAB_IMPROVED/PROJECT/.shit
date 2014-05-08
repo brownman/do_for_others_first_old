@@ -1,0 +1,40 @@
+print_func(){
+    #echo 'print_func:'
+    echo -e "\t\t[ ${FUNCNAME[1]}] ()"
+}
+
+cat(){
+    print_func
+    print_caller 1    
+    print_caller 2    
+    file=$1
+    /bin/cat $file
+}
+
+update_logger(){
+    print_func
+    echo "$@" >>  $dir_log/log.txt
+}
+
+    export dir_root=~/JAIL/TREE
+    export dir_works=$dir_root/works
+    export dir_magnify=$dir_works/magnify_the_small/0.0.1
+print_func
+
+speak(){
+    str="$1"
+    /usr/bin/flite -t "$str"
+}
+
+create_dir(){
+    dir=$1
+    [ ! -d $dir ] && mkdir -p $dir
+}
+
+print_caller(){
+    #print_func
+    local num=$1
+    echo -e "\t\t[ caller ] [ $num ]: ${FUNCNAME[${num}]}"
+}
+
+

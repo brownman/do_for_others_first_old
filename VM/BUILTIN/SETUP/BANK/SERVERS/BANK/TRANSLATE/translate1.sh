@@ -1,0 +1,1 @@
+/home/dao04/JAIL/TREE/.CODE/REGULAR/.old/old_cfg/.old2/src1/.old/share/translation/translation.sh

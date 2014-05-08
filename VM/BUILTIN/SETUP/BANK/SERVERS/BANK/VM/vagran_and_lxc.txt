@@ -1,0 +1,2 @@
+http://pfigue.github.io/blog/2014/01/25/using-vagrant-with-lxc-linux-containers/
+https://github.com/fgrehm/vagrant-lxc

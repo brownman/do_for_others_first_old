@@ -1,0 +1,4 @@
+arc1=amd64.deb
+    arc2=i386.deb
+    arc=$arc1
+

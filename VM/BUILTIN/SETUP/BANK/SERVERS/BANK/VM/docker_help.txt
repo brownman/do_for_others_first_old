@@ -1,0 +1,3 @@
+https://www.docker.io/learn/dockerfile/level1/
+http://docs.docker.io.s3-website-us-west-2.amazonaws.com/installation/ubuntulinux/
+http://stackoverflow.com/questions/16047306/how-is-docker-io-different-from-a-normal-virtual-machine?rq=1

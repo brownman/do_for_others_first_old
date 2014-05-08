@@ -1,0 +1,1 @@
+/home/dao04/JAIL/TREE/VAGRANT/BANK/MTS_2/SINGLES/BANK/translation/translation.sh

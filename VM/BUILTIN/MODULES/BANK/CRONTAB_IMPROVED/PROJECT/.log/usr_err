@@ -1,0 +1,6 @@
+notify-send '1 minute'
+
+gxmessage: message text is required
+Try `gxmessage --help' for more information
+rm: cannot remove `/tmp/CRONING/INDICATORS/admin': Is a directory
+rm: cannot remove `/tmp/CRONING/INDICATORS/usr': Is a directory

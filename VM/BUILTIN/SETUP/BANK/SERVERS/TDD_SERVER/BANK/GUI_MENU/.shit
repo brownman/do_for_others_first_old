@@ -1,0 +1,6 @@
+local  cmd="touch $file"
+                echo create new file ?  
+                echo "[ $file ] "
+                print_color 32 " OK ! " 
+                eval "$cmd"
+
