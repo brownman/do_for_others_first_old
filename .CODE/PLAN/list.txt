@@ -1,0 +1,5 @@
+proxy is the only tool which bash is loading - tracing is a must - catching errors later
+every tool is indepandant
+test each of the tools - update each tool - to be depanded only on: proxy()
+it is easy to take all function fron helper.cfg - automaticly
+coverage = standards / readiness scanner

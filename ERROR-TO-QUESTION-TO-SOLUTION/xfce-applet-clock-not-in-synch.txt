@@ -1,3 +1,0 @@
-http://ubuntuforums.org/showthread.php?t=1963220
-replace it with applet: orange-clock 
-utc: can be set using its configuration menu
