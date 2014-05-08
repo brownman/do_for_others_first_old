@@ -5,7 +5,7 @@ Do For Others First
 
 latest mindmaps
 ==
-[!image](./MINDMAPS/msfe1-4.png)
+![image](./MINDMAPS/msfe1-4.png)
 
 
 ## License
