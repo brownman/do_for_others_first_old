@@ -1,0 +1,16 @@
+dao04@localhost:~/JAIL/TREE$ grep -r 'export time' WORLD/
+[ Exit_code ] 
+SIGTERM
+[GO HOME]
+bash exiting
+dao04@localhost:~/JAIL/TREE$ grep -r 'export time' . --exclude-dir='.git'
+./LIBRARY/CODE/0.0.2/src/.old2/src1/.old/share/cfg/.cfg/vars.cfg:export time1=$(date +%H:%M)
+./LIBRARY/CODE/0.0.2/src/.old2/src1/.old/share/cfg/.cfg/vars.cfg:export timeout1='--timeout=340'
+./LIBRARY/CODE/0.0.2/src/.old2/src1/.old/setup.cfg:export time1=`date | cut -d' ' -f4 | sed 's/:/_/g'`
+./LIBRARY/CODE/0.0.2/src/cfg/breathing/vars.cfg:    export time=`date | tr -s ' ' | cut -d' ' -f4 | sed 's/:/_/g'`
+./LIBRARY/CODE/0.0.2/src/cfg/breathing/old1/export.cfg:    export time=`date | tr -s ' ' | cut -d' ' -f4 | sed 's/:/_/g'`
+./LIBRARY/CODE/0.0.2/src/CONVERT/CODE/BANK/magnify_the_small/0.0.1/OLD/cfg/vars.cfg:export time1=$(date +%H:%M)
+./LIBRARY/CODE/0.0.2/src/CONVERT/CODE/BANK/magnify_the_small/0.0.1/OLD/cfg/vars.cfg:export timeout1='--timeout=340'
+./BASHRC/vars.cfg:export time=`date | tr -s ' ' | cut -d':' -f4 | sed 's/:/_/g'`
+dao04@localhost:~/JAIL/TREE$ 
+

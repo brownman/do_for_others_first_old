@@ -1,0 +1,3 @@
+http://www.binarytides.com/add-ubuntu-ppa-repository-to-debian-7-wheezy/
+http://www.astarix.co.uk/2011/05/using-ubuntu-ppa-packages-with-debian-or-crunchbang/
+https://wiki.debian.org/CreatePackageFromPPA

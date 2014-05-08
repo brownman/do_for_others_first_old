@@ -1,0 +1,22 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/games
+#HOME=/home/guest
+#MAILTO=guest
+DISPLAY=:0 
+NAME=$LOGNAME
+#dir_desktop=/home/$NAME/Desktop/
+#file_env=$dir_plugins/croning/env/user.txt
+#file_error=$dir_plugins/croning/error/user.txt
+#dir_plugins/croning/croning.sh 2>$file_error"
+#* * * * *  /usr/bin/env >$croning_env
+#* * * * *  bash -c "$croning_sh steps new_word"
+dir_desktop=/home/$NAME/Desktop/croning
+script_croning=$dir_desktop/croning.sh
+* * * * *   /usr/bin/env >$dir_desktop/croning.env.txt
+*/1 * * * * bash -c "/usr/bin/notify-send reminder 'suspension is alive' 2>$dir_desktop/cron_user_err_2.txt"
+*/5 * * * * bash -c "flite -t 'sos is working' 2>$dir_desktop/cron_user_err_3.txt"
+
+*/1 * * * * bash -c "sleep 7;flite -t 'sport';xcowsay  mind-map;/usr/bin/notify-send mind map 2>$dir_desktop/cron_user_err_4.txt"
+*/1 * * * * bash -c "flite -t 'white board';xcowsay  mind-map;/usr/bin/notify-send mind map 2>$dir_desktop/cron_user_err_4.txt"
+*/5 * * * * bash -c "$script_croning delete" 2>$dir_desktop/cron_user_err_5.txt"
+*/1 * * * * bash -c "$script_croning report" 2>$dir_desktop/cron_user_err_6.txt"

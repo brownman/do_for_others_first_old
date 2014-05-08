@@ -1,0 +1,10 @@
+CHANGES.rst
+LICENSE
+ez_setup.py
+setup.cfg
+shyaml
+pip-egg-info/shyaml.egg-info/PKG-INFO
+pip-egg-info/shyaml.egg-info/SOURCES.txt
+pip-egg-info/shyaml.egg-info/dependency_links.txt
+pip-egg-info/shyaml.egg-info/requires.txt
+pip-egg-info/shyaml.egg-info/top_level.txt

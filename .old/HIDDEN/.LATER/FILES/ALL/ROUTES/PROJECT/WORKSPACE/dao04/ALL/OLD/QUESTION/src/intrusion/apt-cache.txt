@@ -1,0 +1,43 @@
+aide - Advanced Intrusion Detection Environment - static binary
+aide-common - Advanced Intrusion Detection Environment - Common files
+aide-dynamic - Advanced Intrusion Detection Environment - dynamic binary
+aide-xen - Advanced Intrusion Detection Environment - static binary for XEN
+apf-firewall - easy iptables based firewall system
+chkrootkit - rootkit detector
+fcheck - IDS filesystem baseline integrity checker
+harden-environment - Hardened system environment
+harden-nids - Harden a system by using a network intrusion detection system
+hlbr - IPS that runs over layer 2 (no TCP/IP stack required)
+hlbrw - assistant to help make new rules to HLBR
+hunt - Advanced packet sniffer and connection intrusion
+ippl - IP protocols logger
+libnids-dev - IP defragmentation TCP segment reassembly library (development)
+libnids1.21 - IP defragmentation TCP segment reassembly library
+libprelude-dev - Security Information Management System [ Development files ]
+libprelude-perl - Security Information Management System [ Base library ]
+libprelude2 - Security Information Management System [ Base library ]
+libprelude2-dbg - Security Information Management System [ Debug symbols ]
+python-prelude - Security Information Management System [ Base library ]
+libpreludedb-dev - Security Information Management System [ Development files ]
+libpreludedb-perl - Security Information Management System [ Base library ]
+libpreludedb0 - Security Information Management System [ Base library ]
+python-preludedb - Security Information Management System [ Base library ]
+libapache2-modsecurity - Tighten web applications security for Apache
+packit - Network Injection and Capture
+piwi - P(erl|relude) IDS Web Interface - A frontend to your Prelude database
+prelude-lml - Security Information Management System [ Log Agent ]
+prelude-manager - Security Information Management System [ Manager ]
+python-nids - Python binding for libnids (aka pynids)
+samhain - Data integrity and host intrusion alert system
+snort - flexible Network Intrusion Detection System
+snort-common - flexible Network Intrusion Detection System [common files]
+snort-common-libraries - flexible Network Intrusion Detection System ruleset
+snort-doc - Documentation for the Snort IDS [documentation]
+snort-mysql - flexible Network Intrusion Detection System [MySQL]
+snort-pgsql - flexible Network Intrusion Detection System [PostgreSQL]
+snort-rules-default - flexible Network Intrusion Detection System ruleset
+suricata - Next Generation Intrusion Detection and Prevention Tool
+tiger - Report system security vulnerabilities
+tiger-otheros - Scripts to run Tiger in other operating systems
+kismet - wireless sniffer and monitor - core
+kismet-plugins - wireless sniffer and monitor - plugins

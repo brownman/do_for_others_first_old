@@ -1,0 +1,20 @@
+#info: trap with gxmessage
+#pending: add tests
+#imagine: present /tmp/err + entrytext: gvim +caller
+alias trapE="vi $BASH_SOURCE"
+exec 2>/tmp/err
+trap_err_2(){
+    local str_caller=`caller`
+        local cmd="gvim +${str_caller}"
+        echo trap_err
+        util=`which gxmessage`
+        cmd="$util -entrytext \"$cmd\" -title \"${FUNCNAME[0]}\" -file /tmp/err"
+(        eval "$cmd" )&
+      #  proxy sleep 2
+      #  proxy go_home
+        exit
+        
+}
+trap trap_err_2 ERR
+
+

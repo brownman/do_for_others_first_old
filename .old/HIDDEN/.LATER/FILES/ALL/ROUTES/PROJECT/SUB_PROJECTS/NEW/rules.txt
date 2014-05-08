@@ -1,0 +1,6 @@
+daily moto
+living is prior to thinking
+every cmd- source should use the library
+every cmd- has traces
+every assert -  add 1 test - for the travis.sh
+act: trap -  desc+cmd

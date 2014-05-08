@@ -1,0 +1,1 @@
+sudo killall updatedb.mlocate -9

@@ -1,0 +1,14 @@
+1. use aliasing_dir, exporting : etc + lister to: eliminate PRODUCT/ and move to .CODE/RUNNERS/list.txt  - it is enough !
+
+
+gui menu - make sure to refresh the memory regarding this file- indepandantly !
+-0-0-0-0-0=
+keys
+gui menu for avoiding hotkeys problem
+edit list.txt and source it
+asciicast + fu
+fast_add to .cfg file - from bash-websites
+edit life.txt
+edit project.txt
+edit external_knowledge.txt
+how am i ? what is setup, what is running , examine the progress

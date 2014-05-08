@@ -1,0 +1,2 @@
+1. add layout: .tree in each README.md  file 
+2. show how to build a plugin - a plugin lifecycle 

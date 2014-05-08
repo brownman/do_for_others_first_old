@@ -1,0 +1,4 @@
+1. update todo list to contain column: url
+2. update party example to have a todo list
+3. 
+

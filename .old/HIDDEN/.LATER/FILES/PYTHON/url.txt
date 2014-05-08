@@ -1,0 +1,1 @@
+http://stackoverflow.com/questions/9348869/how-to-install-virtualenv-without-using-sudo

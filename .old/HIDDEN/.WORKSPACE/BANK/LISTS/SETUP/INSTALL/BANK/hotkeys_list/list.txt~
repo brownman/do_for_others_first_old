@@ -1,0 +1,10 @@
+echo xcowsay f6
+echo gedit $dir_self/list.txt
+echo source $dir_self/list.sh
+echo $dir_root/ENTER/BANK/proxy.sh hotkey
+echo gvim $dir_root/genesis.yaml
+echo gvim $dir_root/plan.txt
+echo notify-send f4
+echo notify-send f5
+echo robot_steps
+

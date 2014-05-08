@@ -1,0 +1,10 @@
+  netstat -ntu | awk '{print $5}' | cut -d: -f1 | sort  | uniq -c | sort -n
+nmap -sS -P0 -sV -O <target>
+2009-02-18 07:32:03
+User: starchox
+Tags: Network net
+18
+Up
+Down
+Get info about remote host ports and OS detection
+  thanks

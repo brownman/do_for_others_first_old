@@ -1,0 +1,1 @@
+update wallpaper:   cfg/wallpaper.sh

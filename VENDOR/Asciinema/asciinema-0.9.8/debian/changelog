@@ -1,0 +1,11 @@
+asciinema (0.9.8-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- David Adam <zanchey@ucc.gu.uwa.edu.au>  Mon, 10 Feb 2014 08:51:58 +0800
+
+asciinema (0.9.7-1) unstable; urgency=low
+
+  * source package automatically created by stdeb 0.6.0+git
+
+ -- David Adam <zanchey@ucc.gu.uwa.edu.au>  Sun, 24 Nov 2013 20:46:24 +0800

@@ -1,0 +1,7 @@
+grep1 -lr /backdrop/screen0/monitor0/image-path /home/dao04/JAIL/TREE
+0
+$ : dao04@localhost:~/JAIL/TREE/.WORKSPACE/BANK/LISTS/SETUP/INSTALL/BANK/wallpaper$ grep1 -lr /backdrop/screen0/monitor0/image-path /home/dao04/JAIL/TREE
+/home/dao04/JAIL/TREE/.CODE/REGULAR/.old/old_cfg/LISTS/BANK/product_of_the_day/cfg/wallpaper.sh
+/home/dao04/JAIL/TREE/.WORKSPACE/BANK/LISTS/SETUP/INSTALL/BANK/wallpaper/list.sh
+/home/dao04/JAIL/TREE/IMAGINE/ACT/BANK/VIEW/BANK/PILOT/CFG/magnify_the_small/0.0.1/BANK/OLD/sh/ongoing/tasks/txt_to_png.sh
+/home/dao04/JAIL/TREE/IMAGINE/ACT/BANK/VIEW/BANK/PILOT/CFG/magnify_the_small/0.0.1/BANK/OLD/sh/wallpaper.sh

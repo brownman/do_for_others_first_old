@@ -1,0 +1,14 @@
+Rename asciinema run script so that it does not conflict with the module name.
+Index: asciinema-0.9.7/setup.py
+===================================================================
+--- asciinema-0.9.7.orig/setup.py	2013-11-24 23:01:27.740891888 +0800
++++ asciinema-0.9.7/setup.py	2013-11-24 23:01:38.112410897 +0800
+@@ -24,7 +24,7 @@
+     download_url=(url_template % asciinema.__version__),
+     entry_points={
+         'console_scripts': [
+-            'asciinema = asciinema.__main__:main',
++            'asciinema-run = asciinema.__main__:main',
+         ],
+     },
+     install_requires=requirements,

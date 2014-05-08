@@ -1,0 +1,1 @@
+5|$dir_random_life/imagine_easiness/breath.cfg

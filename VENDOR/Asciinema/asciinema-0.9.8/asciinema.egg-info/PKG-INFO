@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: asciinema
+Version: 0.9.8
+Summary: Command line recorder for asciinema.org service
+Home-page: http://asciinema.org
+Author: Marcin Kulik
+Author-email: m@ku1ik.com
+License: MIT
+Download-URL: https://github.com/sickill/asciinema/archive/v0.9.8.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Topic :: System :: Shells
+Classifier: Topic :: Terminals
+Classifier: Topic :: Utilities

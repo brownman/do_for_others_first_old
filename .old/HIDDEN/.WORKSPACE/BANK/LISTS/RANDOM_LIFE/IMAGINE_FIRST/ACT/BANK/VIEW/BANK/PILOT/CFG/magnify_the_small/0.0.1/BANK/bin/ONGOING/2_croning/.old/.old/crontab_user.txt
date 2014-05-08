@@ -1,0 +1,2 @@
+* * * * * env > /home/dao04/config/env_dump.cfg
+*/1 * * * * bash -c '/home/dao04/config/croning.sh alive

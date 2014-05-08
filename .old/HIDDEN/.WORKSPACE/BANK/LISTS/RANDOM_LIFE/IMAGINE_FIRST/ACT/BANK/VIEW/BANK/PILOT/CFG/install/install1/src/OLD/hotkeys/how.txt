@@ -1,0 +1,2 @@
+      <property name="&lt;Alt&gt;F2" type="string" value="bash -c &apos;  /home/dao04/JAIL/do_for_others_first/wrapper.sh /home/dao04/JAIL/do_for_others_first/1/hotkeys.sh/menu.sh&apos;">
+

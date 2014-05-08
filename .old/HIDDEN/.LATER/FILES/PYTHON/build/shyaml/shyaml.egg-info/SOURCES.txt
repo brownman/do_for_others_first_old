@@ -1,0 +1,10 @@
+CHANGELOG.rst
+README.rst
+setup.cfg
+setup.py
+shyaml
+shyaml.egg-info/PKG-INFO
+shyaml.egg-info/SOURCES.txt
+shyaml.egg-info/dependency_links.txt
+shyaml.egg-info/requires.txt
+shyaml.egg-info/top_level.txt

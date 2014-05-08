@@ -1,0 +1,38 @@
+#alias dir_self="$( pushd `dirname $BASH_SOURCE`; popd )"
+#
+#alias dir_self="echo $( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+where_am_i(){
+########### method1
+#use: /bin/readline
+    local  rpath=$(readlink -m "$BASH_SOURCE")
+        local   rcommand=${rpath##*/}
+    local  str_res=${rpath%/*}
+########### method2
+#use:bash builtin: caller
+#local rpath=$( caller | cut -d' ' -f2 | xargs dirname )
+
+local  dir_self="$( cd $str_res  && pwd )"
+echo "$dir_self"
+}
+
+rules(){
+local cmd="cat $BASH_SOURCE | grep level | sed 's/#level://g'"
+    local level=$( proxy "$cmd" )
+    local count=0
+    while [ "$count" -lt "$level" ];do
+        echo " [ level ] $count "
+        cat $BASH_SOURCE | grep "#level_${level}:" 
+
+        done
+    }
+trap_err(){
+#print_shlvl
+    print_color 31 "[TRAP] $?"
+        local str_caller=`    caller`
+        local cmd="vi +${str_caller}"
+        proxy "update_clipboard \"$cmd\""
+#        return 0
+        proxy go_home
+}
+

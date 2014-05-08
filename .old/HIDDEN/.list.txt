@@ -1,0 +1,10 @@
+#level: 1
+#validation: echo
+#validation2: echo
+#parser: echo|figlet
+show project  modes|cat env.cfg
+set project modes: mute/sleep/etc|set env.cfg
+source the project|source $dir_root/PROJECT/breath.cfg 
+setup the project|bash -c setup
+present reminders|bash -c remind
+robot is here to assist|robot

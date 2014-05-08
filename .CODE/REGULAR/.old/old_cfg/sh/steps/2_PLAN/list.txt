@@ -1,0 +1,2 @@
+1. practice new language through the  cli
+2. dont load .cfg :translate() --> instide use an alias for act.sh to trigger a simple task

@@ -1,0 +1,3 @@
+python is working and shyaml is alive: type shyaml
+library is activated: type use
+print_status of env vars is working: type print_status

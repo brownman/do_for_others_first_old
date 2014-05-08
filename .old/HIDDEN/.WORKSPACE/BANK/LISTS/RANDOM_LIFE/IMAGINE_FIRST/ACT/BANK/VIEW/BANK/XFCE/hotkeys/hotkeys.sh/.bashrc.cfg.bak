@@ -1,0 +1,56 @@
+shopt -s expand_aliases
+assert1() {
+    notify-send hi
+    echo "$1 $2 $3 $4 $5"
+    exit
+    local num3=$(echo "$3" | wc -c)
+    local num4=$(echo "$4" | wc -c)
+    if [ $num3 -gt 100 ];then
+        echo 'exide limits'
+        return
+    fi
+    if [ $num4 -gt 100 ];then
+        echo 'exide limits'
+        return
+    fi
+
+
+    if [[ "$3" != "$4" ]]; then
+        #notify-send ""
+        print_error "  $1 error"
+        #echo "You have not yet reached enlightenment ..."
+        echo "  Expected '$3'" " got '$4'"
+        #echo "Please meditate on the following code:"
+        local filename=`grep  $1 $dir_spec/*.sh -l`
+
+        cmd="vi +$2 $filename" 
+        #monkey="nohup $cmd 1>nohup.out 2>&1 &"
+
+        echo "$cmd" #| xclip
+        if [ "$EDITOR" = 'vi' ];then
+            print_good "updating your clipboard.."
+            sleep1 2
+            echo "$cmd" | xsel --clipboard 1>/dev/null
+            echo DONE!
+        else
+            echo  "  $filename   :$2"
+        fi
+
+
+        #        nohup -p $pid
+
+
+
+        echo ''
+        # echo "You are now 10/291 koans and 2/36 lessons away from reaching enlightenment"
+        exit 1
+    fi
+}
+alias assert1='assert1 ${BASH_SOURCE} ${FUNCNAME} ${LINENO}'
+error_report(){
+notify-send error "$1 $2 $3" 
+echo "bash_source: ${BASH_SOURCE[1]}"
+echo "line number: ${LINENO[1]}"
+#echo "line number: ${FUNCNAME[0]}"
+}
+export -f error_report

@@ -1,0 +1,6 @@
+project:
+    - run the first test on tools - check the lister tool|echo hi
+vendor: 
+    - check google-voice recognition api - using my script|echo bye
+lpi:
+    - download home work to directory|echo die

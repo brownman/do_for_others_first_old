@@ -1,0 +1,8 @@
+must.txt
+pretend.txt
+am_i_ok.txt
+fast_commands.cfg
+measure_progress.txt
+priority.txt
+todo.txt
+wish.txt

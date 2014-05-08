@@ -1,0 +1,94 @@
+ideas_pending:
+        magnify_the_small:
+            est: 10 min
+            steps: 
+                - add proxy
+                - edit a minimal list - room1.txt
+
+        test:
+            est: 10 min
+            tools: 
+                - present_txt_files:
+                    - reminders
+                - scan:
+                    readiness_level:
+                        - of readme.md 
+                        - of plugins
+                    
+            steps: 
+                - use runner: shunit2
+                - present each idea and its changelog/README before testing it
+                - use bash_koans
+
+        travis_presentation: 
+            est: 10 min
+            steps:
+               - run a jail
+               - set up dir_abs
+
+        yaml_menu: 
+            est: 30 min
+            steps:
+                - use a minimal .yaml file
+                - use a yaml parser
+                - first menu: ( version / present layout / present recent / show next features )
+
+        awake_and_learn:
+            est: 20 min
+            steps:
+                - use plugin: learn_lang.sh
+                - use plugin: awaken
+                - create a cron installer: create a script at /tmp/script.sh that cron will trigger 
+                
+                
+
+    
+
+
+smallest_steps:
+    run tasker + proxy commands
+
+points:
+ run as many tasks: tasker/croning/hotkeys + use proxy to log everything + update the wallpaper with a snippet
+
+priority:
+  use robot calls instead of running commands ! --> run test and quick  goto pending
+  edit priority file every 1 minute - through cron
+  run tasker
+  yaml menu / parser
+
+motivation:
+    Imagine that you can play a lecture and control it with your voice
+
+#watch a lecture: vlc `cat lecture.txt`
+#awareness to pending feature: source $dir_library/use.cfg
+new breath:
+    run vendor code: $dir_vendor/run.sh
+    vendor fu: cd ~/JAIL/TREE/HACKER/VENDOR/0.0.1/fu-master && ./fu -a grep
+    vendor iris: cd ~/JAIL/TREE/HACKER/VENDOR/0.0.1/.old/iris_voice_automation
+    vendor android: cd ~/JAIL/TREE/HACKER/VENDOR/0.0.1/android
+    vendor:             cd $dir_vendor;./iris
+
+
+periodic:
+    recent lecture:     cd EXTERNAL;./run.sh
+    run tasker:         cd $dir_magnify;./wrapper.sh
+    use project:        cd TEST;./test.sh
+
+independant:
+    use tasker
+    use sos
+
+
+rules:
+    imagine first
+
+project:
+    1. load struct
+    1.1 load vars
+    2. load the library
+    3. test that tools are alive
+    4. estimate progress
+
+breakthrough:
+    yaml menu:          $dir_vendor/yaml_menu.sh

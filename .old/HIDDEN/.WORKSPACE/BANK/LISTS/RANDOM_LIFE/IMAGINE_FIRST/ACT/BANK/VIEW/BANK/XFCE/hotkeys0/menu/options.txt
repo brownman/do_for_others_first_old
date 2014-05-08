@@ -1,0 +1,11 @@
+edit the urls|gvim menu/url.txt 
+edit the options|gvim menu/options.txt 
+add 1 question|export file=~/Desktop/questions.txt;touch $file;echo `gxmessage -title add_question -file $file -entry` >> $file 2>~/Desktop/errors.txt
+edit the cron jobs|gvim "$dir_plugins/croning/txt/crontab.user.txt" 2>~/Desktop/errors.txt
+open a bookmark|google-chrome <<< echo `menu_gui menu/url.txt` &
+edit the xfce4 settings|xfce4-settings-manager
+fast adding a hotkey|xfconf-query -c xfce4-keyboard-shortcuts -p "/commands/custom/<Alt>F3" -t string -s "$PWD/wrapper.sh" --create
+#google-chrome https://github.com/cesar-rgon/xfce-installer/blob/master/sh/xfce4-config.sh 
+run plugin: gmail-notify|gmail-notify
+run plugin: screencast|screencast
+setxkbmap -option grp:switch,grp:alt_shift_toggle us,il

@@ -1,0 +1,7 @@
+- cron is working
+- tasker_gui is working
+- sos is working
+- random task: are running: test/cli_steps_by_level
+- aliases for Editing + Cd_to_dir are auto-installed when  sourcing ?
+- random robot-command by weight
+- group all tasker_loop_gui/cli/prompt under looper/

@@ -1,0 +1,1 @@
+../../1/testing/python2/koans/about_method_bindings.py

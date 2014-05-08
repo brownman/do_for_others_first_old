@@ -1,0 +1,28 @@
+        for file in $files;do
+            #echo $file
+
+            aliasing $file
+
+
+            #proxy source $file
+            local str=`basename $file`
+            #echo -e "\t[$str]"
+            #local funcs=$( cat $file | grep "(){" | sed 's/(){//g' )
+            #for func in $funcs;do
+#            	read_tag "$file" "$func" info
+            #done
+            #if [ "$MODE" = PENDING ];then
+#proxy            read_script_tag "$file" imagine true
+            #"$FLAG_SLOW"
+#            proxy read_script_tag $file info
+
+  #        proxy  read_script_tag "$file" pending
+
+            #           else
+            #               echo mode is not: pending
+            #       fi
+            sourcing $file $dirname
+
+
+
+
