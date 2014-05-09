@@ -1,1 +1,6 @@
 echo   ls
+echo   menu
+echo   ./list.cfg 
+vi
+./list.cfg 
+./list.cfg 

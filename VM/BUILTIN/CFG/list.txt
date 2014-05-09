@@ -4,6 +4,7 @@ LOCAL/save.cfg
 PROMPT/history_sync.cfg
 SCRIPTING/ensure_escaped.cfg
 SCRIPTING/every.cfg
+SCRIPTING/print_color.cfg
 SCRIPTING/follow_symlinks.cfg
 SCRIPTING/proxy.cfg
 SCRIPTING/random.cfg
