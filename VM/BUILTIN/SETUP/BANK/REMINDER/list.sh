@@ -1,5 +1,5 @@
 #!/bin/bash
-reset
+clear
 trap_sigint(){
     echo $FUNCNAME
 exec gvim $file_list 

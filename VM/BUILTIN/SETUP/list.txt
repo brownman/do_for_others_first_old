@@ -1,2 +1,2 @@
-1:BANK/HOTKEY_F1/hotkeyf1.sh
-5:BANK/ENSURE/ensure.sh
+2:BANK/HOTKEY_F1/hotkeyf1.sh
+5:BANK/ENSURE/list.sh

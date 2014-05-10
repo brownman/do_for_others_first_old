@@ -2,6 +2,7 @@ LOCAL/finder.cfg
 LOCAL/replace.cfg
 LOCAL/save.cfg
 PROMPT/history_sync.cfg
+PROMPT/debug.cfg
 SCRIPTING/ensure_escaped.cfg
 SCRIPTING/every.cfg
 SCRIPTING/pv1.cfg

@@ -1,2 +1,3 @@
+suspend
 commitment 600 
 awake 600

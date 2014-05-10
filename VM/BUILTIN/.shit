@@ -1,0 +1,68 @@
+echo "[reminder] use cdroot / cdroot0"
+
+trap_err0(){
+    if [ $0 = bash ];then
+        return 1
+    else
+
+        #    set -x
+        #    echo "${BASH_SOURCE[@]},${BASH_LINENO[@]}" | zenity --list --saperator="," --column=bash_source --column=line_no --text="2 fields of BASH_X"
+        local str_caller=''
+        (  str_caller=`caller`)
+
+        /usr/bin/notify-send found error
+        local cmd="gvim ~/bashrc_additions.cfg || gvim +${str_caller:-$0}"
+        if [ -f /tmp/err ];then
+            cmd1=$( gxmessage -entrytext "$cmd" -file /tmp/err -title "$BASH_SOURCE" )
+            #notify-send $cmd1
+            eval "$cmd1" 
+
+            sleep 2
+        else
+            notify-send "although error" "/tmp/err is empty"
+        fi
+    fi
+
+}
+test0(){
+    set -e
+
+
+
+    notify-send step1
+    source $dir_root/source.cfg 
+    notify-send step2
+    source $dir_root/struct.cfg 
+ #   echo    notify-send step3
+#    echo    bash -c $dir_root/run.sh  
+}
+
+
+step0(){
+    exec 2>/tmp/err 
+    trap trap_err0 ERR  
+
+    test0  1>/tmp/out  
+    res=$?
+    if [ $res -eq 0 ];then
+        echo SUCCESS;
+        sleep 3;
+        test0;  
+    else
+        [ -f /tmp/out ] && { cat -n /tmp/out; /bin/rm /tmp/out; }
+    fi
+}
+
+#this line here will stack the prompt: exec 2>/tmp/err
+#export -f trap_err0
+#trap trap_err0 ERR
+#[ -f /tmp/err ] && { rm /tmp/err; }
+#ln -sf /tmp/err ~/Desktop/errrrrrr.txt
+#export -f step0
+#export -f test0
+#echo run  step0
+set +x
+#echo ok
+cd $dir_root
+set +e
+

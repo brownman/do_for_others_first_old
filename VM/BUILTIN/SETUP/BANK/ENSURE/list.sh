@@ -10,18 +10,18 @@ pv1 which wallpaper set recently?
 pv1 which keys are configured?
 }
 
-sudo1(){
+crontab1(){
 pv1 who crontab is configured?
-crontab -l
-sudo crontab -l
+#crontab -l
+#sudo crontab -l
 }
 step(){
 funcname=$1
-type $funcname 
+( type $funcname  )
 echo Run it?
 echo press a key to continue!
-read
-eval $funcname
+#read
+( eval $funcname )
 
 }
 
@@ -29,6 +29,6 @@ eval $funcname
 steps(){
 step user
 step xfce
-step sudo1
+step crontab1
 }
 steps

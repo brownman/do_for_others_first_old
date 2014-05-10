@@ -1,6 +1,6 @@
 dir_self=`where_am_i`
 install_hotkey(){
-    local file=$dir_self/ideas.$LOGNAME.yaml
+    local file=$dir_self/ideas.yaml
     if [ -f $file ];then
         #reason: setup the hotkeys for the robot
         echo "[file exist] $file"
