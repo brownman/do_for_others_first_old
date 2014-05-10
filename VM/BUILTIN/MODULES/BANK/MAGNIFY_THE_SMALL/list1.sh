@@ -22,18 +22,26 @@ set_env(){
 eat(){
     local    cmd="$@"
     echo "[cmd] $cmd"
+
     eval   "$cmd" 
     sleep  2
 }
 
 
 single(){
+   local task_name=''
+   local args=()
+            local file_task=''
+            local str_depend=''
+
     while read line;do
         if [ -n "$line" ];then
             task_name=$( echo $line | cut -d' ' -f1 )
             args=$( echo $line | cut -d' ' -f2- )
-            local file_task=$dir_self/SINGLES/BANK/$task_name/${task_name}.sh
+            file_task=$dir_self/SINGLES/BANK/$task_name/${task_name}.sh
             #[ -s "$file_task" ] && { eat "$file_task" ;} || { echo "[file not exist] $file_task";ls -l $file_task; }
+            str_depend=$(            cat $file_task | grep depend_package )
+            echo "[DEPANDENCIES] $str_depend"
             eat "$file_task $args"
         else 
             break

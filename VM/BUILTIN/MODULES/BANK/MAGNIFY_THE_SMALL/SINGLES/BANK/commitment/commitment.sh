@@ -1,3 +1,4 @@
+#depend_package: yad gxmessage
 set -e
 set -o nounset
 update_file(){
