@@ -1,6 +1,0 @@
-/usr/local/lib/python2.7/dist-packages/sphinxbase.so
-/usr/local/lib/python2.7/dist-packages/SphinxBase-0.8-py2.7.egg-info
-/usr/local/lib/python2.7/dist-packages/SphinxBase-0.8-py2.7.egg-info/top_level.txt
-/usr/local/lib/python2.7/dist-packages/SphinxBase-0.8-py2.7.egg-info/dependency_links.txt
-/usr/local/lib/python2.7/dist-packages/SphinxBase-0.8-py2.7.egg-info/SOURCES.txt
-/usr/local/lib/python2.7/dist-packages/SphinxBase-0.8-py2.7.egg-info/PKG-INFO

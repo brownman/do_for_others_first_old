@@ -1,3 +1,0 @@
-slapack_lite.lo: slapack_lite.c ../../../include/sphinxbase/f2c.h
-
-../../../include/sphinxbase/f2c.h:

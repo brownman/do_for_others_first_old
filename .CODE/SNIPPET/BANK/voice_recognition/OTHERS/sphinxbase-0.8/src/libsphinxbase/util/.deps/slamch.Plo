@@ -1,3 +1,0 @@
-slamch.lo: slamch.c ../../../include/sphinxbase/f2c.h
-
-../../../include/sphinxbase/f2c.h:
