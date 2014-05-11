@@ -1,5 +1,6 @@
 clear
-set  -x
+set -e
+set -o nounset
 #info: test the stepper (run,source)
 #motivation: debug technic: step VS trapping -> know the step  the bug is happend -> then dip farther - no quick goto but safer and clearer
 print_color () 
@@ -22,7 +23,9 @@ step(){
     if [ "$MODE_SUBSHELL" = true ];then
     (    eval "$cmd" 1>/tmp/out 2>/tmp/err )
 else
-        eval "$cmd" 1>/tmp/out 2>/tmp/err 
+        eval "$cmd" 
+        #1>/tmp/out 2>/tmp/err 
+
     fi
     local res=$?
 
@@ -36,17 +39,28 @@ else
         exit 1
     fi
 }
-steps(){    
-    file_self=${BASH_SOURCE:-$0}
+set_env(){
+file_self=${BASH_SOURCE:-$0}
     dir_self=`dirname $file_self`
-    while read line;do
+echo "[file_self] $file_self"
+echo "[dir_self] $dir_self"
+}
+loop(){
+    local line=''
+        while read line;do
         if [ -n "$line" ];then
+        echo "[line] $line"
         eval "$line"
     else
         echo "[Empty Line]"
         break
     fi
     done <$dir_self/list.txt
+
+}
+steps(){    
+    set_env
+loop
 }
 
     trap trap_err00 ERR
