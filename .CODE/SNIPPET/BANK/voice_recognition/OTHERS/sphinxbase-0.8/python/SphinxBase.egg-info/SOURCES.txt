@@ -1,0 +1,6 @@
+setup.py
+sphinxbase.c
+SphinxBase.egg-info/PKG-INFO
+SphinxBase.egg-info/SOURCES.txt
+SphinxBase.egg-info/dependency_links.txt
+SphinxBase.egg-info/top_level.txt

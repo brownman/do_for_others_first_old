@@ -1,0 +1,5 @@
+https://gist.github.com/alotaiba/1730160
+https://github.com/gillesdemey/google-speech-v2
+http://bernaerts.dyndns.org/263-asterisk-voicemail-speech-recognition-google
+https://www.google.co.il/search?q=speech+recognition+linux&oq=speech+recognition+linux&aqs=chrome..69i57j69i65j0l3.4456j0j1&sourceid=chrome&ie=UTF-8
+http://www.webupd8.org/2014/02/linux-speech-recognition-using-google.html

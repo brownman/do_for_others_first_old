@@ -1,0 +1,6 @@
+pocketsphinx.c
+setup.py
+PocketSphinx.egg-info/PKG-INFO
+PocketSphinx.egg-info/SOURCES.txt
+PocketSphinx.egg-info/dependency_links.txt
+PocketSphinx.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: PocketSphinx
+Version: 0.8
+Summary: Python interface to CMU PocketSphinx speech recognition
+Home-page: http://cmusphinx.sourceforge.net
+Author: David Huggins-Daines
+Author-email: dhuggins@cs.cmu.edu
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

@@ -1,0 +1,5 @@
+workspace_1:
+    - eclipse - use iris
+    - oss4 - stream to 2nd computer /dev/dsp /dev/audio
+    - mv snippets of speach recognition to 1 dir 
+

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: SphinxBase
+Version: 0.8
+Summary: Python interface to CMU Sphinx base libraries
+Home-page: http://cmusphinx.org
+Author: David Huggins-Daines
+Author-email: dhuggins@cs.cmu.edu
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

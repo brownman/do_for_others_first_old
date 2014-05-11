@@ -1,0 +1,3 @@
+remind of life|life.yaml
+remind of project|project.yaml
+imagine how easy it really is|robot.yaml
