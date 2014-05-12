@@ -1,7 +1,19 @@
+set -e 
+set -o nounset
+eat(){
+    local cmd="$@"
+    eval "$cmd"
+    res=$?
+    if [ $res -eq 0 ];then
+        print_color 32 "OK"
+    else
+        print_color 31 "ERROR"
+        return 1
+    fi
+
+}
 step1(){
     local dir_self=`where_am_i $0`
-    set -e 
-    set -o nounset
     while read line;do
 
 
@@ -22,13 +34,7 @@ step1(){
                 #every $weight $file
                 local    cmd="every $weight $file"
                 echo "[cmd] $cmd"
-                eval "$cmd"
-                res=$?
-                if [ $res -eq 0 ];then
-                    print_color 32 "OK"
-                else
-                    print_color 31 "ERROR"
-                fi
+                eat "$cmd"
             else
                 echo "[ERROR] no such file " "$file"
             fi

@@ -1,5 +1,4 @@
 step source .source.cfg
-
 step source .struct.cfg
 step ./.run.sh
 

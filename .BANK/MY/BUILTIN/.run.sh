@@ -1,9 +1,11 @@
+set -e
+isdf
 step01(){
 #local dir_self=`dirname $0`
 local dir_self=`where_am_i $0`
 echo "[dir_self] $dir_self"
 local file=$dir_self/BANK/SETUP/list.sh
-local  cmd="bash -c $file"
+local  cmd="$file"
 echo "[cmd] $cmd"
 eval "$cmd"
 
