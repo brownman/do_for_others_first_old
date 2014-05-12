@@ -19,7 +19,7 @@ step1(){
 
         if [ -n "$line" ];then
 
-            echo "[line] $line"
+         trace   echo "[line] $line"
             local   weight=`echo $line | cut -d':' -f1`
             local   file_relative=`echo $line | cut -d':' -f2`
 
@@ -30,10 +30,10 @@ step1(){
             #echo $file
             local res=0
             if  [ -f "$file" ];then
-                echo "[file exist] $file" 
+trace                echo "[file exist] $file" 
                 #every $weight $file
                 local    cmd="every $weight $file"
-                echo "[cmd] $cmd"
+     trace           echo "[cmd] $cmd"
                 eat "$cmd"
             else
                 echo "[ERROR] no such file " "$file"
