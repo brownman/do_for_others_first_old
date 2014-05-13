@@ -1,0 +1,41 @@
+indicate_err(){
+    #assert_symlink_not_broken(){
+
+    local dir=$1
+    local file="$dir/err"
+    #    echo "$file"
+    #ls -l $file
+    if [ -f $file ];then
+        #   if [[ ! -e $file &&  -L $file ]]; then
+        #            print_color 32    "symlink is broken:"
+        #        else
+        #        echo    "symlink is ok"
+        #fi
+        num=`cat  $file | wc -l`
+        if [ $num -ne 0  ];then
+            print_color 31 "[err exist and not empty] we got a bug to fix"
+            echo "[file] $file"
+            echo --- content: ----
+            cat $file
+            echo ---
+            exit 1
+        else
+            print_color 32 "no errors"
+        fi
+    else
+        print_color 31 "[Error] file not exist: $file"
+        exit 1
+    fi
+
+}
+
+echo "[we want that a file: err will be existed and will be a broken symlink]"
+print_color 33 "press y - for testing"
+for dir in $dirs;do
+    echo $dir
+done
+
+#            notify-send error 'goto tty1'
+            #for making sure we are not in a subshell
+#            cat /tmp/err > /dev/tty1
+

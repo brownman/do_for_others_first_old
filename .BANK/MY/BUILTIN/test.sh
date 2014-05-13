@@ -73,7 +73,7 @@ loop(){
             echo "[Empty Line]"
             break
         fi
-    done <$dir_self/list.txt
+    done <$dir_self/.list.txt
 
 }
 cleanup(){

@@ -1,0 +1,1 @@
+/home/dao04/JAIL/TREE/.BANK/MY/BUILTIN/BANK/MODULES/PSYCHOLOGIC/list.sh: line 2: isdsflksjflksj: command not found
